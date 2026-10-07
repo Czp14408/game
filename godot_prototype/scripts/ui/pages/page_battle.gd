@@ -192,14 +192,15 @@ func _surrender() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not is_inside_tree():
+	# 页面已脱离界面或正在释放时不再响应输入（不用 is_inside_tree()，理由见 page_minimap.gd）。
+	if get_parent() == null or is_queued_for_deletion():
 		return
 	if event.is_action_pressed("cancel"):
 		_toggle_pause()
-		get_viewport().set_input_as_handled()
+		consume_input()
 	elif event.is_action_pressed("dev_step"):
 		_single_step()
-		get_viewport().set_input_as_handled()
+		consume_input()
 
 
 # ---------------------------------------------------------------------------

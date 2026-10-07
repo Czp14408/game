@@ -386,7 +386,10 @@ func _update_prompt() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not is_inside_tree():
+	# 页面已脱离界面或正在释放时不再响应输入。
+	# 刻意不用 is_inside_tree()：无画面脚本模式下连 SceneTree.root 的该标志都是 false，
+	# 用它会把键盘输入全部吞掉，导致按键路径无法自动验证。
+	if get_parent() == null or is_queued_for_deletion():
 		return
 	if event.is_action_pressed("interact"):
 		var a := _nearest()
@@ -394,13 +397,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		var spec: Dictionary = a.get_meta("spec", {})
 		_activate(spec)
-		get_viewport().set_input_as_handled()
+		consume_input()
 	elif event.is_action_pressed("open_world_map"):
 		ctrl.open_world_map()
-		get_viewport().set_input_as_handled()
+		consume_input()
 	elif event.is_action_pressed("open_build"):
 		ctrl.open_build(RunController.PAGE_MINIMAP)
-		get_viewport().set_input_as_handled()
+		consume_input()
 
 
 # ---------------------------------------------------------------------------

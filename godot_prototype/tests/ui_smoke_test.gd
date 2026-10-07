@@ -36,6 +36,19 @@ func _test_input_map() -> void:
 		check(found, "按键 %s 绑定到 %s" % [action, OS.get_keycode_string(want)])
 
 
+## 模拟按一次 Tab。无画面脚本模式下引擎不派发输入事件，只能直接投递给页面的输入处理。
+func _press_tab(page: Node) -> void:
+	if page == null:
+		check(false, "按 Tab 时当前页面为空")
+		return
+	var ev := InputEventKey.new()
+	ev.keycode = KEY_TAB
+	ev.physical_keycode = KEY_TAB
+	ev.pressed = true
+	check(ev.is_action_pressed("open_world_map"), "Tab 事件能匹配 open_world_map 动作")
+	page._unhandled_input(ev)
+
+
 func run() -> void:
 	suite_name = "M4/M5 界面冒烟"
 	tree = Engine.get_main_loop() as SceneTree
@@ -177,13 +190,19 @@ func run() -> void:
 	ctrl.close_shop()
 	check(app.current_page_node() is PageMinimap, "商店返回小地图")
 
-	# --- 大地图 ---
-	ctrl.open_world_map()
-	check(app.current_page_node() is PageWorldMap, "进入大地图页面")
+	# --- 大地图（Tab 作为开关：打开 / 收起） ---
+	check(app.current_page_node() is PageMinimap, "Tab 开关的起点是小地图")
+	_press_tab(app.current_page_node())
+	check(app.current_page_node() is PageWorldMap, "小地图按 Tab 打开大地图")
 	var wm := app.current_page_node() as PageWorldMap
 	check(wm != null, "大地图页面类型正确")
+	_press_tab(app.current_page_node())
+	check(app.current_page_node() is PageMinimap, "大地图上再按 Tab 收起回小地图")
+	# 按钮路径同样保留
+	ctrl.open_world_map()
+	check(app.current_page_node() is PageWorldMap, "按钮路径：进入大地图页面")
 	ctrl.close_world_map()
-	check(app.current_page_node() is PageMinimap, "大地图返回小地图")
+	check(app.current_page_node() is PageMinimap, "按钮路径：大地图返回小地图")
 
 	# --- 回归与阶段 ---
 	ctrl.state.main_completed = true

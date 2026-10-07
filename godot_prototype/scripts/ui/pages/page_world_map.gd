@@ -45,7 +45,7 @@ func build() -> void:
 	rb.add_child(UiKit.label("· 红色连线：被守路者封锁，需先击败守路者", 13, UiKit.COL_ENEMY))
 	rb.add_child(UiKit.label("· 未探索节点只显示编号；已进入过显示名称", 13, UiKit.COL_MUTED))
 	rb.add_child(UiKit.spacer(8))
-	rb.add_child(UiKit.button("返回小地图", func() -> void: ctrl.close_world_map()))
+	rb.add_child(UiKit.button("返回小地图（Tab）", func() -> void: ctrl.close_world_map()))
 
 	_refresh()
 
@@ -53,6 +53,16 @@ func build() -> void:
 func _on_node_clicked(node_id: String) -> void:
 	_selected = node_id
 	_refresh()
+
+
+## Tab 作为「大地图」的开关：小地图按 Tab 打开，在大地图上再按 Tab 收起。
+func _unhandled_input(event: InputEvent) -> void:
+	# 页面已脱离界面或正在释放时不再响应输入（不用 is_inside_tree()，理由见 page_minimap.gd）。
+	if get_parent() == null or is_queued_for_deletion():
+		return
+	if event.is_action_pressed("open_world_map"):
+		ctrl.close_world_map()
+		consume_input()
 
 
 func _refresh() -> void:

@@ -57,3 +57,11 @@ func item_line(it: ItemInstance) -> String:
 	if it.trial_growth != 0.0:
 		growth = "　试炼成长 +%.0f" % it.trial_growth
 	return "%s（%s）%d 格%s" % [def.display_name, PriceTable.quality_name(it.quality), def.size, growth]
+
+
+## 标记本次输入已消费，避免同一个按键触发多处界面。
+## 无画面脚本模式下 get_viewport() 会返回 null（节点未真正入树），必须做保护。
+func consume_input() -> void:
+	var vp := get_viewport()
+	if vp != null:
+		vp.set_input_as_handled()
