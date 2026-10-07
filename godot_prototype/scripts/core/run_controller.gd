@@ -42,7 +42,8 @@ var dev_mode: StringName = DevTools.MODE_RANDOM
 var last_battle_summary: Dictionary = {}
 var last_result: BattleResult = null
 var _page_entered_ms: int = 0
-## 模态界面（构筑、商店）的返回位置，按 Esc/返回键回到打开前的界面
+## 模态界面（构筑、商店）的返回位置，供界面内的「返回」按钮回到打开前的界面。
+## 注意：Esc 只在战斗页生效（暂停/继续）；商店、构筑、大地图不响应 Esc，用页面内按钮返回。
 var _build_return: StringName = PAGE_MINIMAP
 var _shop_return: StringName = PAGE_MINIMAP
 
