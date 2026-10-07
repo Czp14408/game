@@ -213,6 +213,119 @@ func _all_same(values: PackedInt32Array) -> bool:
 	return values.size() > 0
 
 
+## 背包／商店／整理共用面板（背包商店整理共用面板说明.md）。
+## 同步段只核对「清单自洽 + 布局按清单落位」；控件真实排版（容器有没有把子节点压扁、
+## 文本有没有被裁）必须在帧推进段与真渲染截图里守——无画面脚本模式下 size 恒为设定值。
+func _test_inventory_skin() -> void:
+	check(InventorySkin.load_error() == "", "背包面板清单可读：%s" % InventorySkin.load_error())
+	check(InventorySkin.design_size() == Vector2i(1280, 690),
+		"背包面板设计画布同为 1280×690，实为 %s" % InventorySkin.design_size())
+	check(InventorySkin.has_panel(InventorySkin.PANEL), "共用面板在清单中")
+	if not InventorySkin.has_panel(InventorySkin.PANEL):
+		return
+
+	var rect := InventorySkin.rect(InventorySkin.PANEL)
+	var tex := InventorySkin.texture(InventorySkin.PANEL)
+	check(tex != null, "面板纹理可加载")
+	if tex != null:
+		check(Vector2i(tex.get_size()) == rect.size,
+			"面板纹理 %s 与清单矩形 %s 同尺寸（1:1 贴，不拉伸）" % [Vector2i(tex.get_size()), rect.size])
+	check(InventorySkin.inner(InventorySkin.PANEL).size.x > 0
+		and InventorySkin.inner(InventorySkin.PANEL).size.y > 0,
+		"面板内腔非空：%s" % InventorySkin.inner(InventorySkin.PANEL))
+
+	# 三个分区按清单顺序竖排、互不重叠，且都落在外框内腔里
+	var inner := InventorySkin.inner(InventorySkin.PANEL)
+	var prev_bottom := -1
+	for key in InventorySkin.REGIONS:
+		check(InventorySkin.region(InventorySkin.PANEL, key).size.x > 0,
+			"分区 %s 在清单中且非空" % key)
+		var r := InventorySkin.region(InventorySkin.PANEL, key)
+		check(inner.encloses(r), "分区 %s 落在外框内腔内：%s ⊆ %s" % [key, r, inner])
+		check(r.position.y > prev_bottom, "分区 %s 在上一个之下（y=%d > %d）" % [key, r.position.y, prev_bottom])
+		prev_bottom = r.position.y + r.size.y
+
+	# 横栏净宽按十格换算：格宽非整数是允许的，但乘回去必须等于净宽
+	for row in [InventorySkin.ROW_A, InventorySkin.ROW_B]:
+		var rr := InventorySkin.region(InventorySkin.PANEL, row)
+		var slots := InventorySkin.slot_count(row)
+		check(slots == 10, "%s 是十格模板，实为 %d" % [row, slots])
+		check(is_equal_approx(rr.size.x / float(slots) * slots, float(rr.size.x)),
+			"%s 净宽 %d 由 %d 格换算" % [row, rr.size.x, slots])
+
+	# 操作条在最下方，且不与两条横栏重叠
+	var op := InventorySkin.region(InventorySkin.PANEL, InventorySkin.OP_BAR)
+	for row in [InventorySkin.ROW_A, InventorySkin.ROW_B]:
+		check(not op.intersects(InventorySkin.region(InventorySkin.PANEL, row)),
+			"操作条不与 %s 重叠" % row)
+	check(op.size.y >= 12, "操作条高度够放一行按钮：%d" % op.size.y)
+
+
+## 共用面板在页面上的落位：矩形取自清单、纹理与矩形一致、物品格按占格连续排布。
+## mode 决定上排装什么：「build」是战斗栏，「shop」是商品货位（两者都用同一张面板、同一段分区）。
+func _test_inventory_page_layout(page: Control, ctrl: RunController, label: String,
+		mode: String = "build") -> void:
+	if page == null or not page.has_method("layout_report"):
+		check(false, "%s：页面缺少 layout_report" % label)
+		return
+	var rep: Dictionary = page.layout_report()
+	check(rep["canvas_min"] == rep["design"],
+		"%s：设计画布配置为清单尺寸 %s / %s" % [label, rep["canvas_min"], rep["design"]])
+	check(rep["panel_rect"] == InventorySkin.rect(InventorySkin.PANEL),
+		"%s：面板按清单矩形落位 %s" % [label, rep["panel_rect"]])
+	check(rep["texture"] == Vector2i(rep["panel"].size),
+		"%s：面板纹理 %s 与实际矩形 %s 同尺寸" % [label, rep["texture"], rep["panel"].size])
+	check(rep["op_bar"].size.x > 0, "%s：操作条已落位 %s" % [label, rep["op_bar"]])
+	check((rep["ops"] as Array).size() > 0, "%s：操作条上有按钮（%d 个）"
+		% [label, (rep["ops"] as Array).size()])
+
+	# 两行横栏：格宽由净宽换算，物品格逐个累加不重叠、不越界
+	var rows: Dictionary = rep["rows"]
+	for row in [InventorySkin.ROW_A, InventorySkin.ROW_B]:
+		var info: Dictionary = rows[row]
+		var slot_w := float(info["slot_width"])
+		var region: Rect2i = info["region"]
+		check(is_equal_approx(slot_w * int(info["slot_count"]), float(region.size.x)),
+			"%s：%s 十格由净宽 %d 换算，格宽 %.2f" % [label, row, region.size.x, slot_w])
+		var cells: Array = info["cells"]
+		var cursor := 0
+		var overlap := false
+		for c in cells:
+			var cell: Rect2i = (c as Dictionary)["rect"]
+			check(absf(float(cell.position.x) - slot_w * cursor) <= 1.0,
+				"%s：%s 第 %d 格物品落在第 %d 格起" % [label, row, cells.find(c), cursor])
+			if cell.position.x < cursor * slot_w - 1.0:
+				overlap = true
+			cursor += 1
+		check(not overlap, "%s：%s 物品格互不重叠" % [label, row])
+		check(region.position.x + cursor * slot_w <= region.position.x + region.size.x + 1.0,
+			"%s：%s 物品不越出横栏净宽（%d 格 / %d）" % [label, row, cursor, int(info["slot_count"])])
+
+	# 上排装什么由模式决定：构筑页是战斗栏，商店页是商品货位；下排两边都是背包
+	var bar_row: Dictionary = rows[InventorySkin.ROW_A]
+	var inv_row: Dictionary = rows[InventorySkin.ROW_B]
+	if mode == "shop":
+		var shop := ctrl.current_shop()
+		var goods := 0 if shop == null else shop.slots.size()
+		check((bar_row["cells"] as Array).size() == goods,
+			"%s：上排格数与货位数一致（%d / %d）"
+			% [label, (bar_row["cells"] as Array).size(), goods])
+		check(int(bar_row["enabled"]) == goods,
+			"%s：上排启用格数等于货位数（%d）" % [label, int(bar_row["enabled"])])
+	else:
+		check((bar_row["cells"] as Array).size() == ctrl.state.battle_bar.size(),
+			"%s：上排格数与战斗栏件数一致（%d / %d）"
+			% [label, (bar_row["cells"] as Array).size(), ctrl.state.battle_bar.size()])
+		check(int(bar_row["enabled"]) == RunState.BAR_CAPACITY,
+			"%s：上排启用 %d 格（战斗栏容量）" % [label, int(bar_row["enabled"])])
+	check((inv_row["cells"] as Array).size() == ctrl.state.inventory.size(),
+		"%s：下排格数与背包件数一致（%d / %d）"
+		% [label, (inv_row["cells"] as Array).size(), ctrl.state.inventory.size()])
+	# 启用格数按玩法容量给，不是模板二十格（画出来会被当成额外容量）
+	check(int(inv_row["enabled"]) == RunState.INVENTORY_CAPACITY,
+		"%s：背包启用 %d 格（等于容量）" % [label, int(inv_row["enabled"])])
+
+
 ## 主角美术资源（R0.5）。
 ## 这里钉住三件只在真实渲染下才看得出来、但可以在无画面阶段提前守住的事实：
 ## 素材可加载、同一方向各帧等尺寸（否则走动时角色会上下跳）、方向映射与镜像符合预期。
@@ -284,6 +397,7 @@ func run() -> void:
 
 	_test_input_map()
 	_test_battle_skin()
+	_test_inventory_skin()
 
 	app = AppRoot.new()
 	app.name = "SmokeAppRoot"
@@ -387,6 +501,7 @@ func run() -> void:
 	check(app.current_page_node() is PageBuild, "进入构筑页面")
 	var build := app.current_page_node() as PageBuild
 	check(build != null, "构筑页面类型正确")
+	_test_inventory_page_layout(build, ctrl, "构筑页")
 	var unequip_target := ""
 	if ctrl.state.inventory.size() > 0:
 		unequip_target = ctrl.state.inventory[0].instance_id
@@ -400,6 +515,7 @@ func run() -> void:
 	# --- 商店 ---
 	ctrl.open_shop("03/gear_shop", RunController.PAGE_MINIMAP)
 	check(app.current_page_node() is PageShop, "进入商店页面")
+	_test_inventory_page_layout(app.current_page_node(), ctrl, "商店页", "shop")
 	var shop := ctrl.current_shop()
 	check(shop != null, "商店库存已生成")
 	if shop != null:
@@ -565,6 +681,7 @@ func extend_with_frames() -> void:
 		await tree.process_frame
 		var page := app.current_page_node()
 		check(page != null and page.get_child_count() > 0, "页面在帧推进后仍有内容：%s" % ctrl.current_page)
+	await _test_inventory_frames(ctrl)
 	ctrl.state.main_completed = true
 	ctrl.return_to_deity()
 	await tree.process_frame
@@ -572,6 +689,87 @@ func extend_with_frames() -> void:
 	tree.root.size = Vector2i(1280, 720)
 	await tree.process_frame
 	await _test_battle_log_frames(ctrl)
+
+
+func _find_op_button(page: Control, op_id: String) -> Button:
+	var bar := _named(page, "OpBar")
+	if bar == null:
+		return null
+	return _named(bar, "Op_%s" % op_id) as Button
+
+
+func _find_text_label(node: Node) -> Label:
+	for c in node.get_children():
+		if c is Label and String((c as Label).text) != "":
+			return c as Label
+	return null
+
+
+## 共用面板必须在真实帧推进后量：同步段控件 size 恒为设定值，量不到「容器把子节点压扁」
+## 这类缺陷（战斗日志区曾因此整块空白、779 项全过却看不见内容）。
+## 这里守三件事：面板本体没被容器改尺寸、两条横栏与操作条仍有高度、格线与物品格仍按净宽换算。
+func _test_inventory_frames(ctrl: RunController) -> void:
+	DevTools.mode = DevTools.MODE_RANDOM
+	ctrl.new_trial(&"warrior", &"sturdy", 20261007)
+	await tree.process_frame
+	var cases: Array[Callable] = [
+		func() -> void: ctrl.open_build(RunController.PAGE_MINIMAP),
+		func() -> void: ctrl.open_shop("03/gear_shop", RunController.PAGE_MINIMAP),
+	]
+	for step in cases:
+		step.call()
+		await tree.process_frame
+		await tree.process_frame
+		var page := app.current_page_node()
+		if page == null or not page.has_method("layout_report"):
+			check(false, "帧推进：共用面板页面在位")
+			continue
+		var rep: Dictionary = page.layout_report()
+		var want := InventorySkin.rect(InventorySkin.PANEL)
+		var got: Rect2i = rep["panel"]
+		check(got.size == want.size,
+			"帧推进：面板未被容器改尺寸（实 %s / 清单 %s）" % [got.size, want.size])
+
+		# 设计画布要真被铺到清单尺寸，而不是被父容器按最小尺寸压扁
+		var canvas: Vector2i = rep["canvas"]
+		check(canvas == Vector2i.ZERO or canvas == rep["design"],
+			"帧推进：设计画布实时尺寸为清单尺寸或尚未布局（%s）" % canvas)
+
+		var rows: Dictionary = rep["rows"]
+		for row in [InventorySkin.ROW_A, InventorySkin.ROW_B]:
+			var info: Dictionary = rows[row]
+			var region: Rect2i = info["region"]
+			check(region.size.y > 20,
+				"帧推进：%s 真实高度 %d 未被压扁" % [row, region.size.y])
+			var slot_w := float(info["slot_width"])
+			check(slot_w > 10.0,
+				"帧推进：%s 格宽 %.2f 仍由净宽换算得出" % [row, slot_w])
+			for c in info["cells"]:
+				var cell: Rect2i = (c as Dictionary)["rect"]
+				check(cell.size.x >= 1 and cell.size.y >= 20,
+					"帧推进：%s 物品格实际 %d×%d 未被压扁" % [row, cell.size.x, cell.size.y])
+		var op: Rect2i = rep["op_bar"]
+		check(op.size.y >= 12, "帧推进：操作条真实高度 %d，够显示按钮" % op.size.y)
+		for o in rep["ops"]:
+			var od: Dictionary = o
+			var r: Rect2i = od["rect"]
+			check(r.size.x > 20 and r.size.y > 8,
+				"帧推进：操作按钮「%s」实际 %d×%d" % [od["id"], r.size.x, r.size.y])
+			# 按钮本身不写字，文字在一个不裁剪的 Label 上；核对这个 Label 真的存在且盖住条高，
+			# 否则字会被 Button 的 clip_text 裁掉下半截（真渲染截图里只剩半个字）。
+			var btn := _find_op_button(page, String(od["id"]))
+			if btn == null:
+				check(false, "帧推进：操作按钮「%s」节点在位" % od["id"])
+				continue
+			var lbl := _find_text_label(btn)
+			check(lbl != null, "帧推进：操作按钮「%s」有承载文字的标签" % od["id"])
+			if lbl != null:
+				check((lbl as Control).size.y >= r.size.y,
+					"帧推进：按钮「%s」文字标签高 %d 不小于条高 %d（不会被裁）"
+					% [od["id"], (lbl as Control).size.y, r.size.y])
+	ctrl.close_build()
+	ctrl.close_shop()
+	await tree.process_frame
 
 
 ## 战斗日志必须在真实帧推进后才量得到：日志文本节点曾因换行标签的最小高度塌成 1 像素，

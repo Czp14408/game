@@ -331,6 +331,77 @@ static func _apply_wood_style(b: Button) -> void:
 	b.add_theme_color_override("font_disabled_color", Color(0.45, 0.43, 0.42))
 
 
+## 绝对定位的浅蓝玻璃按钮：给「背包／商店／整理共用面板」用。
+## 为什么另起一套而不是复用 abs_button：后者的深棕描边是配战斗页古铜木框的，
+## 放到浅蓝半透明面板上会像两块不同风格的界面拼在一起。
+## 纵向内边距取 0：共用面板的操作条实测只有 15 像素高，任何上下留白都会把字挤出按钮。
+static func abs_sys_button(text: String, on_pressed: Callable, rect: Rect2i, font_size: int = 11) -> Button:
+	var b := button(text, on_pressed)
+	b.add_theme_font_size_override("font_size", font_size)
+	b.clip_text = true
+	b.position = Vector2(rect.position)
+	b.size = Vector2(rect.size)
+	_apply_sys_style(b)
+	return b
+
+
+## 极扁条带里的居中按钮：条高只有 15 像素，而 Button 自己的文字行高约 29 像素
+## （11px 字 + 主题行距），无论怎么调 content_margin 与 clip_text 都只剩半个字。
+## 做法：Button 自身不写字（clip_text 只裁自己的 text，不裁子节点），
+## 文字交给一个不裁剪的 Label，按「条高 − 行高」的一半向上溢出摆放，字心正好落在条心。
+static func abs_sys_button_centered(text: String, on_pressed: Callable, rect: Rect2i,
+		font_size: int = 11) -> Button:
+	var b := abs_sys_button("", on_pressed, rect, font_size)
+	b.alignment = HORIZONTAL_ALIGNMENT_CENTER
+	b.custom_minimum_size = Vector2(0, 0)
+	var line_h := font_size * 2 + 7
+	var l := Label.new()
+	l.text = text
+	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	l.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	l.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	l.clip_text = false
+	l.add_theme_font_size_override("font_size", font_size)
+	l.add_theme_color_override("font_color", Color(0.93, 0.97, 1.0))
+	l.add_theme_color_override("font_hover_color", Color(1.0, 1.0, 1.0))
+	l.add_theme_color_override("font_pressed_color", Color(1.0, 1.0, 1.0))
+	l.add_theme_color_override("font_disabled_color", Color(0.52, 0.60, 0.68))
+	l.size = Vector2(rect.size.x, line_h)
+	l.position = Vector2(0, roundf((float(rect.size.y) - float(line_h)) * 0.5))
+	b.add_child(l)
+	return b
+
+
+static func _apply_sys_style(b: Button) -> void:
+	var box := StyleBoxFlat.new()
+	box.bg_color = Color(0.72, 0.86, 0.96, 0.16)
+	box.set_border_width_all(1)
+	box.border_color = Color(0.82, 0.93, 1.0, 0.55)
+	box.set_corner_radius_all(3)
+	box.content_margin_left = 8
+	box.content_margin_right = 8
+	box.content_margin_top = 0
+	box.content_margin_bottom = 0
+	b.add_theme_stylebox_override("normal", box)
+	var hot := box.duplicate() as StyleBoxFlat
+	hot.bg_color = Color(0.80, 0.92, 1.0, 0.34)
+	hot.border_color = Color(0.94, 0.98, 1.0, 0.85)
+	b.add_theme_stylebox_override("hover", hot)
+	var down := box.duplicate() as StyleBoxFlat
+	down.bg_color = Color(0.86, 0.95, 1.0, 0.46)
+	down.border_color = Color(1.0, 1.0, 1.0, 0.95)
+	b.add_theme_stylebox_override("pressed", down)
+	b.add_theme_stylebox_override("focus", hot)
+	var off := box.duplicate() as StyleBoxFlat
+	off.bg_color = Color(0.45, 0.55, 0.64, 0.10)
+	off.border_color = Color(0.62, 0.72, 0.80, 0.22)
+	b.add_theme_stylebox_override("disabled", off)
+	b.add_theme_color_override("font_color", Color(0.93, 0.97, 1.0))
+	b.add_theme_color_override("font_hover_color", Color(1.0, 1.0, 1.0))
+	b.add_theme_color_override("font_pressed_color", Color(1.0, 1.0, 1.0))
+	b.add_theme_color_override("font_disabled_color", Color(0.60, 0.67, 0.73))
+
+
 ## 把内容放进可滚动容器。
 ## 注意：ScrollContainer 只把「横向带 SIZE_EXPAND」的子节点撑到容器宽度，
 ## 否则子节点会被压到最小宽度（表现为文字一字一行）。此处统一补上该标记。
