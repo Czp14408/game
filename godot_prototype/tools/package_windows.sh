@@ -131,6 +131,55 @@ pause
 endlocal
 BAT
 
+# README 里的断言项数从实际跑一次的结果里取，写死会在下次加断言后静默过期
+# （曾因此 README 与包内文档长期写着 779，而实际已是 890）。
+# 取不到就退回「未测」而不是编一个数。
+# 两个套件的输出格式不同，都认：
+#   无画面  「===== 合计：通过 890，失败 0 =====」
+#   截图    「[界面截图验证] 通过 128，失败 0，输出 …」
+extract_pass_count() {
+	sed -n 's/.*合计：通过 *\([0-9]\+\).*/\1/p;s/.*] 通过 *\([0-9]\+\).*/\1/p' "$1" | tail -1
+}
+
+read_assert_count() {
+	local log count
+	log="$(mktemp)"
+	"$GODOT_CONSOLE" --headless --path "$PROJECT_DIR" \
+		--script res://tests/headless_main.gd > "$log" 2>&1 || true
+	count="$(extract_pass_count "$log")"
+	rm -f "$log"
+	[[ -n "$count" ]] && printf '%s' "$count" || printf '未测'
+}
+
+read_shot_count() {
+	# 真渲染截图套件需要显示环境且要跑 2 分钟，打包时默认**不重跑**。
+	# 传入 WD_SHOT_COUNT 用当次实测值；没传就如实写「未测」，不猜数字。
+	# 想让它自己量：WD_SHOT_COUNT=auto bash tools/package_windows.sh
+	if [[ "${WD_SHOT_COUNT:-}" == "auto" ]]; then
+		local log count tmp
+		log="$(mktemp)"
+		tmp="$(mktemp -d)"
+		"$GODOT_CONSOLE" --path "$PROJECT_DIR" -- --screenshots "$tmp" > "$log" 2>&1 || true
+		count="$(extract_pass_count "$log")"
+		rm -rf "$log" "$tmp"
+		[[ -n "$count" ]] && { printf '%s' "$count"; return; }
+	fi
+	if [[ -n "${WD_SHOT_COUNT:-}" ]]; then
+		printf '%s' "${WD_SHOT_COUNT}"
+	else
+		printf '未测（需显示环境）'
+	fi
+}
+
+if [[ -f "$GODOT_CONSOLE" ]]; then
+	echo "读取当前无画面断言项数（供 README 使用）……"
+	HEADLESS_COUNT="$(read_assert_count)"
+else
+	HEADLESS_COUNT="未测"
+fi
+SHOT_COUNT="$(read_shot_count)"
+echo "  无画面 ${HEADLESS_COUNT} 项 / 真渲染 ${SHOT_COUNT} 项"
+
 cat > "$OUT_DIR/README.md" <<'MD'
 # 武道试炼原型 · Windows 试玩包
 
@@ -142,9 +191,9 @@ cat > "$OUT_DIR/README.md" <<'MD'
 | 脚本 | 作用 |
 | --- | --- |
 | `run_game.bat` | 开始游戏（键鼠） |
-| `run_verify.bat` | 无画面规则与界面验证（当前 779 项断言，需要控制台窗口） |
+| `run_verify.bat` | 无画面规则与界面验证（当前 __HEADLESS_COUNT__ 项断言，需要控制台窗口） |
 | `run_autodemo.bat` | 无画面自动演示：真实帧循环下走通整局 |
-| `run_screenshots.bat` | 真实渲染下逐页截图 + 布局断言（当前 128 项，需要显示环境，产出 `screenshots/`） |
+| `run_screenshots.bat` | 真实渲染下逐页截图 + 布局断言（当前 __SHOT_COUNT__ 项，需要显示环境，产出 `screenshots/`） |
 | `run_evidence.bat` | 重新生成三份 R0 证据（复演账本 / 构筑方向样本 / 背包容量压力），产出 `evidence/` |
 | `export_release.bat` | 产出标准单文件 `wudao_prototype.exe`（需先安装同版本导出模板） |
 
@@ -180,12 +229,22 @@ wudao_prototype/
 
 完整清单见包内的 `游戏原型已知问题清单.md`，其中明确区分了「已自动验证」与「需要人工在有显示环境下确认」的项。
 
-需要真人操作核对的项见包内 `人工验收清单.md`（A–L 十二组，含键鼠手感、中文缺字、窗口缩放、
+需要真人操作核对的项见包内 `人工验收清单.md`（A–M 十三组，含键鼠手感、中文缺字、窗口缩放、
 满包可继续操作、三条路线的玩法验收与 15 分钟节奏观察）。
 其中 K 组是主角形象的观感验收：形象是否锐利、朝向是否看得懂、有没有挡住交互点——
 这些自动化能证明「素材加载到了正确位置」，证明不了「看起来别不别扭」。
 L 组是战斗界面观感验收：木框拼接口是否变形、生命槽与十格栏是否整齐、战斗记录是否每条一行——
 自动化能证明「面板落到了清单矩形、内腔没被越界、日志有内容」，证明不了「看着顺不顺眼」。
+M 组是背包／商店共用面板的观感验收：格线是否均匀、格内文字有没有被裁、商店上排是否被误读成二十格容量——
+自动化能证明「面板落到了清单矩形、格宽由净宽换算、货位数正确」，证明不了「看着挤不挤」。
+
+## 背包／商店共用面板
+
+构筑与整理页、商店页的背包栏用同一张面板（`project/assets/ui/inventory_v1/panel.png`），
+两处零改动复用。面板矩形与分区全部来自 `manifest.json`，界面层不写死坐标；
+换素材只需重跑 `project/tools/build_inventory_ui.py`。偏差与实测值见《背包商店整理共用面板说明.md》「接入结果」。
+已知的**有意取舍**（不是缺陷）：格子里只有文字没有物品图形（图标属R5 美术）、
+商店上排只启用 4 个货位而不是画满二十格模板。完整清单见包内 `游戏原型已知问题清单.md` §9.7。
 
 ## 战斗界面
 
@@ -207,6 +266,11 @@ L 组是战斗界面观感验收：木框拼接口是否变形、生命槽与十
 并给出与设计文档的逐项对照（含一处尚未成立的方向，如实记录）。
 运行 `run_evidence.bat` 可在本包内重新生成全部三份证据。
 MD
+
+# 占位符在 heredoc 写完之后替换：模板正文全是 Markdown 反引号，
+# 放进可展开 heredoc 会被 shell 当子命令执行，所以保持单引号 heredoc 不动。
+sed -i "s/__HEADLESS_COUNT__/${HEADLESS_COUNT}/g; s/__SHOT_COUNT__/${SHOT_COUNT}/g" \
+	"$OUT_DIR/README.md"
 
 echo "已生成便携试玩包：$OUT_DIR"
 ls -la "$OUT_DIR"
