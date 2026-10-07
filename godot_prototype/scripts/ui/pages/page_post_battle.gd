@@ -36,13 +36,13 @@ func build() -> void:
 		], 14, UiKit.COL_ENEMY))
 
 	var cols := UiKit.row(12)
-	cols.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	root.add_child(cols)
 	cols.add_child(_stats_panel("我方物品统计", result.item_stats.get("player", []), result.player_stats))
 	cols.add_child(_stats_panel("对手物品统计", result.item_stats.get("enemy", []), result.enemy_stats))
 
+	# 掉落、技能决策与拾取区内容可能较长，放进滚动区避免被窗口底部裁掉
 	_dynamic = UiKit.vbox(6)
-	root.add_child(_dynamic)
+	root.add_child(UiKit.scroll_into(_dynamic))
 	_refresh()
 
 

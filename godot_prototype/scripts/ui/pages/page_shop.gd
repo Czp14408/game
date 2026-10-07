@@ -28,7 +28,7 @@ func build() -> void:
 	cols.add_child(left)
 	var lb := UiKit.body(left)
 	_slots_box = UiKit.vbox(8)
-	lb.add_child(_slots_box)
+	lb.add_child(UiKit.scroll_into(_slots_box))
 
 	var right := UiKit.panel("出售与操作")
 	right.custom_minimum_size = Vector2(360, 0)
@@ -36,8 +36,7 @@ func build() -> void:
 	var rb := UiKit.body(right)
 	rb.add_child(UiKit.label("出售按标准价一半回收；技能不能出售。", 13, UiKit.COL_MUTED))
 	_sell_box = UiKit.vbox(6)
-	rb.add_child(_sell_box)
-	rb.add_child(UiKit.spacer(8))
+	rb.add_child(UiKit.scroll_into(_sell_box))
 	rb.add_child(UiKit.button("刷新整批商品", _on_refresh))
 	rb.add_child(UiKit.button("切换锁定", _on_lock))
 	rb.add_child(UiKit.button("离开商店", func() -> void: ctrl.close_shop()))

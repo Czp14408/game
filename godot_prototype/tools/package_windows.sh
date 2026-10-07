@@ -64,6 +64,17 @@ pause
 endlocal
 BAT
 
+cat > "$OUT_DIR/run_screenshots.bat" <<'BAT'
+@echo off
+setlocal
+cd /d "%~dp0"
+rem 真实渲染下逐页截图并做布局断言（需要显示环境，不能加 --headless）
+"Godot_v4.7.2-stable_win64.exe" --path "%~dp0project" -- --screenshots "%~dp0screenshots"
+echo 退出码：%ERRORLEVEL%
+pause
+endlocal
+BAT
+
 cat > "$OUT_DIR/export_release.bat" <<'BAT'
 @echo off
 setlocal
@@ -88,6 +99,7 @@ cat > "$OUT_DIR/README.md" <<'MD'
 | `run_game.bat` | 开始游戏（键鼠） |
 | `run_verify.bat` | 无画面规则与界面验证（621 项断言，需要控制台窗口） |
 | `run_autodemo.bat` | 无画面自动演示：真实帧循环下走通整局 |
+| `run_screenshots.bat` | 真实渲染下逐页截图 + 布局断言（需要显示环境，产出 `screenshots/`） |
 | `export_release.bat` | 产出标准单文件 `wudao_prototype.exe`（需先安装同版本导出模板） |
 
 操作：`WASD`/方向键移动，`E` 交互，`Tab` 大地图，`B` 构筑，`Esc` 关闭界面/战斗中暂停，`F` 战斗中单步。
@@ -108,7 +120,7 @@ cat > "$OUT_DIR/README.md" <<'MD'
 ```
 wudao_prototype/
 ├─ Godot_v4.7.2-stable_win64.exe          同版本运行程序
-├─ run_game.bat / run_verify.bat / run_autodemo.bat / export_release.bat
+├─ run_game.bat / run_verify.bat / run_autodemo.bat / run_screenshots.bat / export_release.bat
 └─ project/                                可编辑工程（data / scripts / scenes / tests / tools）
 ```
 

@@ -64,7 +64,7 @@ static func make_theme() -> Theme:
 
 static func page_root(title: String) -> VBoxContainer:
 	var root := VBoxContainer.new()
-	root.set_anchors_preset(Control.PRESET_FULL_RECT)
+	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.add_theme_constant_override("separation", 8)
 	var t := Label.new()
 	t.text = title
@@ -119,6 +119,9 @@ static func label(text: String, size: int = 15, color: Color = COL_TEXT) -> Labe
 	l.add_theme_font_size_override("font_size", size)
 	l.add_theme_color_override("font_color", color)
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	# 自动换行会把标签的最小宽度压到 0，放进 HBoxContainer 时会被旁边的按钮挤成
+	# 「一字一行」。让标签默认吃掉剩余宽度，才能保持正常排版。
+	l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	return l
 
 
@@ -144,7 +147,7 @@ static func bar(value: float, maximum: float, color: Color, width: int = 220, he
 	holder.custom_minimum_size = Vector2(width, height)
 	var bg := ColorRect.new()
 	bg.color = Color(0.10, 0.10, 0.12)
-	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
+	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	holder.add_child(bg)
 	var fill := ColorRect.new()
 	fill.color = color
@@ -163,7 +166,18 @@ static func spacer(height: int = 6) -> Control:
 static func scroll() -> ScrollContainer:
 	var s := ScrollContainer.new()
 	s.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	s.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	s.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	return s
+
+
+## 把内容放进可滚动容器。
+## 注意：ScrollContainer 只把「横向带 SIZE_EXPAND」的子节点撑到容器宽度，
+## 否则子节点会被压到最小宽度（表现为文字一字一行）。此处统一补上该标记。
+static func scroll_into(child: Control) -> ScrollContainer:
+	child.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var s := scroll()
+	s.add_child(child)
 	return s
 
 

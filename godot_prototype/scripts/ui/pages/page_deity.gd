@@ -19,7 +19,10 @@ func build() -> void:
 	var left := UiKit.panel("整备操作")
 	left.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	cols.add_child(left)
-	var lb := UiKit.body(left)
+	var left_body := UiKit.body(left)
+	# 整备操作较长，放进滚动区避免窗口偏矮时被裁掉
+	var lb := UiKit.vbox(6)
+	left_body.add_child(UiKit.scroll_into(lb))
 	lb.add_child(UiKit.label("主线已完成、已回归主神空间，武道世界不可再进入。此处可交易、合成与恢复。", 14, UiKit.COL_MUTED))
 	lb.add_child(UiKit.spacer(6))
 	_heal_label = UiKit.label("", 15, UiKit.COL_TEXT)

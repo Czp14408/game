@@ -3,7 +3,8 @@ extends Node
 ## 边界：本文件只负责启动顺序，不承载业务规则。
 ##
 ## 额外命令行（在 `--` 之后传入）：
-##   --auto-demo [种子]   在真实帧循环下自动走通整局，用于导出前集成检查。
+##   --auto-demo [种子]        在真实帧循环下自动走通整局，用于导出前集成检查。
+##   --screenshots [输出目录]  真实渲染下逐页截图并做布局断言（无画面模式覆盖不到）。
 
 const USE_UI := true
 const AUTOPLAY_SCRIPT := "res://tests/ui_autoplay.gd"
@@ -28,8 +29,16 @@ func _ready() -> void:
 		add_child(demo)
 		return
 
+	if OS.get_cmdline_user_args().has("--screenshots"):
+		var shots: Node = load("res://tests/ui_screenshots.gd").new()
+		shots.name = "Screenshots"
+		add_child(shots)
+		return
+
 	if USE_UI:
 		var app := AppRoot.new()
 		app.name = "AppRoot"
 		app.catalog = catalog
-		add_child(app)
+		# 必须挂到视口根节点下：Control 的锚点只有相对视口或父 Control 才会随窗口尺寸变化，
+		# 挂在普通 Node（本场景根）下会保持 0×0，导致整棵界面按最小尺寸排布。
+		get_tree().root.add_child.call_deferred(app)

@@ -113,7 +113,7 @@ func _build_center() -> PanelContainer:
 func _build_pause_panel() -> void:
 	_pause_panel = UiKit.panel("战斗暂停")
 	_pause_panel.visible = false
-	_pause_panel.set_anchors_preset(Control.PRESET_CENTER)
+	_pause_panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	_pause_panel.custom_minimum_size = Vector2(420, 0)
 	var b := UiKit.body(_pause_panel)
 	b.add_child(UiKit.label("暂停期间战斗时钟停止，不积累时间步。", 14, UiKit.COL_MUTED))
@@ -211,7 +211,7 @@ func _make_bar(width: int, height: int, color: Color) -> Dictionary:
 	holder.custom_minimum_size = Vector2(width, height)
 	var bg := ColorRect.new()
 	bg.color = Color(0.10, 0.10, 0.12)
-	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
+	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	holder.add_child(bg)
 	var fill := ColorRect.new()
 	fill.color = color

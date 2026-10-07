@@ -22,7 +22,7 @@ func setup(p_catalog: ContentCatalog = null) -> void:
 	_setup_done = true
 	if p_catalog != null:
 		catalog = p_catalog
-	set_anchors_preset(Control.PRESET_FULL_RECT)
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	if theme == null:
 		theme = UiKit.make_theme()
 	_build_shell()
@@ -37,12 +37,12 @@ func setup(p_catalog: ContentCatalog = null) -> void:
 func _build_shell() -> void:
 	var bg := ColorRect.new()
 	bg.color = UiKit.COL_BG
-	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
+	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(bg)
 
 	var root := VBoxContainer.new()
 	root.name = "Shell"
-	root.set_anchors_preset(Control.PRESET_FULL_RECT)
+	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.add_theme_constant_override("separation", 0)
 	add_child(root)
 
@@ -79,7 +79,7 @@ func show_page(page: Control) -> void:
 	for child in _page_holder.get_children():
 		_page_holder.remove_child(child)
 		child.queue_free()
-	page.set_anchors_preset(Control.PRESET_FULL_RECT)
+	page.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_page_holder.add_child(page)
 	# 显式构建：不依赖引擎 _ready 的派发时机（无画面脚本模式下不会派发）
 	if page is PageBase:

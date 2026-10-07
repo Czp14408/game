@@ -50,8 +50,12 @@ func build() -> void:
 	var right := UiKit.panel("")
 	right.custom_minimum_size = Vector2(340, 0)
 	right.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	right.size_flags_horizontal = Control.SIZE_FILL
 	cols.add_child(right)
+	# 右侧信息较长时允许滚动，避免底部任务与情报被裁掉
 	var rb := UiKit.body(right)
+	right.remove_child(rb)
+	right.add_child(UiKit.scroll_into(rb))
 	_actions_box = UiKit.vbox(6)
 	rb.add_child(_actions_box)
 	_prompt = UiKit.label("", 14, UiKit.COL_ACCENT)
@@ -72,7 +76,7 @@ func _build_room() -> void:
 	var floor := ColorRect.new()
 	floor.name = "Floor"
 	floor.color = Color(0.13, 0.14, 0.16)
-	floor.set_anchors_preset(Control.PRESET_FULL_RECT)
+	floor.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_canvas.add_child(floor)
 
 	_world = Node2D.new()
