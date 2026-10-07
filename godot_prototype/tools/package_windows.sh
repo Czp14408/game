@@ -211,3 +211,15 @@ MD
 echo "已生成便携试玩包：$OUT_DIR"
 ls -la "$OUT_DIR"
 du -sh "$OUT_DIR"
+
+# 4) 陈旧检测：包里最容易出现「跑起来看不到新效果」的情况——
+#    工作区已经改完界面，试玩包还是上一次打包的旧工程。
+#    这里比对两个来源的 mtime（新的那个更新 = 旧包）并直接报出来，
+#    免得下次以为是改动没生效、白查代码。
+STALE="$(find "$PROJECT_DIR/assets" "$PROJECT_DIR/scripts" "$PROJECT_DIR/data" \
+	"$PROJECT_DIR/scenes" -type f -newer "$OUT_DIR/run_game.bat" -print 2>/dev/null | head -5)"
+if [[ -n "$STALE" ]]; then
+	echo "警告：包内 run_game.bat 比工程里这些文件旧，试玩包可能是上一版：" >&2
+	echo "$STALE" | sed 's/^/      /' >&2
+	echo "      请重新运行 tools/package_windows.sh。" >&2
+fi
