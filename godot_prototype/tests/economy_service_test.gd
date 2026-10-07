@@ -20,6 +20,7 @@ func run() -> void:
 	_test_buy_sell()
 	_test_refresh_and_lock()
 	_test_synthesis()
+	_test_drag_and_auto_synth()
 	_test_skills()
 	_test_consumable()
 	_test_idempotency()
@@ -38,16 +39,17 @@ func _setup(money: int = 200) -> void:
 	inventory = economy.inventory
 
 
+## 测试准备原语：直接把一件物品放进背包/战斗栏，不经过 pickup/自动合成。
+## 这是「构造受控前置状态」的手段，语义与业务入口（pickup/buy）解耦，
+## 避免自动合成在测试夹具阶段就悄悄合并同名物品、破坏后续断言。
 func _hold(def_id: StringName, quality: int = 0, to_bar: bool = false) -> ItemInstance:
 	var it := state.new_instance(def_id, quality)
 	if to_bar:
-		var r := inventory.pickup(state, it)
-		check(r.success, "测试准备：放入背包 %s" % def_id)
-		var er := inventory.equip(state, it.instance_id)
-		check(er.success, "测试准备：装备 %s" % def_id)
+		it.location = ItemInstance.LOC_BATTLE
+		state.battle_bar.append(it)
 	else:
-		var r2 := inventory.pickup(state, it)
-		check(r2.success, "测试准备：放入背包 %s" % def_id)
+		it.location = ItemInstance.LOC_INVENTORY
+		state.inventory.append(it)
 	return it
 
 
@@ -279,6 +281,92 @@ func _test_synthesis() -> void:
 		var def := catalog.item(id)
 		for q in range(ContentCatalog.MAX_QUALITY):
 			check(not PriceTable.synthesis_is_profitable(def, q), "%s 第 %d 档不应可套利" % [id, q])
+
+
+## 拖拽移动与入背包自动合成（v0.5/v0.6/v0.7）。
+## 依据：游戏主界面与交互调整方案.md §7 拖拽表、§8 自动合成。
+func _test_drag_and_auto_synth() -> void:
+	# --- 拖拽同栏重排：自动让位，不改变占用 ---
+	_setup()
+	var a := _hold(&"short_blade")       # 1 格
+	var b := _hold(&"long_blade")        # 2 格
+	var c := _hold(&"ward_charm")        # 2 格
+	eq(state.inventory_used(), 5, "背包占用 5 点")
+	# 把 a 从第 0 格移到第 3 格之后（重排顺序）
+	var r := inventory.move_item(state, a.instance_id, "inv", "inv", 3)
+	check(r.success, "同栏拖拽重排应成功")
+	eq(state.inventory_used(), 5, "重排不改变占用")
+	check(state.is_held(a.instance_id), "重排后物品仍持有")
+
+	# --- 跨栏移动（装备）：背包→战斗栏 ---
+	_setup()
+	var blade := _hold(&"long_blade")   # 2 格，可装备
+	var r2 := inventory.move_item(state, blade.instance_id, "inv", "bar", 0)
+	check(r2.success, "背包→战斗栏装备应成功")
+	eq(blade.location, ItemInstance.LOC_BATTLE, "装备后进入战斗栏")
+	eq(state.bar_used(), 2, "战斗栏占用 2 格")
+	eq(state.inventory_used(), 0, "装备后背包为空")
+
+	# --- 跨栏移动（卸下）：战斗栏→背包 ---
+	var r3 := inventory.move_item(state, blade.instance_id, "bar", "inv", 0)
+	check(r3.success, "战斗栏→背包卸下应成功")
+	eq(blade.location, ItemInstance.LOC_INVENTORY, "卸下后回到背包")
+
+	# --- 容量不足整次回退 ---
+	_setup()
+	for i in 10:
+		_hold(&"scrap_material")          # 背包占满 10 点
+	eq(state.inventory_used(), 10, "背包已满")
+	var big := state.new_instance(&"heavy_hammer", 0)  # 3 格
+	var r4 := inventory.move_item(state, "", "inv", "inv", 0)
+	check(not r4.success, "空实例 ID 应失败")
+	# 尝试把背包里的材料拖到战斗栏（材料不可装备）应失败
+	var mat := state.inventory[0]
+	var r5 := inventory.move_item(state, mat.instance_id, "inv", "bar", 0)
+	check(not r5.success, "材料不能放入战斗栏")
+	check(state.is_held(mat.instance_id), "失败不丢失物品")
+	eq(state.inventory_used(), 10, "失败不改变占用")
+
+	# --- 入背包自动合成：连续升级 + 最终容量校验 ---
+	_setup()
+	# 直接往背包放两件同名同品质青铜（绕过 pickup/自动合成，构造受控前置状态），
+	# 再入包一件同名青铜 → 两件青铜合成一件白银，再与第三件？连续升级。
+	var x := state.new_instance(&"short_blade", 0)
+	var y := state.new_instance(&"short_blade", 0)
+	x.location = ItemInstance.LOC_INVENTORY
+	y.location = ItemInstance.LOC_INVENTORY
+	state.inventory.append(x)
+	state.inventory.append(y)
+	eq(state.inventory_used(), 2, "背包现有 2 件青铜短刀")
+	var incoming := state.new_instance(&"short_blade", 0)
+	incoming.location = ItemInstance.LOC_NONE
+	var sr := inventory.auto_synthesize_into(state, incoming)
+	check(sr.success, "入包自动合成应成功")
+	check(int(sr.data.get("merged", 0)) >= 1, "应发生合成（merged=%d）" % int(sr.data.get("merged", 0)))
+	# 两件青铜（x,y）+ 新青铜 incoming → 合成一件白银（消耗 x + incoming），剩 y 青铜 + 新白银
+	# 最终：背包里 short_blade 青铜 1 件 + 白银 1 件
+	var bronze_count := 0
+	var silver_count := 0
+	for it in state.inventory:
+		if it.definition_id == &"short_blade" and it.quality == 0:
+			bronze_count += 1
+		elif it.definition_id == &"short_blade" and it.quality == 1:
+			silver_count += 1
+	check(bronze_count == 1 and silver_count == 1, "合成后剩 1 青铜 + 1 白银（实 %d/%d）" % [bronze_count, silver_count])
+
+	# --- 钻石重复件作为独立物品接收，不叠加 ---
+	_setup()
+	var d1 := _hold(&"short_blade", 3)
+	var d2 := state.new_instance(&"short_blade", 3)
+	d2.location = ItemInstance.LOC_NONE
+	var sr2 := inventory.auto_synthesize_into(state, d2)
+	check(sr2.success, "钻石重复件应作为独立物品接收")
+	eq(int(sr2.data.get("merged", 0)), 0, "钻石不再合成")
+	var diamond_count := 0
+	for it in state.inventory:
+		if it.definition_id == &"short_blade" and it.quality == 3:
+			diamond_count += 1
+	eq(diamond_count, 2, "钻石重复件不叠加为一件")
 
 
 func _test_skills() -> void:

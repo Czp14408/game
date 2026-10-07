@@ -51,7 +51,8 @@ func _start(seed_value: int) -> void:
 		_ok(ctrl.confirm_battle(), "开始战斗")
 		_expect(app.current_page_node() is PageBattle, "进入战斗页面")
 		await _wait_battle_end(20.0)
-		_expect(app.current_page_node() is PagePostBattle, "战斗结束进入战后")
+		# §3 统一战斗界面：胜利/失败结果与掉落留在战斗页，不跳转战后页。
+		_expect(app.current_page_node() is PageBattle, "战斗结束留在战斗页")
 		var es := ctrl.encounter_state()
 		if es != null and not es.pending_skill.is_empty():
 			ctrl.resolve_skill_drop(true)

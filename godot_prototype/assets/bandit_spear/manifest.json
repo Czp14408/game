@@ -1,0 +1,1674 @@
+{
+  "character": "bandit_spear",
+  "source": "bandit_spear_raw.jpg",
+  "source_size": [
+    1024,
+    1024
+  ],
+  "grid": [
+    8,
+    8
+  ],
+  "cell": [
+    128.0,
+    128.0
+  ],
+  "background_rgb": [
+    19,
+    204,
+    40
+  ],
+  "note": "walk/action 序列按「序列并集包围盒」统一裁剪，帧间不跳动。mirrored=true 的方向由右向帧水平镜像得到，运行时无需再翻转。",
+  "walk": {
+    "down": {
+      "frames": [
+        "walk/down_0.png",
+        "walk/down_1.png",
+        "walk/down_2.png",
+        "walk/down_3.png",
+        "walk/down_4.png",
+        "walk/down_5.png",
+        "walk/down_6.png",
+        "walk/down_7.png"
+      ],
+      "size": [
+        113,
+        117
+      ],
+      "source_row": 0,
+      "mirrored": false
+    },
+    "right": {
+      "frames": [
+        "walk/right_0.png",
+        "walk/right_1.png",
+        "walk/right_2.png",
+        "walk/right_3.png",
+        "walk/right_4.png",
+        "walk/right_5.png",
+        "walk/right_6.png",
+        "walk/right_7.png"
+      ],
+      "size": [
+        128,
+        114
+      ],
+      "source_row": 1,
+      "mirrored": false
+    },
+    "up": {
+      "frames": [
+        "walk/up_0.png",
+        "walk/up_1.png",
+        "walk/up_2.png",
+        "walk/up_3.png",
+        "walk/up_4.png",
+        "walk/up_5.png",
+        "walk/up_6.png",
+        "walk/up_7.png"
+      ],
+      "size": [
+        103,
+        115
+      ],
+      "source_row": 2,
+      "mirrored": false
+    },
+    "left": {
+      "frames": [
+        "walk/left_0.png",
+        "walk/left_1.png",
+        "walk/left_2.png",
+        "walk/left_3.png",
+        "walk/left_4.png",
+        "walk/left_5.png",
+        "walk/left_6.png",
+        "walk/left_7.png"
+      ],
+      "size": [
+        102,
+        114
+      ],
+      "source_row": 3,
+      "mirrored": false
+    }
+  },
+  "actions": {
+    "thrust": {
+      "frames": [
+        "action/thrust_0.png",
+        "action/thrust_1.png",
+        "action/thrust_2.png",
+        "action/thrust_3.png",
+        "action/thrust_4.png",
+        "action/thrust_5.png",
+        "action/thrust_6.png",
+        "action/thrust_7.png"
+      ],
+      "size": [
+        128,
+        121
+      ],
+      "source_row": 4,
+      "source_start_col": 0
+    },
+    "lunge": {
+      "frames": [
+        "action/lunge_0.png",
+        "action/lunge_1.png",
+        "action/lunge_2.png",
+        "action/lunge_3.png",
+        "action/lunge_4.png",
+        "action/lunge_5.png",
+        "action/lunge_6.png",
+        "action/lunge_7.png"
+      ],
+      "size": [
+        128,
+        117
+      ],
+      "source_row": 5,
+      "source_start_col": 0
+    },
+    "guard": {
+      "frames": [
+        "action/guard_0.png",
+        "action/guard_1.png"
+      ],
+      "size": [
+        105,
+        124
+      ],
+      "source_row": 6,
+      "source_start_col": 0
+    },
+    "slash": {
+      "frames": [
+        "action/slash_0.png",
+        "action/slash_1.png",
+        "action/slash_2.png",
+        "action/slash_3.png"
+      ],
+      "size": [
+        120,
+        118
+      ],
+      "source_row": 6,
+      "source_start_col": 2
+    },
+    "hit": {
+      "frames": [
+        "action/hit_0.png",
+        "action/hit_1.png"
+      ],
+      "size": [
+        99,
+        118
+      ],
+      "source_row": 6,
+      "source_start_col": 6
+    },
+    "idle": {
+      "frames": [
+        "action/idle_0.png",
+        "action/idle_1.png"
+      ],
+      "size": [
+        111,
+        126
+      ],
+      "source_row": 7,
+      "source_start_col": 0
+    },
+    "death": {
+      "frames": [
+        "action/death_0.png",
+        "action/death_1.png",
+        "action/death_2.png",
+        "action/death_3.png",
+        "action/death_4.png",
+        "action/death_5.png"
+      ],
+      "size": [
+        128,
+        116
+      ],
+      "source_row": 7,
+      "source_start_col": 2
+    }
+  },
+  "cells": [
+    {
+      "name": "bandit_spear_r0c0",
+      "row": 0,
+      "col": 0,
+      "cell_rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        12,
+        112,
+        116
+      ],
+      "trim_abs": [
+        9,
+        12,
+        112,
+        116
+      ]
+    },
+    {
+      "name": "bandit_spear_r0c1",
+      "row": 0,
+      "col": 1,
+      "cell_rect": [
+        128,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        11,
+        111,
+        117
+      ],
+      "trim_abs": [
+        137,
+        11,
+        111,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r0c2",
+      "row": 0,
+      "col": 2,
+      "cell_rect": [
+        256,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        8,
+        12,
+        112,
+        116
+      ],
+      "trim_abs": [
+        264,
+        12,
+        112,
+        116
+      ]
+    },
+    {
+      "name": "bandit_spear_r0c3",
+      "row": 0,
+      "col": 3,
+      "cell_rect": [
+        384,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        11,
+        111,
+        117
+      ],
+      "trim_abs": [
+        393,
+        11,
+        111,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r0c4",
+      "row": 0,
+      "col": 4,
+      "cell_rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        12,
+        111,
+        116
+      ],
+      "trim_abs": [
+        521,
+        12,
+        111,
+        116
+      ]
+    },
+    {
+      "name": "bandit_spear_r0c5",
+      "row": 0,
+      "col": 5,
+      "cell_rect": [
+        640,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        11,
+        111,
+        117
+      ],
+      "trim_abs": [
+        649,
+        11,
+        111,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r0c6",
+      "row": 0,
+      "col": 6,
+      "cell_rect": [
+        768,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        12,
+        111,
+        116
+      ],
+      "trim_abs": [
+        777,
+        12,
+        111,
+        116
+      ]
+    },
+    {
+      "name": "bandit_spear_r0c7",
+      "row": 0,
+      "col": 7,
+      "cell_rect": [
+        896,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        11,
+        111,
+        117
+      ],
+      "trim_abs": [
+        905,
+        11,
+        111,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r1c0",
+      "row": 1,
+      "col": 0,
+      "cell_rect": [
+        0,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        13,
+        14,
+        95,
+        114
+      ],
+      "trim_abs": [
+        13,
+        142,
+        95,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r1c1",
+      "row": 1,
+      "col": 1,
+      "cell_rect": [
+        128,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        12,
+        14,
+        113,
+        114
+      ],
+      "trim_abs": [
+        140,
+        142,
+        113,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r1c2",
+      "row": 1,
+      "col": 2,
+      "cell_rect": [
+        256,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        23,
+        14,
+        105,
+        114
+      ],
+      "trim_abs": [
+        279,
+        142,
+        105,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r1c3",
+      "row": 1,
+      "col": 3,
+      "cell_rect": [
+        384,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        0,
+        14,
+        128,
+        114
+      ],
+      "trim_abs": [
+        384,
+        142,
+        128,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r1c4",
+      "row": 1,
+      "col": 4,
+      "cell_rect": [
+        512,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        12,
+        14,
+        113,
+        114
+      ],
+      "trim_abs": [
+        524,
+        142,
+        113,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r1c5",
+      "row": 1,
+      "col": 5,
+      "cell_rect": [
+        640,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        20,
+        14,
+        105,
+        114
+      ],
+      "trim_abs": [
+        660,
+        142,
+        105,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r1c6",
+      "row": 1,
+      "col": 6,
+      "cell_rect": [
+        768,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        11,
+        14,
+        114,
+        114
+      ],
+      "trim_abs": [
+        779,
+        142,
+        114,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r1c7",
+      "row": 1,
+      "col": 7,
+      "cell_rect": [
+        896,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        19,
+        14,
+        106,
+        114
+      ],
+      "trim_abs": [
+        915,
+        142,
+        106,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r2c0",
+      "row": 2,
+      "col": 0,
+      "cell_rect": [
+        0,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        13,
+        102,
+        115
+      ],
+      "trim_abs": [
+        17,
+        269,
+        102,
+        115
+      ]
+    },
+    {
+      "name": "bandit_spear_r2c1",
+      "row": 2,
+      "col": 1,
+      "cell_rect": [
+        128,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        13,
+        103,
+        115
+      ],
+      "trim_abs": [
+        145,
+        269,
+        103,
+        115
+      ]
+    },
+    {
+      "name": "bandit_spear_r2c2",
+      "row": 2,
+      "col": 2,
+      "cell_rect": [
+        256,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        13,
+        103,
+        114
+      ],
+      "trim_abs": [
+        273,
+        269,
+        103,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r2c3",
+      "row": 2,
+      "col": 3,
+      "cell_rect": [
+        384,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        13,
+        102,
+        115
+      ],
+      "trim_abs": [
+        401,
+        269,
+        102,
+        115
+      ]
+    },
+    {
+      "name": "bandit_spear_r2c4",
+      "row": 2,
+      "col": 4,
+      "cell_rect": [
+        512,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        13,
+        103,
+        115
+      ],
+      "trim_abs": [
+        529,
+        269,
+        103,
+        115
+      ]
+    },
+    {
+      "name": "bandit_spear_r2c5",
+      "row": 2,
+      "col": 5,
+      "cell_rect": [
+        640,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        13,
+        103,
+        115
+      ],
+      "trim_abs": [
+        657,
+        269,
+        103,
+        115
+      ]
+    },
+    {
+      "name": "bandit_spear_r2c6",
+      "row": 2,
+      "col": 6,
+      "cell_rect": [
+        768,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        13,
+        103,
+        115
+      ],
+      "trim_abs": [
+        785,
+        269,
+        103,
+        115
+      ]
+    },
+    {
+      "name": "bandit_spear_r2c7",
+      "row": 2,
+      "col": 7,
+      "cell_rect": [
+        896,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        13,
+        103,
+        115
+      ],
+      "trim_abs": [
+        913,
+        269,
+        103,
+        115
+      ]
+    },
+    {
+      "name": "bandit_spear_r3c0",
+      "row": 3,
+      "col": 0,
+      "cell_rect": [
+        0,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        14,
+        89,
+        114
+      ],
+      "trim_abs": [
+        17,
+        398,
+        89,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r3c1",
+      "row": 3,
+      "col": 1,
+      "cell_rect": [
+        128,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        27,
+        14,
+        79,
+        114
+      ],
+      "trim_abs": [
+        155,
+        398,
+        79,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r3c2",
+      "row": 3,
+      "col": 2,
+      "cell_rect": [
+        256,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        28,
+        14,
+        83,
+        114
+      ],
+      "trim_abs": [
+        284,
+        398,
+        83,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r3c3",
+      "row": 3,
+      "col": 3,
+      "cell_rect": [
+        384,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        26,
+        14,
+        81,
+        114
+      ],
+      "trim_abs": [
+        410,
+        398,
+        81,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r3c4",
+      "row": 3,
+      "col": 4,
+      "cell_rect": [
+        512,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        18,
+        14,
+        89,
+        114
+      ],
+      "trim_abs": [
+        530,
+        398,
+        89,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r3c5",
+      "row": 3,
+      "col": 5,
+      "cell_rect": [
+        640,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        27,
+        14,
+        81,
+        114
+      ],
+      "trim_abs": [
+        667,
+        398,
+        81,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r3c6",
+      "row": 3,
+      "col": 6,
+      "cell_rect": [
+        768,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        14,
+        98,
+        114
+      ],
+      "trim_abs": [
+        777,
+        398,
+        98,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r3c7",
+      "row": 3,
+      "col": 7,
+      "cell_rect": [
+        896,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        22,
+        14,
+        89,
+        114
+      ],
+      "trim_abs": [
+        918,
+        398,
+        89,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r4c0",
+      "row": 4,
+      "col": 0,
+      "cell_rect": [
+        0,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        11,
+        104,
+        117
+      ],
+      "trim_abs": [
+        17,
+        523,
+        104,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r4c1",
+      "row": 4,
+      "col": 1,
+      "cell_rect": [
+        128,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        11,
+        11,
+        108,
+        117
+      ],
+      "trim_abs": [
+        139,
+        523,
+        108,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r4c2",
+      "row": 4,
+      "col": 2,
+      "cell_rect": [
+        256,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        4,
+        11,
+        124,
+        117
+      ],
+      "trim_abs": [
+        260,
+        523,
+        124,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r4c3",
+      "row": 4,
+      "col": 3,
+      "cell_rect": [
+        384,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        0,
+        7,
+        122,
+        121
+      ],
+      "trim_abs": [
+        384,
+        519,
+        122,
+        121
+      ]
+    },
+    {
+      "name": "bandit_spear_r4c4",
+      "row": 4,
+      "col": 4,
+      "cell_rect": [
+        512,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        2,
+        14,
+        126,
+        114
+      ],
+      "trim_abs": [
+        514,
+        526,
+        126,
+        114
+      ]
+    },
+    {
+      "name": "bandit_spear_r4c5",
+      "row": 4,
+      "col": 5,
+      "cell_rect": [
+        640,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        0,
+        8,
+        122,
+        120
+      ],
+      "trim_abs": [
+        640,
+        520,
+        122,
+        120
+      ]
+    },
+    {
+      "name": "bandit_spear_r4c6",
+      "row": 4,
+      "col": 6,
+      "cell_rect": [
+        768,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        12,
+        9,
+        105,
+        119
+      ],
+      "trim_abs": [
+        780,
+        521,
+        105,
+        119
+      ]
+    },
+    {
+      "name": "bandit_spear_r4c7",
+      "row": 4,
+      "col": 7,
+      "cell_rect": [
+        896,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        12,
+        8,
+        105,
+        120
+      ],
+      "trim_abs": [
+        908,
+        520,
+        105,
+        120
+      ]
+    },
+    {
+      "name": "bandit_spear_r5c0",
+      "row": 5,
+      "col": 0,
+      "cell_rect": [
+        0,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        16,
+        11,
+        91,
+        117
+      ],
+      "trim_abs": [
+        16,
+        651,
+        91,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r5c1",
+      "row": 5,
+      "col": 1,
+      "cell_rect": [
+        128,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        12,
+        11,
+        96,
+        117
+      ],
+      "trim_abs": [
+        140,
+        651,
+        96,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r5c2",
+      "row": 5,
+      "col": 2,
+      "cell_rect": [
+        256,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        2,
+        11,
+        126,
+        117
+      ],
+      "trim_abs": [
+        258,
+        651,
+        126,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r5c3",
+      "row": 5,
+      "col": 3,
+      "cell_rect": [
+        384,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        3,
+        11,
+        125,
+        117
+      ],
+      "trim_abs": [
+        387,
+        651,
+        125,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r5c4",
+      "row": 5,
+      "col": 4,
+      "cell_rect": [
+        512,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        0,
+        11,
+        114,
+        117
+      ],
+      "trim_abs": [
+        512,
+        651,
+        114,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r5c5",
+      "row": 5,
+      "col": 5,
+      "cell_rect": [
+        640,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        12,
+        11,
+        93,
+        117
+      ],
+      "trim_abs": [
+        652,
+        651,
+        93,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r5c6",
+      "row": 5,
+      "col": 6,
+      "cell_rect": [
+        768,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        0,
+        11,
+        127,
+        117
+      ],
+      "trim_abs": [
+        768,
+        651,
+        127,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r5c7",
+      "row": 5,
+      "col": 7,
+      "cell_rect": [
+        896,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        2,
+        11,
+        126,
+        117
+      ],
+      "trim_abs": [
+        898,
+        651,
+        126,
+        117
+      ]
+    },
+    {
+      "name": "bandit_spear_r6c0",
+      "row": 6,
+      "col": 0,
+      "cell_rect": [
+        0,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        5,
+        105,
+        123
+      ],
+      "trim_abs": [
+        17,
+        773,
+        105,
+        123
+      ]
+    },
+    {
+      "name": "bandit_spear_r6c1",
+      "row": 6,
+      "col": 1,
+      "cell_rect": [
+        128,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        4,
+        105,
+        124
+      ],
+      "trim_abs": [
+        145,
+        772,
+        105,
+        124
+      ]
+    },
+    {
+      "name": "bandit_spear_r6c2",
+      "row": 6,
+      "col": 2,
+      "cell_rect": [
+        256,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        10,
+        111,
+        118
+      ],
+      "trim_abs": [
+        265,
+        778,
+        111,
+        118
+      ]
+    },
+    {
+      "name": "bandit_spear_r6c3",
+      "row": 6,
+      "col": 3,
+      "cell_rect": [
+        384,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        6,
+        12,
+        105,
+        116
+      ],
+      "trim_abs": [
+        390,
+        780,
+        105,
+        116
+      ]
+    },
+    {
+      "name": "bandit_spear_r6c4",
+      "row": 6,
+      "col": 4,
+      "cell_rect": [
+        512,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        1,
+        12,
+        120,
+        116
+      ],
+      "trim_abs": [
+        513,
+        780,
+        120,
+        116
+      ]
+    },
+    {
+      "name": "bandit_spear_r6c5",
+      "row": 6,
+      "col": 5,
+      "cell_rect": [
+        640,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        5,
+        10,
+        111,
+        118
+      ],
+      "trim_abs": [
+        645,
+        778,
+        111,
+        118
+      ]
+    },
+    {
+      "name": "bandit_spear_r6c6",
+      "row": 6,
+      "col": 6,
+      "cell_rect": [
+        768,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        8,
+        10,
+        95,
+        118
+      ],
+      "trim_abs": [
+        776,
+        778,
+        95,
+        118
+      ]
+    },
+    {
+      "name": "bandit_spear_r6c7",
+      "row": 6,
+      "col": 7,
+      "cell_rect": [
+        896,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        5,
+        10,
+        99,
+        118
+      ],
+      "trim_abs": [
+        901,
+        778,
+        99,
+        118
+      ]
+    },
+    {
+      "name": "bandit_spear_r7c0",
+      "row": 7,
+      "col": 0,
+      "cell_rect": [
+        0,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        20,
+        2,
+        94,
+        126
+      ],
+      "trim_abs": [
+        20,
+        898,
+        94,
+        126
+      ]
+    },
+    {
+      "name": "bandit_spear_r7c1",
+      "row": 7,
+      "col": 1,
+      "cell_rect": [
+        128,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        3,
+        7,
+        108,
+        121
+      ],
+      "trim_abs": [
+        131,
+        903,
+        108,
+        121
+      ]
+    },
+    {
+      "name": "bandit_spear_r7c2",
+      "row": 7,
+      "col": 2,
+      "cell_rect": [
+        256,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        1,
+        12,
+        123,
+        116
+      ],
+      "trim_abs": [
+        257,
+        908,
+        123,
+        116
+      ]
+    },
+    {
+      "name": "bandit_spear_r7c3",
+      "row": 7,
+      "col": 3,
+      "cell_rect": [
+        384,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        2,
+        36,
+        115,
+        92
+      ],
+      "trim_abs": [
+        386,
+        932,
+        115,
+        92
+      ]
+    },
+    {
+      "name": "bandit_spear_r7c4",
+      "row": 7,
+      "col": 4,
+      "cell_rect": [
+        512,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        6,
+        57,
+        122,
+        71
+      ],
+      "trim_abs": [
+        518,
+        953,
+        122,
+        71
+      ]
+    },
+    {
+      "name": "bandit_spear_r7c5",
+      "row": 7,
+      "col": 5,
+      "cell_rect": [
+        640,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        1,
+        61,
+        124,
+        67
+      ],
+      "trim_abs": [
+        641,
+        957,
+        124,
+        67
+      ]
+    },
+    {
+      "name": "bandit_spear_r7c6",
+      "row": 7,
+      "col": 6,
+      "cell_rect": [
+        768,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        0,
+        65,
+        123,
+        63
+      ],
+      "trim_abs": [
+        768,
+        961,
+        123,
+        63
+      ]
+    },
+    {
+      "name": "bandit_spear_r7c7",
+      "row": 7,
+      "col": 7,
+      "cell_rect": [
+        896,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        1,
+        69,
+        123,
+        59
+      ],
+      "trim_abs": [
+        897,
+        965,
+        123,
+        59
+      ]
+    }
+  ]
+}

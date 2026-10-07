@@ -47,6 +47,14 @@ var _page_entered_ms: int = 0
 var _build_return: StringName = PAGE_MINIMAP
 var _shop_return: StringName = PAGE_MINIMAP
 
+## 主界面 HUD 显示状态（供 page_minimap 读写，跨页面切换保留）：
+## 状态栏（Tab 开关）与背包（B 开关）是否显示。
+## Tab 联动：打开状态栏时同时显示背包，关闭状态栏后恢复此前背包开关状态。
+## 这些只影响 HUD 叠加层显示，不改变物品/金币/世界进度，也不停止移动。
+var _status_bar_open := false
+var _bag_open := true
+var _bag_open_before_tab := true
+
 
 func start_new_app(seed_value: int = -1) -> void:
 	if seed_value < 0:
@@ -191,6 +199,40 @@ func close_world_map() -> void:
 	_open_minimap()
 
 
+# ---------------------------------------------------------------------------
+# 主界面 HUD 状态（Tab 状态栏 / B 背包开关）
+# ---------------------------------------------------------------------------
+
+func status_bar_open() -> bool:
+	return _status_bar_open
+
+
+func bag_open() -> bool:
+	return _bag_open
+
+
+## Tab：切换状态栏。打开时联动显示背包；关闭时恢复此前背包开关状态。
+## 不停止移动，不复制物品、不重新生成背包。
+func toggle_status_bar() -> void:
+	if _status_bar_open:
+		# 关闭状态栏：恢复此前背包开关状态
+		_status_bar_open = false
+		_bag_open = _bag_open_before_tab
+	else:
+		# 打开状态栏：记录当前背包状态，并联动显示背包
+		_bag_open_before_tab = _bag_open
+		_status_bar_open = true
+		_bag_open = true
+
+
+## B：独立切换背包显示（不影响状态栏）。
+func toggle_bag() -> void:
+	_bag_open = not _bag_open
+	# 手动切背包后，若状态栏当前开着，同步记录「此前背包状态」，供下次 Tab 关闭恢复
+	if _status_bar_open:
+		_bag_open_before_tab = _bag_open
+
+
 func is_main_target_known() -> bool:
 	return state.known_intel.has("chief_node") or state.node_state("15").discovered
 
@@ -271,6 +313,18 @@ func settle_battle(engine: CombatEngine) -> Dictionary:
 		_finish_run("累计 %d 次战败" % state.defeats)
 	else:
 		_set_page(PAGE_POST_BATTLE, {"summary": last_battle_summary})
+	return last_battle_summary
+
+
+## 结算但停留在当前战斗界面（胜利/失败结果与掉落都在同一战斗界面内展示，§3）。
+## 与 settle_battle 共用结算核心，只是不跳转页面；掉落/技能待领取保留在 encounter 上。
+func settle_battle_inplace(engine: CombatEngine) -> Dictionary:
+	var es := encounter_state()
+	last_battle_summary = encounters.settle(state, es, engine)
+	last_result = engine.result()
+	recorder.record_event("battle_result", last_result.headline())
+	if not state.is_running():
+		_finish_run("累计 %d 次战败" % state.defeats)
 	return last_battle_summary
 
 
@@ -407,6 +461,60 @@ func synthesize(a: String, b: String) -> OperationResult:
 	return r
 
 
+## 拖拽移动：来源/目标栏 + 目标格位。转发服务层，失败原因经 message 透出。
+func move_item(instance_id: String, src: String, dst: String, target_index: int) -> OperationResult:
+	var r := inventory.move_item(state, instance_id, src, dst, target_index)
+	if r.success:
+		message.emit("已移动物品")
+	else:
+		message.emit(r.reason)
+	return r
+
+
+## 商品拖拽购买：指定货位 + 目标栏 + 目标格位。
+func buy_into(slot_index: int, dst: String, target_index: int) -> OperationResult:
+	var r := economy.buy_into(state, current_shop(), slot_index, dst, target_index)
+	if r.success:
+		message.emit("购买完成")
+	else:
+		message.emit(r.reason)
+	return r
+
+
+## 出售（拖拽到售卖区）：沿用现有 sell，目标落区在界面层决定。
+func sell_item(instance_id: String) -> OperationResult:
+	return sell(instance_id)
+
+
+## 入背包自动合成预览：给定一个物品定义+品质，返回若入包会发生的合成链结果
+## （用于界面在拖入背包/购买时预览「最终品质/占格」）。只读，不改状态。
+func preview_auto_synth(def_id: StringName, quality: int) -> Dictionary:
+	if state == null:
+		return {"merged": 0, "final_quality": quality, "changed": false}
+	var it := state.new_instance(def_id, quality)
+	# 构造只读预览：不真正提交，复用服务层校验逻辑
+	var merged := 0
+	var q := quality
+	var inv: Array = state.inventory.duplicate()
+	var guard := 0
+	while guard < 64:
+		guard += 1
+		if q >= ContentCatalog.MAX_QUALITY:
+			break
+		var found := false
+		for other in inv:
+			var o := other as ItemInstance
+			if o.definition_id == def_id and o.quality == q:
+				inv.erase(o)
+				q += 1
+				merged += 1
+				found = true
+				break
+		if not found:
+			break
+	return {"merged": merged, "final_quality": q, "changed": merged > 0}
+
+
 func discard_item(instance_id: String) -> OperationResult:
 	var r := inventory.discard(state, instance_id)
 	message.emit("已丢弃" if r.success else r.reason)
@@ -431,14 +539,21 @@ func open_container_here(container_key: String) -> OperationResult:
 	var drops: Array = r.data.get("drops", [])
 	var got := 0
 	var left := 0
+	var merges := 0
+	var landed: Array[String] = []     ## 最终落袋实例 id（合成时是产物，供界面闪光）
 	for it in drops:
 		var pr := inventory.pickup(state, it)
 		if pr.success:
 			got += 1
+			var m := int(pr.data.get("merged", 0))
+			merges += m
+			landed.append(String(pr.data.get("instance_id", "")))
 		else:
 			left += 1
+	r.data["landed_ids"] = landed
+	r.data["merges"] = merges
 	if left == 0:
-		message.emit("搜刮到 %d 件物品" % got)
+		message.emit(("搜刮到 %d 件物品" % got) + ("（自动合成 ×%d）" % merges if merges > 0 else ""))
 	else:
 		message.emit("搜刮到 %d 件，另有 %d 件因背包空间不足留在原地" % [got, left])
 	return r

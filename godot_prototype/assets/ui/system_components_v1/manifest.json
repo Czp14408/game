@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "filter": "nearest",
+  "mipmaps": false,
+  "status": "connected_via_system_skin",
+  "assets": {
+    "inventory_tray": {
+      "texture": "inventory_tray.png",
+      "source": "source/inventory_tray.png",
+      "source_crop": [
+        103,
+        229,
+        2070,
+        491
+      ],
+      "size": [
+        1152,
+        153
+      ],
+      "inner": [
+        20,
+        14,
+        1112,
+        125
+      ],
+      "nine_patch_margins_ltrb": [
+        20,
+        14,
+        20,
+        14
+      ],
+      "center_alpha": 129,
+      "control": "NinePatchRect"
+    },
+    "status_panel": {
+      "texture": "status_panel.png",
+      "source": "source/status_panel.png",
+      "source_crop": [
+        72,
+        217,
+        2101,
+        505
+      ],
+      "size": [
+        1152,
+        164
+      ],
+      "inner": [
+        15,
+        15,
+        1122,
+        134
+      ],
+      "nine_patch_margins_ltrb": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "center_alpha": 107,
+      "control": "NinePatchRect"
+    },
+    "information_panel": {
+      "texture": "information_panel.png",
+      "source": "source/information_panel.png",
+      "source_crop": [
+        51,
+        112,
+        1536,
+        882
+      ],
+      "size": [
+        1120,
+        581
+      ],
+      "inner": [
+        52,
+        52,
+        1016,
+        477
+      ],
+      "nine_patch_margins_ltrb": [
+        52,
+        52,
+        52,
+        52
+      ],
+      "center_alpha": 116,
+      "control": "NinePatchRect"
+    },
+    "tooltip_panel": {
+      "texture": "tooltip_panel.png",
+      "source": "source/tooltip_panel.png",
+      "source_crop": [
+        48,
+        96,
+        1297,
+        1071
+      ],
+      "size": [
+        360,
+        281
+      ],
+      "inner": [
+        25,
+        25,
+        310,
+        231
+      ],
+      "nine_patch_margins_ltrb": [
+        25,
+        25,
+        25,
+        25
+      ],
+      "center_alpha": 175,
+      "control": "NinePatchRect"
+    },
+    "context_menu": {
+      "texture": "context_menu.png",
+      "source": "source/context_menu.png",
+      "source_crop": [
+        98,
+        201,
+        1386,
+        860
+      ],
+      "size": [
+        200,
+        102
+      ],
+      "inner": [
+        9,
+        9,
+        182,
+        84
+      ],
+      "nine_patch_margins_ltrb": [
+        9,
+        9,
+        9,
+        9
+      ],
+      "center_alpha": 164,
+      "control": "NinePatchRect"
+    },
+    "minimap_frame": {
+      "texture": "minimap_frame.png",
+      "source": "source/minimap_frame.png",
+      "source_crop": [
+        163,
+        108,
+        1149,
+        1084
+      ],
+      "size": [
+        176,
+        174
+      ],
+      "inner": null,
+      "nine_patch_margins_ltrb": null,
+      "center_alpha": 0,
+      "control": "TextureRect"
+    },
+    "battle_statistics": {
+      "texture": "battle_statistics.png",
+      "source": "source/battle_statistics.png",
+      "source_crop": [
+        33,
+        113,
+        1648,
+        822
+      ],
+      "size": [
+        720,
+        316
+      ],
+      "inner": [
+        28,
+        28,
+        664,
+        260
+      ],
+      "nine_patch_margins_ltrb": [
+        28,
+        28,
+        28,
+        28
+      ],
+      "center_alpha": 254,
+      "control": "NinePatchRect"
+    }
+  }
+}

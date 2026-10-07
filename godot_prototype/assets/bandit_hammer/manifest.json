@@ -1,0 +1,1664 @@
+{
+  "character": "bandit_hammer",
+  "source": "bandit_hammer_raw.jpg",
+  "source_size": [
+    1024,
+    1024
+  ],
+  "grid": [
+    8,
+    8
+  ],
+  "cell": [
+    128.0,
+    128.0
+  ],
+  "background_rgb": [
+    26,
+    200,
+    40
+  ],
+  "note": "walk/action 序列按「序列并集包围盒」统一裁剪，帧间不跳动。mirrored=true 的方向由右向帧水平镜像得到，运行时无需再翻转。",
+  "walk": {
+    "down": {
+      "frames": [
+        "walk/down_0.png",
+        "walk/down_1.png",
+        "walk/down_2.png",
+        "walk/down_3.png",
+        "walk/down_4.png",
+        "walk/down_5.png",
+        "walk/down_6.png",
+        "walk/down_7.png"
+      ],
+      "size": [
+        98,
+        109
+      ],
+      "source_row": 0,
+      "mirrored": false
+    },
+    "right": {
+      "frames": [
+        "walk/right_0.png",
+        "walk/right_1.png",
+        "walk/right_2.png",
+        "walk/right_3.png",
+        "walk/right_4.png",
+        "walk/right_5.png",
+        "walk/right_6.png",
+        "walk/right_7.png"
+      ],
+      "size": [
+        90,
+        109
+      ],
+      "source_row": 1,
+      "mirrored": false
+    },
+    "up": {
+      "frames": [
+        "walk/up_0.png",
+        "walk/up_1.png",
+        "walk/up_2.png",
+        "walk/up_3.png",
+        "walk/up_4.png",
+        "walk/up_5.png",
+        "walk/up_6.png",
+        "walk/up_7.png"
+      ],
+      "size": [
+        100,
+        111
+      ],
+      "source_row": 2,
+      "mirrored": false
+    },
+    "left": {
+      "frames": [
+        "walk/left_0.png",
+        "walk/left_1.png",
+        "walk/left_2.png",
+        "walk/left_3.png",
+        "walk/left_4.png",
+        "walk/left_5.png",
+        "walk/left_6.png",
+        "walk/left_7.png"
+      ],
+      "size": [
+        92,
+        109
+      ],
+      "source_row": 3,
+      "mirrored": false
+    }
+  },
+  "actions": {
+    "knife": {
+      "frames": [
+        "action/knife_0.png",
+        "action/knife_1.png",
+        "action/knife_2.png",
+        "action/knife_3.png",
+        "action/knife_4.png",
+        "action/knife_5.png",
+        "action/knife_6.png",
+        "action/knife_7.png"
+      ],
+      "size": [
+        121,
+        119
+      ],
+      "source_row": 4,
+      "source_start_col": 0
+    },
+    "smash": {
+      "frames": [
+        "action/smash_0.png",
+        "action/smash_1.png",
+        "action/smash_2.png",
+        "action/smash_3.png",
+        "action/smash_4.png",
+        "action/smash_5.png",
+        "action/smash_6.png",
+        "action/smash_7.png"
+      ],
+      "size": [
+        128,
+        119
+      ],
+      "source_row": 5,
+      "source_start_col": 0
+    },
+    "guard": {
+      "frames": [
+        "action/guard_0.png",
+        "action/guard_1.png",
+        "action/guard_2.png",
+        "action/guard_3.png"
+      ],
+      "size": [
+        77,
+        116
+      ],
+      "source_row": 6,
+      "source_start_col": 0
+    },
+    "taunt": {
+      "frames": [
+        "action/taunt_0.png",
+        "action/taunt_1.png",
+        "action/taunt_2.png",
+        "action/taunt_3.png"
+      ],
+      "size": [
+        96,
+        119
+      ],
+      "source_row": 6,
+      "source_start_col": 4
+    },
+    "idle": {
+      "frames": [
+        "action/idle_0.png",
+        "action/idle_1.png"
+      ],
+      "size": [
+        85,
+        119
+      ],
+      "source_row": 7,
+      "source_start_col": 0
+    },
+    "death": {
+      "frames": [
+        "action/death_0.png",
+        "action/death_1.png",
+        "action/death_2.png",
+        "action/death_3.png",
+        "action/death_4.png",
+        "action/death_5.png"
+      ],
+      "size": [
+        119,
+        114
+      ],
+      "source_row": 7,
+      "source_start_col": 2
+    }
+  },
+  "cells": [
+    {
+      "name": "bandit_hammer_r0c0",
+      "row": 0,
+      "col": 0,
+      "cell_rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        10,
+        19,
+        98,
+        109
+      ],
+      "trim_abs": [
+        10,
+        19,
+        98,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r0c1",
+      "row": 0,
+      "col": 1,
+      "cell_rect": [
+        128,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        10,
+        19,
+        98,
+        109
+      ],
+      "trim_abs": [
+        138,
+        19,
+        98,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r0c2",
+      "row": 0,
+      "col": 2,
+      "cell_rect": [
+        256,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        10,
+        19,
+        98,
+        109
+      ],
+      "trim_abs": [
+        266,
+        19,
+        98,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r0c3",
+      "row": 0,
+      "col": 3,
+      "cell_rect": [
+        384,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        10,
+        19,
+        98,
+        105
+      ],
+      "trim_abs": [
+        394,
+        19,
+        98,
+        105
+      ]
+    },
+    {
+      "name": "bandit_hammer_r0c4",
+      "row": 0,
+      "col": 4,
+      "cell_rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        10,
+        19,
+        98,
+        109
+      ],
+      "trim_abs": [
+        522,
+        19,
+        98,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r0c5",
+      "row": 0,
+      "col": 5,
+      "cell_rect": [
+        640,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        10,
+        19,
+        98,
+        109
+      ],
+      "trim_abs": [
+        650,
+        19,
+        98,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r0c6",
+      "row": 0,
+      "col": 6,
+      "cell_rect": [
+        768,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        10,
+        19,
+        98,
+        109
+      ],
+      "trim_abs": [
+        778,
+        19,
+        98,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r0c7",
+      "row": 0,
+      "col": 7,
+      "cell_rect": [
+        896,
+        0,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        10,
+        19,
+        98,
+        109
+      ],
+      "trim_abs": [
+        906,
+        19,
+        98,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r1c0",
+      "row": 1,
+      "col": 0,
+      "cell_rect": [
+        0,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        5,
+        19,
+        89,
+        109
+      ],
+      "trim_abs": [
+        5,
+        147,
+        89,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r1c1",
+      "row": 1,
+      "col": 1,
+      "cell_rect": [
+        128,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        5,
+        19,
+        90,
+        109
+      ],
+      "trim_abs": [
+        133,
+        147,
+        90,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r1c2",
+      "row": 1,
+      "col": 2,
+      "cell_rect": [
+        256,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        5,
+        19,
+        90,
+        109
+      ],
+      "trim_abs": [
+        261,
+        147,
+        90,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r1c3",
+      "row": 1,
+      "col": 3,
+      "cell_rect": [
+        384,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        5,
+        19,
+        89,
+        109
+      ],
+      "trim_abs": [
+        389,
+        147,
+        89,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r1c4",
+      "row": 1,
+      "col": 4,
+      "cell_rect": [
+        512,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        5,
+        19,
+        89,
+        109
+      ],
+      "trim_abs": [
+        517,
+        147,
+        89,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r1c5",
+      "row": 1,
+      "col": 5,
+      "cell_rect": [
+        640,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        5,
+        19,
+        89,
+        109
+      ],
+      "trim_abs": [
+        645,
+        147,
+        89,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r1c6",
+      "row": 1,
+      "col": 6,
+      "cell_rect": [
+        768,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        5,
+        19,
+        89,
+        109
+      ],
+      "trim_abs": [
+        773,
+        147,
+        89,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r1c7",
+      "row": 1,
+      "col": 7,
+      "cell_rect": [
+        896,
+        128,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        5,
+        19,
+        89,
+        109
+      ],
+      "trim_abs": [
+        901,
+        147,
+        89,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r2c0",
+      "row": 2,
+      "col": 0,
+      "cell_rect": [
+        0,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        22,
+        17,
+        100,
+        111
+      ],
+      "trim_abs": [
+        22,
+        273,
+        100,
+        111
+      ]
+    },
+    {
+      "name": "bandit_hammer_r2c1",
+      "row": 2,
+      "col": 1,
+      "cell_rect": [
+        128,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        22,
+        17,
+        100,
+        111
+      ],
+      "trim_abs": [
+        150,
+        273,
+        100,
+        111
+      ]
+    },
+    {
+      "name": "bandit_hammer_r2c2",
+      "row": 2,
+      "col": 2,
+      "cell_rect": [
+        256,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        22,
+        17,
+        100,
+        111
+      ],
+      "trim_abs": [
+        278,
+        273,
+        100,
+        111
+      ]
+    },
+    {
+      "name": "bandit_hammer_r2c3",
+      "row": 2,
+      "col": 3,
+      "cell_rect": [
+        384,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        22,
+        17,
+        99,
+        111
+      ],
+      "trim_abs": [
+        406,
+        273,
+        99,
+        111
+      ]
+    },
+    {
+      "name": "bandit_hammer_r2c4",
+      "row": 2,
+      "col": 4,
+      "cell_rect": [
+        512,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        22,
+        17,
+        100,
+        111
+      ],
+      "trim_abs": [
+        534,
+        273,
+        100,
+        111
+      ]
+    },
+    {
+      "name": "bandit_hammer_r2c5",
+      "row": 2,
+      "col": 5,
+      "cell_rect": [
+        640,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        22,
+        17,
+        99,
+        111
+      ],
+      "trim_abs": [
+        662,
+        273,
+        99,
+        111
+      ]
+    },
+    {
+      "name": "bandit_hammer_r2c6",
+      "row": 2,
+      "col": 6,
+      "cell_rect": [
+        768,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        22,
+        17,
+        99,
+        111
+      ],
+      "trim_abs": [
+        790,
+        273,
+        99,
+        111
+      ]
+    },
+    {
+      "name": "bandit_hammer_r2c7",
+      "row": 2,
+      "col": 7,
+      "cell_rect": [
+        896,
+        256,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        22,
+        17,
+        99,
+        111
+      ],
+      "trim_abs": [
+        918,
+        273,
+        99,
+        111
+      ]
+    },
+    {
+      "name": "bandit_hammer_r3c0",
+      "row": 3,
+      "col": 0,
+      "cell_rect": [
+        0,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        35,
+        19,
+        87,
+        109
+      ],
+      "trim_abs": [
+        35,
+        403,
+        87,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r3c1",
+      "row": 3,
+      "col": 1,
+      "cell_rect": [
+        128,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        35,
+        19,
+        87,
+        109
+      ],
+      "trim_abs": [
+        163,
+        403,
+        87,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r3c2",
+      "row": 3,
+      "col": 2,
+      "cell_rect": [
+        256,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        35,
+        19,
+        87,
+        109
+      ],
+      "trim_abs": [
+        291,
+        403,
+        87,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r3c3",
+      "row": 3,
+      "col": 3,
+      "cell_rect": [
+        384,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        35,
+        19,
+        87,
+        109
+      ],
+      "trim_abs": [
+        419,
+        403,
+        87,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r3c4",
+      "row": 3,
+      "col": 4,
+      "cell_rect": [
+        512,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        35,
+        19,
+        87,
+        109
+      ],
+      "trim_abs": [
+        547,
+        403,
+        87,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r3c5",
+      "row": 3,
+      "col": 5,
+      "cell_rect": [
+        640,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        35,
+        19,
+        87,
+        109
+      ],
+      "trim_abs": [
+        675,
+        403,
+        87,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r3c6",
+      "row": 3,
+      "col": 6,
+      "cell_rect": [
+        768,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        30,
+        19,
+        91,
+        109
+      ],
+      "trim_abs": [
+        798,
+        403,
+        91,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r3c7",
+      "row": 3,
+      "col": 7,
+      "cell_rect": [
+        896,
+        384,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        35,
+        19,
+        86,
+        109
+      ],
+      "trim_abs": [
+        931,
+        403,
+        86,
+        109
+      ]
+    },
+    {
+      "name": "bandit_hammer_r4c0",
+      "row": 4,
+      "col": 0,
+      "cell_rect": [
+        0,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        9,
+        92,
+        119
+      ],
+      "trim_abs": [
+        9,
+        521,
+        92,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r4c1",
+      "row": 4,
+      "col": 1,
+      "cell_rect": [
+        128,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        9,
+        92,
+        119
+      ],
+      "trim_abs": [
+        137,
+        521,
+        92,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r4c2",
+      "row": 4,
+      "col": 2,
+      "cell_rect": [
+        256,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        7,
+        10,
+        117,
+        118
+      ],
+      "trim_abs": [
+        263,
+        522,
+        117,
+        118
+      ]
+    },
+    {
+      "name": "bandit_hammer_r4c3",
+      "row": 4,
+      "col": 3,
+      "cell_rect": [
+        384,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        9,
+        102,
+        119
+      ],
+      "trim_abs": [
+        393,
+        521,
+        102,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r4c4",
+      "row": 4,
+      "col": 4,
+      "cell_rect": [
+        512,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        9,
+        119,
+        119
+      ],
+      "trim_abs": [
+        521,
+        521,
+        119,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r4c5",
+      "row": 4,
+      "col": 5,
+      "cell_rect": [
+        640,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        9,
+        9,
+        99,
+        119
+      ],
+      "trim_abs": [
+        649,
+        521,
+        99,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r4c6",
+      "row": 4,
+      "col": 6,
+      "cell_rect": [
+        768,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        7,
+        9,
+        109,
+        119
+      ],
+      "trim_abs": [
+        775,
+        521,
+        109,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r4c7",
+      "row": 4,
+      "col": 7,
+      "cell_rect": [
+        896,
+        512,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        7,
+        9,
+        103,
+        119
+      ],
+      "trim_abs": [
+        903,
+        521,
+        103,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r5c0",
+      "row": 5,
+      "col": 0,
+      "cell_rect": [
+        0,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        3,
+        9,
+        95,
+        119
+      ],
+      "trim_abs": [
+        3,
+        649,
+        95,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r5c1",
+      "row": 5,
+      "col": 1,
+      "cell_rect": [
+        128,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        2,
+        9,
+        96,
+        119
+      ],
+      "trim_abs": [
+        130,
+        649,
+        96,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r5c2",
+      "row": 5,
+      "col": 2,
+      "cell_rect": [
+        256,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        0,
+        10,
+        90,
+        118
+      ],
+      "trim_abs": [
+        256,
+        650,
+        90,
+        118
+      ]
+    },
+    {
+      "name": "bandit_hammer_r5c3",
+      "row": 5,
+      "col": 3,
+      "cell_rect": [
+        384,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        19,
+        17,
+        109,
+        111
+      ],
+      "trim_abs": [
+        403,
+        657,
+        109,
+        111
+      ]
+    },
+    {
+      "name": "bandit_hammer_r5c4",
+      "row": 5,
+      "col": 4,
+      "cell_rect": [
+        512,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        4,
+        9,
+        94,
+        119
+      ],
+      "trim_abs": [
+        516,
+        649,
+        94,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r5c5",
+      "row": 5,
+      "col": 5,
+      "cell_rect": [
+        640,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        2,
+        9,
+        124,
+        119
+      ],
+      "trim_abs": [
+        642,
+        649,
+        124,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r5c6",
+      "row": 5,
+      "col": 6,
+      "cell_rect": [
+        768,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        1,
+        9,
+        90,
+        119
+      ],
+      "trim_abs": [
+        769,
+        649,
+        90,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r5c7",
+      "row": 5,
+      "col": 7,
+      "cell_rect": [
+        896,
+        640,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        0,
+        9,
+        89,
+        119
+      ],
+      "trim_abs": [
+        896,
+        649,
+        89,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r6c0",
+      "row": 6,
+      "col": 0,
+      "cell_rect": [
+        0,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        33,
+        12,
+        68,
+        116
+      ],
+      "trim_abs": [
+        33,
+        780,
+        68,
+        116
+      ]
+    },
+    {
+      "name": "bandit_hammer_r6c1",
+      "row": 6,
+      "col": 1,
+      "cell_rect": [
+        128,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        30,
+        12,
+        71,
+        116
+      ],
+      "trim_abs": [
+        158,
+        780,
+        71,
+        116
+      ]
+    },
+    {
+      "name": "bandit_hammer_r6c2",
+      "row": 6,
+      "col": 2,
+      "cell_rect": [
+        256,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        27,
+        12,
+        74,
+        116
+      ],
+      "trim_abs": [
+        283,
+        780,
+        74,
+        116
+      ]
+    },
+    {
+      "name": "bandit_hammer_r6c3",
+      "row": 6,
+      "col": 3,
+      "cell_rect": [
+        384,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        24,
+        12,
+        77,
+        116
+      ],
+      "trim_abs": [
+        408,
+        780,
+        77,
+        116
+      ]
+    },
+    {
+      "name": "bandit_hammer_r6c4",
+      "row": 6,
+      "col": 4,
+      "cell_rect": [
+        512,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        20,
+        12,
+        88,
+        116
+      ],
+      "trim_abs": [
+        532,
+        780,
+        88,
+        116
+      ]
+    },
+    {
+      "name": "bandit_hammer_r6c5",
+      "row": 6,
+      "col": 5,
+      "cell_rect": [
+        640,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        17,
+        12,
+        91,
+        116
+      ],
+      "trim_abs": [
+        657,
+        780,
+        91,
+        116
+      ]
+    },
+    {
+      "name": "bandit_hammer_r6c6",
+      "row": 6,
+      "col": 6,
+      "cell_rect": [
+        768,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        14,
+        9,
+        87,
+        119
+      ],
+      "trim_abs": [
+        782,
+        777,
+        87,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r6c7",
+      "row": 6,
+      "col": 7,
+      "cell_rect": [
+        896,
+        768,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        12,
+        9,
+        86,
+        119
+      ],
+      "trim_abs": [
+        908,
+        777,
+        86,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r7c0",
+      "row": 7,
+      "col": 0,
+      "cell_rect": [
+        0,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        24,
+        12,
+        79,
+        116
+      ],
+      "trim_abs": [
+        24,
+        908,
+        79,
+        116
+      ]
+    },
+    {
+      "name": "bandit_hammer_r7c1",
+      "row": 7,
+      "col": 1,
+      "cell_rect": [
+        128,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        18,
+        9,
+        85,
+        119
+      ],
+      "trim_abs": [
+        146,
+        905,
+        85,
+        119
+      ]
+    },
+    {
+      "name": "bandit_hammer_r7c2",
+      "row": 7,
+      "col": 2,
+      "cell_rect": [
+        256,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        14,
+        14,
+        88,
+        114
+      ],
+      "trim_abs": [
+        270,
+        910,
+        88,
+        114
+      ]
+    },
+    {
+      "name": "bandit_hammer_r7c3",
+      "row": 7,
+      "col": 3,
+      "cell_rect": [
+        384,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        2,
+        37,
+        109,
+        90
+      ],
+      "trim_abs": [
+        386,
+        933,
+        109,
+        90
+      ]
+    },
+    {
+      "name": "bandit_hammer_r7c4",
+      "row": 7,
+      "col": 4,
+      "cell_rect": [
+        512,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        7,
+        58,
+        111,
+        70
+      ],
+      "trim_abs": [
+        519,
+        954,
+        111,
+        70
+      ]
+    },
+    {
+      "name": "bandit_hammer_r7c5",
+      "row": 7,
+      "col": 5,
+      "cell_rect": [
+        640,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        2,
+        68,
+        114,
+        60
+      ],
+      "trim_abs": [
+        642,
+        964,
+        114,
+        60
+      ]
+    },
+    {
+      "name": "bandit_hammer_r7c6",
+      "row": 7,
+      "col": 6,
+      "cell_rect": [
+        768,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        0,
+        76,
+        119,
+        52
+      ],
+      "trim_abs": [
+        768,
+        972,
+        119,
+        52
+      ]
+    },
+    {
+      "name": "bandit_hammer_r7c7",
+      "row": 7,
+      "col": 7,
+      "cell_rect": [
+        896,
+        896,
+        128,
+        128
+      ],
+      "trim_in_cell": [
+        1,
+        78,
+        118,
+        50
+      ],
+      "trim_abs": [
+        897,
+        974,
+        118,
+        50
+      ]
+    }
+  ]
+}

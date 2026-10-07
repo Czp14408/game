@@ -61,24 +61,84 @@ func buy(state: RunState, shop_state: ShopState, slot_index: int) -> OperationRe
 		_record("buy_skill", -price, "技能购买：%s" % catalog.skill_display(slot.skill_id))
 		return OperationResult.ok({"spent": price, "skill": String(slot.skill_id)})
 
-	# 物品：先验证接收容量
+	# 物品：进入背包并触发自动合成（§8）。合成后按最终占用校验容量，失败整次回退。
 	var it := slot.item
-	var new_inv: Array = state.inventory.duplicate()
-	new_inv.append(it)
-	if not state.fits_after(state.battle_bar, new_inv):
-		return OperationResult.fail("背包空间不足，可先整理后重试")
-
+	it.origin_node = shop_state.shop_key
+	var sr := inventory.auto_synthesize_into(state, it)
+	if not sr.success:
+		return OperationResult.fail(sr.reason)
 	state.spend_money(price)
 	slot.purchased = true
-	it.origin_node = shop_state.shop_key
-	var pr := inventory.pickup(state, it)
-	if not pr.success:
-		# 已通过容量校验，此处失败说明状态被并发修改：回滚货币与购买标记
-		state.add_money(price)
-		slot.purchased = false
-		return OperationResult.fail(pr.reason)
 	_record("buy_item", -price, "物品购买：%s（%s）" % [catalog.item_display(it.definition_id), PriceTable.quality_name(it.quality)])
-	return OperationResult.ok({"spent": price, "instance_id": it.instance_id})
+	# instance_id 用最终产物（合并发生时购入件已被消耗）
+	return OperationResult.ok({"spent": price, "instance_id": String(sr.data.get("instance_id", it.instance_id)),
+		"merged": sr.data.get("merged", 0), "produced_quality": sr.data.get("produced_quality", it.quality)})
+
+
+## 购买到指定位置：商品拖入背包（dst="inv"）或战斗栏（dst="bar"）的 target_index。
+## 物品购买会触发入背包自动合成；技能购买直接学习（技能不占物品格）。
+## 整次原子提交：失败不扣币、不消耗货位、不留半件物品。
+## 依据：游戏主界面与交互调整方案.md §7 商品拖拽购买、§8 入包自动合成。
+func buy_into(state: RunState, shop_state: ShopState, slot_index: int,
+		dst: String, target_index: int) -> OperationResult:
+	if not state.is_running():
+		return OperationResult.fail("试炼已结束")
+	if shop_state == null or slot_index < 0 or slot_index >= shop_state.slots.size():
+		return OperationResult.fail("商品位无效")
+	var slot: ShopState.Slot = shop_state.slots[slot_index]
+	if slot.purchased:
+		return OperationResult.fail("该商品已买走")
+	var price := price_of_slot(slot)
+	if state.money < price:
+		return OperationResult.fail("余额不足（需要 %d，现有 %d）" % [price, state.money])
+
+	if slot.is_skill:
+		# 技能：直接学习，不占物品格；dst/target_index 忽略
+		var lr := learn_skill(state, slot.skill_id, slot.quality)
+		if not lr.success:
+			return lr
+		state.spend_money(price)
+		slot.purchased = true
+		_record("buy_skill", -price, "技能购买：%s" % catalog.skill_display(slot.skill_id))
+		return OperationResult.ok({"spent": price, "skill": String(slot.skill_id)})
+
+	# 物品：先按目标栏构造副本校验（不真正改动状态），通过后才提交。
+	var it := slot.item
+	if dst != "bar" and dst != "inv":
+		return OperationResult.fail("目标栏无效")
+
+	if dst == "bar":
+		var def := catalog.item(it.definition_id)
+		if def == null or not def.equippable:
+			return OperationResult.fail("该商品不能放入战斗栏")
+		if def.category == ItemDef.CAT_CONSUMABLE:
+			return OperationResult.fail("恢复品不进入战斗栏")
+		# 直接进入战斗栏不触发自动合成（§8：进入战斗栏不合成）
+		var new_bar: Array = state.battle_bar.duplicate()
+		new_bar.erase(it)
+		inventory._insert_at(new_bar, it, target_index)
+		if not state.fits_after(new_bar, state.inventory.duplicate()):
+			return OperationResult.fail("战斗栏空间不足")
+		state.spend_money(price)
+		slot.purchased = true
+		it.origin_node = shop_state.shop_key
+		inventory._commit(state, new_bar, state.inventory.duplicate())
+		state.register_instance(it)
+		_record("buy_item", -price, "物品购买：%s（%s）" % [catalog.item_display(it.definition_id), PriceTable.quality_name(it.quality)])
+		return OperationResult.ok({"spent": price, "instance_id": it.instance_id})
+
+	# 目标背包：触发入背包自动合成（§8）。
+	# 先扣币/占位标记必须在合成成功后才提交，失败整次回退。
+	it.origin_node = shop_state.shop_key
+	var sr := inventory.auto_synthesize_into(state, it)
+	if not sr.success:
+		return OperationResult.fail(sr.reason)
+	state.spend_money(price)
+	slot.purchased = true
+	_record("buy_item", -price, "物品购买：%s（%s）" % [catalog.item_display(it.definition_id), PriceTable.quality_name(it.quality)])
+	# instance_id 用最终产物（合并发生时购入件已被消耗）
+	return OperationResult.ok({"spent": price, "instance_id": String(sr.data.get("instance_id", it.instance_id)),
+		"merged": sr.data.get("merged", 0), "produced_quality": sr.data.get("produced_quality", it.quality)})
 
 
 # ---------------------------------------------------------------------------

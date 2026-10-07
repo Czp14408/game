@@ -214,6 +214,18 @@ func selected() -> String:
 	return _selected
 
 
+## 按条目 id 找某行的物品格控件（找不到返回 null）。
+## 供页面在 set_row 重建后定位反馈位置（如入包合成的短暂闪光）。
+func cell_by_id(row: String, id: String) -> Control:
+	if not _rows.has(row):
+		return null
+	for row_cell in _rows[row]["cells"]:
+		var d: Dictionary = row_cell
+		if String((d["entry"] as Dictionary).get("id", "")) == id:
+			return d["node"] as Control
+	return null
+
+
 func _apply_selection_style() -> void:
 	for row in _rows.keys():
 		var info: Dictionary = _rows[row]

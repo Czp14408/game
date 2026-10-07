@@ -16,6 +16,11 @@ const Y_DETAIL := 222
 const H_DETAIL := 150
 const Y_LEGEND := 392
 
+## §2「商店在屏幕上方横向展开」：共用面板在商店页落位画布右上，
+## 覆盖清单里的默认落位（右侧居中是 R0.7 历史基线，构筑/整理页仍按清单落位）。
+const PANEL_TOP_Y := 46
+const PANEL_MARGIN_R := 16
+
 var _canvas: Control
 var _panel: PanelInventory
 var _shop_label: Label
@@ -79,6 +84,12 @@ func _build_panel() -> void:
 	_panel.name = "InventoryPanel"
 	_canvas.add_child(_panel)
 	_panel.build()
+	# §2 商店在屏幕上方：面板贴画布右上（清单矩形只定尺寸，落位由本页覆盖）。
+	var pr := InventorySkin.rect(InventorySkin.PANEL)
+	var design := InventorySkin.design_size()
+	if design == Vector2i.ZERO:
+		design = Vector2i(1280, 690)
+	_panel.position = Vector2(design.x - pr.size.x - PANEL_MARGIN_R, PANEL_TOP_Y)
 	_panel.cell_selected.connect(_on_cell_selected)
 	_panel.op_pressed.connect(_on_op)
 
@@ -268,7 +279,11 @@ func _on_op(op_id: String) -> void:
 		"buy":
 			var e := _selected_entry()
 			if not e.is_empty():
-				_note.text = _result_text(ctrl.buy_slot(int(e.get("index", 0))))
+				var r := ctrl.buy_slot(int(e.get("index", 0)))
+				_note.text = _result_text(r)
+				_refresh()
+				_flash_buy_result(r)
+				return
 		"sell":
 			var b := _selected_entry()
 			if not b.is_empty():
@@ -284,6 +299,21 @@ func _on_op(op_id: String) -> void:
 			ctrl.close_shop()
 			return
 	_refresh()
+
+
+## 购买后的入包反馈（§11）：在最终产物落位的背包格上短暂闪光；
+## 发生合成时合并为一条品质变化提示，不弹确认窗口。
+func _flash_buy_result(r: OperationResult) -> void:
+	if r == null or not r.success:
+		return
+	var iid := String(r.data.get("instance_id", ""))
+	var cell := _panel.cell_by_id(InventorySkin.ROW_B, "bag:%s" % iid)
+	if cell != null:
+		UiKit.flash_control(cell)
+	var merged := int(r.data.get("merged", 0))
+	if merged > 0:
+		var q := int(r.data.get("produced_quality", 0))
+		_note.text = "自动合成 ×%d → %s" % [merged, PriceTable.quality_name(q)]
 
 
 func _result_text(result: OperationResult) -> String:
@@ -303,6 +333,8 @@ func layout_report() -> Dictionary:
 	rep["canvas_min"] = Vector2i(_canvas.custom_minimum_size)
 	rep["canvas"] = Vector2i(_canvas.size)
 	rep["design"] = InventorySkin.design_size()
-	rep["panel_rect"] = InventorySkin.rect(InventorySkin.PANEL)
+	# panel_rect 报实际落位（商店页覆盖到屏幕上方）；清单矩形另存一份备查。
+	rep["panel_rect"] = Rect2i(Vector2i(_panel.position), Vector2i(_panel.size))
+	rep["panel_rect_manifest"] = InventorySkin.rect(InventorySkin.PANEL)
 	rep["inner"] = InventorySkin.inner(InventorySkin.PANEL)
 	return rep

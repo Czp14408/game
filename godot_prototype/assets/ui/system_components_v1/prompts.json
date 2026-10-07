@@ -1,0 +1,48 @@
+{
+  "generator": "built-in imagegen",
+  "date": "2026-10-07",
+  "assets": [
+    {
+      "id": "inventory_tray",
+      "source": "C:\\Users\\DELL\\.codex\\generated_images\\01a114a1-ff89-7732-b2a0-fa612c6a0de8\\exec-a99b6383-cbf7-4598-b7ef-5546b710694a.png",
+      "prompt": "Production transparent Godot UI panel. A wide horizontal empty inventory backing panel, width to height ratio about 7:1. One continuous open interior, NO slots, NO grid, NO dividers. This will underlay ten unit cells drawn by Godot. Thin square-stepped corners. Pale desaturated blue-gray glass, no metal, no baked contents, translucent interior and transparent exterior.",
+      "repair": null
+    },
+    {
+      "id": "status_panel",
+      "source": "C:\\Users\\DELL\\.codex\\generated_images\\01a114a1-ff89-7732-b2a0-fa612c6a0de8\\exec-0dd6cf83-7345-4859-a2d5-f3ffd104bbbe.png",
+      "prompt": "Production Godot UI asset, one isolated empty panel on true transparent background. A wide empty horizontal status panel, ratio 6:1, one continuous interior with ample room for dynamic health money and remaining chances plus combat equipment and skills. NO dividers, NO icons, NO gauges. Future system interface, pale blue-gray low saturation translucent glass, thin nearly white pixel outline, stepped square corners, uniform corner thickness suitable nine-slice. NO metal, NO heavy glow, no decoration inside. Interior alpha 50/255 approximately, must be genuinely translucent, NOT opaque blue. Exterior alpha zero. Flat orthographic front-facing. Tight clean edges with no broken speckles, no shadow. No text numbers icons dividers grid bars scenery baked checkerboard. Panel fills 90% canvas width.",
+      "repair": null
+    },
+    {
+      "id": "information_panel",
+      "source": "C:\\Users\\DELL\\.codex\\generated_images\\01a114a1-ff89-7732-b2a0-fa612c6a0de8\\exec-71e84a34-b360-4dcf-b32e-205911354ec9.png",
+      "prompt": "Production Godot game UI PNG asset, one isolated empty panel, true transparent background. A large empty rectangular information page backing panel, ratio 1.6:1. One continuous interior, no map or text or dividers; map and quest sections added dynamically. Match deity space approved translucent system glass: very pale blue-gray desaturated, fine near-white pixel outline, simple stepped corners. Center genuinely transparent glass alpha around 60/255, outside zero alpha. NO metallic shapes, no strong blue or neon, no shadows. Clean sharp rectilinear pixel edges, front-facing flat design. Full complete outer border, generous empty uniform interior. No words, numbers, icons, scenery, grid, divider or baked checkerboard. Only one panel fills canvas with 5% transparent margin.",
+      "repair": null
+    },
+    {
+      "id": "tooltip_panel",
+      "source": "C:\\Users\\DELL\\.codex\\generated_images\\01a114a1-ff89-7732-b2a0-fa612c6a0de8\\exec-e117e30f-8065-48c0-8cae-920cfd8d6328.png",
+      "prompt": "Create one EMPTY Godot tooltip panel transparent PNG, no demonstration sheet. A medium empty rectangular tooltip backing panel, ratio 1.15:1. Square stepped corners, subtle tiny pixel corner accents, single continuous interior for dynamic item or skill descriptions. Approved pale icy blue-gray futuristic system glass style, muted desaturated color, white pixel outline 3-4 pixels, delicate tiny corner accents. Uniform EMPTY translucent interior true alpha about 60/255, outside alpha zero. Clean intact regular stepped pixel corners, no soft shadows, no speckles, minimal ornament. Flat orthographic front. No metal, neon, text, words, numbers, icon holders, icon frames, dividers, grid, scenery, example data or checkerboard. One panel fills 90% of canvas.",
+      "repair": "Remove exterior flecks and ragged halo; preserve stepped panel and set translucent interior."
+    },
+    {
+      "id": "context_menu",
+      "source": "C:\\Users\\DELL\\.codex\\generated_images\\01a114a1-ff89-7732-b2a0-fa612c6a0de8\\exec-cb3831cb-45b4-484d-8e2c-126baf573c01.png",
+      "prompt": "Production Godot UI asset: A compact empty rectangular right-click menu backing panel, ratio 1.4:1. Single continuous interior for two dynamic menu entries. No separator or entries baked in. A clean understated futuristic pale blue-gray translucent system panel. Minimal near-white outline, squared stepped corners, flat front view, clean uniform edges. Exterior completely transparent, interior translucent. NO decorations, flecks, shadow, texture outside silhouette. No text icons numbers rows lines grid content. One empty panel alone, 5% margin, aspect 1.4:1.",
+      "repair": null
+    },
+    {
+      "id": "minimap_frame",
+      "source": "C:\\Users\\DELL\\.codex\\generated_images\\01a114a1-ff89-7732-b2a0-fa612c6a0de8\\exec-4ab6f601-42a6-4e6a-905e-597a3d8e3b77.png",
+      "prompt": "One isolated Godot UI minimap circular frame asset on genuine alpha transparent background. Thin pale desaturated ice-blue and white pixel-art ring, restrained four cardinal short tick accents, futuristic system interface with no metal. Perfect front-facing circle, complete symmetrical rim, centered with 10% transparent margin. Both circular interior and all exterior completely transparent alpha zero. Only rim visible. NO fill, no map, no scenery, no text, no letters, no icons, no labels, no grid, no particles, no shadow. Crisp pixel contour.",
+      "repair": null
+    },
+    {
+      "id": "battle_statistics",
+      "source": "C:\\Users\\DELL\\.codex\\generated_images\\01a114a1-ff89-7732-b2a0-fa612c6a0de8\\exec-28c8c045-d067-4623-b314-410f779a3f57.png",
+      "prompt": "One isolated empty Godot battle statistics drawer UI background asset. An empty rectangular battle statistics drawer backing panel, ratio 1.8:1. Match warm aged bronze pixel outline and deep desaturated navy interior of battle reference. Very restrained corner rivets only, NO internal dividers or content. Retro fantasy pixel-art, dark charcoal navy uniform interior, slim aged warm bronze border, intact square corner blocks and tiny rivets, balanced understated decoration confined corners. Flat front-facing rectangular panel, no perspective. Exterior genuine alpha zero, interior dark sufficiently opaque for readable tables. NO title text numbers tables column lines tabs buttons icons characters scenery grid. Only one empty panel fills 90% canvas. Clean complete silhouette and thin uniform straight sides suitable nine-patch.",
+      "repair": null
+    }
+  ]
+}

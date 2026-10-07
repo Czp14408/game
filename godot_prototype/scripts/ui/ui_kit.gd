@@ -18,6 +18,18 @@ const COL_SHIELD := Color(0.42, 0.66, 0.90)
 const COL_BURN := Color(0.95, 0.55, 0.25)
 const COL_POISON := Color(0.55, 0.80, 0.35)
 
+## 系统组件浅蓝半透明未来风格配色（system_components_v1）。
+## 用于状态栏、背包底板、信息页、tooltip、context_menu 等系统级面板上的叠加内容。
+## 不替代战斗页的木框古铜风格——战斗页保留自己的深色暖色调。
+const COL_SYS_BG := Color(0.10, 0.16, 0.24, 0.55)        ## 系统面板底层叠加色（半透明浅蓝）
+const COL_SYS_TEXT := Color(0.94, 0.98, 1.0)             ## 系统面板主文字
+const COL_SYS_MUTED := Color(0.62, 0.74, 0.86)           ## 系统面板次文字
+const COL_SYS_ACCENT := Color(0.62, 0.86, 1.0)           ## 系统面板强调色
+const COL_SYS_BORDER := Color(0.78, 0.92, 1.0, 0.65)     ## 系统面板边框
+const COL_SYS_GOOD := Color(0.55, 0.92, 0.78)            ## 系统面板正向反馈
+const COL_SYS_BAD := Color(0.96, 0.55, 0.62)             ## 系统面板负向反馈
+const COL_SYS_GRID := Color(0.82, 0.93, 1.0, 0.20)       ## 系统面板格线
+
 ## 品质色（0 青铜 1 白银 2 黄金 3 钻石），与价目表的档位一致
 const QUALITY_COLORS: Array[Color] = [
 	Color(0.76, 0.54, 0.33),
@@ -224,6 +236,22 @@ static func overlay(color: Color, size: Vector2) -> ColorRect:
 	return c
 
 
+## 合成成功在合成位置的短暂闪光（§11）：在目标控件上叠一层亮色块，透明度渐隐后自毁。
+## 只做表现不改数据；连续升级合并为一次反馈，由调用方决定闪哪一格、配什么文字。
+static func flash_control(target: Control, color: Color = Color(0.85, 0.97, 1.0, 0.85),
+		duration: float = 0.45) -> void:
+	if target == null or not is_instance_valid(target) or target.size.x <= 0.0:
+		return
+	var fl := ColorRect.new()
+	fl.color = color
+	fl.size = target.size
+	fl.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	target.add_child(fl)
+	var tw := fl.create_tween()
+	tw.tween_property(fl, "color:a", 0.0, duration)
+	tw.tween_callback(fl.queue_free)
+
+
 ## 按目标矩形摆放的像素图。STRETCH_SCALE 而非按比例：面板纹理已由生成器
 ## 烘焙成目标尺寸，这里必须 1:1 落位，不能让它再等比缩放。
 static func panel_art(tex: Texture2D, rect: Rect2i) -> TextureRect:
@@ -236,6 +264,97 @@ static func panel_art(tex: Texture2D, rect: Rect2i) -> TextureRect:
 	t.size = Vector2(rect.size)
 	t.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	return t
+
+
+## 九宫格面板：边角不缩放、边带按倍率拉伸、中心区被拉伸。
+## 用于 system_components_v1 这类带边框与角部装饰的系统底板。
+## margins_ltrb 是 [左, 上, 右, 下] 四边的九宫格边距，由生成器测出。
+## 为什么用 NinePatchRect 而不是 TextureRect：素材是 AI 生成、带 JPEG 噪点
+## 与非整数倍放大，整张拉伸会把边角装饰拉变形（工作流 §5.4）。
+static func nine_patch(tex: Texture2D, rect: Rect2i, margins_ltrb: Array) -> NinePatchRect:
+	var t := NinePatchRect.new()
+	t.texture = tex
+	# 注意：NinePatchRect 没有 expand_mode / stretch_mode（那是 TextureRect 的属性），
+	# 赋值会报脚本错误并使函数中止返回 null——面板会整块消失。
+	t.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	t.position = Vector2(rect.position)
+	t.size = Vector2(rect.size)
+	t.patch_margin_left = maxi(int(margins_ltrb[0]) if margins_ltrb.size() > 0 else 0, 0)
+	t.patch_margin_top = maxi(int(margins_ltrb[1]) if margins_ltrb.size() > 1 else 0, 0)
+	t.patch_margin_right = maxi(int(margins_ltrb[2]) if margins_ltrb.size() > 2 else 0, 0)
+	t.patch_margin_bottom = maxi(int(margins_ltrb[3]) if margins_ltrb.size() > 3 else 0, 0)
+	t.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	return t
+
+
+## 系统面板快捷构造：通过 SystemSkin 取面板纹理、矩形与九宫格边距，组装 NinePatchRect。
+## 半透明自调制：alpha < 1 时叠到真实场景才看清，与 system_components_v1/README.md
+## 「中心 alpha 实测 129/106/116 等」对应；最终值需叠到真实场景校准。
+static func abs_sys_panel(panel: String, modulate_alpha: float = 1.0) -> NinePatchRect:
+	var tex := SystemSkin.texture(panel)
+	var rect := SystemSkin.rect(panel)
+	var margins := SystemSkin.nine_patch_margins_ltrb(panel)
+	var np := nine_patch(tex, rect, margins)
+	if np == null:
+		return null
+	np.name = "SysPanel_%s" % panel
+	if modulate_alpha < 1.0:
+		np.self_modulate.a = modulate_alpha
+	return np
+
+
+## 系统风格的绝对定位标签（用于系统面板上的文字叠加）。
+## 与 abs_label 同结构，但默认用浅蓝系统配色。
+static func abs_sys_label(
+	text: String,
+	font_size: int,
+	rect: Rect2i,
+	color: Color = COL_SYS_TEXT,
+	align: int = HORIZONTAL_ALIGNMENT_LEFT
+) -> Label:
+	var l := label(text, font_size, color)
+	l.position = Vector2(rect.position)
+	l.size = Vector2(rect.size)
+	l.clip_text = true
+	l.horizontal_alignment = align
+	l.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	return l
+
+
+## 系统风格的多行文本块（用于 tooltip / 信息页等）。
+static func abs_sys_block(
+	text: String,
+	font_size: int,
+	rect: Rect2i,
+	color: Color = COL_SYS_TEXT
+) -> Label:
+	var l := label(text, font_size, color)
+	l.position = Vector2(rect.position)
+	l.size = Vector2(rect.size)
+	l.clip_text = true
+	l.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+	return l
+
+
+## 系统风格的圆形图标占位（技能栏用）。技能素材尚未提供时显示品质色圆环。
+static func abs_sys_skill_slot(rect: Rect2i, quality: int = -1) -> Control:
+	var holder := Control.new()
+	holder.position = Vector2(rect.position)
+	holder.size = Vector2(rect.size)
+	holder.mouse_filter = Control.MOUSE_FILTER_PASS
+	var ring := ColorRect.new()
+	ring.color = Color(0.10, 0.18, 0.28, 0.65)
+	ring.position = Vector2.ZERO
+	ring.size = Vector2(rect.size)
+	ring.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	holder.add_child(ring)
+	var border := ColorRect.new()
+	border.color = UiKit.quality_color(quality) if quality >= 0 else COL_SYS_BORDER
+	border.position = Vector2(1, 1)
+	border.size = Vector2(maxf(rect.size.x - 2, 1), maxf(rect.size.y - 2, 1))
+	border.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	holder.add_child(border)
+	return holder
 
 
 ## 绝对定位的文本块。垂直居中，宽度给定，超出宽度的部分裁剪而不撑破面板。

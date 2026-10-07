@@ -68,6 +68,13 @@ var _rate := 1.0
 var _paused := false
 var _settled := false
 
+## 结果阶段：战斗结束后停留在本界面，展示胜负与掉落（§3）。
+var _result_phase := false
+var _result_summary: Dictionary = {}
+var _drop_holder: Control = null       ## 掉落居中展示区（清空后的敌方物品栏）
+var _result_hint: Label = null         ## 中央胜负提示
+var _exit_btn: Button = null           ## 结果阶段的「退出战斗」
+
 var _canvas: Control
 var _clock: Label
 var _ops_kind: Label
@@ -75,6 +82,11 @@ var _ops_step: Label
 var _ops_state: Label
 var _log_text: RichTextLabel
 var _pause_layer: Control
+var _stats_drawer: Control          ## 统计抽屉（battle_statistics 面板，默认隐藏）
+var _stats_text: RichTextLabel      ## 统计数字区
+var _stats_events: RichTextLabel    ## 事件流水区
+var _stats_visible := false
+var _stats_event_count := -1        ## 与日志同款：事件数没变就不重排
 var _item_names: Dictionary = {}
 var _log_event_count := -1
 var _player_side := BattleSide.new()
@@ -119,6 +131,7 @@ func build() -> void:
 	_build_middle()
 	_build_operations()
 	_build_pause_layer()
+	_build_stats_drawer()
 	_refresh_view()
 	set_process(true)
 
@@ -375,8 +388,11 @@ func _build_operations() -> void:
 	_log_text.name = "BattleLog"
 	_canvas.add_child(_log_text)
 
-	# 底部：退出
-	_canvas.add_child(UiKit.abs_button("主动认输并结束试炼", _surrender, Rect2i(x, btm_y + 2, w, 30), 12))
+	# 底部：统计抽屉开关 + 退出
+	var btm_w := (w - 6) / 2
+	_canvas.add_child(UiKit.abs_button("战斗统计", _toggle_stats, Rect2i(x, btm_y + 2, btm_w, 30), 12))
+	_canvas.add_child(UiKit.abs_button("主动认输并结束试炼", _surrender,
+		Rect2i(x + btm_w + 6, btm_y + 2, w - btm_w - 6, 30), 12))
 	_canvas.add_child(UiKit.abs_block("认输后本局直接结束。战斗中不能整理、交易或使用战斗外恢复品。",
 		11, UiKit.COL_MUTED, Rect2i(x, btm_y + 34, w, maxi(btm_h - 36, 16))))
 
@@ -420,6 +436,87 @@ func _build_pause_layer() -> void:
 	_pause_layer.add_child(UiKit.abs_button("继续战斗（Esc）", _toggle_pause, Rect2i(x, y + 96, bw, 34), 13))
 	_pause_layer.add_child(UiKit.abs_button("主动认输并结束试炼", _surrender,
 		Rect2i(x + bw + 10, y + 96, bw, 34), 13))
+
+
+## 统计抽屉（battle_statistics 面板）：几何全部经 SystemSkin 读取，默认隐藏。
+## 与暂停层同类：浮在战斗画布之上，不参与排布。
+func _build_stats_drawer() -> void:
+	var rect := SystemSkin.rect(SystemSkin.BATTLE_STATISTICS)
+	if rect.size.x <= 0:
+		return
+	_stats_drawer = Control.new()
+	_stats_drawer.name = "StatsDrawer"
+	_stats_drawer.position = Vector2(rect.position)
+	_stats_drawer.size = Vector2(rect.size)
+	_stats_drawer.visible = false
+	_canvas.add_child(_stats_drawer)
+	var art := UiKit.nine_patch(SystemSkin.texture(SystemSkin.BATTLE_STATISTICS),
+		Rect2i(Vector2i.ZERO, rect.size), SystemSkin.nine_patch_margins_ltrb(SystemSkin.BATTLE_STATISTICS))
+	_stats_drawer.add_child(art)
+
+	var stats_r := SystemSkin.region(SystemSkin.BATTLE_STATISTICS, "stats")
+	var events_r := SystemSkin.region(SystemSkin.BATTLE_STATISTICS, "events")
+	_stats_text = UiKit.abs_log(12, UiKit.COL_TEXT, Rect2i(stats_r.position, stats_r.size))
+	_stats_text.name = "StatsNumbers"
+	_stats_drawer.add_child(_stats_text)
+	_stats_events = UiKit.abs_log(11, UiKit.COL_MUTED, Rect2i(events_r.position, events_r.size))
+	_stats_events.name = "StatsEvents"
+	_stats_drawer.add_child(_stats_events)
+
+
+func _toggle_stats() -> void:
+	_stats_visible = not _stats_visible
+	if _stats_drawer != null:
+		_stats_drawer.visible = _stats_visible
+	if _stats_visible:
+		_stats_event_count = -1  # 强制下次刷新重排
+		_update_stats()
+
+
+## 统计内容：从事件流聚合双方输出／治疗／用物次数。事件数没变就跳过重排。
+func _update_stats() -> void:
+	if _stats_text == null or _engine == null or not _stats_visible:
+		return
+	var events: Array = _engine.result().events
+	if events.size() == _stats_event_count:
+		return
+	_stats_event_count = events.size()
+	var dmg_out := 0.0
+	var dmg_in := 0.0
+	var heal_get := 0.0
+	var uses := 0
+	var storms := 0
+	for raw in events:
+		var ev: Dictionary = raw
+		match String(ev.get("type", "")):
+			"use_weapon":
+				if int(ev.get("source_side", 0)) == CombatActor.SIDE_PLAYER:
+					dmg_out += float(ev.get("actual", 0.0))
+				else:
+					dmg_in += float(ev.get("actual", 0.0))
+			"heal":
+				if int(ev.get("source_side", 0)) == CombatActor.SIDE_PLAYER:
+					heal_get += float(ev.get("actual", 0.0))
+			"use_item":
+				uses += 1
+			"storm":
+				storms += 1
+	var lines := PackedStringArray()
+	lines.append("已进行 %d 步（约 %.1fs）　事件 %d 条" % [
+		_engine.current_step(), float(_engine.current_step()) * CombatEngine.STEP_SECONDS, events.size()])
+	lines.append("我方输出 %.1f　承伤 %.1f　治疗实得 %.1f" % [dmg_out, dmg_in, heal_get])
+	lines.append("用物 %d 次　沙尘暴 %d 次" % [uses, storms])
+	_stats_text.text = "\n".join(lines)
+	# 事件流水：复用右栏格式化，取最近 8 条
+	var recent := PackedStringArray()
+	var i := events.size() - 1
+	while i >= 0 and recent.size() < 8:
+		var one := _format_event(events[i])
+		if not one.is_empty():
+			recent.append(one)
+		i -= 1
+	recent.reverse()
+	_stats_events.text = "\n".join(recent) if not recent.is_empty() else "暂无事件。"
 
 
 # ---------------------------------------------------------------------------
@@ -480,9 +577,215 @@ func _finish() -> void:
 	if _pause_layer != null:
 		_pause_layer.visible = false
 	if _is_stage:
+		# 阶段战斗：结算后按既定阶段规则流转（胜利回整备/结果，失败回整备或结束）
 		ctrl.settle_stage_battle(_engine)
+		return
+	# 普通世界战斗：结果与掉落留在本界面（§3 统一战斗界面）
+	_result_summary = ctrl.settle_battle_inplace(_engine)
+	_enter_result_phase()
+
+
+## 进入结果阶段：显示胜负提示，清空敌方物品栏并居中展示唯一掉落（若有）。
+## 点击掉落领取/学习；退出未领取默认放弃（阶段首领无掉落）。
+func _enter_result_phase() -> void:
+	_result_phase = true
+	var win := _engine.result().winner_is_player()
+	var es := ctrl.encounter_state()
+	# 中央胜负提示
+	var text := "胜利" if win else "失败"
+	var col := UiKit.COL_MERCHANT if win else UiKit.COL_ENEMY
+	var middle := BattleSkin.inner(BattleSkin.MIDDLE)
+	var mrect := Rect2i(BattleSkin.rect(BattleSkin.MIDDLE).position + middle.position, middle.size)
+	_result_hint = UiKit.abs_label("战斗%s" % text, 18, col, mrect, HORIZONTAL_ALIGNMENT_CENTER)
+	_result_hint.name = "ResultHint"
+	_canvas.add_child(_result_hint)
+
+	# 清空敌方物品栏（复用 _enemy_side 的 slots 控件），居中展示掉落
+	_clear_enemy_tray()
+	_build_drop_display(es, win)
+
+	# 结果阶段：右侧底部操作切换为「退出战斗」
+	_build_result_exit()
+
+	if _ops_kind != null:
+		_ops_kind.text = "战斗结束"
+	if _ops_state != null:
+		_ops_state.text = "胜利" if win else "失败"
+	_refresh_view()
+
+
+## 清空敌方物品栏里的物品格（掉落居中展示前）。
+func _clear_enemy_tray() -> void:
+	if _enemy_side.slots == null:
+		return
+	for c in _enemy_side.slots.get_children():
+		_enemy_side.slots.remove_child(c)
+		c.queue_free()
+	_enemy_side.cells.clear()
+
+
+## 在清空后的敌方物品栏中央展示掉落：物品按实际占格，技能用独立卡牌样式。
+func _build_drop_display(es: EncounterState, win: bool) -> void:
+	if _enemy_side.slots == null:
+		return
+	var tray_rect := Rect2(_enemy_side.slots.position, _enemy_side.slots.size)
+	_drop_holder = Control.new()
+	_drop_holder.name = "DropHolder"
+	_drop_holder.position = tray_rect.position
+	_drop_holder.size = tray_rect.size
+	_drop_holder.mouse_filter = Control.MOUSE_FILTER_PASS
+	_canvas.add_child(_drop_holder)
+
+	if not win:
+		_drop_holder.add_child(UiKit.abs_label("本场没有掉落", 14, UiKit.COL_MUTED,
+			Rect2i(0, int(tray_rect.size.y / 2) - 10, int(tray_rect.size.x), 20), HORIZONTAL_ALIGNMENT_CENTER))
+		return
+
+	# 阶段首领无掉落（stage 战斗不走这里，但普通世界战斗可能无掉落）
+	if es == null or (es.pending_drops.is_empty() and es.pending_skill.is_empty()):
+		_drop_holder.add_child(UiKit.abs_label("本场没有掉落", 14, UiKit.COL_MUTED,
+			Rect2i(0, int(tray_rect.size.y / 2) - 10, int(tray_rect.size.x), 20), HORIZONTAL_ALIGNMENT_CENTER))
+		return
+
+	# 技能掉落：独立卡牌样式（圆形），居中
+	if not es.pending_skill.is_empty():
+		_build_skill_drop(es.pending_skill)
+		return
+
+	# 物品掉落：按实际占格大小，居中
+	var it: ItemInstance = es.pending_drops[0]
+	_build_item_drop(it)
+
+
+func _build_item_drop(it: ItemInstance) -> void:
+	var slot_w := _enemy_side.slots.size.x / 10.0
+	var span := maxi(it.size(catalog), 1)
+	var w := slot_w * span
+	var h := _enemy_side.slots.size.y
+	var x := (_enemy_side.slots.size.x - w) / 2.0
+	var box := Rect2(x, 0, w, h)
+	var cell := Panel.new()
+	cell.position = box.position
+	cell.size = box.size
+	cell.mouse_filter = Control.MOUSE_FILTER_STOP
+	cell.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color(0.11, 0.15, 0.22, 0.9)
+	style.set_border_width_all(2)
+	style.border_color = UiKit.quality_color(it.quality)
+	style.set_corner_radius_all(3)
+	cell.add_theme_stylebox_override("panel", style)
+	var def := catalog.item(it.definition_id)
+	cell.add_child(UiKit.abs_label("点击领取", 11, UiKit.COL_SYS_ACCENT,
+		Rect2i(4, int(h) - 34, int(w) - 8, 14), HORIZONTAL_ALIGNMENT_CENTER))
+	cell.add_child(UiKit.abs_block(def.display_name if def != null else String(it.definition_id),
+		12, UiKit.COL_TEXT, Rect2i(4, 6, int(w) - 8, maxi(int(h) - 50, 12))))
+	cell.add_child(UiKit.abs_label("%s·%d格" % [PriceTable.quality_name(it.quality), def.size if def != null else 1],
+		10, UiKit.quality_color(it.quality), Rect2i(4, int(h) - 18, int(w) - 8, 14)))
+	cell.gui_input.connect(_on_drop_item_click.bind(it))
+	_drop_holder.add_child(cell)
+
+
+func _build_skill_drop(skill: Dictionary) -> void:
+	var box := Rect2(_enemy_side.slots.size.x / 2 - 60, 8, 120, _enemy_side.slots.size.y - 16)
+	var cell := Button.new()
+	cell.position = box.position
+	cell.size = box.size
+	cell.focus_mode = Control.FOCUS_NONE
+	cell.text = ""
+	cell.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color(0.13, 0.20, 0.30, 0.9)
+	style.set_border_width_all(2)
+	style.border_color = UiKit.quality_color(int(skill.get("quality", 0)))
+	style.set_corner_radius_all(48)  # 圆形技能卡牌
+	style.content_margin_left = 0
+	style.content_margin_right = 0
+	style.content_margin_top = 0
+	style.content_margin_bottom = 0
+	cell.add_theme_stylebox_override("normal", style)
+	cell.add_theme_stylebox_override("hover", style)
+	cell.add_theme_stylebox_override("pressed", style)
+	var sd := catalog.skill(StringName(skill.get("skill_id", "")))
+	cell.add_child(UiKit.abs_label("技能·点击学习", 11, UiKit.COL_SYS_ACCENT,
+		Rect2i(4, int(box.size.y) - 30, int(box.size.x) - 8, 14), HORIZONTAL_ALIGNMENT_CENTER))
+	cell.add_child(UiKit.abs_label(sd.display_name if sd != null else String(skill.get("skill_id", "")),
+		12, UiKit.COL_TEXT, Rect2i(4, 12, int(box.size.x) - 8, 30), HORIZONTAL_ALIGNMENT_CENTER))
+	cell.add_child(UiKit.abs_label("%s" % PriceTable.quality_name(int(skill.get("quality", 0))),
+		10, UiKit.quality_color(int(skill.get("quality", 0))), Rect2i(4, int(box.size.y) - 18, int(box.size.x) - 8, 14), HORIZONTAL_ALIGNMENT_CENTER))
+	cell.gui_input.connect(_on_drop_skill_click)
+	_drop_holder.add_child(cell)
+
+
+func _on_drop_item_click(event: InputEvent, it: ItemInstance) -> void:
+	if not (event is InputEventMouseButton):
+		return
+	var mb := event as InputEventMouseButton
+	if not (mb.pressed and mb.button_index == MOUSE_BUTTON_LEFT):
+		return
+	# 直接拾取到背包（唯一掉落）；入包自动合成的结果合并为一次提示（§11）
+	var res := ctrl.inventory.pickup(ctrl.state, it)
+	if res.success:
+		# 从 pending_drops 移除
+		var es := ctrl.encounter_state()
+		if es != null:
+			es.pending_drops.erase(it)
+		var merged := int(res.data.get("merged", 0))
+		if merged > 0:
+			_ctrl_toast("自动合成 ×%d → %s·%s" % [merged,
+				PriceTable.quality_name(int(res.data.get("produced_quality", it.quality))),
+				ctrl.catalog.item_display(it.definition_id)])
+		else:
+			_ctrl_toast("已领取 %s" % ctrl.catalog.item_display(it.definition_id))
+		_rebuild_drop_display()
 	else:
-		ctrl.settle_battle(_engine)
+		_ctrl_toast(res.reason)
+
+
+func _on_drop_skill_click(event: InputEvent) -> void:
+	if not (event is InputEventMouseButton):
+		return
+	var mb := event as InputEventMouseButton
+	if not (mb.pressed and mb.button_index == MOUSE_BUTTON_LEFT):
+		return
+	var res := ctrl.resolve_skill_drop(true)
+	_ctrl_toast("已学习技能" if res.success else res.reason)
+	_rebuild_drop_display()
+
+
+## 领取/学习后重建掉落展示（掉落已移除则显示空态）。
+func _rebuild_drop_display() -> void:
+	if _drop_holder != null and is_instance_valid(_drop_holder):
+		_drop_holder.queue_free()
+	_drop_holder = null
+	var es := ctrl.encounter_state()
+	_build_drop_display(es, true)
+
+
+## 结果阶段的「退出战斗」：返回场景，未领取掉落默认放弃。
+func _build_result_exit() -> void:
+	if _ops_kind == null:
+		return
+	# 复用中部操作区上方位置放退出按钮（避免覆盖日志）
+	var panel_rect := BattleSkin.rect(BattleSkin.OPERATIONS)
+	var inner := BattleSkin.inner(BattleSkin.OPERATIONS)
+	var x := panel_rect.position.x + inner.position.x + 2
+	var w := inner.size.x - 4
+	var bands := BattleSkin.bands_h(BattleSkin.OPERATIONS)
+	var mid_y := panel_rect.position.y + _band_start(bands, 1, inner.position.y)
+	_exit_btn = UiKit.abs_button("退出战斗（未领取默认放弃）", _on_exit_battle,
+		Rect2i(x, mid_y + 2, w, 30), 12)
+	_canvas.add_child(_exit_btn)
+
+
+func _on_exit_battle() -> void:
+	ctrl.leave_post_battle()
+
+
+func _ctrl_toast(text: String) -> void:
+	# 战斗页用操作栏状态行提示
+	if _ops_state != null:
+		_ops_state.text = text
 
 
 func _surrender() -> void:
@@ -523,6 +826,7 @@ func _refresh_view() -> void:
 		_ops_step.text = "第 %d 步 · %.1f 秒" % [_engine.current_step(), secs]
 		_ops_state.text = "%s · 倍速 ×%.0f" % ["已暂停" if _paused else "进行中", _rate]
 	_update_log()
+	_update_stats()
 
 
 func _refresh_side(view: BattleSide, actor: CombatActor) -> void:

@@ -11,6 +11,9 @@ build/
 # 工具本地状态
 .workbuddy/
 
+# Python 工具缓存（build_system_components_ui.py 等运行产物）
+__pycache__/
+
 # 真渲染截图验证的产物（由 --screenshots 生成，不入库）
 测试单次问题反馈/_shots/
 

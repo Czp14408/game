@@ -11,6 +11,7 @@ var tree: SceneTree
 ## 输入映射必须与 README 与界面提示一致。
 ## 回归背景：大地图曾在 `project.godot` 中被绑到 Backspace（4194308），
 ## 而 README 与页面按钮都写「Tab」，两者不一致——人工试玩时表现为「按 Tab 没反应」。
+## v0.8 起：M 打开信息页（世界节点/任务/情报），Tab 切换状态栏（联动背包）。
 func _test_input_map() -> void:
 	var expected: Dictionary = {
 		"move_up": KEY_W,
@@ -18,7 +19,8 @@ func _test_input_map() -> void:
 		"move_left": KEY_A,
 		"move_right": KEY_D,
 		"interact": KEY_E,
-		"open_world_map": KEY_TAB,
+		"open_world_map": KEY_M,
+		"toggle_status": KEY_TAB,
 		"open_build": KEY_B,
 		"cancel": KEY_ESCAPE,
 		"dev_step": KEY_F,
@@ -271,8 +273,19 @@ func _test_inventory_page_layout(page: Control, ctrl: RunController, label: Stri
 	var rep: Dictionary = page.layout_report()
 	check(rep["canvas_min"] == rep["design"],
 		"%s：设计画布配置为清单尺寸 %s / %s" % [label, rep["canvas_min"], rep["design"]])
-	check(rep["panel_rect"] == InventorySkin.rect(InventorySkin.PANEL),
-		"%s：面板按清单矩形落位 %s" % [label, rep["panel_rect"]])
+	check(rep["panel_rect"] == rep["panel"],
+		"%s：报告落位与面板实际位置一致 %s" % [label, rep["panel_rect"]])
+	if mode == "shop":
+		# §2：商店在屏幕上方横向展开——面板落位由页面覆盖到画布上半部
+		var shop_rect: Rect2i = rep["panel_rect"]
+		var shop_design: Vector2i = rep["design"]
+		check(shop_rect.position.y < shop_design.y / 2.0,
+			"%s：面板位于屏幕上方（y=%d）" % [label, shop_rect.position.y])
+		check(shop_rect.position.x + shop_rect.size.x <= shop_design.x,
+			"%s：面板不越出画布右缘" % label)
+	else:
+		check(rep["panel_rect"] == InventorySkin.rect(InventorySkin.PANEL),
+			"%s：面板按清单矩形落位 %s" % [label, rep["panel_rect"]])
 	check(rep["texture"] == Vector2i(rep["panel"].size),
 		"%s：面板纹理 %s 与实际矩形 %s 同尺寸" % [label, rep["texture"], rep["panel"].size])
 	check(rep["op_bar"].size.x > 0, "%s：操作条已落位 %s" % [label, rep["op_bar"]])
@@ -371,7 +384,20 @@ func _test_hero_art() -> void:
 	check(HeroArt.frame_index(-5.0) == 0, "负相位按第 0 帧处理")
 
 
-## 模拟按一次 Tab。无画面脚本模式下引擎不派发输入事件，只能直接投递给页面的输入处理。
+## 模拟按一次 M（信息页开关）。无画面脚本模式下引擎不派发输入事件，只能直接投递给页面的输入处理。
+func _press_m(page: Node) -> void:
+	if page == null:
+		check(false, "按 M 时当前页面为空")
+		return
+	var ev := InputEventKey.new()
+	ev.keycode = KEY_M
+	ev.physical_keycode = KEY_M
+	ev.pressed = true
+	check(ev.is_action_pressed("open_world_map"), "M 事件能匹配 open_world_map 动作")
+	page._unhandled_input(ev)
+
+
+## 模拟按一次 Tab（状态栏开关）。
 func _press_tab(page: Node) -> void:
 	if page == null:
 		check(false, "按 Tab 时当前页面为空")
@@ -380,7 +406,7 @@ func _press_tab(page: Node) -> void:
 	ev.keycode = KEY_TAB
 	ev.physical_keycode = KEY_TAB
 	ev.pressed = true
-	check(ev.is_action_pressed("open_world_map"), "Tab 事件能匹配 open_world_map 动作")
+	check(ev.is_action_pressed("toggle_status"), "Tab 事件能匹配 toggle_status 动作")
 	page._unhandled_input(ev)
 
 
@@ -468,22 +494,23 @@ func run() -> void:
 	_test_battle_page_layout(battle, ctrl)
 	battle.fast_forward()
 	var page := app.current_page_node()
-	check(page is PagePostBattle, "战斗结束后进入战后反馈页面")
+	# v0.8：普通世界战斗结果与掉落留在同一战斗界面，不进入独立战后反馈页（§3）
+	check(page is PageBattle, "战斗结束后停留在同一战斗界面")
 	check(ctrl.last_result != null, "战斗结果已生成")
 	if ctrl.last_result != null:
 		check(ctrl.last_result.steps > 0, "战斗推进了 %d 个时间步" % ctrl.last_result.steps)
 		check(ctrl.state.money >= money_before, "胜利后货币不减少")
-
-	var post := page as PagePostBattle
-	if post != null:
-		var es := ctrl.encounter_state()
-		if es != null and not es.pending_skill.is_empty():
-			ctrl.resolve_skill_drop(false)
-		ctrl.pickup_drops()
-	check(app.current_page_node() is PagePostBattle, "战后页面在拾取后仍在位")
+	# 结果阶段：掉落居中展示，领取（若胜利有掉落）
+	var es := ctrl.encounter_state()
+	if es != null:
+		if not es.pending_skill.is_empty():
+			ctrl.resolve_skill_drop(true)
+		if not es.pending_drops.is_empty():
+			ctrl.pickup_drops()
+	check(app.current_page_node() is PageBattle, "领取后仍在同一战斗界面")
 
 	ctrl.leave_post_battle()
-	check(app.current_page_node() is PageMinimap, "离开战后回到小地图")
+	check(app.current_page_node() is PageMinimap, "退出战斗回到小地图")
 
 	# --- 付费探索：01 → 03 ---
 	var money_pre := ctrl.state.money
@@ -551,19 +578,30 @@ func run() -> void:
 	ctrl.close_shop()
 	check(app.current_page_node() is PageMinimap, "商店返回小地图")
 
-	# --- 大地图（Tab 作为开关：打开 / 收起） ---
-	check(app.current_page_node() is PageMinimap, "Tab 开关的起点是小地图")
-	_press_tab(app.current_page_node())
-	check(app.current_page_node() is PageWorldMap, "小地图按 Tab 打开大地图")
+	# --- 信息页（M 作为开关：打开 / 收起） + Tab 切换状态栏 ---
+	check(app.current_page_node() is PageMinimap, "M 开关的起点是小地图")
+	# Tab 切换状态栏（联动背包），不打开信息页
+	var mini2 := app.current_page_node() as PageMinimap
+	check(mini2 != null, "小地图在位")
+	if mini2 != null:
+		var status_before := ctrl.status_bar_open()
+		_press_tab(app.current_page_node())
+		check(ctrl.status_bar_open() != status_before, "Tab 切换状态栏显示状态")
+		check(app.current_page_node() is PageMinimap, "Tab 不离开小地图")
+		_press_tab(app.current_page_node())
+		check(ctrl.status_bar_open() == status_before, "再次 Tab 恢复状态栏开关")
+	# M 打开信息页
+	_press_m(app.current_page_node())
+	check(app.current_page_node() is PageWorldMap, "小地图按 M 打开信息页")
 	var wm := app.current_page_node() as PageWorldMap
-	check(wm != null, "大地图页面类型正确")
-	_press_tab(app.current_page_node())
-	check(app.current_page_node() is PageMinimap, "大地图上再按 Tab 收起回小地图")
+	check(wm != null, "信息页页面类型正确")
+	_press_m(app.current_page_node())
+	check(app.current_page_node() is PageMinimap, "信息页上再按 M 收起回小地图")
 	# 按钮路径同样保留
 	ctrl.open_world_map()
-	check(app.current_page_node() is PageWorldMap, "按钮路径：进入大地图页面")
+	check(app.current_page_node() is PageWorldMap, "按钮路径：进入信息页")
 	ctrl.close_world_map()
-	check(app.current_page_node() is PageMinimap, "按钮路径：大地图返回小地图")
+	check(app.current_page_node() is PageMinimap, "按钮路径：信息页返回小地图")
 
 	# --- 回归与阶段 ---
 	ctrl.state.main_completed = true
@@ -770,6 +808,60 @@ func _test_inventory_frames(ctrl: RunController) -> void:
 	ctrl.close_build()
 	ctrl.close_shop()
 	await tree.process_frame
+	await _test_flash_frames(ctrl)
+
+
+## 入包合成闪光（§11）必须在真实帧里守：叠加层的建立与 tween 自毁都依赖帧推进，
+## --script 同步段量不到（与战斗日志同一类「同步全绿、真渲染空白」的缺陷）。
+func _test_flash_frames(ctrl: RunController) -> void:
+	DevTools.mode = DevTools.MODE_RANDOM
+	ctrl.new_trial(&"warrior", &"sturdy", 20261007)
+	ctrl.open_shop("03/gear_shop", RunController.PAGE_MINIMAP)
+	await tree.process_frame
+	await tree.process_frame
+	var page := app.current_page_node()
+	# 注意：PanelInventory.build() 会把节点名固定成 "PanelInventory"（覆盖页面先设的名字）
+	var panel := _named(page, "PanelInventory") as PanelInventory
+	check(panel != null, "闪光帧测：商店共用面板在位")
+	if panel == null:
+		return
+	check(panel.cell_by_id(InventorySkin.ROW_B, "不存在的id") == null,
+		"闪光帧测：cell_by_id 未命中时返回 null")
+	# 买得起就买一件，闪最终落袋格；买不起就闪面板本体（闪光机制相同）
+	var target: Control = panel
+	var shop := ctrl.current_shop()
+	if shop != null:
+		for i in shop.slots.size():
+			var slot: ShopState.Slot = shop.slots[i]
+			if not slot.purchased and not slot.is_skill \
+					and ctrl.economy.price_of_slot(slot) <= ctrl.state.money:
+				var br := ctrl.buy_slot(i)
+				if br.success:
+					# 与真实按钮路径一致：先刷新背包行，再按最终产物 id 找落位格
+					page.call("_refresh")
+					await tree.process_frame
+					var landed := String(br.data.get("instance_id", ""))
+					var cell := panel.cell_by_id(InventorySkin.ROW_B, "bag:%s" % landed)
+					check(cell != null, "闪光帧测：购买产物在背包行有落位格")
+					if cell != null:
+						target = cell
+				break
+	UiKit.flash_control(target)
+	check(_first_flash_rect(target) != null, "闪光帧测：闪光叠加层已建立")
+	# tween 是真实时间驱动（0.45 秒）：无画面模式帧率不封顶，按帧数等不到，
+	# 必须等真实时间走完后断言叠加层已自毁。
+	await tree.create_timer(0.7).timeout
+	await tree.process_frame
+	check(_first_flash_rect(target) == null, "闪光帧测：闪光叠加层渐隐后自毁")
+	ctrl.close_shop()
+	await tree.process_frame
+
+
+func _first_flash_rect(host: Control) -> ColorRect:
+	for c in host.get_children():
+		if c is ColorRect:
+			return c
+	return null
 
 
 ## 战斗日志必须在真实帧推进后才量得到：日志文本节点曾因换行标签的最小高度塌成 1 像素，
