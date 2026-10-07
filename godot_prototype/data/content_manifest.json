@@ -1,0 +1,16 @@
+{
+	"content_version": "0.1.0",
+	"engine_version": "4.7.2-stable",
+	"generated_by": "tools/build_content.gd",
+	"prototype_defaults": [
+		"商店候选池与类别权重",
+		"节点内容配置（商店/敌人/容器/情报 NPC 的分布）",
+		"入口可选弱敌",
+		"容器内容表"
+	],
+	"sources": [
+		"游戏最小战斗与经济方案.md 第 3/4/5/6 节",
+		"游戏可玩原型技术方案.md 第 9/10/12 节",
+		"游戏单局推演.md 第 3 节"
+	]
+}

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShopDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/shop_def.gd" id="1_gh7be"]
+
+[resource]
+script = ExtResource("1_gh7be")
+shop_id = &"skill_shop"
+display_name = "技能商人"
+skill_candidates = Array[StringName]([&"ever_stronger", &"flame_aegis", &"rejuvenating_aegis"])
+quality_weights = PackedFloat64Array(0.85, 0.15, 0, 0)

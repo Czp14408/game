@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TraitDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/trait_def.gd" id="1_tdwy8"]
+
+[resource]
+script = ExtResource("1_tdwy8")
+trait_id = &"warrior"
+display_name = "武者"
+effect_type = &"weapon_damage_flat"
+effect_amount = 2.0
+description = "武器攻击伤害增加 2"

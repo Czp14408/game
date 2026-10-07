@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/effect_def.gd" id="1_6nm0j"]
+[ext_resource type="Script" path="res://scripts/data/item_def.gd" id="2_a3vy5"]
+
+[resource]
+script = ExtResource("2_a3vy5")
+definition_id = &"recovery_draught"
+display_name = "恢复品"
+category = &"consumable"
+tags = Array[StringName]([&"active"])
+tier_values = PackedFloat64Array(30, 30, 30, 30)
+equippable = false
+out_of_combat_heal = 30.0
+fixed_base_price = 6

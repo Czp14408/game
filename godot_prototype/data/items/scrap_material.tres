@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/effect_def.gd" id="1_jful2"]
+[ext_resource type="Script" path="res://scripts/data/item_def.gd" id="2_r7jt3"]
+
+[resource]
+script = ExtResource("2_r7jt3")
+definition_id = &"scrap_material"
+display_name = "材料"
+category = &"material"
+tags = Array[StringName]([&"active"])
+tier_values = PackedFloat64Array(8, 8, 8, 8)
+equippable = false
+fixed_base_price = 8

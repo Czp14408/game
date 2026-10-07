@@ -1,0 +1,89 @@
+{
+  "tickets": {
+    "6": {
+      "number": 7,
+      "url": "https://github.com/Czp14408/game/issues/7",
+      "id": 5740513863,
+      "title": "回归整备并完成第一阶段挑战",
+      "parentLinked": true,
+      "blockersLinked": [
+        5
+      ]
+    },
+    "2": {
+      "number": 3,
+      "url": "https://github.com/Czp14408/game/issues/3",
+      "id": 5740509200,
+      "title": "搜刮交易并装备合成战利品",
+      "parentLinked": true,
+      "blockersLinked": [
+        1
+      ]
+    },
+    "5": {
+      "number": 6,
+      "url": "https://github.com/Czp14408/game/issues/6",
+      "id": 5740512339,
+      "title": "打听并完成武道主线与支线",
+      "parentLinked": true,
+      "blockersLinked": [
+        3,
+        4
+      ]
+    },
+    "1": {
+      "number": 2,
+      "url": "https://github.com/Czp14408/game/issues/2",
+      "id": 5740508163,
+      "title": "开局并完成首场武器战斗",
+      "parentLinked": true,
+      "blockersLinked": []
+    },
+    "8": {
+      "number": 9,
+      "url": "https://github.com/Czp14408/game/issues/9",
+      "id": 5740516120,
+      "title": "导出并验收Windows试玩包",
+      "parentLinked": true,
+      "blockersLinked": [
+        7
+      ]
+    },
+    "7": {
+      "number": 8,
+      "url": "https://github.com/Czp14408/game/issues/8",
+      "id": 5740514932,
+      "title": "验证三条复演和不同构筑取舍",
+      "parentLinked": true,
+      "blockersLinked": [
+        6
+      ]
+    },
+    "4": {
+      "number": 5,
+      "url": "https://github.com/Czp14408/game/issues/5",
+      "id": 5740511468,
+      "title": "付费探索路线并处理守路遭遇",
+      "parentLinked": true,
+      "blockersLinked": [
+        2
+      ]
+    },
+    "3": {
+      "number": 4,
+      "url": "https://github.com/Czp14408/game/issues/4",
+      "id": 5740510322,
+      "title": "组建完整机制构筑并理解战斗结果",
+      "parentLinked": true,
+      "blockersLinked": [
+        2
+      ]
+    }
+  },
+  "repository": "Czp14408/game",
+  "parent": {
+    "url": "https://github.com/Czp14408/game/issues/1",
+    "id": 5740507573,
+    "number": 1
+  }
+}

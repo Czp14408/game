@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TraitDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/trait_def.gd" id="1_ensdq"]
+
+[resource]
+script = ExtResource("1_ensdq")
+trait_id = &"sturdy"
+display_name = "强健"
+kind = &"bloodline"
+effect_type = &"max_hp_flat"
+effect_amount = 20.0
+description = "最大生命增加 20，起始生命 120/120"

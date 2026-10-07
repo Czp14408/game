@@ -1,0 +1,17 @@
+# Godot 缓存（不进入版本管理）
+.godot/
+
+# 导出产物与试玩包（体积大）
+dist/
+build/
+*.exe
+*.pck
+*.tpz
+
+# 工具本地状态
+.workbuddy/
+
+# 系统
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,17 @@
+# Godot 4 缓存（不进入版本管理）
+.godot/
+/android/
+.import/
+
+# 导出产物与试玩包（体积大，不进入版本管理）
+build/
+dist/
+*.exe
+*.pck
+*.zip
+*.tpz
+
+# 系统
+Thumbs.db
+desktop.ini
+.DS_Store

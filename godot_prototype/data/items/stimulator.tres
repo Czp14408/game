@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/effect_def.gd" id="1_xceyb"]
+[ext_resource type="Script" path="res://scripts/data/item_def.gd" id="2_vhkrl"]
+
+[sub_resource type="Resource" id="Resource_xqmok"]
+script = ExtResource("1_xceyb")
+effect_type = &"haste"
+target_rule = &"own_other_active_item"
+
+[resource]
+script = ExtResource("2_vhkrl")
+definition_id = &"stimulator"
+display_name = "鼓劲器"
+category = &"haste"
+tags = Array[StringName]([&"active"])
+cooldown_ms = 6000
+tier_values = PackedFloat64Array(2000, 3000, 4000, 5000)
+effects = Array[ExtResource("1_xceyb")]([SubResource("Resource_xqmok")])

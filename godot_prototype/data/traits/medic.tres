@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TraitDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/trait_def.gd" id="1_llas0"]
+
+[resource]
+script = ExtResource("1_llas0")
+trait_id = &"medic"
+display_name = "医者"
+effect_type = &"heal_computed_flat"
+effect_amount = 2.0
+description = "每次计算治疗量增加 2"

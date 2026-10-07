@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/grant_def.gd" id="1_tj87p"]
+[ext_resource type="Script" path="res://scripts/data/enemy_def.gd" id="2_e4l3d"]
+
+[sub_resource type="Resource" id="Resource_e6jvu"]
+script = ExtResource("1_tj87p")
+definition_id = &"long_blade"
+
+[sub_resource type="Resource" id="Resource_yqaii"]
+script = ExtResource("1_tj87p")
+definition_id = &"ward_charm"
+
+[resource]
+script = ExtResource("2_e4l3d")
+template_id = &"mountain_guard"
+display_name = "山口守路者"
+max_hp = 60.0
+equipment = Array[ExtResource("1_tj87p")]([SubResource("Resource_e6jvu"), SubResource("Resource_yqaii")])

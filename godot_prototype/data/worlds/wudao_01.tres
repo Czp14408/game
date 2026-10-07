@@ -1,0 +1,312 @@
+[gd_resource type="Resource" script_class="WorldDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/connection_def.gd" id="1_x3aq6"]
+[ext_resource type="Script" path="res://scripts/data/node_def.gd" id="2_0b832"]
+[ext_resource type="Script" path="res://scripts/data/quest_def.gd" id="3_ke7i5"]
+[ext_resource type="Script" path="res://scripts/data/world_def.gd" id="4_e16tg"]
+
+[sub_resource type="Resource" id="Resource_vu6o4"]
+script = ExtResource("1_x3aq6")
+node_a = "01"
+node_b = "02"
+
+[sub_resource type="Resource" id="Resource_8rrcb"]
+script = ExtResource("1_x3aq6")
+node_a = "01"
+node_b = "03"
+
+[sub_resource type="Resource" id="Resource_n4gge"]
+script = ExtResource("1_x3aq6")
+node_a = "02"
+node_b = "03"
+
+[sub_resource type="Resource" id="Resource_v6rg7"]
+script = ExtResource("1_x3aq6")
+node_a = "02"
+node_b = "04"
+
+[sub_resource type="Resource" id="Resource_lwycs"]
+script = ExtResource("1_x3aq6")
+node_a = "03"
+node_b = "05"
+
+[sub_resource type="Resource" id="Resource_wvcrh"]
+script = ExtResource("1_x3aq6")
+node_a = "03"
+node_b = "17"
+
+[sub_resource type="Resource" id="Resource_gada3"]
+script = ExtResource("1_x3aq6")
+node_a = "04"
+node_b = "07"
+
+[sub_resource type="Resource" id="Resource_3ug7l"]
+script = ExtResource("1_x3aq6")
+node_a = "05"
+node_b = "06"
+
+[sub_resource type="Resource" id="Resource_hfnyp"]
+script = ExtResource("1_x3aq6")
+node_a = "05"
+node_b = "09"
+
+[sub_resource type="Resource" id="Resource_r17u8"]
+script = ExtResource("1_x3aq6")
+node_a = "06"
+node_b = "08"
+
+[sub_resource type="Resource" id="Resource_gyif4"]
+script = ExtResource("1_x3aq6")
+node_a = "07"
+node_b = "08"
+
+[sub_resource type="Resource" id="Resource_gf8hu"]
+script = ExtResource("1_x3aq6")
+node_a = "08"
+node_b = "11"
+guard_enemy_id = &"mountain_guard"
+
+[sub_resource type="Resource" id="Resource_0juih"]
+script = ExtResource("1_x3aq6")
+node_a = "08"
+node_b = "13"
+
+[sub_resource type="Resource" id="Resource_nr8u1"]
+script = ExtResource("1_x3aq6")
+node_a = "09"
+node_b = "10"
+
+[sub_resource type="Resource" id="Resource_h7bdk"]
+script = ExtResource("1_x3aq6")
+node_a = "10"
+node_b = "13"
+
+[sub_resource type="Resource" id="Resource_jkdci"]
+script = ExtResource("1_x3aq6")
+node_a = "11"
+node_b = "12"
+
+[sub_resource type="Resource" id="Resource_hsj24"]
+script = ExtResource("1_x3aq6")
+node_a = "12"
+node_b = "15"
+
+[sub_resource type="Resource" id="Resource_8g6ka"]
+script = ExtResource("1_x3aq6")
+node_a = "12"
+node_b = "16"
+
+[sub_resource type="Resource" id="Resource_7d81u"]
+script = ExtResource("1_x3aq6")
+node_a = "13"
+node_b = "14"
+
+[sub_resource type="Resource" id="Resource_utn2d"]
+script = ExtResource("1_x3aq6")
+node_a = "14"
+node_b = "15"
+
+[sub_resource type="Resource" id="Resource_4wlri"]
+script = ExtResource("1_x3aq6")
+node_a = "15"
+node_b = "16"
+
+[sub_resource type="Resource" id="Resource_3w74w"]
+script = ExtResource("1_x3aq6")
+node_a = "17"
+node_b = "18"
+
+[sub_resource type="Resource" id="Resource_4nnaq"]
+script = ExtResource("2_0b832")
+node_id = "01"
+display_name = "城镇街市"
+shop_ids = Array[StringName]([&"gear_shop"])
+enemies = Array[StringName]([&"bandit"])
+npc_services = Array[StringName]([&"intel_area", &"quest_side"])
+quest_ids = Array[StringName]([&"side_road_bandit"])
+
+[sub_resource type="Resource" id="Resource_mtc5n"]
+script = ExtResource("2_0b832")
+node_id = "02"
+display_name = "武馆街区"
+shop_ids = Array[StringName]([&"skill_shop"])
+enemies = Array[StringName]([&"bandit"])
+npc_services = Array[StringName]([&"quest_challenge"])
+quest_ids = Array[StringName]([&"side_challenge"])
+
+[sub_resource type="Resource" id="Resource_ikc52"]
+script = ExtResource("2_0b832")
+node_id = "03"
+display_name = "药铺与兵器铺街区"
+shop_ids = Array[StringName]([&"gear_shop", &"weapon_shop", &"clinic"])
+npc_services = Array[StringName]([&"shop"])
+
+[sub_resource type="Resource" id="Resource_yn3u4"]
+script = ExtResource("2_0b832")
+node_id = "04"
+display_name = "城镇后街"
+shop_ids = Array[StringName]([&"gear_shop"])
+npc_services = Array[StringName]([&"shop"])
+
+[sub_resource type="Resource" id="Resource_bnuua"]
+script = ExtResource("2_0b832")
+node_id = "06"
+display_name = "林间驿站"
+shop_ids = Array[StringName]([&"clinic"])
+npc_services = Array[StringName]([&"intel_target"])
+
+[sub_resource type="Resource" id="Resource_6ofqs"]
+script = ExtResource("2_0b832")
+node_id = "07"
+display_name = "山脚村落"
+shop_ids = Array[StringName]([&"gear_shop"])
+npc_services = Array[StringName]([&"shop"])
+has_container = true
+container_table = &"material_small"
+
+[sub_resource type="Resource" id="Resource_oopkb"]
+script = ExtResource("2_0b832")
+node_id = "17"
+display_name = "城镇偏街"
+shop_ids = Array[StringName]([&"weapon_shop"])
+npc_services = Array[StringName]([&"shop"])
+
+[sub_resource type="Resource" id="Resource_jye1v"]
+script = ExtResource("2_0b832")
+node_id = "18"
+display_name = "外围集市"
+shop_ids = Array[StringName]([&"gear_shop"])
+npc_services = Array[StringName]([&"shop"])
+
+[sub_resource type="Resource" id="Resource_04pc2"]
+script = ExtResource("2_0b832")
+node_id = "05"
+display_name = "城外官道"
+layout = &"road"
+enemies = Array[StringName]([&"bandit", &"bandit"])
+has_container = true
+container_table = &"material_small"
+
+[sub_resource type="Resource" id="Resource_ky525"]
+script = ExtResource("2_0b832")
+node_id = "08"
+display_name = "山口"
+layout = &"road"
+enemies = Array[StringName]([&"bandit"])
+has_container = true
+container_table = &"supply_small"
+
+[sub_resource type="Resource" id="Resource_seu1m"]
+script = ExtResource("2_0b832")
+node_id = "09"
+display_name = "河岸"
+layout = &"road"
+enemies = Array[StringName]([&"bandit"])
+has_container = true
+container_table = &"material_small"
+
+[sub_resource type="Resource" id="Resource_auqyi"]
+script = ExtResource("2_0b832")
+node_id = "10"
+display_name = "废弃渡口"
+layout = &"road"
+enemies = Array[StringName]([&"bandit"])
+has_container = true
+container_table = &"material_small"
+
+[sub_resource type="Resource" id="Resource_86csg"]
+script = ExtResource("2_0b832")
+node_id = "11"
+display_name = "土匪前哨"
+layout = &"camp"
+enemies = Array[StringName]([&"bandit"])
+has_container = true
+container_table = &"supply_small"
+
+[sub_resource type="Resource" id="Resource_v83v2"]
+script = ExtResource("2_0b832")
+node_id = "12"
+display_name = "土匪营地"
+layout = &"camp"
+enemies = Array[StringName]([&"camp_blade"])
+has_container = true
+container_table = &"material_small"
+
+[sub_resource type="Resource" id="Resource_4n0li"]
+script = ExtResource("2_0b832")
+node_id = "13"
+display_name = "土匪侧营"
+layout = &"camp"
+enemies = Array[StringName]([&"bandit"])
+has_container = true
+container_table = &"material_small"
+
+[sub_resource type="Resource" id="Resource_mmo1n"]
+script = ExtResource("2_0b832")
+node_id = "14"
+display_name = "后山据点"
+layout = &"camp"
+enemies = Array[StringName]([&"camp_blade"])
+has_container = true
+container_table = &"material_small"
+
+[sub_resource type="Resource" id="Resource_vok7s"]
+script = ExtResource("2_0b832")
+node_id = "15"
+display_name = "头子所在主寨"
+layout = &"camp"
+enemies = Array[StringName]([&"bandit_chief"])
+is_main_target = true
+
+[sub_resource type="Resource" id="Resource_n0kc7"]
+script = ExtResource("2_0b832")
+node_id = "16"
+display_name = "土匪仓场"
+layout = &"camp"
+enemies = Array[StringName]([&"camp_blade"])
+has_container = true
+container_table = &"material_small"
+
+[sub_resource type="Resource" id="Resource_viodo"]
+script = ExtResource("3_ke7i5")
+quest_id = &"main_kill_chief"
+display_name = "寻找并击杀土匪头子"
+is_main = true
+target_enemy_id = &"bandit_chief"
+target_node_id = "15"
+reward_money = 24
+reward_id = &"reward_main_chief"
+description = "区域与准确节点开局均不揭示，可打听或实地发现"
+
+[sub_resource type="Resource" id="Resource_tirli"]
+script = ExtResource("3_ke7i5")
+quest_id = &"side_challenge"
+display_name = "挑战武者"
+objective_type = &"challenge"
+target_enemy_id = &"bandit"
+target_node_id = "02"
+reward_money = 6
+reward_id = &"reward_side_challenge"
+retroactive = true
+description = "胜后现场领取 6"
+
+[sub_resource type="Resource" id="Resource_wrfdu"]
+script = ExtResource("3_ke7i5")
+quest_id = &"side_road_bandit"
+display_name = "击杀路匪"
+target_enemy_id = &"bandit"
+target_node_id = "05"
+reward_money = 6
+reward_id = &"reward_side_road_bandit"
+claim_mode = &"npc_claim"
+claim_node_id = "01"
+retroactive = true
+description = "回 01 委托 NPC 领取 6"
+
+[resource]
+script = ExtResource("4_e16tg")
+world_id = &"wudao_01"
+display_name = "武道任务世界"
+nodes = Array[ExtResource("2_0b832")]([SubResource("Resource_4nnaq"), SubResource("Resource_mtc5n"), SubResource("Resource_ikc52"), SubResource("Resource_yn3u4"), SubResource("Resource_bnuua"), SubResource("Resource_6ofqs"), SubResource("Resource_oopkb"), SubResource("Resource_jye1v"), SubResource("Resource_04pc2"), SubResource("Resource_ky525"), SubResource("Resource_seu1m"), SubResource("Resource_auqyi"), SubResource("Resource_86csg"), SubResource("Resource_v83v2"), SubResource("Resource_4n0li"), SubResource("Resource_mmo1n"), SubResource("Resource_vok7s"), SubResource("Resource_n0kc7")])
+connections = Array[ExtResource("1_x3aq6")]([SubResource("Resource_vu6o4"), SubResource("Resource_8rrcb"), SubResource("Resource_n4gge"), SubResource("Resource_v6rg7"), SubResource("Resource_lwycs"), SubResource("Resource_wvcrh"), SubResource("Resource_gada3"), SubResource("Resource_3ug7l"), SubResource("Resource_hfnyp"), SubResource("Resource_r17u8"), SubResource("Resource_gyif4"), SubResource("Resource_gf8hu"), SubResource("Resource_0juih"), SubResource("Resource_nr8u1"), SubResource("Resource_h7bdk"), SubResource("Resource_jkdci"), SubResource("Resource_hsj24"), SubResource("Resource_8g6ka"), SubResource("Resource_7d81u"), SubResource("Resource_utn2d"), SubResource("Resource_4wlri"), SubResource("Resource_3w74w")])
+quests = Array[ExtResource("3_ke7i5")]([SubResource("Resource_viodo"), SubResource("Resource_tirli"), SubResource("Resource_wrfdu")])

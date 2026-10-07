@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ShopDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/shop_def.gd" id="1_n1lxl"]
+
+[resource]
+script = ExtResource("1_n1lxl")
+shop_id = &"clinic"
+display_name = "医馆"
+item_candidates = Array[StringName]([&"recovery_draught", &"rejuvenator", &"ward_charm"])
+quality_weights = PackedFloat64Array(0.85, 0.15, 0, 0)
+sells_consumable = true

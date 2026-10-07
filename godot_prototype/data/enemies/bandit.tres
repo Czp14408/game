@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/grant_def.gd" id="1_hqabf"]
+[ext_resource type="Script" path="res://scripts/data/enemy_def.gd" id="2_hn8w4"]
+
+[sub_resource type="Resource" id="Resource_yxsit"]
+script = ExtResource("1_hqabf")
+definition_id = &"bandit_knife"
+
+[resource]
+script = ExtResource("2_hn8w4")
+template_id = &"bandit"
+display_name = "普通土匪"
+equipment = Array[ExtResource("1_hqabf")]([SubResource("Resource_yxsit")])

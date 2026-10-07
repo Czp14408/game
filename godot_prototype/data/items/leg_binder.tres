@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/effect_def.gd" id="1_cc8ad"]
+[ext_resource type="Script" path="res://scripts/data/item_def.gd" id="2_jobtf"]
+
+[sub_resource type="Resource" id="Resource_xyjau"]
+script = ExtResource("1_cc8ad")
+effect_type = &"slow"
+target_rule = &"enemy_active_item"
+
+[resource]
+script = ExtResource("2_jobtf")
+definition_id = &"leg_binder"
+display_name = "缚足器"
+category = &"slow"
+tags = Array[StringName]([&"active"])
+size = 2
+cooldown_ms = 7000
+tier_values = PackedFloat64Array(3000, 4000, 5000, 6000)
+effects = Array[ExtResource("1_cc8ad")]([SubResource("Resource_xyjau")])

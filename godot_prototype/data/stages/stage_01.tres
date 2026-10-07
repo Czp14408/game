@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="StageSetDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/grant_def.gd" id="1_gb3sk"]
+[ext_resource type="Script" path="res://scripts/data/stage_set_def.gd" id="2_ccodv"]
+[ext_resource type="Script" path="res://scripts/data/stage_template_def.gd" id="3_yj6ml"]
+
+[sub_resource type="Resource" id="Resource_yqbk2"]
+script = ExtResource("1_gb3sk")
+definition_id = &"rejuvenator"
+
+[sub_resource type="Resource" id="Resource_nqm85"]
+script = ExtResource("1_gb3sk")
+definition_id = &"leg_binder"
+
+[sub_resource type="Resource" id="Resource_233me"]
+script = ExtResource("1_gb3sk")
+definition_id = &"frost_seal"
+
+[sub_resource type="Resource" id="Resource_5ox8f"]
+script = ExtResource("1_gb3sk")
+definition_id = &"long_blade"
+quality = 1
+
+[sub_resource type="Resource" id="Resource_a154h"]
+script = ExtResource("1_gb3sk")
+definition_id = &"short_blade"
+
+[sub_resource type="Resource" id="Resource_u1kn1"]
+script = ExtResource("1_gb3sk")
+definition_id = &"ward_charm"
+
+[sub_resource type="Resource" id="Resource_lstpg"]
+script = ExtResource("3_yj6ml")
+template_id = &"direct_attack"
+display_name = "直接攻击"
+equipment = Array[ExtResource("1_gb3sk")]([SubResource("Resource_5ox8f"), SubResource("Resource_a154h"), SubResource("Resource_u1kn1")])
+
+[sub_resource type="Resource" id="Resource_dk08l"]
+script = ExtResource("1_gb3sk")
+definition_id = &"long_blade"
+
+[sub_resource type="Resource" id="Resource_t4dgm"]
+script = ExtResource("1_gb3sk")
+definition_id = &"tower_shield"
+
+[sub_resource type="Resource" id="Resource_xac5c"]
+script = ExtResource("1_gb3sk")
+definition_id = &"rejuvenator"
+
+[sub_resource type="Resource" id="Resource_gmauv"]
+script = ExtResource("3_yj6ml")
+template_id = &"defense_heal"
+display_name = "防御恢复"
+equipment = Array[ExtResource("1_gb3sk")]([SubResource("Resource_dk08l"), SubResource("Resource_t4dgm"), SubResource("Resource_xac5c")])
+
+[sub_resource type="Resource" id="Resource_ecfjx"]
+script = ExtResource("1_gb3sk")
+definition_id = &"fire_oil"
+
+[sub_resource type="Resource" id="Resource_x7s4n"]
+script = ExtResource("1_gb3sk")
+definition_id = &"poison_needle"
+
+[sub_resource type="Resource" id="Resource_j807p"]
+script = ExtResource("1_gb3sk")
+definition_id = &"ward_charm"
+
+[sub_resource type="Resource" id="Resource_yqygw"]
+script = ExtResource("3_yj6ml")
+template_id = &"damage_over_time"
+display_name = "持续伤害"
+equipment = Array[ExtResource("1_gb3sk")]([SubResource("Resource_ecfjx"), SubResource("Resource_x7s4n"), SubResource("Resource_j807p")])
+
+[resource]
+script = ExtResource("2_ccodv")
+stage_id = &"stage_01"
+display_name = "第一阶段试炼者"
+templates = Array[ExtResource("3_yj6ml")]([SubResource("Resource_lstpg"), SubResource("Resource_gmauv"), SubResource("Resource_yqygw")])
+extra_pool = Array[ExtResource("1_gb3sk")]([SubResource("Resource_yqbk2"), SubResource("Resource_nqm85"), SubResource("Resource_233me")])

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TraitDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/trait_def.gd" id="1_c8ywc"]
+
+[resource]
+script = ExtResource("1_c8ywc")
+trait_id = &"vampire"
+display_name = "吸血"
+kind = &"bloodline"
+effect_type = &"heal_on_weapon_use"
+effect_amount = 1.0
+description = "每次使用武器后治疗自身 1 生命（连锁阶段，不能复活）"

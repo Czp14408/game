@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/effect_def.gd" id="1_gqwbe"]
+[ext_resource type="Script" path="res://scripts/data/item_def.gd" id="2_pj57h"]
+
+[sub_resource type="Resource" id="Resource_vhjpm"]
+script = ExtResource("1_gqwbe")
+emits_event = &"use_weapon"
+
+[resource]
+script = ExtResource("2_pj57h")
+definition_id = &"heavy_hammer"
+display_name = "重锤"
+tags = Array[StringName]([&"active"])
+size = 3
+cooldown_ms = 7000
+tier_values = PackedFloat64Array(30, 45, 65, 90)
+effects = Array[ExtResource("1_gqwbe")]([SubResource("Resource_vhjpm")])

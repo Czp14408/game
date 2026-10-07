@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ItemDef" format=3]
+
+[ext_resource type="Script" path="res://scripts/data/effect_def.gd" id="1_143al"]
+[ext_resource type="Script" path="res://scripts/data/item_def.gd" id="2_xapnp"]
+
+[sub_resource type="Resource" id="Resource_58lfw"]
+script = ExtResource("1_143al")
+effect_type = &"heal"
+target_rule = &"self"
+emits_event = &"heal"
+
+[resource]
+script = ExtResource("2_xapnp")
+definition_id = &"rejuvenator"
+display_name = "回春装置"
+category = &"heal"
+tags = Array[StringName]([&"active"])
+size = 2
+cooldown_ms = 6000
+tier_values = PackedFloat64Array(8, 13, 20, 30)
+effects = Array[ExtResource("1_143al")]([SubResource("Resource_58lfw")])
