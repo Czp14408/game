@@ -5,6 +5,8 @@ extends PageBase
 ## 依据：游戏可玩原型技术方案.md 第 7 节。
 
 const LOG_LINES := 16
+## 玩家侧头像外框（按等比缩放，实际绘制尺寸由素材比例决定）
+const AVATAR_BOX := Vector2(84, 100)
 
 
 class SideView:
@@ -64,11 +66,22 @@ func _build_side(view: SideView, actor: CombatActor, is_player: bool) -> PanelCo
 	var b := UiKit.body(p)
 	view.title = b.get_child(0) as Label
 	view.bar = _make_bar(260, 20, color)
-	b.add_child(view.bar["holder"])
+	# 玩家侧带头像：血条与状态并到头像右侧，而不是在头像下方再堆三行，
+	# 否则 720 高度下玩家栏会比其他两栏高出许多。
+	var head := UiKit.row(8)
+	b.add_child(head)
+	if is_player:
+		var avatar := UiKit.pixel_art(HeroArt.pose(HeroArt.POSE_BATTLE), AVATAR_BOX)
+		avatar.name = "HeroAvatar"
+		head.add_child(avatar)
+	var stats := UiKit.vbox(4)
+	stats.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	head.add_child(stats)
+	stats.add_child(view.bar["holder"])
 	view.hp_caption = UiKit.label("", 14, UiKit.COL_TEXT)
-	b.add_child(view.hp_caption)
+	stats.add_child(view.hp_caption)
 	view.status = UiKit.label("", 13, UiKit.COL_MUTED)
-	b.add_child(view.status)
+	stats.add_child(view.status)
 	b.add_child(UiKit.spacer(6))
 	b.add_child(UiKit.label("物品（释放次数／剩余冷却）", 14, UiKit.COL_ACCENT))
 	if actor != null:

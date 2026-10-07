@@ -17,6 +17,21 @@ func build() -> void:
 	left.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	cols.add_child(left)
 	var lb := UiKit.body(left)
+	# 主角立绘放在左栏顶部：不额外分栏，避免小窗口下三栏把选择按钮挤窄。
+	var hero_row := UiKit.row(12)
+	lb.add_child(hero_row)
+	var portrait := UiKit.pixel_art(HeroArt.pose(HeroArt.POSE_HOME), Vector2(126, 188))
+	portrait.name = "HeroPortrait"
+	hero_row.add_child(portrait)
+	var intro := UiKit.vbox(4)
+	intro.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	hero_row.add_child(intro)
+	intro.add_child(UiKit.label("轮回者", 18, UiKit.COL_ACCENT))
+	intro.add_child(UiKit.label(
+		"被主神空间征召的人。每次踏入武道世界，都要在有限的背包格数与十点战斗栏之间做取舍。",
+		14, UiKit.COL_MUTED))
+	intro.add_child(UiKit.label(
+		"当前形象为单一素材，暂不随职业与血统变化。", 13, UiKit.COL_MUTED))
 	lb.add_child(UiKit.label("职业（被动规则）", 16, UiKit.COL_ACCENT))
 	_prof_buttons.clear()
 	for id in catalog.profession_choices():

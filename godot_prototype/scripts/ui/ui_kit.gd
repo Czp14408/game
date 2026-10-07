@@ -163,6 +163,21 @@ static func spacer(height: int = 6) -> Control:
 	return c
 
 
+## 像素图显示：按给定方框等比缩放、居中，并强制最近邻采样。
+## 为什么显式指定采样：像素图一旦被线性插值就会糊边，且不同显卡驱动默认值不一致，
+## 不能依赖项目默认设置。
+static func pixel_art(tex: Texture2D, box: Vector2) -> TextureRect:
+	var t := TextureRect.new()
+	t.texture = tex
+	t.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	t.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	t.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	t.custom_minimum_size = box
+	t.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	t.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	return t
+
+
 static func scroll() -> ScrollContainer:
 	var s := ScrollContainer.new()
 	s.size_flags_vertical = Control.SIZE_EXPAND_FILL

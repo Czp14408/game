@@ -9,6 +9,270 @@
     204.8,
     204.8
   ],
+  "note": "walk 序列按「序列并集包围盒」统一裁剪，帧间不跳动；pose 为逐帧紧贴裁剪。left 由 right 水平镜像得到，运行时无需再翻转。",
+  "walk": {
+    "down": {
+      "frames": [
+        "walk/down_0.png",
+        "walk/down_1.png",
+        "walk/down_2.png",
+        "walk/down_3.png",
+        "walk/down_4.png"
+      ],
+      "size": [
+        106,
+        186
+      ],
+      "source_row": 0,
+      "source_cells": [
+        "hero_r0c0",
+        "hero_r0c1",
+        "hero_r0c2",
+        "hero_r0c3",
+        "hero_r0c4"
+      ],
+      "mirrored": false
+    },
+    "up": {
+      "frames": [
+        "walk/up_0.png",
+        "walk/up_1.png",
+        "walk/up_2.png",
+        "walk/up_3.png",
+        "walk/up_4.png"
+      ],
+      "size": [
+        106,
+        188
+      ],
+      "source_row": 2,
+      "source_cells": [
+        "hero_r2c0",
+        "hero_r2c1",
+        "hero_r2c2",
+        "hero_r2c3",
+        "hero_r2c4"
+      ],
+      "mirrored": false
+    },
+    "right": {
+      "frames": [
+        "walk/right_0.png",
+        "walk/right_1.png",
+        "walk/right_2.png",
+        "walk/right_3.png",
+        "walk/right_4.png"
+      ],
+      "size": [
+        106,
+        181
+      ],
+      "source_row": 1,
+      "source_cells": [
+        "hero_r1c0",
+        "hero_r1c1",
+        "hero_r1c2",
+        "hero_r1c3",
+        "hero_r1c4"
+      ],
+      "mirrored": false
+    },
+    "left": {
+      "frames": [
+        "walk/left_0.png",
+        "walk/left_1.png",
+        "walk/left_2.png",
+        "walk/left_3.png",
+        "walk/left_4.png"
+      ],
+      "size": [
+        106,
+        181
+      ],
+      "source_row": 1,
+      "source_cells": [
+        "hero_r1c0",
+        "hero_r1c1",
+        "hero_r1c2",
+        "hero_r1c3",
+        "hero_r1c4"
+      ],
+      "mirrored": true,
+      "mirror_of": "right"
+    }
+  },
+  "poses": [
+    {
+      "name": "wave",
+      "label": "挥手",
+      "usage": "打招呼／交谈",
+      "file": "pose/wave.png",
+      "cell": "hero_r3c0",
+      "size": [
+        128,
+        191
+      ],
+      "trim_in_cell": [
+        26,
+        14,
+        128,
+        191
+      ]
+    },
+    {
+      "name": "salute",
+      "label": "敬礼",
+      "usage": "接受任务",
+      "file": "pose/salute.png",
+      "cell": "hero_r3c1",
+      "size": [
+        118,
+        190
+      ],
+      "trim_in_cell": [
+        30,
+        15,
+        118,
+        190
+      ]
+    },
+    {
+      "name": "punch",
+      "label": "出拳",
+      "usage": "战斗页头像",
+      "file": "pose/punch.png",
+      "cell": "hero_r3c2",
+      "size": [
+        137,
+        181
+      ],
+      "trim_in_cell": [
+        43,
+        24,
+        137,
+        181
+      ]
+    },
+    {
+      "name": "cheer_back",
+      "label": "背身高举",
+      "usage": "背影举手（备用）",
+      "file": "pose/cheer_back.png",
+      "cell": "hero_r3c3",
+      "size": [
+        124,
+        190
+      ],
+      "trim_in_cell": [
+        43,
+        15,
+        124,
+        190
+      ]
+    },
+    {
+      "name": "jump",
+      "label": "跳跃欢呼",
+      "usage": "胜利结算立绘",
+      "file": "pose/jump.png",
+      "cell": "hero_r3c4",
+      "size": [
+        156,
+        175
+      ],
+      "trim_in_cell": [
+        24,
+        24,
+        156,
+        175
+      ]
+    },
+    {
+      "name": "think",
+      "label": "低头",
+      "usage": "认输／沮丧结算立绘",
+      "file": "pose/think.png",
+      "cell": "hero_r4c0",
+      "size": [
+        93,
+        181
+      ],
+      "trim_in_cell": [
+        56,
+        23,
+        93,
+        181
+      ]
+    },
+    {
+      "name": "run",
+      "label": "奔跑",
+      "usage": "快速移动姿态",
+      "file": "pose/run.png",
+      "cell": "hero_r4c1",
+      "size": [
+        137,
+        176
+      ],
+      "trim_in_cell": [
+        37,
+        23,
+        137,
+        176
+      ]
+    },
+    {
+      "name": "sprint",
+      "label": "冲刺",
+      "usage": "快速移动姿态",
+      "file": "pose/sprint.png",
+      "cell": "hero_r4c2",
+      "size": [
+        137,
+        175
+      ],
+      "trim_in_cell": [
+        37,
+        11,
+        137,
+        175
+      ]
+    },
+    {
+      "name": "down",
+      "label": "倒地",
+      "usage": "战败结算立绘",
+      "file": "pose/down.png",
+      "cell": "hero_r4c3",
+      "size": [
+        200,
+        86
+      ],
+      "trim_in_cell": [
+        5,
+        75,
+        200,
+        86
+      ]
+    },
+    {
+      "name": "pockets",
+      "label": "插兜站立",
+      "usage": "闲置立绘（备用）",
+      "file": "pose/pockets.png",
+      "cell": "hero_r4c4",
+      "size": [
+        105,
+        187
+      ],
+      "trim_in_cell": [
+        49,
+        17,
+        105,
+        187
+      ]
+    }
+  ],
   "cells": [
     {
       "name": "hero_r0c0",

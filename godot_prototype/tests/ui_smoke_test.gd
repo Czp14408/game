@@ -36,6 +36,59 @@ func _test_input_map() -> void:
 		check(found, "按键 %s 绑定到 %s" % [action, OS.get_keycode_string(want)])
 
 
+## 递归查找界面中挂上的形象节点。
+## 运行时创建的节点 owner 为空，find_child 必须显式传 owned=false，否则找不到。
+func _named(root: Node, node_name: String) -> Node:
+	if root == null:
+		return null
+	return root.find_child(node_name, true, false)
+
+
+## 主角美术资源（R0.5）。
+## 这里钉住三件只在真实渲染下才看得出来、但可以在无画面阶段提前守住的事实：
+## 素材可加载、同一方向各帧等尺寸（否则走动时角色会上下跳）、方向映射与镜像符合预期。
+func _test_hero_art() -> void:
+	for dir in HeroArt.DIRECTIONS:
+		var frames := HeroArt.walk_frames(dir)
+		check(frames.size() == HeroArt.WALK_FRAMES,
+			"行走序列 %s 有 %d 帧" % [dir, HeroArt.WALK_FRAMES])
+		var first := Vector2.ZERO
+		var same := true
+		for i in frames.size():
+			if frames[i] == null:
+				same = false
+				continue
+			if i == 0:
+				first = frames[i].get_size()
+			elif frames[i].get_size() != first:
+				same = false
+		check(same and first.x > 0.0,
+			"行走序列 %s 各帧等尺寸 %.0f×%.0f（保证帧间不跳动）" % [dir, first.x, first.y])
+
+	for key in [HeroArt.POSE_HOME, HeroArt.POSE_BATTLE, HeroArt.POSE_VICTORY,
+			HeroArt.POSE_DEFEAT, HeroArt.POSE_SURRENDER]:
+		var tex := HeroArt.pose(key)
+		check(tex != null and tex.get_width() > 0, "姿势 %s 可加载" % key)
+
+	# 方向映射：纵向分量不弱于横向时取上下；左右靠镜像素材
+	check(HeroArt.direction_of(Vector2.ZERO) == HeroArt.DIR_UP, "静止时朝上站立")
+	check(HeroArt.direction_of(Vector2(0, -1)) == HeroArt.DIR_UP, "向上移动显示背面")
+	check(HeroArt.direction_of(Vector2(0, 1)) == HeroArt.DIR_DOWN, "向下移动显示正面")
+	check(HeroArt.direction_of(Vector2(1, 0)) == HeroArt.DIR_RIGHT, "向右移动显示右侧视")
+	check(HeroArt.direction_of(Vector2(-1, 0)) == HeroArt.DIR_LEFT, "向左移动显示左侧视（镜像）")
+	check(HeroArt.direction_of(Vector2(1, -1)) == HeroArt.DIR_UP, "斜向偏上时取背面")
+	check(HeroArt.direction_of(Vector2(1, -0.2)) == HeroArt.DIR_RIGHT, "斜向偏右时取侧面")
+	check(HeroArt.direction_of(Vector2(0, 1)) != HeroArt.direction_of(Vector2(0, -1)),
+		"正反面不是同一序列")
+
+	# 帧序号回绕：长时间移动不会越界
+	check(HeroArt.frame_index(0.0) == 0, "相位 0 取第 0 帧")
+	check(HeroArt.frame_index(1.0 / HeroArt.WALK_FPS) == 1, "经过一帧时长后取第 1 帧")
+	var big := HeroArt.frame_index(10000.0)
+	check(big >= 0 and big < HeroArt.WALK_FRAMES, "相位很大时帧序号仍在范围内（%d）" % big)
+	check(HeroArt.frame_index(-5.0) == 0, "负相位按第 0 帧处理")
+
+
 ## 模拟按一次 Tab。无画面脚本模式下引擎不派发输入事件，只能直接投递给页面的输入处理。
 func _press_tab(page: Node) -> void:
 	if page == null:
@@ -72,6 +125,10 @@ func run() -> void:
 	check(ctrl != null, "控制器已建立")
 	check(app.current_page_node() is PageHome, "开局进入选择页面")
 
+	# --- 主角美术资源（R0.5） ---
+	_test_hero_art()
+	check(_named(app.current_page_node(), "HeroPortrait") != null, "开局页挂上主角立绘")
+
 	# --- 开局（随机游玩模式） ---
 	DevTools.mode = DevTools.MODE_RANDOM
 	var r := ctrl.new_trial(&"warrior", &"sturdy", 20261007)
@@ -94,6 +151,22 @@ func run() -> void:
 		check(areas.size() == specs.size(), "小地图交互实体数与清单一致（%d）" % areas.size())
 		check(mini.get("_player") != null, "小地图已创建角色实体")
 		check(mini.get("_walls") != null, "小地图已创建地形碰撞")
+		# 主角指示物：四方向行走 + 左右镜像素材
+		var ind := mini.hero_indicator()
+		var ind_tex: Texture2D = ind["texture"]
+		check(ind["node"] != null and ind_tex != null, "小地图指示物已挂上主角素材")
+		check(String(ind["direction"]) == String(HeroArt.DIR_UP), "静止时朝上站立")
+		mini.drive_hero(Vector2(-1, 0), 0.5)
+		check(String(mini.hero_indicator()["direction"]) == String(HeroArt.DIR_LEFT), "向左移动切换左侧视")
+		var left_tex: Texture2D = mini.hero_indicator()["texture"]
+		check(left_tex != null and left_tex.get_width() == ind_tex.get_width(),
+			"左侧视素材与背面素材同宽（镜像不改变画布）")
+		mini.drive_hero(Vector2.ZERO, 0.5)
+		check(String(mini.hero_indicator()["direction"]) == String(HeroArt.DIR_LEFT),
+			"松开按键保持最后朝向且回到站立帧")
+		check(int(mini.hero_indicator()["frame"]) == 0, "静止时回到第 0 帧")
+		check(is_equal_approx(float(ind["collision_radius"]), PageMinimap.PLAYER_RADIUS),
+			"接入形象未改动碰撞半径（%.1f）" % PageMinimap.PLAYER_RADIUS)
 
 	# --- 世界战斗 ---
 	var keys := ctrl.node_enemy_keys()
@@ -107,6 +180,7 @@ func run() -> void:
 
 	var money_before := ctrl.state.money
 	var battle := app.current_page_node() as PageBattle
+	check(_named(battle, "HeroAvatar") != null, "战斗页玩家侧挂上主角头像")
 	battle.fast_forward()
 	var page := app.current_page_node()
 	check(page is PagePostBattle, "战斗结束后进入战后反馈页面")
@@ -238,6 +312,11 @@ func run() -> void:
 	check(app.current_page_node() is PageResult, "认输进入结果页")
 	var result := app.current_page_node() as PageResult
 	check(result != null, "结果页类型正确")
+	check(_named(result, "HeroPortrait") != null, "结果页挂上结局立绘")
+	if result != null:
+		check(String(result._pose_for("stage_complete")) == String(HeroArt.POSE_VICTORY), "阶段完成用欢呼立绘")
+		check(String(result._pose_for("failed")) == String(HeroArt.POSE_DEFEAT), "试炼失败用倒地立绘")
+		check(String(result._pose_for("surrendered")) == String(HeroArt.POSE_SURRENDER), "主动认输用低头立绘")
 	check(ctrl.state.battle_bar.is_empty() and ctrl.state.inventory.is_empty(), "试炼结束后清空携带物")
 
 	# --- 重新开局 ---

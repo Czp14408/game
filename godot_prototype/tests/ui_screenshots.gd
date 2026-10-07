@@ -49,6 +49,16 @@ func _begin() -> void:
 		ctrl.new_trial(&"warrior", &"sturdy", 20261007)
 		await _capture("02_minimap_%s" % tag, ctrl, "小地图")
 
+		# 四方向行进指示物对照：直接驱动指示物再截图。
+		# 无画面断言只能证明「拿到了正确的纹理」，方向是否真的朝对、镜像版是否可用
+		# 仍要看图；这里把四个方向各留一张证据。
+		var mini := app.current_page_node() as PageMinimap
+		if mini != null:
+			for dir in [Vector2(0, 1), Vector2(0, -1), Vector2(1, 0), Vector2(-1, 0)]:
+				mini.drive_hero(dir, 0.22)
+				await _snapshot("02b_walk_%s_%s" % [String(mini.hero_indicator()["direction"]), tag])
+			mini.drive_hero(Vector2.ZERO, 0.0)
+
 		var keys := ctrl.node_enemy_keys()
 		if keys.size() > 0:
 			ctrl.open_pre_battle(keys[0])
@@ -90,6 +100,17 @@ func _begin() -> void:
 		ctrl.surrender()
 		await _capture("11_result_%s" % tag, ctrl, "试炼结果")
 
+		# 三种结局立绘对照：只构造结果页用于截图，不进入任何结局流程，也不改玩法状态。
+		for item in [
+			["12_result_victory", "stage_complete", "击败阶段试炼者"],
+			["13_result_defeat", "failed", "累计三次战败"],
+			["14_result_surrender", "surrendered", "主动认输"],
+		]:
+			var summary: Dictionary = ctrl.state.summary()
+			summary["state"] = item[1]
+			app.show_page(PageResult.new(ctrl, {"summary": summary, "reason": item[2]}))
+			await _snapshot("%s_%s" % [item[0], tag])
+
 		ctrl.start_new_app()
 
 	print("[界面截图验证] 通过 %d，失败 %d，输出 %s" % [_passed, _failed, absolute])
@@ -122,6 +143,14 @@ func _capture(name: String, ctrl: RunController, label: String) -> void:
 	var content := _first_content_width(page)
 	_check(content >= page.size.x - 1.0,
 		"%s：页面内容未被压到最小宽度（%.0f / %.0f）" % [label, content, page.size.x])
+
+
+## 只截图、不重复跑布局断言。用于同一页面下的多处对照（四方向指示物、三种结局立绘）。
+func _snapshot(name: String) -> void:
+	await _idle(0.15)
+	await RenderingServer.frame_post_draw
+	var img := get_viewport().get_texture().get_image()
+	_check(img.save_png("%s/%s.png" % [_out_dir, name]) == OK, "%s 截图已保存" % name)
 
 
 ## 页面第一层内容容器的实际宽度：若被压到最小宽度，说明锚点或滚动容器标记有问题。

@@ -18,8 +18,17 @@ func build() -> void:
 		col = UiKit.COL_ENEMY
 	elif state_name == "surrendered":
 		col = UiKit.COL_MUTED
-	hb.add_child(UiKit.label("结束原因：%s" % reason, 18, col))
-	hb.add_child(UiKit.label("最终状态：%s" % state_name, 15, UiKit.COL_TEXT))
+	# 结局立绘直接取用现成姿势：完成=跳跃欢呼，失败=倒地，认输=低头。
+	var head_row := UiKit.row(12)
+	hb.add_child(head_row)
+	var portrait := UiKit.pixel_art(HeroArt.pose(_pose_for(state_name)), _portrait_box(state_name))
+	portrait.name = "HeroPortrait"
+	head_row.add_child(portrait)
+	var head_col := UiKit.vbox(4)
+	head_col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	head_row.add_child(head_col)
+	head_col.add_child(UiKit.label("结束原因：%s" % reason, 18, col))
+	head_col.add_child(UiKit.label("最终状态：%s" % state_name, 15, UiKit.COL_TEXT))
 
 	var cols := UiKit.row(12)
 	cols.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -73,6 +82,23 @@ func _headline(state_name: String) -> String:
 		"surrendered":
 			return "主动认输"
 	return "试炼结束"
+
+
+## 结局 → 立绘姿势
+func _pose_for(state_name: String) -> StringName:
+	match state_name:
+		"failed":
+			return HeroArt.POSE_DEFEAT
+		"surrendered":
+			return HeroArt.POSE_SURRENDER
+	return HeroArt.POSE_VICTORY
+
+
+## 「倒地」是横躺素材（宽大于高），用同一比例的方框会缩得很小，单独给一套外框。
+func _portrait_box(state_name: String) -> Vector2:
+	if state_name == "failed":
+		return Vector2(200, 88)
+	return Vector2(150, 176)
 
 
 func _join_items(rows: Array) -> String:

@@ -9,10 +9,15 @@ const PLAYER_RADIUS := 11.0
 const AREA_RADIUS := 30.0
 const WALL_THICKNESS := 10.0
 const INSET := 26.0
+## 主角立绘缩放：素材约 106×186，缩到 0.45 后高约 84，与 340 高的房间相称。
+const HERO_SCALE := 0.45
 
 var _canvas: Control
 var _world: Node2D
 var _player: CharacterBody2D
+var _hero: Sprite2D
+var _hero_dir: StringName = HeroArt.DIR_UP
+var _hero_phase := 0.0
 var _walls: StaticBody2D
 var _areas: Array[Area2D] = []
 var _specs: Array[Dictionary] = []
@@ -93,15 +98,25 @@ func _build_room() -> void:
 	pshape.radius = PLAYER_RADIUS
 	pc.shape = pshape
 	_player.add_child(pc)
-	var pvis := Polygon2D.new()
-	pvis.polygon = _circle_points(PLAYER_RADIUS + 1.0)
-	pvis.color = UiKit.COL_PLAYER
-	_player.add_child(pvis)
+	# 主角形象：四方向行走序列。左向的素材由管线水平镜像生成，
+	# 运行时不需要再翻转，避免各页面各写一套翻转逻辑。
+	_hero = Sprite2D.new()
+	_hero.name = "HeroSprite"
+	_hero.texture = HeroArt.walk(HeroArt.DIR_UP, 0)
+	_hero.scale = Vector2(HERO_SCALE, HERO_SCALE)
+	_hero.z_index = 1
+	# 像素图必须最近邻采样，线性插值会糊边。
+	_hero.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	var hero_size := HeroArt.size_of(_hero.texture)
+	# 素材是底对齐的：把脚底对到碰撞圆位置，而不是把图片中心放过去，
+	# 否则角色会「浮」在碰撞圆上方半个身位。
+	_hero.offset = Vector2(0.0, PLAYER_RADIUS - hero_size.y * 0.5)
+	_player.add_child(_hero)
 	var plabel := Label.new()
 	plabel.text = "玩家"
 	plabel.add_theme_font_size_override("font_size", 12)
 	plabel.add_theme_color_override("font_color", UiKit.COL_PLAYER)
-	plabel.position = Vector2(-20, -26)
+	plabel.position = Vector2(-30, -(hero_size.y * HERO_SCALE) - 6.0)
 	plabel.custom_minimum_size = Vector2(60, 0)
 	plabel.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_player.add_child(plabel)
@@ -304,7 +319,7 @@ static func _circle_points(radius: float, segments: int = 22) -> PackedVector2Ar
 # 移动与接触
 # ---------------------------------------------------------------------------
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if _player == null or not _room_built:
 		return
 	var dir := Vector2(
@@ -315,7 +330,38 @@ func _physics_process(_delta: float) -> void:
 		dir = dir.normalized()
 	_player.velocity = dir * MOVE_SPEED
 	_player.move_and_slide()
+	_update_hero(dir, delta)
 	_update_prompt()
+
+
+## 指示物朝向与行走帧。静止时回到该方向的第 0 帧（站立），移动时按时间推进帧序号。
+func _update_hero(dir: Vector2, delta: float) -> void:
+	if _hero == null:
+		return
+	if dir == Vector2.ZERO:
+		_hero_phase = 0.0
+		_hero.texture = HeroArt.walk(_hero_dir, 0)
+		return
+	_hero_dir = HeroArt.direction_of(dir)
+	_hero_phase += delta
+	_hero.texture = HeroArt.walk(_hero_dir, HeroArt.frame_index(_hero_phase))
+
+
+## 指示物当前状态（无画面验证与调试使用）
+func hero_indicator() -> Dictionary:
+	return {
+		"node": _hero,
+		"direction": _hero_dir,
+		"frame": HeroArt.frame_index(_hero_phase),
+		"texture": null if _hero == null else _hero.texture,
+		"scale": HERO_SCALE,
+		"collision_radius": PLAYER_RADIUS,
+	}
+
+
+## 按方向驱动指示物，供无画面验证直接调用（无画面模式下不派发帧循环）
+func drive_hero(dir: Vector2, delta: float) -> void:
+	_update_hero(dir, delta)
 
 
 func _on_body_entered(body: Node2D, area: Area2D) -> void:
