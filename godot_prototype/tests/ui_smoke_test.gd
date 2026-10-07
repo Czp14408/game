@@ -8,6 +8,34 @@ var app: AppRoot
 var tree: SceneTree
 
 
+## 输入映射必须与 README 与界面提示一致。
+## 回归背景：大地图曾在 `project.godot` 中被绑到 Backspace（4194308），
+## 而 README 与页面按钮都写「Tab」，两者不一致——人工试玩时表现为「按 Tab 没反应」。
+func _test_input_map() -> void:
+	var expected: Dictionary = {
+		"move_up": KEY_W,
+		"move_down": KEY_S,
+		"move_left": KEY_A,
+		"move_right": KEY_D,
+		"interact": KEY_E,
+		"open_world_map": KEY_TAB,
+		"open_build": KEY_B,
+		"cancel": KEY_ESCAPE,
+		"dev_step": KEY_F,
+	}
+	for action in expected.keys():
+		var want := int(expected[action])
+		var found := false
+		for ev in InputMap.action_get_events(String(action)):
+			var ke := ev as InputEventKey
+			if ke == null:
+				continue
+			if ke.keycode == want or ke.physical_keycode == want:
+				found = true
+				break
+		check(found, "按键 %s 绑定到 %s" % [action, OS.get_keycode_string(want)])
+
+
 func run() -> void:
 	suite_name = "M4/M5 界面冒烟"
 	tree = Engine.get_main_loop() as SceneTree
@@ -18,6 +46,8 @@ func run() -> void:
 	var catalog := ContentCatalog.load_default()
 	check(catalog.load_errors.is_empty(), "内容目录加载无错误")
 	check(catalog.validate().is_empty(), "参数检查通过")
+
+	_test_input_map()
 
 	app = AppRoot.new()
 	app.name = "SmokeAppRoot"

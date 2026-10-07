@@ -22,7 +22,12 @@ if [[ ! -f "$GODOT_BIN" ]]; then
 	exit 1
 fi
 
-rm -rf "$OUT_DIR"
+# 优先重建整个输出目录；若旧包正被占用（例如试玩窗口还开着）无法删除，
+# 则降级为就地覆盖更新——包内容仍是最新的，只是旧包里的陈旧文件不会被清理。
+if ! rm -rf "$OUT_DIR"; then
+	echo "注意：旧包目录未能删除（可能正被运行中的游戏占用），已改为就地覆盖更新。" >&2
+	echo "      若要得到干净的重建结果，请先关闭游戏窗口再重跑本脚本。" >&2
+fi
 mkdir -p "$PKG_PROJECT"
 
 # 1) 工程本体（排除版本管理与导出产物）
@@ -34,6 +39,13 @@ cp "$GODOT_BIN" "$OUT_DIR/Godot_v4.7.2-stable_win64.exe"
 if [[ -f "$GODOT_CONSOLE" ]]; then
 	cp "$GODOT_CONSOLE" "$OUT_DIR/Godot_v4.7.2-stable_win64_console.exe"
 fi
+
+# 2.5) 随包附带验收文档，便于试玩者按项核对
+for doc in "人工验收清单.md" "游戏原型已知问题清单.md"; do
+	if [[ -f "$GAME_DIR/$doc" ]]; then
+		cp "$GAME_DIR/$doc" "$OUT_DIR/$doc"
+	fi
+done
 
 # 3) 启动脚本（只使用 %~dp0，不含非 ASCII 路径）
 cat > "$OUT_DIR/run_game.bat" <<'BAT'
@@ -97,12 +109,13 @@ cat > "$OUT_DIR/README.md" <<'MD'
 | 脚本 | 作用 |
 | --- | --- |
 | `run_game.bat` | 开始游戏（键鼠） |
-| `run_verify.bat` | 无画面规则与界面验证（621 项断言，需要控制台窗口） |
+| `run_verify.bat` | 无画面规则与界面验证（630 项断言，需要控制台窗口） |
 | `run_autodemo.bat` | 无画面自动演示：真实帧循环下走通整局 |
 | `run_screenshots.bat` | 真实渲染下逐页截图 + 布局断言（需要显示环境，产出 `screenshots/`） |
 | `export_release.bat` | 产出标准单文件 `wudao_prototype.exe`（需先安装同版本导出模板） |
 
-操作：`WASD`/方向键移动，`E` 交互，`Tab` 大地图，`B` 构筑，`Esc` 关闭界面/战斗中暂停，`F` 战斗中单步。
+操作：`WASD`/方向键移动，`E` 交互，`Tab` 大地图（仅小地图），`B` 构筑（仅小地图），`Esc` 战斗中暂停/继续，`F` 战斗中单步。
+商店、构筑、大地图等界面用界面内的按钮返回。
 
 ## 关于标准导出
 
@@ -128,10 +141,12 @@ wudao_prototype/
 
 每次试炼的 JSONL 事件日志与 JSON 摘要写在 `%APPDATA%\Godot\app_userdata\武道试炼原型\logs\`。
 
-## 已知问题
+## 已知问题与人工验收
 
-完整清单见工程上级目录的 `游戏原型已知问题清单.md`，
-其中明确区分了「已自动验证」与「需要人工在有显示环境下确认」的项。
+完整清单见包内的 `游戏原型已知问题清单.md`，其中明确区分了「已自动验证」与「需要人工在有显示环境下确认」的项。
+
+需要真人操作核对的项见包内 `人工验收清单.md`（A–J 十组，含键鼠手感、中文缺字、窗口缩放、
+满包可继续操作、三条路线的玩法验收与 15 分钟节奏观察）。
 MD
 
 echo "已生成便携试玩包：$OUT_DIR"
