@@ -334,10 +334,11 @@ func _deity_store(ctrl: RunController) -> void:
 
 
 func _test_route_normal() -> void:
+	# 阶段对手固定为「持续伤害＋治疗」，与 DevTools.stage_override() 及文档 §7.1 的样本一致
 	var ctrl := _new_run(20261007, {
 		"02": "bandit_knife", "05": "material", "08": "ward_charm",
 		"12": "long_blade", "15": "heavy_hammer",
-	}, {})
+	}, {"template": &"damage_over_time", "extra": &"rejuvenator"})
 	_route_shops(ctrl)
 	ctrl.talk_to(NodeDef.NPC_QUEST_SIDE)
 	eq(int(ctrl.state.current_hp), 120, "开局生命 120")
@@ -438,6 +439,18 @@ func _test_route_normal() -> void:
 	eq(ctrl.state.current_hp, 120.0, "主神治疗免费回满")
 	eq(ctrl.state.money, 27, "免费治疗不扣币")
 	check(ctrl.encounters.ensure_stage_opponent(ctrl.state).size() > 0, "应生成阶段对手")
+
+	# 阶段战斗：文档 §7.1 记录 24 秒、剩 48 生命、累计 0 次战败
+	ctrl.confirm_stage_battle()
+	ctrl.active_engine.run_all()
+	var boss: BattleResult = ctrl.active_engine.result()
+	check(boss.winner_is_player(), "正常路线补强后应击败阶段对手")
+	eq(boss.time_seconds, 24.0, "正常路线阶段耗时 24 秒")
+	eq(int(boss.player_hp), 48, "正常路线阶段战后生命 48")
+	ctrl.settle_stage_battle(ctrl.active_engine)
+	eq(ctrl.state.defeats, 0, "正常路线阶段战 0 次战败")
+	eq(ctrl.state.money, 27, "正常路线终局现金 27")
+	eq(ctrl.state.state, RunState.STATE_STAGE_COMPLETE, "正常路线应取得下一阶段资格")
 
 
 func _test_route_low() -> void:

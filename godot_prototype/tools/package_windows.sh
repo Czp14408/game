@@ -35,13 +35,32 @@ cp -r "$PROJECT_DIR/." "$PKG_PROJECT/"
 rm -rf "$PKG_PROJECT/.git" "$PKG_PROJECT/dist" "$PKG_PROJECT/build"
 
 # 2) 引擎运行程序
-cp "$GODOT_BIN" "$OUT_DIR/Godot_v4.7.2-stable_win64.exe"
+# 内容一致时直接跳过：某些环境下对已存在的同名大文件重写会被拒（Device or resource busy），
+# 而文件其实完全相同，此时不该中断整次打包。
+copy_binary() {
+	local src="$1" dst="$2"
+	if [[ -f "$dst" ]] && cmp -s "$src" "$dst"; then
+		echo "跳过（内容一致）：$(basename "$dst")"
+		return 0
+	fi
+	if cp "$src" "$dst" 2>/dev/null; then
+		return 0
+	fi
+	if [[ -f "$dst" ]] && cmp -s "$src" "$dst"; then
+		echo "跳过（覆盖被拒但内容一致）：$(basename "$dst")"
+		return 0
+	fi
+	echo "警告：无法更新 $(basename "$dst")，包内该文件可能不是最新版本。" >&2
+	return 1
+}
+
+copy_binary "$GODOT_BIN" "$OUT_DIR/Godot_v4.7.2-stable_win64.exe" || true
 if [[ -f "$GODOT_CONSOLE" ]]; then
-	cp "$GODOT_CONSOLE" "$OUT_DIR/Godot_v4.7.2-stable_win64_console.exe"
+	copy_binary "$GODOT_CONSOLE" "$OUT_DIR/Godot_v4.7.2-stable_win64_console.exe" || true
 fi
 
 # 2.5) 随包附带验收文档，便于试玩者按项核对
-for doc in "人工验收清单.md" "游戏原型已知问题清单.md"; do
+for doc in "人工验收清单.md" "游戏原型已知问题清单.md" "R0收尾证据.md"; do
 	if [[ -f "$GAME_DIR/$doc" ]]; then
 		cp "$GAME_DIR/$doc" "$OUT_DIR/$doc"
 	fi
@@ -87,6 +106,20 @@ pause
 endlocal
 BAT
 
+cat > "$OUT_DIR/run_evidence.bat" <<'BAT'
+@echo off
+setlocal
+cd /d "%~dp0"
+rem 重新生成 R0 收尾的三份证据（复演账本 / 构筑方向样本 / 背包容量压力样本）
+set G=Godot_v4.7.2-stable_win64_console.exe
+"%G%" --headless --path "%~dp0project" --script res://tests/replay_ledger.gd  -- --out "%~dp0evidence"
+"%G%" --headless --path "%~dp0project" --script res://tests/build_samples.gd  -- --out "%~dp0evidence"
+"%G%" --headless --path "%~dp0project" --script res://tests/carry_pressure.gd -- --out "%~dp0evidence"
+echo 证据已写入 %~dp0evidence
+pause
+endlocal
+BAT
+
 cat > "$OUT_DIR/export_release.bat" <<'BAT'
 @echo off
 setlocal
@@ -109,9 +142,10 @@ cat > "$OUT_DIR/README.md" <<'MD'
 | 脚本 | 作用 |
 | --- | --- |
 | `run_game.bat` | 开始游戏（键鼠） |
-| `run_verify.bat` | 无画面规则与界面验证（635 项断言，需要控制台窗口） |
+| `run_verify.bat` | 无画面规则与界面验证（当前 646 项断言，需要控制台窗口） |
 | `run_autodemo.bat` | 无画面自动演示：真实帧循环下走通整局 |
 | `run_screenshots.bat` | 真实渲染下逐页截图 + 布局断言（需要显示环境，产出 `screenshots/`） |
+| `run_evidence.bat` | 重新生成三份 R0 证据（复演账本 / 构筑方向样本 / 背包容量压力），产出 `evidence/` |
 | `export_release.bat` | 产出标准单文件 `wudao_prototype.exe`（需先安装同版本导出模板） |
 
 操作：`WASD`/方向键移动，`E` 交互，`Tab` 打开/收起大地图，`B` 构筑（仅小地图），`Esc` 战斗中暂停/继续，`F` 战斗中单步。
@@ -133,7 +167,8 @@ cat > "$OUT_DIR/README.md" <<'MD'
 ```
 wudao_prototype/
 ├─ Godot_v4.7.2-stable_win64.exe          同版本运行程序
-├─ run_game.bat / run_verify.bat / run_autodemo.bat / run_screenshots.bat / export_release.bat
+├─ run_game.bat / run_verify.bat / run_autodemo.bat / run_screenshots.bat
+├─ run_evidence.bat / export_release.bat
 └─ project/                                可编辑工程（data / scripts / scenes / tests / tools）
 ```
 
@@ -147,6 +182,12 @@ wudao_prototype/
 
 需要真人操作核对的项见包内 `人工验收清单.md`（A–J 十组，含键鼠手感、中文缺字、窗口缩放、
 满包可继续操作、三条路线的玩法验收与 15 分钟节奏观察）。
+
+## 可复查的证据
+
+`R0收尾证据.md` 汇总了三条固定路线的逐场账本、三类构筑方向的供给样本与背包容量压力样本，
+并给出与设计文档的逐项对照（含一处尚未成立的方向，如实记录）。
+运行 `run_evidence.bat` 可在本包内重新生成全部三份证据。
 MD
 
 echo "已生成便携试玩包：$OUT_DIR"

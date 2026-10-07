@@ -255,6 +255,10 @@ func run() -> void:
 		if DevTools.is_replay():
 			check(not ctrl.encounters.drop_override.is_empty(), "回放模式 %s 有固定掉落序列" % mode)
 			check(not ctrl.state.node_state("__deity__").shops.is_empty(), "回放模式 %s 已安装固定主神库存" % mode)
+		else:
+			# 正常随机游玩不得加载任何固定供给（工单 07 验收条目 1）
+			check(ctrl.encounters.drop_override.is_empty(), "随机游玩不加载固定掉落序列")
+			check(ctrl.encounters.stage_override.is_empty(), "随机游玩不加载固定阶段对手")
 
 	# --- 战斗实验室 ---
 	DevTools.mode = DevTools.MODE_BATTLE_LAB

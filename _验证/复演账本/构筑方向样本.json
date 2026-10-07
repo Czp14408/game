@@ -1,0 +1,1486 @@
+{
+  "assertions": {
+    "failed": 0,
+    "failures": [],
+    "passed": 16
+  },
+  "content_version": "0.1.0",
+  "engine": "4.7.2-stable (official)",
+  "generated_at": "2026-10-07T18:10:27",
+  "player_max_hp": 120.0,
+  "results": [
+    {
+      "design_note": "越战越勇在「使用护盾」后成长全部武器本场伤害，与护身佩的「使用武器后自身充能」形成双向联动。",
+      "direction": "① 武器护盾方向",
+      "key": "weapon_shield",
+      "rows": [
+        {
+          "enemy_hp": 0,
+          "hp": 0,
+          "label": "直接攻击＋回春装置",
+          "outcome": "战败",
+          "same_step": true,
+          "seconds": "32",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 15,
+          "label": "直接攻击＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "31",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 19,
+          "label": "直接攻击＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "31",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 15,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "35",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 70,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "33",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 70,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "33",
+          "win": true
+        },
+        {
+          "enemy_hp": 13,
+          "hp": 0,
+          "label": "持续伤害＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "30",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 32,
+          "label": "持续伤害＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "26",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 32,
+          "label": "持续伤害＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "26",
+          "win": true
+        }
+      ],
+      "supply": "起始青铜长刀；03 号节点固定库存护身佩(10)、短刃(6)；主神固定库存越战越勇(12)",
+      "total": 9,
+      "variant": "补强前：长刀＋护身佩＋短刃",
+      "wins": 7
+    },
+    {
+      "design_note": "越战越勇在「使用护盾」后成长全部武器本场伤害，与护身佩的「使用武器后自身充能」形成双向联动。",
+      "direction": "① 武器护盾方向",
+      "key": "weapon_shield",
+      "rows": [
+        {
+          "enemy_hp": 0,
+          "hp": 36,
+          "label": "直接攻击＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "24",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 62,
+          "label": "直接攻击＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "22",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 62,
+          "label": "直接攻击＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "21",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 120,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "28",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 120,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "22",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 120,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "22",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 60,
+          "label": "持续伤害＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "22",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 84,
+          "label": "持续伤害＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "18",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 84,
+          "label": "持续伤害＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "18",
+          "win": true
+        }
+      ],
+      "supply": "起始青铜长刀；03 号节点固定库存护身佩(10)、短刃(6)；主神固定库存越战越勇(12)",
+      "total": 9,
+      "variant": "补强后：＋青铜越战越勇(12)",
+      "wins": 9
+    },
+    {
+      "design_note": "越战越勇在「使用护盾」后成长全部武器本场伤害，与护身佩的「使用武器后自身充能」形成双向联动。",
+      "direction": "① 武器护盾方向",
+      "key": "weapon_shield",
+      "rows": [
+        {
+          "enemy_hp": 0,
+          "hp": 7,
+          "label": "直接攻击＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "31",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 44,
+          "label": "直接攻击＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "26",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 48,
+          "label": "直接攻击＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "26",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 70,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "33",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 105,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "31",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 105,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "31",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 48,
+          "label": "持续伤害＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "24",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 66,
+          "label": "持续伤害＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "22",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 66,
+          "label": "持续伤害＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "21",
+          "win": true
+        }
+      ],
+      "supply": "起始青铜长刀；03 号节点固定库存护身佩(10)、短刃(6)；主神固定库存越战越勇(12)",
+      "total": 9,
+      "variant": "对照补强：第二件短刃合成白银短刃(6)",
+      "wins": 9
+    },
+    {
+      "design_note": "越战越勇在「使用护盾」后成长全部武器本场伤害，与护身佩的「使用武器后自身充能」形成双向联动。",
+      "direction": "① 武器护盾方向",
+      "key": "weapon_shield",
+      "rows": [
+        {
+          "enemy_hp": 0,
+          "hp": 10,
+          "label": "直接攻击＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "28",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 10,
+          "label": "直接攻击＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "28",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 10,
+          "label": "直接攻击＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "28",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 58,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "33",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 108,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "30",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 108,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "29",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 48,
+          "label": "持续伤害＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "24",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 66,
+          "label": "持续伤害＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "21",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 66,
+          "label": "持续伤害＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "21",
+          "win": true
+        }
+      ],
+      "supply": "起始青铜长刀；03 号节点固定库存护身佩(10)、短刃(6)；主神固定库存越战越勇(12)",
+      "total": 9,
+      "variant": "对照补强：＋重锤(14)",
+      "wins": 9
+    },
+    {
+      "design_note": "越战越勇在「使用护盾」后成长全部武器本场伤害，与护身佩的「使用武器后自身充能」形成双向联动。",
+      "direction": "① 武器护盾方向",
+      "key": "weapon_shield",
+      "rows": [
+        {
+          "enemy_hp": 0,
+          "hp": 84,
+          "label": "直接攻击＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "24",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 96,
+          "label": "直接攻击＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "22",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 102,
+          "label": "直接攻击＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "21",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 120,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "28",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 120,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "22",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 120,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "22",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 60,
+          "label": "持续伤害＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "22",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 84,
+          "label": "持续伤害＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "18",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 84,
+          "label": "持续伤害＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "18",
+          "win": true
+        }
+      ],
+      "supply": "起始青铜长刀；03 号节点固定库存护身佩(10)、短刃(6)；主神固定库存越战越勇(12)",
+      "total": 9,
+      "variant": "上界参考：长刀＋白银护身佩＋短刃＋越战越勇",
+      "wins": 9
+    },
+    {
+      "design_note": "火油器灼烧、毒针器剧毒均为持续伤害，与技能「火势护体」（施加灼烧后获得护盾）联动；该技能在固定验证库存中无来源，此处作为显式测试输入注入。",
+      "direction": "② 持续伤害方向",
+      "key": "damage_over_time",
+      "rows": [
+        {
+          "enemy_hp": 0,
+          "hp": 0,
+          "label": "直接攻击＋回春装置",
+          "outcome": "战败",
+          "same_step": true,
+          "seconds": "32",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 15,
+          "label": "直接攻击＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "31",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 19,
+          "label": "直接攻击＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "31",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 15,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "35",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 70,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "33",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 70,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "33",
+          "win": true
+        },
+        {
+          "enemy_hp": 13,
+          "hp": 0,
+          "label": "持续伤害＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "30",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 32,
+          "label": "持续伤害＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "26",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 32,
+          "label": "持续伤害＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "26",
+          "win": true
+        }
+      ],
+      "supply": "03 号节点固定库存火油器(10)；主神固定库存毒针器(10)。战斗栏需 2＋2 格。",
+      "total": 9,
+      "variant": "补强前：长刀＋护身佩＋短刃",
+      "wins": 7
+    },
+    {
+      "design_note": "火油器灼烧、毒针器剧毒均为持续伤害，与技能「火势护体」（施加灼烧后获得护盾）联动；该技能在固定验证库存中无来源，此处作为显式测试输入注入。",
+      "direction": "② 持续伤害方向",
+      "key": "damage_over_time",
+      "rows": [
+        {
+          "enemy_hp": 30,
+          "hp": 0,
+          "label": "直接攻击＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "20",
+          "win": false
+        },
+        {
+          "enemy_hp": 26,
+          "hp": 0,
+          "label": "直接攻击＋缚足器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "20",
+          "win": false
+        },
+        {
+          "enemy_hp": 26,
+          "hp": 0,
+          "label": "直接攻击＋寒封器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "20",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 36,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "28",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 48,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "26",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 48,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "26",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 15,
+          "label": "持续伤害＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "23",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 32,
+          "label": "持续伤害＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "21",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 32,
+          "label": "持续伤害＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "21",
+          "win": true
+        }
+      ],
+      "supply": "03 号节点固定库存火油器(10)；主神固定库存毒针器(10)。战斗栏需 2＋2 格。",
+      "total": 9,
+      "variant": "纯持续伤害：长刀＋火油器＋毒针器",
+      "wins": 6
+    },
+    {
+      "design_note": "火油器灼烧、毒针器剧毒均为持续伤害，与技能「火势护体」（施加灼烧后获得护盾）联动；该技能在固定验证库存中无来源，此处作为显式测试输入注入。",
+      "direction": "② 持续伤害方向",
+      "key": "damage_over_time",
+      "rows": [
+        {
+          "enemy_hp": 0,
+          "hp": 0,
+          "label": "直接攻击＋回春装置",
+          "outcome": "战败",
+          "same_step": true,
+          "seconds": "20",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 16,
+          "label": "直接攻击＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "16",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 16,
+          "label": "直接攻击＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "16",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 60,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "20",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 60,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "20",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 60,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "20",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 68,
+          "label": "持续伤害＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "16",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 76,
+          "label": "持续伤害＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "15",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 76,
+          "label": "持续伤害＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "15",
+          "win": true
+        }
+      ],
+      "supply": "03 号节点固定库存火油器(10)；主神固定库存毒针器(10)。战斗栏需 2＋2 格。",
+      "total": 9,
+      "variant": "武器＋持续伤害：长刀＋短刃＋火油器＋毒针器",
+      "wins": 8
+    },
+    {
+      "design_note": "火油器灼烧、毒针器剧毒均为持续伤害，与技能「火势护体」（施加灼烧后获得护盾）联动；该技能在固定验证库存中无来源，此处作为显式测试输入注入。",
+      "direction": "② 持续伤害方向",
+      "key": "damage_over_time",
+      "rows": [
+        {
+          "enemy_hp": 0,
+          "hp": 0,
+          "label": "直接攻击＋回春装置",
+          "outcome": "战败",
+          "same_step": true,
+          "seconds": "20",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 20,
+          "label": "直接攻击＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "16",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 22,
+          "label": "直接攻击＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "16",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 66,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "20",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 66,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "20",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 66,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "20",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 74,
+          "label": "持续伤害＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "16",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 80,
+          "label": "持续伤害＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "15",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 80,
+          "label": "持续伤害＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "15",
+          "win": true
+        }
+      ],
+      "supply": "03 号节点固定库存火油器(10)；主神固定库存毒针器(10)。战斗栏需 2＋2 格。",
+      "total": 9,
+      "variant": "武器＋持续伤害＋火势护体",
+      "wins": 8
+    },
+    {
+      "design_note": "火油器灼烧、毒针器剧毒均为持续伤害，与技能「火势护体」（施加灼烧后获得护盾）联动；该技能在固定验证库存中无来源，此处作为显式测试输入注入。",
+      "direction": "② 持续伤害方向",
+      "key": "damage_over_time",
+      "rows": [
+        {
+          "enemy_hp": 0,
+          "hp": 64,
+          "label": "直接攻击＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "16",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 64,
+          "label": "直接攻击＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "16",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 64,
+          "label": "直接攻击＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "16",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 120,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "17",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 120,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "15",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 120,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "15",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 100,
+          "label": "持续伤害＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "14",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 104,
+          "label": "持续伤害＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "13",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 104,
+          "label": "持续伤害＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "13",
+          "win": true
+        }
+      ],
+      "supply": "03 号节点固定库存火油器(10)；主神固定库存毒针器(10)。战斗栏需 2＋2 格。",
+      "total": 9,
+      "variant": "满战斗栏：长刀＋短刃＋护身佩＋火油器＋毒针器＋越战越勇",
+      "wins": 9
+    },
+    {
+      "design_note": "回春装置为战斗中治疗，与技能「回春护体」（治疗事件后获得护盾，满血也触发）联动，医者职业使每次计算治疗量 +2。该技能在固定验证库存中无来源，此处作为显式测试输入注入。",
+      "direction": "③ 治疗联动方向",
+      "key": "heal_synergy",
+      "rows": [
+        {
+          "enemy_hp": 0,
+          "hp": 0,
+          "label": "直接攻击＋回春装置",
+          "outcome": "战败",
+          "same_step": true,
+          "seconds": "32",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 15,
+          "label": "直接攻击＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "31",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 19,
+          "label": "直接攻击＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "31",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 15,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "35",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 70,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "33",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 70,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "33",
+          "win": true
+        },
+        {
+          "enemy_hp": 13,
+          "hp": 0,
+          "label": "持续伤害＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "30",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 32,
+          "label": "持续伤害＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "26",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 32,
+          "label": "持续伤害＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "26",
+          "win": true
+        }
+      ],
+      "supply": "03 号节点固定库存回春装置(10)；补给店恢复品(6)；主神固定库存回春装置(10)。",
+      "total": 9,
+      "variant": "补强前：长刀＋护身佩＋短刃",
+      "wins": 7
+    },
+    {
+      "design_note": "回春装置为战斗中治疗，与技能「回春护体」（治疗事件后获得护盾，满血也触发）联动，医者职业使每次计算治疗量 +2。该技能在固定验证库存中无来源，此处作为显式测试输入注入。",
+      "direction": "③ 治疗联动方向",
+      "key": "heal_synergy",
+      "rows": [
+        {
+          "enemy_hp": 50,
+          "hp": 0,
+          "label": "直接攻击＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "33",
+          "win": false
+        },
+        {
+          "enemy_hp": 50,
+          "hp": 0,
+          "label": "直接攻击＋缚足器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "33",
+          "win": false
+        },
+        {
+          "enemy_hp": 50,
+          "hp": 0,
+          "label": "直接攻击＋寒封器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "33",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 15,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "35",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 25,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "35",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 25,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "35",
+          "win": true
+        },
+        {
+          "enemy_hp": 66,
+          "hp": 0,
+          "label": "持续伤害＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "32",
+          "win": false
+        },
+        {
+          "enemy_hp": 46,
+          "hp": 0,
+          "label": "持续伤害＋缚足器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "32",
+          "win": false
+        },
+        {
+          "enemy_hp": 46,
+          "hp": 0,
+          "label": "持续伤害＋寒封器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "32",
+          "win": false
+        }
+      ],
+      "supply": "03 号节点固定库存回春装置(10)；补给店恢复品(6)；主神固定库存回春装置(10)。",
+      "total": 9,
+      "variant": "治疗站场：长刀＋回春装置＋护身佩（医者）",
+      "wins": 3
+    },
+    {
+      "design_note": "回春装置为战斗中治疗，与技能「回春护体」（治疗事件后获得护盾，满血也触发）联动，医者职业使每次计算治疗量 +2。该技能在固定验证库存中无来源，此处作为显式测试输入注入。",
+      "direction": "③ 治疗联动方向",
+      "key": "heal_synergy",
+      "rows": [
+        {
+          "enemy_hp": 84,
+          "hp": 0,
+          "label": "直接攻击＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "26",
+          "win": false
+        },
+        {
+          "enemy_hp": 68,
+          "hp": 0,
+          "label": "直接攻击＋缚足器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "26",
+          "win": false
+        },
+        {
+          "enemy_hp": 64,
+          "hp": 0,
+          "label": "直接攻击＋寒封器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "26",
+          "win": false
+        },
+        {
+          "enemy_hp": 21,
+          "hp": 0,
+          "label": "防御恢复＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "34",
+          "win": false
+        },
+        {
+          "enemy_hp": 13,
+          "hp": 0,
+          "label": "防御恢复＋缚足器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "34",
+          "win": false
+        },
+        {
+          "enemy_hp": 9,
+          "hp": 0,
+          "label": "防御恢复＋寒封器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "34",
+          "win": false
+        },
+        {
+          "enemy_hp": 52,
+          "hp": 0,
+          "label": "持续伤害＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "28",
+          "win": false
+        },
+        {
+          "enemy_hp": 40,
+          "hp": 0,
+          "label": "持续伤害＋缚足器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "28",
+          "win": false
+        },
+        {
+          "enemy_hp": 36,
+          "hp": 0,
+          "label": "持续伤害＋寒封器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "28",
+          "win": false
+        }
+      ],
+      "supply": "03 号节点固定库存回春装置(10)；补给店恢复品(6)；主神固定库存回春装置(10)。",
+      "total": 9,
+      "variant": "武器＋治疗：长刀＋短刃＋回春装置（医者）",
+      "wins": 0
+    },
+    {
+      "design_note": "回春装置为战斗中治疗，与技能「回春护体」（治疗事件后获得护盾，满血也触发）联动，医者职业使每次计算治疗量 +2。该技能在固定验证库存中无来源，此处作为显式测试输入注入。",
+      "direction": "③ 治疗联动方向",
+      "key": "heal_synergy",
+      "rows": [
+        {
+          "enemy_hp": 76,
+          "hp": 0,
+          "label": "直接攻击＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "28",
+          "win": false
+        },
+        {
+          "enemy_hp": 64,
+          "hp": 0,
+          "label": "直接攻击＋缚足器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "28",
+          "win": false
+        },
+        {
+          "enemy_hp": 60,
+          "hp": 0,
+          "label": "直接攻击＋寒封器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "28",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 0,
+          "label": "防御恢复＋回春装置",
+          "outcome": "战败",
+          "same_step": true,
+          "seconds": "35",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 0,
+          "label": "防御恢复＋缚足器",
+          "outcome": "战败",
+          "same_step": true,
+          "seconds": "35",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 0,
+          "label": "防御恢复＋寒封器",
+          "outcome": "战败",
+          "same_step": true,
+          "seconds": "35",
+          "win": false
+        },
+        {
+          "enemy_hp": 52,
+          "hp": 0,
+          "label": "持续伤害＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "29",
+          "win": false
+        },
+        {
+          "enemy_hp": 40,
+          "hp": 0,
+          "label": "持续伤害＋缚足器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "29",
+          "win": false
+        },
+        {
+          "enemy_hp": 24,
+          "hp": 0,
+          "label": "持续伤害＋寒封器",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "29",
+          "win": false
+        }
+      ],
+      "supply": "03 号节点固定库存回春装置(10)；补给店恢复品(6)；主神固定库存回春装置(10)。",
+      "total": 9,
+      "variant": "武器＋治疗＋回春护体（技能无固定来源）",
+      "wins": 0
+    },
+    {
+      "design_note": "回春装置为战斗中治疗，与技能「回春护体」（治疗事件后获得护盾，满血也触发）联动，医者职业使每次计算治疗量 +2。该技能在固定验证库存中无来源，此处作为显式测试输入注入。",
+      "direction": "③ 治疗联动方向",
+      "key": "heal_synergy",
+      "rows": [
+        {
+          "enemy_hp": 1,
+          "hp": 0,
+          "label": "直接攻击＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "34",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 16,
+          "label": "直接攻击＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "33",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 16,
+          "label": "直接攻击＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "33",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 15,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "35",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 25,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "35",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 25,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "35",
+          "win": true
+        },
+        {
+          "enemy_hp": 22,
+          "hp": 0,
+          "label": "持续伤害＋回春装置",
+          "outcome": "战败",
+          "same_step": false,
+          "seconds": "32",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 0,
+          "label": "持续伤害＋缚足器",
+          "outcome": "战败",
+          "same_step": true,
+          "seconds": "32",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 0,
+          "label": "持续伤害＋寒封器",
+          "outcome": "战败",
+          "same_step": true,
+          "seconds": "32",
+          "win": false
+        }
+      ],
+      "supply": "03 号节点固定库存回春装置(10)；补给店恢复品(6)；主神固定库存回春装置(10)。",
+      "total": 9,
+      "variant": "满战斗栏：长刀＋短刃＋护身佩＋回春装置＋回春护体（医者）",
+      "wins": 5
+    },
+    {
+      "design_note": "回春装置为战斗中治疗，与技能「回春护体」（治疗事件后获得护盾，满血也触发）联动，医者职业使每次计算治疗量 +2。该技能在固定验证库存中无来源，此处作为显式测试输入注入。",
+      "direction": "③ 治疗联动方向",
+      "key": "heal_synergy",
+      "rows": [
+        {
+          "enemy_hp": 0,
+          "hp": 84,
+          "label": "直接攻击＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "32",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 111,
+          "label": "直接攻击＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "30",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 111,
+          "label": "直接攻击＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "30",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 19,
+          "label": "防御恢复＋回春装置",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "35",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 81,
+          "label": "防御恢复＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "33",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 81,
+          "label": "防御恢复＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "33",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 0,
+          "label": "持续伤害＋回春装置",
+          "outcome": "战败",
+          "same_step": true,
+          "seconds": "32",
+          "win": false
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 76,
+          "label": "持续伤害＋缚足器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "24",
+          "win": true
+        },
+        {
+          "enemy_hp": 0,
+          "hp": 75,
+          "label": "持续伤害＋寒封器",
+          "outcome": "胜利",
+          "same_step": false,
+          "seconds": "24",
+          "win": true
+        }
+      ],
+      "supply": "03 号节点固定库存回春装置(10)；补给店恢复品(6)；主神固定库存回春装置(10)。",
+      "total": 9,
+      "variant": "满战斗栏＋吸血血统：长刀＋短刃＋护身佩＋回春装置",
+      "wins": 8
+    }
+  ],
+  "seed": 20261007
+}
