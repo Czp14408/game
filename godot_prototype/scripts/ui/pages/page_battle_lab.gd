@@ -23,7 +23,7 @@ var _enemy_picker: OptionButton
 var _hp_box: SpinBox
 var _seed_box: LineEdit
 var _result_box: VBoxContainer
-var _log_label: Label
+var _log_label: RichTextLabel
 var _status: Label
 var _enemy_ids: Array[StringName] = []
 
@@ -84,11 +84,12 @@ func build() -> void:
 	_result_box = UiKit.vbox(4)
 	rb.add_child(_result_box)
 	rb.add_child(UiKit.label("事件日志", 15, UiKit.COL_ACCENT))
-	var scroll := UiKit.scroll()
-	scroll.custom_minimum_size = Vector2(0, 200)
-	_log_label = UiKit.label("", 13, UiKit.COL_MUTED)
-	scroll.add_child(_log_label)
-	rb.add_child(scroll)
+	# 用自带滚动的 RichTextLabel：Label 开自动换行后被 ScrollContainer 压成 1 像素高，
+	# 整块日志区看不见内容（与战斗页同因，见 ui_kit.gd 的 log_text）。
+	_log_label = UiKit.log_text(13, UiKit.COL_MUTED)
+	_log_label.custom_minimum_size = Vector2(0, 200)
+	_log_label.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	rb.add_child(_log_label)
 
 	_reset_engine()
 

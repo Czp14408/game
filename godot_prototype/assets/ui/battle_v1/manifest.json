@@ -1,0 +1,682 @@
+{
+ "edge_mode": "tile",
+ "design": [
+  1280,
+  690
+ ],
+ "layout": {
+  "portrait_enemy": [
+   16,
+   16,
+   160,
+   160
+  ],
+  "name_enemy": [
+   16,
+   184,
+   160,
+   32
+  ],
+  "status_enemy": [
+   16,
+   224,
+   160,
+   92
+  ],
+  "skill_enemy": [
+   192,
+   16,
+   820,
+   72
+  ],
+  "health_enemy": [
+   192,
+   96,
+   820,
+   40
+  ],
+  "tray_enemy": [
+   192,
+   148,
+   820,
+   168
+  ],
+  "middle": [
+   16,
+   328,
+   996,
+   36
+  ],
+  "portrait_player": [
+   16,
+   376,
+   160,
+   160
+  ],
+  "name_player": [
+   16,
+   544,
+   160,
+   32
+  ],
+  "status_player": [
+   16,
+   584,
+   160,
+   92
+  ],
+  "skill_player": [
+   192,
+   376,
+   820,
+   72
+  ],
+  "health_player": [
+   192,
+   456,
+   820,
+   40
+  ],
+  "tray_player": [
+   192,
+   508,
+   820,
+   168
+  ],
+  "operations": [
+   1028,
+   16,
+   236,
+   660
+  ]
+ },
+ "extra": {
+  "modal": [
+   0,
+   0,
+   460,
+   236
+  ]
+ },
+ "panels": {
+  "portrait_enemy": {
+   "source": "portrait_frame.png",
+   "rect": [
+    16,
+    16,
+    160,
+    160
+   ],
+   "inner": [
+    21,
+    18,
+    118,
+    122
+   ],
+   "bands_h": [
+    [
+     18,
+     140
+    ]
+   ],
+   "bands_v": [
+    [
+     21,
+     139
+    ]
+   ],
+   "source_visible": [
+    1128,
+    1103
+   ],
+   "source_cavity": [
+    147,
+    129,
+    981,
+    963
+   ]
+  },
+  "name_enemy": {
+   "source": "middle_strip.png",
+   "rect": [
+    16,
+    184,
+    160,
+    32
+   ],
+   "inner": [
+    5,
+    5,
+    150,
+    22
+   ],
+   "bands_h": [
+    [
+     5,
+     27
+    ]
+   ],
+   "bands_v": [
+    [
+     5,
+     155
+    ]
+   ],
+   "source_visible": [
+    2060,
+    258
+   ],
+   "source_cavity": [
+    69,
+    63,
+    1992,
+    198
+   ]
+  },
+  "status_enemy": {
+   "source": "status_panel.png",
+   "rect": [
+    16,
+    224,
+    160,
+    92
+   ],
+   "inner": [
+    10,
+    9,
+    140,
+    74
+   ],
+   "bands_h": [
+    [
+     9,
+     83
+    ]
+   ],
+   "bands_v": [
+    [
+     10,
+     150
+    ]
+   ],
+   "source_visible": [
+    1710,
+    485
+   ],
+   "source_cavity": [
+    105,
+    96,
+    1607,
+    391
+   ]
+  },
+  "skill_enemy": {
+   "source": "skill_strip.png",
+   "rect": [
+    192,
+    16,
+    820,
+    72
+   ],
+   "inner": [
+    17,
+    15,
+    786,
+    42
+   ],
+   "bands_h": [
+    [
+     15,
+     57
+    ]
+   ],
+   "bands_v": [
+    [
+     17,
+     803
+    ]
+   ],
+   "source_visible": [
+    2142,
+    296
+   ],
+   "source_cavity": [
+    68,
+    61,
+    2074,
+    235
+   ]
+  },
+  "health_enemy": {
+   "source": "health_trough.png",
+   "rect": [
+    192,
+    96,
+    820,
+    40
+   ],
+   "inner": [
+    25,
+    14,
+    769,
+    15
+   ],
+   "bands_h": [
+    [
+     14,
+     29
+    ]
+   ],
+   "bands_v": [
+    [
+     8,
+     9
+    ],
+    [
+     25,
+     794
+    ],
+    [
+     811,
+     812
+    ]
+   ],
+   "source_visible": [
+    1526,
+    123
+   ],
+   "source_cavity": [
+    77,
+    43,
+    1445,
+    89
+   ]
+  },
+  "tray_enemy": {
+   "source": "item_tray.png",
+   "rect": [
+    192,
+    148,
+    820,
+    168
+   ],
+   "inner": [
+    28,
+    27,
+    763,
+    115
+   ],
+   "bands_h": [
+    [
+     27,
+     142
+    ]
+   ],
+   "bands_v": [
+    [
+     29,
+     791
+    ]
+   ],
+   "source_visible": [
+    2121,
+    319
+   ],
+   "source_cavity": [
+    73,
+    70,
+    2046,
+    252
+   ]
+  },
+  "middle": {
+   "source": "middle_strip.png",
+   "rect": [
+    16,
+    328,
+    996,
+    36
+   ],
+   "inner": [
+    10,
+    9,
+    977,
+    19
+   ],
+   "bands_h": [
+    [
+     9,
+     28
+    ]
+   ],
+   "bands_v": [
+    [
+     10,
+     987
+    ]
+   ],
+   "source_visible": [
+    2060,
+    258
+   ],
+   "source_cavity": [
+    69,
+    63,
+    1992,
+    198
+   ]
+  },
+  "portrait_player": {
+   "source": "portrait_frame.png",
+   "rect": [
+    16,
+    376,
+    160,
+    160
+   ],
+   "inner": [
+    21,
+    18,
+    118,
+    122
+   ],
+   "bands_h": [
+    [
+     18,
+     140
+    ]
+   ],
+   "bands_v": [
+    [
+     21,
+     139
+    ]
+   ],
+   "source_visible": [
+    1128,
+    1103
+   ],
+   "source_cavity": [
+    147,
+    129,
+    981,
+    963
+   ]
+  },
+  "name_player": {
+   "source": "middle_strip.png",
+   "rect": [
+    16,
+    544,
+    160,
+    32
+   ],
+   "inner": [
+    5,
+    5,
+    150,
+    22
+   ],
+   "bands_h": [
+    [
+     5,
+     27
+    ]
+   ],
+   "bands_v": [
+    [
+     5,
+     155
+    ]
+   ],
+   "source_visible": [
+    2060,
+    258
+   ],
+   "source_cavity": [
+    69,
+    63,
+    1992,
+    198
+   ]
+  },
+  "status_player": {
+   "source": "status_panel.png",
+   "rect": [
+    16,
+    584,
+    160,
+    92
+   ],
+   "inner": [
+    10,
+    9,
+    140,
+    74
+   ],
+   "bands_h": [
+    [
+     9,
+     83
+    ]
+   ],
+   "bands_v": [
+    [
+     10,
+     150
+    ]
+   ],
+   "source_visible": [
+    1710,
+    485
+   ],
+   "source_cavity": [
+    105,
+    96,
+    1607,
+    391
+   ]
+  },
+  "skill_player": {
+   "source": "skill_strip.png",
+   "rect": [
+    192,
+    376,
+    820,
+    72
+   ],
+   "inner": [
+    17,
+    15,
+    786,
+    42
+   ],
+   "bands_h": [
+    [
+     15,
+     57
+    ]
+   ],
+   "bands_v": [
+    [
+     17,
+     803
+    ]
+   ],
+   "source_visible": [
+    2142,
+    296
+   ],
+   "source_cavity": [
+    68,
+    61,
+    2074,
+    235
+   ]
+  },
+  "health_player": {
+   "source": "health_trough.png",
+   "rect": [
+    192,
+    456,
+    820,
+    40
+   ],
+   "inner": [
+    25,
+    14,
+    769,
+    15
+   ],
+   "bands_h": [
+    [
+     14,
+     29
+    ]
+   ],
+   "bands_v": [
+    [
+     8,
+     9
+    ],
+    [
+     25,
+     794
+    ],
+    [
+     811,
+     812
+    ]
+   ],
+   "source_visible": [
+    1526,
+    123
+   ],
+   "source_cavity": [
+    77,
+    43,
+    1445,
+    89
+   ]
+  },
+  "tray_player": {
+   "source": "item_tray.png",
+   "rect": [
+    192,
+    508,
+    820,
+    168
+   ],
+   "inner": [
+    28,
+    27,
+    763,
+    115
+   ],
+   "bands_h": [
+    [
+     27,
+     142
+    ]
+   ],
+   "bands_v": [
+    [
+     29,
+     791
+    ]
+   ],
+   "source_visible": [
+    2121,
+    319
+   ],
+   "source_cavity": [
+    73,
+    70,
+    2046,
+    252
+   ]
+  },
+  "operations": {
+   "source": "operations_panel.png",
+   "rect": [
+    1028,
+    16,
+    236,
+    660
+   ],
+   "inner": [
+    21,
+    83,
+    195,
+    493
+   ],
+   "bands_h": [
+    [
+     20,
+     72
+    ],
+    [
+     83,
+     576
+    ],
+    [
+     586,
+     641
+    ]
+   ],
+   "bands_v": [
+    [
+     21,
+     216
+    ]
+   ],
+   "source_visible": [
+    646,
+    2101
+   ],
+   "source_cavity": [
+    68,
+    265,
+    583,
+    1833
+   ]
+  },
+  "modal": {
+   "source": "status_panel.png",
+   "rect": [
+    0,
+    0,
+    460,
+    236
+   ],
+   "inner": [
+    28,
+    26,
+    404,
+    185
+   ],
+   "bands_h": [
+    [
+     26,
+     211
+    ]
+   ],
+   "bands_v": [
+    [
+     28,
+     432
+    ]
+   ],
+   "source_visible": [
+    1710,
+    485
+   ],
+   "source_cavity": [
+    105,
+    96,
+    1607,
+    391
+   ]
+  }
+ }
+}

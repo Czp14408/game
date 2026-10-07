@@ -18,6 +18,14 @@ const COL_SHIELD := Color(0.42, 0.66, 0.90)
 const COL_BURN := Color(0.95, 0.55, 0.25)
 const COL_POISON := Color(0.55, 0.80, 0.35)
 
+## 品质色（0 青铜 1 白银 2 黄金 3 钻石），与价目表的档位一致
+const QUALITY_COLORS: Array[Color] = [
+	Color(0.76, 0.54, 0.33),
+	Color(0.82, 0.84, 0.88),
+	Color(0.92, 0.78, 0.36),
+	Color(0.55, 0.85, 0.95),
+]
+
 
 static func make_theme() -> Theme:
 	var theme := Theme.new()
@@ -184,6 +192,143 @@ static func scroll() -> ScrollContainer:
 	s.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	s.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	return s
+
+
+static func quality_color(quality: int) -> Color:
+	return QUALITY_COLORS[clampi(quality, 0, QUALITY_COLORS.size() - 1)]
+
+
+# ---------------------------------------------------------------------------
+# 绝对定位构件
+# 战斗界面按组件规范用固定坐标排布（见 battle_skin.gd），不套容器：
+# 容器会把子节点按最小尺寸重排，而组件边框要求像素级对齐。
+# ---------------------------------------------------------------------------
+
+## 指定尺寸的实心色块：生命填充、护盾填充、冷却条、遮罩
+static func solid(color: Color, rect: Rect2i) -> ColorRect:
+	var c := ColorRect.new()
+	c.color = color
+	c.position = Vector2(rect.position)
+	c.size = Vector2(rect.size)
+	c.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	return c
+
+
+## 实心控件但不吃鼠标、可整体挪动（用于叠加覆盖层）
+static func overlay(color: Color, size: Vector2) -> ColorRect:
+	var c := ColorRect.new()
+	c.color = color
+	c.position = Vector2.ZERO
+	c.size = size
+	c.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	return c
+
+
+## 按目标矩形摆放的像素图。STRETCH_SCALE 而非按比例：面板纹理已由生成器
+## 烘焙成目标尺寸，这里必须 1:1 落位，不能让它再等比缩放。
+static func panel_art(tex: Texture2D, rect: Rect2i) -> TextureRect:
+	var t := TextureRect.new()
+	t.texture = tex
+	t.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	t.stretch_mode = TextureRect.STRETCH_SCALE
+	t.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	t.position = Vector2(rect.position)
+	t.size = Vector2(rect.size)
+	t.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	return t
+
+
+## 绝对定位的文本块。垂直居中，宽度给定，超出宽度的部分裁剪而不撑破面板。
+static func abs_label(
+	text: String,
+	font_size: int,
+	color: Color,
+	rect: Rect2i,
+	align: int = HORIZONTAL_ALIGNMENT_LEFT
+) -> Label:
+	var l := label(text, font_size, color)
+	l.position = Vector2(rect.position)
+	l.size = Vector2(rect.size)
+	l.clip_text = true
+	l.horizontal_alignment = align
+	l.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	return l
+
+
+## 绝对定位的多行文本块（状态、技能、日志），顶端对齐并允许换行
+static func abs_block(text: String, font_size: int, color: Color, rect: Rect2i) -> Label:
+	var l := label(text, font_size, color)
+	l.position = Vector2(rect.position)
+	l.size = Vector2(rect.size)
+	l.clip_text = true
+	l.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+	return l
+
+
+## 自带滚动的日志文本：按目标矩形绝对定位即可，不需要再外套 ScrollContainer。
+## 为什么不用 Label：Label 同时开自动换行与 clip_text 时最小高度塌成 1 像素，
+## 放进 ScrollContainer 会被排成 191×1（实测），整块区域看起来是空的。
+## RichTextLabel 自己管换行与滚动，scroll_following 让追加内容时自动贴到最新一条，
+## 高度完全不依赖容器推算——正是战斗记录需要的行为。
+static func log_text(font_size: int, color: Color) -> RichTextLabel:
+	var t := RichTextLabel.new()
+	t.bbcode_enabled = false
+	t.fit_content = false
+	t.scroll_active = true
+	t.scroll_following = true
+	t.selection_enabled = false
+	t.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	t.add_theme_font_size_override("normal_font_size", font_size)
+	t.add_theme_color_override("default_color", color)
+	t.mouse_filter = Control.MOUSE_FILTER_PASS
+	return t
+
+
+## 绝对定位版本：矩形由调用方给定，控件自身不再参与容器重排。
+static func abs_log(font_size: int, color: Color, rect: Rect2i) -> RichTextLabel:
+	var t := log_text(font_size, color)
+	t.position = Vector2(rect.position)
+	t.size = Vector2(rect.size)
+	return t
+
+
+## 绝对定位的按钮：横向固定宽度，纵向按内容最小高度撑开。
+## 这套按钮落在木框组件里面，所以用深色底 + 古铜描边，而不是全局主题的深灰圆角块；
+## 只覆盖本控件的样式，不改全局主题，其他页面照旧。
+static func abs_button(text: String, on_pressed: Callable, rect: Rect2i, font_size: int = 13) -> Button:
+	var b := button(text, on_pressed)
+	b.add_theme_font_size_override("font_size", font_size)
+	b.clip_text = true
+	b.position = Vector2(rect.position)
+	b.size = Vector2(rect.size)
+	_apply_wood_style(b)
+	return b
+
+
+static func _apply_wood_style(b: Button) -> void:
+	var box := StyleBoxFlat.new()
+	box.bg_color = Color(0.14, 0.13, 0.13, 0.94)
+	box.set_border_width_all(1)
+	box.border_color = Color(0.50, 0.35, 0.19)
+	box.set_corner_radius_all(3)
+	box.content_margin_left = 8
+	box.content_margin_right = 8
+	box.content_margin_top = 3
+	box.content_margin_bottom = 3
+	b.add_theme_stylebox_override("normal", box)
+	var hot := box.duplicate() as StyleBoxFlat
+	hot.bg_color = Color(0.23, 0.19, 0.15, 0.96)
+	hot.border_color = Color(0.80, 0.60, 0.32)
+	b.add_theme_stylebox_override("hover", hot)
+	b.add_theme_stylebox_override("pressed", hot)
+	b.add_theme_stylebox_override("focus", hot)
+	var off := box.duplicate() as StyleBoxFlat
+	off.bg_color = Color(0.11, 0.11, 0.12, 0.9)
+	off.border_color = Color(0.26, 0.22, 0.18)
+	b.add_theme_stylebox_override("disabled", off)
+	b.add_theme_color_override("font_color", Color(0.93, 0.87, 0.77))
+	b.add_theme_color_override("font_hover_color", Color(1.0, 0.95, 0.85))
+	b.add_theme_color_override("font_disabled_color", Color(0.45, 0.43, 0.42))
 
 
 ## 把内容放进可滚动容器。

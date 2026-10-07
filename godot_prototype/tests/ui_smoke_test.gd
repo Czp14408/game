@@ -36,12 +36,181 @@ func _test_input_map() -> void:
 		check(found, "按键 %s 绑定到 %s" % [action, OS.get_keycode_string(want)])
 
 
+## 战斗页实际排版：面板是否按清单落位、十格栏是否由净宽换算、
+## 物品是否按占格落在连续的单位格里、生命填充是否留在生命槽内腔。
+func _test_battle_page_layout(battle: PageBattle, ctrl: RunController) -> void:
+	if battle == null:
+		check(false, "战斗页为空，无法核对排版")
+		return
+	var rep := battle.layout_report()
+	# 无画面脚本模式下不派发布局，设计画布的实时尺寸恒为 0；
+	# 这里核对它「被要求」的尺寸，实际铺满与否由真渲染截图断言负责。
+	check(rep["canvas_min"] == rep["design"],
+		"设计画布配置为清单尺寸：%s / %s" % [rep["canvas_min"], rep["design"]])
+	check(rep["canvas"] == rep["design"] or rep["canvas"] == Vector2i.ZERO,
+		"设计画布未按非清单尺寸排布：%s" % rep["canvas"])
+
+	var problems := PackedStringArray()
+	for info in rep["panels"]:
+		var d: Dictionary = info
+		if d["texture"] != Vector2i(d["rect"].size):
+			problems.append("%s 纹理 %s ≠ 矩形 %s" % [d["name"], d["texture"], d["rect"].size])
+	check(problems.is_empty(), "落位的面板纹理与矩形一一对应，异常：%s" % "、".join(problems))
+
+	check(rep["ops_bands"] == BattleSkin.bands_h(BattleSkin.OPERATIONS), "操作栏按清单的三段条带排布")
+
+	var engine: CombatEngine = ctrl.active_engine
+	var slot_count := int(rep["slot_count"])
+	var sides: Dictionary = rep["sides"]
+	for key in BattleSkin.SIDES:
+		var is_player := key == BattleSkin.SIDE_PLAYER
+		var info: Dictionary = sides[key]
+		var tray: Rect2i = info["tray"]
+		var slot_w: float = info["slot_width"]
+		check(is_equal_approx(slot_w * slot_count, float(tray.size.x)),
+			"%s 十格由净宽 %d 换算，格宽 %.2f" % [key, tray.size.x, slot_w])
+		var hp_inner: Rect2i = info["hp_inner"]
+		var hp_rect := BattleSkin.rect(BattleSkin.side_panel(BattleSkin.HEALTH, key))
+		check(hp_rect.encloses(hp_inner), "%s 生命填充内腔落在生命槽内" % key)
+		check(not hp_inner.intersects(tray), "%s 生命填充内腔不与物品栏重叠" % key)
+
+		# 物品按占格落在连续单位格上：起格累加，末件不超过第十格
+		var actor := engine.player_actor() if is_player else engine.enemy_actor()
+		var cells: Array = info["cells"]
+		check(cells.size() == actor.items.size(),
+			"%s 每件物品都有一个单位格控件（%d / %d）" % [key, cells.size(), actor.items.size()])
+		var cursor := 0
+		for i in mini(cells.size(), actor.items.size()):
+			var cell: Rect2i = cells[i]
+			var item: BattleItemState = actor.items[i]
+			# 单位格宽是净宽除以十（非整数），逐格取整后单格宽会在 ±1 像素内浮动
+			check(absf(float(cell.size.x) - slot_w * item.size) <= 1.0,
+				"%s 第 %d 件「%s」占 %d 格，宽 %d 像素" % [key, i, item.display_name, item.size, cell.size.x])
+			check(absf(cell.position.x - slot_w * cursor) <= 1.0,
+				"%s 第 %d 件落在第 %d 格起" % [key, i, cursor])
+			cursor += item.size
+		check(cursor <= slot_count, "%s 物品共占 %d 格，不超过 %d 格" % [key, cursor, slot_count])
+
+
 ## 递归查找界面中挂上的形象节点。
 ## 运行时创建的节点 owner 为空，find_child 必须显式传 owned=false，否则找不到。
 func _named(root: Node, node_name: String) -> Node:
 	if root == null:
 		return null
 	return root.find_child(node_name, true, false)
+
+
+## 战斗界面组件（见 战斗UI组件与组合说明.md）。
+## 这里钉住三类只在真渲染下才暴露、但可以提前守住的事实：
+## 面板纹理与布局矩形一致（否则会静默拉伸）、版面矩形互不重叠、
+## 以及左右列对齐与两侧区块等高这两条排布不变式。
+func _test_battle_skin() -> void:
+	check(BattleSkin.load_error() == "", "战斗皮肤清单可读：%s" % BattleSkin.load_error())
+	check(BattleSkin.design_size() == Vector2i(1280, 690),
+		"设计画布为 1280×690（720 减去顶部 30 像素状态条），实为 %s" % BattleSkin.design_size())
+
+	var expected := [
+		"portrait_enemy", "name_enemy", "status_enemy", "skill_enemy", "health_enemy", "tray_enemy",
+		"middle",
+		"portrait_player", "name_player", "status_player", "skill_player", "health_player", "tray_player",
+		"operations",
+	]
+	for panel in expected:
+		check(BattleSkin.has_panel(panel), "面板 %s 在清单中" % panel)
+	var design := BattleSkin.design_size()
+	var rects: Array = []
+	var missing := PackedStringArray()
+	for panel in expected:
+		if not BattleSkin.has_panel(panel):
+			continue
+		var r := BattleSkin.rect(panel)
+		var tex := BattleSkin.texture(panel)
+		if tex == null:
+			missing.append(panel)
+			continue
+		check(Vector2i(tex.get_size()) == r.size,
+			"面板 %s 纹理尺寸 %s 与布局矩形 %s 一致" % [panel, tex.get_size(), r.size])
+		check(r.position.x >= 0 and r.position.y >= 0
+			and r.position.x + r.size.x <= design.x and r.position.y + r.size.y <= design.y,
+			"面板 %s 不超出设计画布" % panel)
+		var inner := BattleSkin.inner(panel)
+		check(inner.size.x > 0 and inner.size.y > 0
+			and inner.position.x >= 0 and inner.position.y >= 0
+			and inner.position.x + inner.size.x <= r.size.x
+			and inner.position.y + inner.size.y <= r.size.y,
+			"面板 %s 内腔落在面板内且非空：%s" % [panel, inner])
+		rects.append({"name": panel, "rect": r})
+	check(missing.is_empty(), "全部面板纹理可加载，缺 %s" % "、".join(missing))
+
+	# 版面矩形两两不重叠：重叠会让后画的面板盖住前一个的边框
+	var overlaps := PackedStringArray()
+	for i in rects.size():
+		for j in range(i + 1, rects.size()):
+			var a: Rect2i = rects[i]["rect"]
+			var b: Rect2i = rects[j]["rect"]
+			if a.intersects(b):
+				overlaps.append("%s×%s" % [rects[i]["name"], rects[j]["name"]])
+	check(overlaps.is_empty(), "版面矩形互不重叠，冲突：%s" % "、".join(overlaps))
+
+	# 排布不变式：左右列对齐、两侧区块等高、两条物品栏等宽同列、生命槽独立于物品栏
+	var lx := PackedInt32Array()
+	var lw := PackedInt32Array()
+	for side in BattleSkin.SIDES:
+		for base in [BattleSkin.PORTRAIT, BattleSkin.NAME, BattleSkin.STATUS]:
+			var r := BattleSkin.rect(BattleSkin.side_panel(base, side))
+			lx.append(r.position.x)
+			lw.append(r.size.x)
+	check(_all_same(lx) and _all_same(lw), "头像／名称／状态三块左右对齐且等宽")
+	var mid_x := PackedInt32Array()
+	for side in BattleSkin.SIDES:
+		for base in [BattleSkin.SKILL, BattleSkin.HEALTH, BattleSkin.TRAY]:
+			mid_x.append(BattleSkin.rect(BattleSkin.side_panel(base, side)).position.x)
+	check(_all_same(mid_x), "技能／生命／物品三栏起始 x 一致")
+	var tray_e := BattleSkin.rect(BattleSkin.side_panel(BattleSkin.TRAY, BattleSkin.SIDE_ENEMY))
+	var tray_p := BattleSkin.rect(BattleSkin.side_panel(BattleSkin.TRAY, BattleSkin.SIDE_PLAYER))
+	check(tray_e.size == tray_p.size and tray_e.position.x == tray_p.position.x,
+		"双方物品栏等宽同列：%s / %s" % [tray_e, tray_p])
+
+	var block_e := _side_block(BattleSkin.SIDE_ENEMY)
+	var block_p := _side_block(BattleSkin.SIDE_PLAYER)
+	check(block_e == block_p, "两侧区块等高：%d / %d" % [block_e, block_p])
+	check(block_e > 0 and block_e * 2 <= BattleSkin.design_size().y,
+		"两侧区块叠起来放得下设计画布：%d×2 ≤ %d" % [block_e, BattleSkin.design_size().y])
+
+	# 生命槽必须与物品栏分离，且槽内腔留得下填充与数值
+	for side in BattleSkin.SIDES:
+		var hp := BattleSkin.rect(BattleSkin.side_panel(BattleSkin.HEALTH, side))
+		var tray := BattleSkin.rect(BattleSkin.side_panel(BattleSkin.TRAY, side))
+		check(not hp.intersects(tray), "%s 生命槽与物品栏不重叠" % side)
+		var groove := BattleSkin.inner(BattleSkin.side_panel(BattleSkin.HEALTH, side))
+		check(groove.size.y >= 12 and groove.size.x > 400,
+			"%s 生命槽内腔足够叠加填充与数值：%s" % [side, groove])
+
+	# 操作栏由素材自带的两处分隔切成三段，界面按这三段排内容
+	var bands := BattleSkin.bands_h(BattleSkin.OPERATIONS)
+	check(bands.size() == 3, "操作栏可用条带为三段，实为 %d" % bands.size())
+	if bands.size() == 3:
+		check(bands[0].y <= bands[1].x and bands[1].y <= bands[2].x, "操作栏三段互不重叠")
+		check(bands[1].y - bands[1].x > bands[0].y - bands[0].x,
+			"操作栏中段最大（操作与记录）：%d" % (bands[1].y - bands[1].x))
+
+	# 十格栏：净宽必须能被十等分，否则格宽会出现半像素
+	var tray_inner := BattleSkin.inner(BattleSkin.side_panel(BattleSkin.TRAY, BattleSkin.SIDE_PLAYER))
+	check(tray_inner.size.x / 10.0 >= 40.0,
+		"十格单位格宽 %.1f 逻辑像素" % (tray_inner.size.x / 10.0))
+
+
+func _side_block(side: String) -> int:
+	var top := BattleSkin.rect(BattleSkin.side_panel(BattleSkin.PORTRAIT, side)).position.y
+	var bottom := BattleSkin.rect(BattleSkin.side_panel(BattleSkin.STATUS, side))
+	return bottom.position.y + bottom.size.y - top
+
+
+func _all_same(values: PackedInt32Array) -> bool:
+	for v in values:
+		if v != values[0]:
+			return false
+	return values.size() > 0
 
 
 ## 主角美术资源（R0.5）。
@@ -114,6 +283,7 @@ func run() -> void:
 	check(catalog.validate().is_empty(), "参数检查通过")
 
 	_test_input_map()
+	_test_battle_skin()
 
 	app = AppRoot.new()
 	app.name = "SmokeAppRoot"
@@ -181,6 +351,7 @@ func run() -> void:
 	var money_before := ctrl.state.money
 	var battle := app.current_page_node() as PageBattle
 	check(_named(battle, "HeroAvatar") != null, "战斗页玩家侧挂上主角头像")
+	_test_battle_page_layout(battle, ctrl)
 	battle.fast_forward()
 	var page := app.current_page_node()
 	check(page is PagePostBattle, "战斗结束后进入战后反馈页面")
@@ -400,3 +571,46 @@ func extend_with_frames() -> void:
 	check(app.current_page_node() is PageDeity and (app.current_page_node() as Control).get_child_count() > 0, "主神整备页面有内容")
 	tree.root.size = Vector2i(1280, 720)
 	await tree.process_frame
+	await _test_battle_log_frames(ctrl)
+
+
+## 战斗日志必须在真实帧推进后才量得到：日志文本节点曾因换行标签的最小高度塌成 1 像素，
+## 被外层容器排成 191×1，内容再全也看不见。同步断言量不到（此时控件尺寸恒为设置值），
+## 所以这条只能放在帧断言段里守——它正是无画面套件与真渲染截图之外最容易漏掉的那类缺陷。
+func _test_battle_log_frames(ctrl: RunController) -> void:
+	DevTools.mode = DevTools.MODE_RANDOM
+	ctrl.new_trial(&"warrior", &"sturdy", 20261007)
+	await tree.process_frame
+	var keys := ctrl.node_enemy_keys()
+	if keys.is_empty():
+		check(false, "战斗日志：可进入战斗（缺少对手）")
+		return
+	ctrl.open_pre_battle(keys[0])
+	ctrl.confirm_battle()
+	await tree.process_frame
+	await tree.process_frame
+	var battle := app.current_page_node() as PageBattle
+	var eng: CombatEngine = ctrl.active_engine
+	if battle == null or eng == null:
+		check(false, "战斗日志：战斗页与引擎在位")
+		return
+
+	# 开战前几秒双方物品都在初始冷却，日志应当是「尚无事件」提示而不是空白。
+	var before: Dictionary = battle.layout_report()["log"]
+	check(int(before["chars"]) > 0, "开战初期日志给出空状态提示（%d 字）" % int(before["chars"]))
+
+	# 推到双方都出手之后，日志必须有实际事件行。
+	while not eng.is_finished() and eng.current_step() < 90:
+		eng.step()
+	battle._refresh_view()
+	await tree.process_frame
+	await tree.process_frame
+	var after: Dictionary = battle.layout_report()["log"]
+	var rect: Rect2i = after["rect"]
+	check(int(after["chars"]) > 40,
+		"战斗日志记录到事件（%d 字 / %d 行）" % [int(after["chars"]), int(after["lines"])])
+	check(rect.size.x > 100 and rect.size.y > 100,
+		"战斗日志区实际高宽足够（%d×%d）" % [rect.size.x, rect.size.y])
+	check((battle.get_node_or_null("BattleCenter/DesignCanvas/BattleLog") as Control) != null,
+		"战斗日志节点挂在设计画布上")
+	ctrl.surrender()

@@ -65,6 +65,20 @@ func _begin() -> void:
 			await _capture("03_pre_battle_%s" % tag, ctrl, "战前查看")
 			ctrl.confirm_battle()
 			await _capture("04_battle_%s" % tag, ctrl, "自动战斗")
+			# 先跑一段再看：生命下降、冷却进度与事件日志都要有内容，
+			# 才能看出「文字是否溢出内腔、日志是否被压住」这类排版问题。
+			# 停到约第 100 步：双方首次出手在第 30 步左右，太早截图日志还是空的。
+			var page0 := app.current_page_node() as PageBattle
+			if page0 != null:
+				page0.set("_rate", 4.0)
+			await _idle(2.4)
+			await _snapshot("04b_battle_mid_%s" % tag)
+			# 暂停浮层是唯一不在排布表里的叠加层，单独留证据
+			if app.current_page_node() is PageBattle:
+				var pauser := app.current_page_node() as PageBattle
+				pauser._toggle_pause()
+				await _snapshot("04c_battle_pause_%s" % tag)
+				pauser._toggle_pause()
 			var waited := 0.0
 			while waited < 30.0 and app.current_page_node() is PageBattle:
 				var page := app.current_page_node() as PageBattle
