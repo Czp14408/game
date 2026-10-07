@@ -49,7 +49,7 @@ static func build_actor(p_catalog: ContentCatalog, spec: Dictionary) -> CombatAc
 			TraitDef.EFFECT_HEAL_COMPUTED_FLAT:
 				a.heal_computed_flat += p.effect_amount
 			TraitDef.EFFECT_MAX_HP_FLAT:
-				pass  # 由调用方在 max_hp 中体现
+				pass  # max_hp 已由 RunState.apply_traits() 算进 spec，此处不重复叠加
 			TraitDef.EFFECT_HEAL_ON_WEAPON_USE:
 				a.heal_on_weapon_use += p.effect_amount
 	var b := p_catalog.trait_by_id(a.bloodline)
@@ -60,7 +60,7 @@ static func build_actor(p_catalog: ContentCatalog, spec: Dictionary) -> CombatAc
 			TraitDef.EFFECT_HEAL_COMPUTED_FLAT:
 				a.heal_computed_flat += b.effect_amount
 			TraitDef.EFFECT_MAX_HP_FLAT:
-				pass
+				pass  # 同上：由 spec.max_hp 提供
 			TraitDef.EFFECT_HEAL_ON_WEAPON_USE:
 				a.heal_on_weapon_use += b.effect_amount
 

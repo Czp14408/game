@@ -140,10 +140,9 @@ func fits_after(bar: Array, inv: Array) -> bool:
 # ---------------------------------------------------------------------------
 
 func apply_traits() -> void:
-	max_hp = BASE_MAX_HP
-	var t := catalog.trait_by_id(bloodline)
-	if t != null and t.effect_type == TraitDef.EFFECT_MAX_HP_FLAT:
-		max_hp += t.effect_amount
+	# 职业与血统都要计入（此前只读 bloodline，导致职业侧的 max_hp_flat 被静默忽略）。
+	# 复用 trait_value()，与 weapon_damage_flat / heal_computed_flat 的取法保持一致。
+	max_hp = BASE_MAX_HP + trait_value(TraitDef.EFFECT_MAX_HP_FLAT)
 	current_hp = max_hp
 
 

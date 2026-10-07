@@ -23,6 +23,7 @@ func run() -> void:
 	_test_skills()
 	_test_consumable()
 	_test_idempotency()
+	_test_max_hp_trait()
 
 
 func _setup(money: int = 200) -> void:
@@ -346,3 +347,30 @@ func _test_idempotency() -> void:
 		if state.is_held(it.instance_id):
 			held += 1
 	eq(held, 1, "重复点击不得复制物品")
+
+
+func _test_max_hp_trait() -> void:
+	# 职业与血统的 max_hp_flat 都要生效（回归：apply_traits 曾只读 bloodline，
+	# 职业侧的同名效果被静默忽略）。现有内容里只有血统「强健」带该效果，
+	# 因此注入一份带 max_hp_flat 的职业来覆盖职业侧这条路径。
+	var cat := ContentCatalog.load_default()
+	var fake := TraitDef.new()
+	fake.trait_id = &"__test_prof_maxhp"
+	fake.display_name = "测试职业"
+	fake.kind = TraitDef.KIND_PROFESSION
+	fake.effect_type = TraitDef.EFFECT_MAX_HP_FLAT
+	fake.effect_amount = 30.0
+	cat.traits[fake.trait_id] = fake
+
+	var both := RunState.create(cat, RandomService.create(7))
+	both.profession = &"__test_prof_maxhp"
+	both.bloodline = &"sturdy"
+	both.apply_traits()
+	eq(both.max_hp, 150.0, "职业 max_hp_flat 30 + 血统 20 + 基础 100 = 150")
+	eq(both.current_hp, 150.0, "起始生命随最大生命")
+
+	var blood_only := RunState.create(cat, RandomService.create(7))
+	blood_only.profession = &"warrior"
+	blood_only.bloodline = &"sturdy"
+	blood_only.apply_traits()
+	eq(blood_only.max_hp, 120.0, "武者 + 强健：基础 100 + 血统 20 = 120（与既有口径一致）")
