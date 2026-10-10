@@ -60,6 +60,8 @@ func _generate(state: RunState, shop_key: String, def: ShopDef) -> ShopState:
 
 
 func _roll_slot(state: RunState, def: ShopDef, scope: String) -> ShopState.Slot:
+	if catalog.items_from_excel or catalog.generated_shop_rules.has(def.shop_id):
+		return _roll_extended_slot(state, def, scope)
 	var slot := ShopState.Slot.new()
 	var is_skill := false
 	var pool: Array = []
@@ -89,6 +91,48 @@ func _roll_slot(state: RunState, def: ShopDef, scope: String) -> ShopState.Slot:
 	else:
 		var entry: Dictionary = pool[idx]
 		_assign(slot, state, entry["id"], bool(entry["is_skill"]), def, scope)
+	return slot
+
+
+## 有 Excel 扩展的商店先抽品质，再从该品质可售的原池与扩展池中按权重抽取。
+## 保留商店品质概率；其他商店继续原有抽取顺序与随机流。
+func _roll_extended_slot(state: RunState, def: ShopDef, scope: String) -> ShopState.Slot:
+	var slot := ShopState.Slot.new()
+	var quality := _roll_quality(def, scope)
+	var pool: Array[Dictionary] = []
+	var weights: Array = []
+	var mixed_skill := false
+	if def.mode == ShopDef.MODE_MIXED:
+		mixed_skill = rng.pick_weighted(scope, [def.equipment_weight, def.skill_weight]) == 1
+	var original: Array[StringName] = def.item_candidates
+	if def.mode == ShopDef.MODE_MIXED:
+		original = def.skill_candidates if mixed_skill else def.equipment_pool
+	for id in original:
+		if catalog.items_from_excel and not mixed_skill: continue
+		pool.append({"id": id, "skill": mixed_skill})
+		weights.append(1.0)
+	if def.mode != ShopDef.MODE_MIXED:
+		for id in def.skill_candidates:
+			pool.append({"id": id, "skill": true})
+			weights.append(1.0)
+	if not mixed_skill:
+		for rule in catalog.generated_shop_rules.get(def.shop_id,[]):
+			if quality >= int(rule["min_quality"]) and quality <= int(rule["max_quality"]):
+				pool.append({"id": StringName(rule["item"]), "skill": false})
+				weights.append(float(rule["weight"]))
+	if pool.is_empty():
+		return slot
+	var chosen: Dictionary = pool[rng.pick_weighted(scope, weights)]
+	slot.is_skill = bool(chosen["skill"])
+	slot.quality = quality
+	if slot.is_skill:
+		slot.skill_id = chosen["id"]
+	else:
+		var definition := catalog.item(chosen["id"])
+		if definition.fixed_base_price >= 0:
+			slot.quality = 0
+		slot.item = state.new_instance(chosen["id"], slot.quality)
+		slot.item.location = ItemInstance.LOC_NONE
 	return slot
 
 

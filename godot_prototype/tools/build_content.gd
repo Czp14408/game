@@ -1,5 +1,5 @@
 extends SceneTree
-## 内容生成器：构建全部定义对象并序列化为文本 .tres。
+## 非物品内容生成器：技能、职业、敌人、商店、世界、阶段；物品来自 Excel。
 ## 用法：godot --headless --path . --script res://tools/build_content.gd
 ##
 ## 内容来源：
@@ -11,7 +11,6 @@ extends SceneTree
 const CONTENT_VERSION := "0.1.0"
 
 const DIRS := [
-	"res://data/items",
 	"res://data/skills",
 	"res://data/traits",
 	"res://data/enemies",
@@ -25,7 +24,6 @@ var _written: int = 0
 func _initialize() -> void:
 	for d in DIRS:
 		DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(d))
-	_build_items()
 	_build_skills()
 	_build_traits()
 	_build_enemies()
@@ -43,89 +41,7 @@ func _save(res: Resource, rel_path: String) -> void:
 	_written += 1
 
 
-func _effect(type_: StringName, target: StringName, event: StringName = &"") -> EffectDef:
-	var e := EffectDef.new()
-	e.effect_type = type_
-	e.target_rule = target
-	e.emits_event = event
-	return e
-
-
-func _item(
-	id: StringName,
-	name_: String,
-	category: StringName,
-	size: int,
-	cd_ms: int,
-	values: Array,
-	effects: Array[EffectDef],
-	tags: Array[StringName] = [],
-	passive: StringName = &"",
-	equippable: bool = true,
-	out_of_combat_heal: float = 0.0,
-	fixed_price: int = -1
-) -> ItemDef:
-	var d := ItemDef.new()
-	d.definition_id = id
-	d.display_name = name_
-	d.category = category
-	d.size = size
-	d.cooldown_ms = cd_ms
-	d.tier_values = PackedFloat64Array(values)
-	d.effects = effects
-	d.tags = tags
-	d.self_passive = passive
-	d.equippable = equippable
-	d.out_of_combat_heal = out_of_combat_heal
-	d.fixed_base_price = fixed_price
-	return d
-
-
-func _build_items() -> void:
-	# --- 12 件主动物品（数值见最小方案第 3 节，均为可调整测试值）---
-	var weapon_tag: Array[StringName] = [&"active"]
-	var defs: Array[ItemDef] = []
-
-	defs.append(_item(&"long_blade", "长刀", ItemDef.CAT_WEAPON, 2, 4000, [12, 18, 28, 42],
-		[_effect(EffectDef.TYPE_ATTACK, EffectDef.TARGET_ENEMY, &"use_weapon")], weapon_tag))
-	defs.append(_item(&"short_blade", "短刃", ItemDef.CAT_WEAPON, 1, 2000, [4, 6, 9, 13],
-		[_effect(EffectDef.TYPE_ATTACK, EffectDef.TARGET_ENEMY, &"use_weapon")], weapon_tag))
-	defs.append(_item(&"bandit_knife", "土匪短刀", ItemDef.CAT_WEAPON, 1, 3000, [8, 12, 18, 26],
-		[_effect(EffectDef.TYPE_ATTACK, EffectDef.TARGET_ENEMY, &"use_weapon")], weapon_tag))
-	defs.append(_item(&"heavy_hammer", "重锤", ItemDef.CAT_WEAPON, 3, 7000, [30, 45, 65, 90],
-		[_effect(EffectDef.TYPE_ATTACK, EffectDef.TARGET_ENEMY, &"use_weapon")], weapon_tag))
-
-	# 护身佩自带被动：当使用武器时，充能此物品 1 秒（所有品质 1 秒）
-	defs.append(_item(&"ward_charm", "护身佩", ItemDef.CAT_SHIELD, 2, 5000, [12, 20, 32, 48],
-		[_effect(EffectDef.TYPE_SHIELD, EffectDef.TARGET_SELF, &"use_shield")], weapon_tag,
-		ItemDef.PASSIVE_CHARGE_ON_WEAPON_USE))
-	defs.append(_item(&"tower_shield", "重盾", ItemDef.CAT_SHIELD, 3, 8000, [28, 45, 70, 105],
-		[_effect(EffectDef.TYPE_SHIELD, EffectDef.TARGET_SELF, &"use_shield")], weapon_tag))
-
-	defs.append(_item(&"rejuvenator", "回春装置", ItemDef.CAT_HEAL, 2, 6000, [8, 13, 20, 30],
-		[_effect(EffectDef.TYPE_HEAL, EffectDef.TARGET_SELF, &"heal")], weapon_tag))
-
-	defs.append(_item(&"fire_oil", "火油器", ItemDef.CAT_BURN, 2, 5000, [4, 6, 9, 13],
-		[_effect(EffectDef.TYPE_BURN, EffectDef.TARGET_ENEMY, &"apply_burn")], weapon_tag))
-	defs.append(_item(&"poison_needle", "毒针器", ItemDef.CAT_POISON, 2, 6000, [2, 3, 5, 8],
-		[_effect(EffectDef.TYPE_POISON, EffectDef.TARGET_ENEMY, &"apply_poison")], weapon_tag))
-
-	# 控制类数值单位为毫秒（青铜/白银/黄金/钻石）
-	defs.append(_item(&"stimulator", "鼓劲器", ItemDef.CAT_HASTE, 1, 6000, [2000, 3000, 4000, 5000],
-		[_effect(EffectDef.TYPE_HASTE, EffectDef.TARGET_OWN_OTHER_ITEM, &"")], weapon_tag))
-	defs.append(_item(&"leg_binder", "缚足器", ItemDef.CAT_SLOW, 2, 7000, [3000, 4000, 5000, 6000],
-		[_effect(EffectDef.TYPE_SLOW, EffectDef.TARGET_ENEMY_ITEM, &"")], weapon_tag))
-	defs.append(_item(&"frost_seal", "寒封器", ItemDef.CAT_FREEZE, 2, 8000, [1000, 1500, 2000, 2500],
-		[_effect(EffectDef.TYPE_FREEZE, EffectDef.TARGET_ENEMY_ITEM, &"")], weapon_tag))
-
-	# --- 恢复品与材料（无四档效果）---
-	defs.append(_item(&"recovery_draught", "恢复品", ItemDef.CAT_CONSUMABLE, 1, 0, [30, 30, 30, 30],
-		[], weapon_tag, &"", false, 30.0, 6))
-	defs.append(_item(&"scrap_material", "材料", ItemDef.CAT_MATERIAL, 1, 0, [8, 8, 8, 8],
-		[], weapon_tag, &"", false, 0.0, 8))
-
-	for d in defs:
-		_save(d, "res://data/items/%s.tres" % d.definition_id)
+# 物品与获取渠道仅由 content/items.xlsx 导入；此工具保留非物品内容生成。
 
 
 func _build_skills() -> void:
@@ -243,27 +159,22 @@ func _build_enemies() -> void:
 
 
 func _build_shops() -> void:
+	# 物品候选由 Excel 获取渠道维护；此处仅配置商店规则和技能候选。
 	var defs: Array[ShopDef] = []
 
 	var weapon := ShopDef.new()
 	weapon.shop_id = &"weapon_shop"
 	weapon.display_name = "兵器铺"
-	weapon.item_candidates = [&"long_blade", &"short_blade", &"bandit_knife", &"heavy_hammer"]
 	defs.append(weapon)
 
 	var gear := ShopDef.new()
 	gear.shop_id = &"gear_shop"
 	gear.display_name = "装备铺"
-	gear.item_candidates = [
-		&"ward_charm", &"tower_shield", &"rejuvenator", &"fire_oil",
-		&"poison_needle", &"stimulator", &"leg_binder", &"frost_seal"
-	]
 	defs.append(gear)
 
 	var clinic := ShopDef.new()
 	clinic.shop_id = &"clinic"
 	clinic.display_name = "医馆"
-	clinic.item_candidates = [&"recovery_draught", &"rejuvenator", &"ward_charm"]
 	clinic.sells_consumable = true
 	defs.append(clinic)
 
@@ -279,11 +190,6 @@ func _build_shops() -> void:
 	deity.mode = ShopDef.MODE_MIXED
 	deity.equipment_weight = 0.8
 	deity.skill_weight = 0.2
-	deity.equipment_pool = [
-		&"long_blade", &"short_blade", &"bandit_knife", &"heavy_hammer",
-		&"ward_charm", &"tower_shield", &"rejuvenator", &"fire_oil",
-		&"poison_needle", &"stimulator", &"leg_binder", &"frost_seal"
-	]
 	deity.skill_candidates = [&"ever_stronger", &"flame_aegis", &"rejuvenating_aegis"]
 	defs.append(deity)
 

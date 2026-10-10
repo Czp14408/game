@@ -1,6 +1,6 @@
 class_name InventorySkin
 extends RefCounted
-## 背包／商店／整理共用面板的皮肤访问层：面板矩形与内部三段分区统一来自生成器产出的 manifest。
+## 共用面板布局访问层：旧美术清单提供资源，presentation.json 覆盖物品卡布局。
 ## 边界：只读资源 + 纯查表；不做布局决策，不承载业务规则。
 ## 依据：背包商店整理共用面板说明.md；资产由 tools/build_inventory_ui.py 生成。
 ##
@@ -143,3 +143,10 @@ static func _ensure() -> void:
 		_error = "%s 不是合法 JSON" % MANIFEST_PATH
 		return
 	_manifest = parsed
+	# Item-card geometry is independent of the legacy baked panel artwork.
+	var presentation: Variant = JSON.parse_string(FileAccess.get_file_as_string(ROOT + "/presentation.json"))
+	if presentation is Dictionary:
+		for key in presentation:
+			_manifest["panels"][PANEL][key] = presentation[key]
+	else:
+		_error = "物品展示布局不是合法 JSON"

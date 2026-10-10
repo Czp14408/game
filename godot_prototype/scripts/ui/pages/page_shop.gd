@@ -136,20 +136,23 @@ func _refresh() -> void:
 func _goods_entry(index: int, slot: ShopState.Slot) -> Dictionary:
 	if slot.purchased:
 		return {"id": "goods:%d" % index, "index": index, "name": "已售出", "sub": "不补位",
-			"quality": -1, "size": 1, "enabled": false}
+			"quality": -1, "size": 1, "enabled": false, "offer": true}
 	var price := ctrl.economy.price_of_slot(slot)
 	var name := ""
+	var item_definition: ItemDef = null
 	var sub := "%d 货币" % price
 	if slot.is_skill:
 		name = "技能·%s" % catalog.skill_display(slot.skill_id)
 		sub = "技能　%d 货币" % price
 	else:
 		var idef := catalog.item(slot.item.definition_id)
+		item_definition = idef
 		name = catalog.item_display(slot.item.definition_id)
 		sub = "%s·%d 格　%d" % [PriceTable.quality_name(slot.quality),
 			idef.size if idef != null else 1, price]
 	return {"id": "goods:%d" % index, "index": index, "name": name, "sub": sub,
-		"quality": slot.quality, "size": 1, "enabled": true}
+		"quality": slot.quality, "size": 1, "enabled": true, "offer": true,
+		"definition": item_definition, "instance": slot.item, "price_text": "%d 货币" % price}
 
 
 func _bag_entry(it: ItemInstance) -> Dictionary:
@@ -163,6 +166,7 @@ func _bag_entry(it: ItemInstance) -> Dictionary:
 		"id": "bag:%s" % it.instance_id,
 		"instance_id": it.instance_id,
 		"definition_id": it.definition_id,
+		"definition": def, "instance": it,
 		"name": title,
 		"sub": "%s·回收 %d" % [PriceTable.quality_name(it.quality), price],
 		"quality": it.quality,

@@ -931,39 +931,16 @@ func _layout_inventory_tray(items: Array) -> void:
 ## 单个物品格：品质色方形边框 + 物品名 + 品质·格数小字。
 ## 可交互（悬浮说明 / 右键菜单 / 拖拽起手），mouse_filter 在拖拽时临时忽略以透传到落点栏。
 func _make_cell(it: ItemInstance, box: Rect2, field: Control, where: String) -> void:
-	var cell := Button.new()
+	var cell := ItemCard.new()
 	cell.name = "Cell_%s" % it.instance_id
 	cell.position = box.position
 	cell.size = box.size
 	cell.focus_mode = Control.FOCUS_NONE
-	cell.text = ""
-	cell.clip_text = true
 	cell.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	var style := StyleBoxFlat.new()
-	style.bg_color = Color(0.07, 0.13, 0.20, 0.72)
-	style.set_border_width_all(2)
-	style.border_color = UiKit.quality_color(it.quality)
-	style.set_corner_radius_all(3)
-	style.content_margin_left = 0
-	style.content_margin_right = 0
-	style.content_margin_top = 0
-	style.content_margin_bottom = 0
-	cell.add_theme_stylebox_override("normal", style)
-	cell.add_theme_stylebox_override("hover", style)
-	cell.add_theme_stylebox_override("pressed", style)
-	var def := catalog.item(it.definition_id)
-	var inner_w := maxi(int(box.size.x) - 6, 8)
-	var name_str := def.display_name if def != null else String(it.definition_id)
-	if it.trial_growth != 0.0:
-		name_str += " ▲"
-	cell.add_child(UiKit.abs_block(name_str, 11, UiKit.COL_SYS_TEXT,
-		Rect2i(3, 3, inner_w, maxi(int(box.size.y) - 18, 8))))
-	cell.add_child(UiKit.abs_label("%s·%d格" % [PriceTable.quality_name(it.quality), def.size if def != null else 1],
-		10, UiKit.quality_color(it.quality),
-		Rect2i(3, int(box.size.y) - 15, inner_w, 11)))
+	cell.configure({"definition": catalog.item(it.definition_id), "instance": it, "quality": it.quality})
 	field.add_child(cell)
 
-	cell.mouse_entered.connect(_on_cell_hover.bind(cell, it))
+
 	cell.mouse_exited.connect(_on_cell_unhover)
 	cell.gui_input.connect(_on_cell_gui.bind(cell, it, where))
 	_cell_map[it.instance_id] = {"cell": cell, "field": field, "where": where}

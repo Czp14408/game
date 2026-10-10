@@ -8,5 +8,4 @@ shop_id = &"deity_mixed"
 display_name = "主神混合店"
 mode = &"mixed"
 skill_candidates = Array[StringName]([&"ever_stronger", &"flame_aegis", &"rejuvenating_aegis"])
-equipment_pool = Array[StringName]([&"long_blade", &"short_blade", &"bandit_knife", &"heavy_hammer", &"ward_charm", &"tower_shield", &"rejuvenator", &"fire_oil", &"poison_needle", &"stimulator", &"leg_binder", &"frost_seal"])
 quality_weights = PackedFloat64Array(0.85, 0.15, 0, 0)

@@ -1,0 +1,34 @@
+{
+  "ids": [
+    "bandit_knife",
+    "fire_oil",
+    "frost_seal",
+    "heavy_hammer",
+    "leg_binder",
+    "long_blade",
+    "poison_needle",
+    "recovery_draught",
+    "rejuvenator",
+    "scrap_material",
+    "short_blade",
+    "stimulator",
+    "tower_shield",
+    "ward_charm"
+  ],
+  "legacy_sha256": {
+    "bandit_knife": "784a056a98d525ead3343208357f09bb7e8e2f5894a7a135738e291fd6191bff",
+    "fire_oil": "2263f4077b4080ee21fe315c4a837e276dfc0437662857c815408451fdda3f96",
+    "frost_seal": "293e3795a768f22327f66367452fe2769ab43eee4f69cf1233f05f7e874acbf9",
+    "heavy_hammer": "2732cda702b34d5032bc3017995f9eaa66ce2457513a193a7fe33822e2f9dd18",
+    "leg_binder": "6b928db62cad2e6b5de5f068c484e5e2cc793d068f075fedd6bef1b181dc96f4",
+    "long_blade": "660bfea4cf957bd6668a5e593f0498f31d9cd0e92b3e05e7436701f15cf9bd7b",
+    "poison_needle": "3c4fe9313299ed65e1bee1a16ac2dc907ef6c4c4ad7d60b35c3cc4ed3a334fa0",
+    "recovery_draught": "ae6ac455390434aa9f30cd73217a35a1d1e828d6c295a8bfbeeb6f82ade23a95",
+    "rejuvenator": "60c8325457e7cb175268454b648d3d7ef057b931208514bb16b9da3f28f0ee0b",
+    "scrap_material": "c0e92a78f019f632957b3eb53b32a79926127b5a3f32abbc72d0cbe03d28f372",
+    "short_blade": "5454743314e5ddbaeb842373072b29f3153debda2008627d5e2aa168ab88f992",
+    "stimulator": "26e935b935bb098fbda19e7578251058e5e970e53e41fe1c618b537c4e9f2993",
+    "tower_shield": "6ede3eb5cf6f79c461b50a2f8296d71edc50828a356d22a0b7dc9c52a6f6c74e",
+    "ward_charm": "bf2989b0e2f52d5797cceb41d5061a89776ef3285c84a73fa895ff847dbeb30b"
+  }
+}

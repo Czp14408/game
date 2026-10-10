@@ -37,6 +37,7 @@ var node_states: Dictionary = {}    # node_id -> NodeState
 var known_intel: Dictionary = {}    # intel key -> true
 var quest_states: Dictionary = {}   # quest_id -> QuestState
 var claimed_rewards: Dictionary = {}# reward_id -> true
+var pending_quest_items: Dictionary = {} # reward_id -> ItemInstance; capacity failure does not reroll
 var submitted_battles: Dictionary = {} # battle_id -> true
 var main_completed: bool = false
 var returned_to_deity: bool = false

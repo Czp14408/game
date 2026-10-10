@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ItemDef" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_def.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/effect_def.gd" id="2"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+effect_type = &"attack"
+target_rule = &"enemy"
+emits_event = &"use_weapon"
+tier_values = PackedFloat64Array(8.0, 12.0, 18.0, 26.0)
+
+[resource]
+script = ExtResource("1")
+definition_id = &"growth_blade"
+display_name = "铁刃"
+category = &"weapon"
+tags = Array[StringName]([&"weapon", &"tool"])
+display_tags = PackedStringArray("武器", "工具")
+size = 2
+cooldown_ms = 2000
+tier_values = PackedFloat64Array(8.0, 12.0, 18.0, 26.0)
+tier_multicast = PackedInt32Array(1, 1, 1, 1)
+tier_weapon_growth = PackedFloat64Array(5.0, 7.0, 10.0, 15.0)
+icon_path = ""
+effects = Array[ExtResource("2")]([SubResource("Effect0")])

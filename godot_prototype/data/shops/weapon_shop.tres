@@ -6,5 +6,4 @@
 script = ExtResource("1_shvov")
 shop_id = &"weapon_shop"
 display_name = "兵器铺"
-item_candidates = Array[StringName]([&"long_blade", &"short_blade", &"bandit_knife", &"heavy_hammer"])
 quality_weights = PackedFloat64Array(0.85, 0.15, 0, 0)

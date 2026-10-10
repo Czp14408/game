@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "slice": 8,
+  "image_inset": 6,
+  "tooltip_padding": 16,
+  "tooltip_width": 320,
+  "qualities": [
+    {
+      "name": "bronze",
+      "frame": "bronze.svg",
+      "selected": "bronze_selected.svg"
+    },
+    {
+      "name": "silver",
+      "frame": "silver.svg",
+      "selected": "silver_selected.svg"
+    },
+    {
+      "name": "gold",
+      "frame": "gold.svg",
+      "selected": "gold_selected.svg"
+    },
+    {
+      "name": "diamond",
+      "frame": "diamond.svg",
+      "selected": "diamond_selected.svg"
+    }
+  ]
+}

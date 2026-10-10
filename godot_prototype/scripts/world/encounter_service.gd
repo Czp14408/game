@@ -221,7 +221,8 @@ func _generate_drops(state: RunState, es: EncounterState, summary: Dictionary) -
 		branch = "material" if rng.rand_float(scope) < DROP_MATERIAL_CHANCE else "config"
 
 	var entries := enemy.resolved_drop_entries()
-	if branch == "config" and entries.is_empty():
+	var extra_rules := catalog.reward_rules("drop",String(enemy.template_id))
+	if branch == "config" and entries.is_empty() and extra_rules.is_empty():
 		branch = "material"
 
 	if branch == "material":
@@ -231,8 +232,22 @@ func _generate_drops(state: RunState, es: EncounterState, summary: Dictionary) -
 		summary["drops"].append({"kind": "material", "definition_id": "scrap_material"})
 		return
 
-	var idx := rng.rand_index(scope, entries.size())
-	var grant: GrantDef = entries[idx]
+	var grant: GrantDef
+	if extra_rules.is_empty():
+		grant = entries[rng.rand_index(scope,entries.size())]
+	else:
+		var weights: Array = []
+		for entry in entries: weights.append(1.0)
+		for rule in extra_rules: weights.append(float(rule["weight"]))
+		var idx := rng.pick_weighted(scope,weights)
+		if idx < entries.size():
+			grant = entries[idx]
+		else:
+			var chosen: Dictionary = extra_rules[idx-entries.size()]
+			grant = GrantDef.new()
+			grant.definition_id = StringName(chosen["item"])
+			grant.quality = int(chosen["min_quality"]) + rng.rand_index(scope,int(chosen["max_quality"])-int(chosen["min_quality"])+1)
+			if catalog.item(grant.definition_id).fixed_base_price>=0:grant.quality=0
 	if grant.is_skill:
 		es.pending_skill = {"skill_id": grant.definition_id, "quality": grant.quality}
 		summary["drops"].append({"kind": "skill", "definition_id": String(grant.definition_id), "quality": grant.quality})

@@ -1,0 +1,26 @@
+[
+  {
+    "item": "shield_dagger",
+    "type": "drop",
+    "pool": "bandit",
+    "weight": 100000.0,
+    "min_quality": 1,
+    "max_quality": 2
+  },
+  {
+    "item": "shield_dagger",
+    "type": "event",
+    "pool": "material_small",
+    "weight": 100000.0,
+    "min_quality": 1,
+    "max_quality": 2
+  },
+  {
+    "item": "shield_dagger",
+    "type": "quest",
+    "pool": "side_road_bandit",
+    "weight": 100000.0,
+    "min_quality": 1,
+    "max_quality": 2
+  }
+]

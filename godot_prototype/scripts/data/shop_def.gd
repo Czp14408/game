@@ -10,14 +10,14 @@ const MODE_CANDIDATES := &"candidates"
 const MODE_MIXED := &"mixed"
 @export var mode: StringName = MODE_CANDIDATES
 
-## 候选池：物品 definition_id 列表（mode = candidates）
+## 旧测试/兼容候选池；正式物品候选仅使用 Excel 获取渠道。
 @export var item_candidates: Array[StringName] = []
 ## 技能候选池
 @export var skill_candidates: Array[StringName] = []
 ## mode = mixed 时：装备/技能类别权重
 @export var equipment_weight: float = 0.8
 @export var skill_weight: float = 0.2
-## mode = mixed 时：装备池与技能池
+## 旧测试/兼容装备池；正式装备候选仅使用 Excel 获取渠道。
 @export var equipment_pool: Array[StringName] = []
 
 @export var item_count: int = 4

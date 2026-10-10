@@ -77,6 +77,8 @@ static func build_actor(p_catalog: ContentCatalog, spec: Dictionary) -> CombatAc
 		st.size = def.size
 		st.quality = int(s.get("quality", 0))
 		st.effects = def.effects
+		st.multicast = def.multicast_at(st.quality)
+		st.weapon_growth_per_use = def.weapon_growth_at(st.quality)
 		st.self_passive = def.self_passive
 		st.base_cd_ms = def.cooldown_ms
 		st.base_value = def.value_at(st.quality) + float(s.get("extra_value", 0.0)) + float(s.get("trial_growth", 0.0))
@@ -164,9 +166,11 @@ func begin(p_player: CombatActor, p_enemy: CombatActor, p_battle_id: String, p_r
 			it.slow_ms = 0
 			it.haste_ms = 0
 			it.uses = 0
+			it.charge_visual_seq = 0
 			it.battle_growth = 0.0
 			it.locked_value = 0.0
 			it.locked_this_step = false
+			it.release_values.clear()
 			it.damage_attack = 0.0
 			it.damage_burn = 0.0
 			it.damage_poison = 0.0
@@ -213,13 +217,32 @@ func step() -> bool:
 			item.haste_ms = maxi(0, item.haste_ms - STEP_MS)
 			item.locked_this_step = (not frozen) and item.cooldown_remaining_ms <= 0
 
-	# 2. 双方共同锁定本步就绪且未被冻结的释放；锁定时快照效果值并重置该物品 CD。
+	# 2. 同轮释放先统一成长再快照，避免装备顺序影响结果。多重释放逐轮累积。
+	for actor: CombatActor in [_player, _enemy]:
+		for item in actor.items:
+			item.release_values.clear()
+		for release in range(10):
+			var growth := 0.0
+			for item in actor.items:
+				if item.locked_this_step and release < item.multicast:
+					growth += item.weapon_growth_per_use
+			for item in actor.items:
+				if item.is_weapon(): item.battle_growth += growth
+			for item in actor.items:
+				if item.locked_this_step and release < item.multicast:
+					item.release_values.append(item.base_value + item.battle_growth)
+	# 每个自然冷却只重置一次；使用事件读取各次释放快照。
 	for actor: CombatActor in [_player, _enemy]:
 		for item in actor.items:
 			if item.locked_this_step:
 				item.cooldown_remaining_ms = item.base_cd_ms
-				item.uses += 1
-				item.locked_value = item.base_value + item.battle_growth
+				item.uses += item.multicast
+				item.locked_value = item.release_values[0]
+				if item.effects.size() > 1:
+					for release in item.multicast:
+						var target_side := actor.side if item.category in [ItemDef.CAT_SHIELD, ItemDef.CAT_HEAL] else 1 - actor.side
+						var release_value := item.release_values[release]
+						_emit_and_queue(BattleEvent.TYPE_USE_ITEM, actor.side, item, release_value, release_value, target_side)
 
 	var locked: Array = [locked_items(_player), locked_items(_enemy)]
 
@@ -231,31 +254,38 @@ func step() -> bool:
 			actor.hp = minf(actor.hp, actor.max_hp)
 			actor.hp_limit_delta_pending = 0.0
 		for item in locked[i]:
-			match item.category:
-				ItemDef.CAT_SHIELD:
-					actor.shield += item.locked_value
-					actor.shield_gained += item.locked_value
-					item.shield_gained += item.locked_value
-					_emit_and_queue(BattleEvent.TYPE_USE_ITEM, i, item, item.locked_value, item.locked_value, 1 - i)
-					_emit_and_queue(BattleEvent.TYPE_USE_SHIELD, i, item, item.locked_value, item.locked_value, i)
-				ItemDef.CAT_HEAL:
-					var r := _heal(actor, item.locked_value, item)
-					_emit_and_queue(BattleEvent.TYPE_USE_ITEM, i, item, item.locked_value, item.locked_value, i)
-					_emit_and_queue(BattleEvent.TYPE_HEAL, i, item, r["computed"], r["actual"], i)
+			for amount in _effect_values(item, &"shield"):
+				actor.shield += amount
+				actor.shield_gained += amount
+				item.shield_gained += amount
+				if item.category == ItemDef.CAT_SHIELD and item.effects.size() <= 1:
+					_emit_and_queue(BattleEvent.TYPE_USE_ITEM, i, item, amount, amount, i)
+				_emit_and_queue(BattleEvent.TYPE_USE_SHIELD, i, item, amount, amount, i)
+			for amount in _effect_values(item, &"heal"):
+				var r := _heal(actor, amount, item)
+				if item.category == ItemDef.CAT_HEAL and item.effects.size() <= 1:
+					_emit_and_queue(BattleEvent.TYPE_USE_ITEM, i, item, amount, amount, i)
+				_emit_and_queue(BattleEvent.TYPE_HEAL, i, item, r["computed"], r["actual"], i)
 
-	# 4. 处理攻击、已有异常状态的整数秒跳伤与沙尘暴。新施加异常不参与本步跳伤。
+	# 4. Resolve all attack effects before the existing DoT and death phases.
 	for i in [CombatActor.SIDE_PLAYER, CombatActor.SIDE_ENEMY]:
 		var attacker: CombatActor = sides()[i]
 		var target: CombatActor = sides()[1 - i]
+		var release_indices := {}
 		for item in locked[i]:
-			if item.category != ItemDef.CAT_WEAPON:
-				continue
-			var amount: float = item.locked_value + attacker.weapon_damage_flat
-			if attacker.weapon_damage_flat != 0.0:
-				attacker.add_trait_stat("weapon_damage_flat", attacker.weapon_damage_flat)
-			_apply_ordinary(target, amount, item, "attack")
-			_emit_and_queue(BattleEvent.TYPE_USE_ITEM, i, item, amount, amount, 1 - i)
-			_emit_and_queue(BattleEvent.TYPE_USE_WEAPON, i, item, amount, amount, 1 - i)
+			var release_index: int = release_indices.get(item, 0)
+			release_indices[item] = release_index + 1
+			item.locked_value = item.release_values[release_index]
+			for value in _effect_values(item, &"attack"):
+				var flat := attacker.weapon_damage_flat if item.is_weapon() else 0.0
+				var amount: float = value + flat
+				if flat != 0.0:
+					attacker.add_trait_stat("weapon_damage_flat", flat)
+				_apply_ordinary(target, amount, item, "attack")
+				if item.is_weapon():
+					if item.effects.size() <= 1:
+						_emit_and_queue(BattleEvent.TYPE_USE_ITEM, i, item, amount, amount, 1 - i)
+					_emit_and_queue(BattleEvent.TYPE_USE_WEAPON, i, item, amount, amount, 1 - i)
 
 	if _step % DOT_INTERVAL_STEPS == 0:
 		for actor: CombatActor in [_player, _enemy]:
@@ -296,13 +326,17 @@ func step() -> bool:
 		var actor: CombatActor = sides()[i]
 		var target: CombatActor = sides()[1 - i]
 		for item in locked[i]:
+			for amount in _effect_values(item, &"burn"):
+				if item.category == ItemDef.CAT_BURN and item.effects.size() <= 1:
+					_emit_and_queue(BattleEvent.TYPE_USE_ITEM, i, item, amount, amount, 1 - i)
+				target.add_stack(target.burn_stacks, item.instance_id, amount)
+				_emit_and_queue(BattleEvent.TYPE_APPLY_BURN, i, item, amount, amount, 1 - i)
+			for amount in _effect_values(item, &"poison"):
+				if item.category == ItemDef.CAT_POISON and item.effects.size() <= 1:
+					_emit_and_queue(BattleEvent.TYPE_USE_ITEM, i, item, amount, amount, 1 - i)
+				target.add_stack(target.poison_stacks, item.instance_id, amount)
+				_emit_and_queue(BattleEvent.TYPE_APPLY_POISON, i, item, amount, amount, 1 - i)
 			match item.category:
-				ItemDef.CAT_BURN:
-					target.add_stack(target.burn_stacks, item.instance_id, item.locked_value)
-					_emit_and_queue(BattleEvent.TYPE_APPLY_BURN, i, item, item.locked_value, item.locked_value, 1 - i)
-				ItemDef.CAT_POISON:
-					target.add_stack(target.poison_stacks, item.instance_id, item.locked_value)
-					_emit_and_queue(BattleEvent.TYPE_APPLY_POISON, i, item, item.locked_value, item.locked_value, 1 - i)
 				ItemDef.CAT_HASTE:
 					var own_pool: Array[BattleItemState] = []
 					for y in actor.items:
@@ -340,11 +374,25 @@ func sides() -> Array:
 	return [_player, _enemy]
 
 
+func _effect_values(item: BattleItemState, kind: StringName) -> Array[float]:
+	var result: Array[float] = []
+	var primary := &"attack" if item.category == ItemDef.CAT_WEAPON else item.category
+	if primary == kind:
+		result.append(item.locked_value)
+	# Keep legacy single-effect and category behavior; only new secondary effects use own tiers.
+	for index in range(1, item.effects.size()):
+		var effect := item.effects[index]
+		if effect.effect_type == kind:
+			result.append(effect.value_at(item.quality, item.locked_value))
+	return result
+
+
 func locked_items(actor: CombatActor) -> Array[BattleItemState]:
 	var out: Array[BattleItemState] = []
 	for item in actor.items:
 		if item.locked_this_step:
-			out.append(item)
+			for release in item.multicast:
+				out.append(item)
 	return out
 
 
@@ -490,6 +538,7 @@ func _process_chain_event(actor: CombatActor, target: CombatActor, ev: BattleEve
 			for y in actor.items:
 				if y.self_passive == ItemDef.PASSIVE_CHARGE_ON_WEAPON_USE:
 					y.cooldown_remaining_ms = maxi(0, y.cooldown_remaining_ms - CHARGE_MS)
+					y.charge_visual_seq += 1
 			# 吸血：伤害后、存活时的连锁阶段治疗，不能复活已死亡角色
 			if actor.heal_on_weapon_use > 0.0:
 				var r := _heal(actor, actor.heal_on_weapon_use, null)

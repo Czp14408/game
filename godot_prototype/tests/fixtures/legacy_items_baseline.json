@@ -1,0 +1,418 @@
+[
+	{
+		"category": "weapon",
+		"cooldown_ms": 3000,
+		"effects": [
+			{
+				"event": "use_weapon",
+				"fixed_value": 0.0,
+				"target": "enemy",
+				"type": "attack",
+				"value_source": "tier",
+				"values": []
+			}
+		],
+		"equippable": true,
+		"fixed_base_price": -1,
+		"icon_path": "",
+		"id": "bandit_knife",
+		"name": "土匪短刀",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "",
+		"size": 1,
+		"tags": [
+			"active"
+		],
+		"values": [
+			8.0,
+			12.0,
+			18.0,
+			26.0
+		]
+	},
+	{
+		"category": "burn",
+		"cooldown_ms": 5000,
+		"effects": [
+			{
+				"event": "apply_burn",
+				"fixed_value": 0.0,
+				"target": "enemy",
+				"type": "burn",
+				"value_source": "tier",
+				"values": []
+			}
+		],
+		"equippable": true,
+		"fixed_base_price": -1,
+		"icon_path": "",
+		"id": "fire_oil",
+		"name": "火油器",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "",
+		"size": 2,
+		"tags": [
+			"active"
+		],
+		"values": [
+			4.0,
+			6.0,
+			9.0,
+			13.0
+		]
+	},
+	{
+		"category": "freeze",
+		"cooldown_ms": 8000,
+		"effects": [
+			{
+				"event": "",
+				"fixed_value": 0.0,
+				"target": "enemy_active_item",
+				"type": "freeze",
+				"value_source": "tier",
+				"values": []
+			}
+		],
+		"equippable": true,
+		"fixed_base_price": -1,
+		"icon_path": "",
+		"id": "frost_seal",
+		"name": "寒封器",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "",
+		"size": 2,
+		"tags": [
+			"active"
+		],
+		"values": [
+			1000.0,
+			1500.0,
+			2000.0,
+			2500.0
+		]
+	},
+	{
+		"category": "weapon",
+		"cooldown_ms": 7000,
+		"effects": [
+			{
+				"event": "use_weapon",
+				"fixed_value": 0.0,
+				"target": "enemy",
+				"type": "attack",
+				"value_source": "tier",
+				"values": []
+			}
+		],
+		"equippable": true,
+		"fixed_base_price": -1,
+		"icon_path": "",
+		"id": "heavy_hammer",
+		"name": "重锤",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "",
+		"size": 3,
+		"tags": [
+			"active"
+		],
+		"values": [
+			30.0,
+			45.0,
+			65.0,
+			90.0
+		]
+	},
+	{
+		"category": "slow",
+		"cooldown_ms": 7000,
+		"effects": [
+			{
+				"event": "",
+				"fixed_value": 0.0,
+				"target": "enemy_active_item",
+				"type": "slow",
+				"value_source": "tier",
+				"values": []
+			}
+		],
+		"equippable": true,
+		"fixed_base_price": -1,
+		"icon_path": "",
+		"id": "leg_binder",
+		"name": "缚足器",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "",
+		"size": 2,
+		"tags": [
+			"active"
+		],
+		"values": [
+			3000.0,
+			4000.0,
+			5000.0,
+			6000.0
+		]
+	},
+	{
+		"category": "weapon",
+		"cooldown_ms": 4000,
+		"effects": [
+			{
+				"event": "use_weapon",
+				"fixed_value": 0.0,
+				"target": "enemy",
+				"type": "attack",
+				"value_source": "tier",
+				"values": []
+			}
+		],
+		"equippable": true,
+		"fixed_base_price": -1,
+		"icon_path": "",
+		"id": "long_blade",
+		"name": "长刀",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "",
+		"size": 2,
+		"tags": [
+			"active"
+		],
+		"values": [
+			12.0,
+			18.0,
+			28.0,
+			42.0
+		]
+	},
+	{
+		"category": "poison",
+		"cooldown_ms": 6000,
+		"effects": [
+			{
+				"event": "apply_poison",
+				"fixed_value": 0.0,
+				"target": "enemy",
+				"type": "poison",
+				"value_source": "tier",
+				"values": []
+			}
+		],
+		"equippable": true,
+		"fixed_base_price": -1,
+		"icon_path": "",
+		"id": "poison_needle",
+		"name": "毒针器",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "",
+		"size": 2,
+		"tags": [
+			"active"
+		],
+		"values": [
+			2.0,
+			3.0,
+			5.0,
+			8.0
+		]
+	},
+	{
+		"category": "consumable",
+		"cooldown_ms": 0,
+		"effects": [],
+		"equippable": false,
+		"fixed_base_price": 6,
+		"icon_path": "",
+		"id": "recovery_draught",
+		"name": "恢复品",
+		"out_of_combat_heal": 30.0,
+		"self_passive": "",
+		"size": 1,
+		"tags": [
+			"active"
+		],
+		"values": [
+			30.0,
+			30.0,
+			30.0,
+			30.0
+		]
+	},
+	{
+		"category": "heal",
+		"cooldown_ms": 6000,
+		"effects": [
+			{
+				"event": "heal",
+				"fixed_value": 0.0,
+				"target": "self",
+				"type": "heal",
+				"value_source": "tier",
+				"values": []
+			}
+		],
+		"equippable": true,
+		"fixed_base_price": -1,
+		"icon_path": "",
+		"id": "rejuvenator",
+		"name": "回春装置",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "",
+		"size": 2,
+		"tags": [
+			"active"
+		],
+		"values": [
+			8.0,
+			13.0,
+			20.0,
+			30.0
+		]
+	},
+	{
+		"category": "material",
+		"cooldown_ms": 0,
+		"effects": [],
+		"equippable": false,
+		"fixed_base_price": 8,
+		"icon_path": "",
+		"id": "scrap_material",
+		"name": "材料",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "",
+		"size": 1,
+		"tags": [
+			"active"
+		],
+		"values": [
+			8.0,
+			8.0,
+			8.0,
+			8.0
+		]
+	},
+	{
+		"category": "weapon",
+		"cooldown_ms": 2000,
+		"effects": [
+			{
+				"event": "use_weapon",
+				"fixed_value": 0.0,
+				"target": "enemy",
+				"type": "attack",
+				"value_source": "tier",
+				"values": []
+			}
+		],
+		"equippable": true,
+		"fixed_base_price": -1,
+		"icon_path": "",
+		"id": "short_blade",
+		"name": "短刃",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "",
+		"size": 1,
+		"tags": [
+			"active"
+		],
+		"values": [
+			4.0,
+			6.0,
+			9.0,
+			13.0
+		]
+	},
+	{
+		"category": "haste",
+		"cooldown_ms": 6000,
+		"effects": [
+			{
+				"event": "",
+				"fixed_value": 0.0,
+				"target": "own_other_active_item",
+				"type": "haste",
+				"value_source": "tier",
+				"values": []
+			}
+		],
+		"equippable": true,
+		"fixed_base_price": -1,
+		"icon_path": "",
+		"id": "stimulator",
+		"name": "鼓劲器",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "",
+		"size": 1,
+		"tags": [
+			"active"
+		],
+		"values": [
+			2000.0,
+			3000.0,
+			4000.0,
+			5000.0
+		]
+	},
+	{
+		"category": "shield",
+		"cooldown_ms": 8000,
+		"effects": [
+			{
+				"event": "use_shield",
+				"fixed_value": 0.0,
+				"target": "self",
+				"type": "shield",
+				"value_source": "tier",
+				"values": []
+			}
+		],
+		"equippable": true,
+		"fixed_base_price": -1,
+		"icon_path": "",
+		"id": "tower_shield",
+		"name": "重盾",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "",
+		"size": 3,
+		"tags": [
+			"active"
+		],
+		"values": [
+			28.0,
+			45.0,
+			70.0,
+			105.0
+		]
+	},
+	{
+		"category": "shield",
+		"cooldown_ms": 5000,
+		"effects": [
+			{
+				"event": "use_shield",
+				"fixed_value": 0.0,
+				"target": "self",
+				"type": "shield",
+				"value_source": "tier",
+				"values": []
+			}
+		],
+		"equippable": true,
+		"fixed_base_price": -1,
+		"icon_path": "",
+		"id": "ward_charm",
+		"name": "护身佩",
+		"out_of_combat_heal": 0.0,
+		"self_passive": "charge_on_weapon_use",
+		"size": 2,
+		"tags": [
+			"active"
+		],
+		"values": [
+			12.0,
+			20.0,
+			32.0,
+			48.0
+		]
+	}
+]

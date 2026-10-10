@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="ItemDef" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_def.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/effect_def.gd" id="2"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+effect_type = &"poison"
+target_rule = &"enemy"
+emits_event = &"apply_poison"
+tier_values = PackedFloat64Array(3.0, 6.0, 9.0, 12.0)
+
+[sub_resource type="Resource" id="Effect1"]
+script = ExtResource("2")
+effect_type = &"attack"
+target_rule = &"enemy"
+emits_event = &""
+tier_values = PackedFloat64Array(8.0, 9.0, 10.0, 11.0)
+
+[sub_resource type="Resource" id="Effect2"]
+script = ExtResource("2")
+effect_type = &"shield"
+target_rule = &"self"
+emits_event = &"use_shield"
+tier_values = PackedFloat64Array(5.0, 6.0, 7.0, 8.0)
+
+[resource]
+script = ExtResource("1")
+definition_id = &"combined_small"
+display_name = "组合效果展示样例"
+category = &"poison"
+tags = Array[StringName]([&"material"])
+display_tags = PackedStringArray("材料")
+size = 1
+cooldown_ms = 3000
+tier_values = PackedFloat64Array(3.0, 6.0, 9.0, 12.0)
+tier_multicast = PackedInt32Array(2, 2, 2, 2)
+icon_path = ""
+effects = Array[ExtResource("2")]([SubResource("Effect0"), SubResource("Effect1"), SubResource("Effect2")])

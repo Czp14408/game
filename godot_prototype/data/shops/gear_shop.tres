@@ -6,5 +6,4 @@
 script = ExtResource("1_24dgm")
 shop_id = &"gear_shop"
 display_name = "装备铺"
-item_candidates = Array[StringName]([&"ward_charm", &"tower_shield", &"rejuvenator", &"fire_oil", &"poison_needle", &"stimulator", &"leg_binder", &"frost_seal"])
 quality_weights = PackedFloat64Array(0.85, 0.15, 0, 0)

@@ -9,13 +9,13 @@ const QUALITY_GOLD := 2
 const QUALITY_DIAMOND := 3
 const MAX_QUALITY := 3
 
-const ITEMS_DIR := "res://data/items"
 const SKILLS_DIR := "res://data/skills"
 const TRAITS_DIR := "res://data/traits"
 const ENEMIES_DIR := "res://data/enemies"
 const SHOPS_DIR := "res://data/shops"
 const WORLDS_DIR := "res://data/worlds"
 const STAGES_DIR := "res://data/stages"
+const GENERATED_ITEMS_DIR := "res://data/generated_items"
 
 var items: Dictionary = {}          # StringName -> ItemDef
 var skills: Dictionary = {}         # StringName -> SkillDef
@@ -26,6 +26,10 @@ var worlds: Dictionary = {}         # StringName -> WorldDef
 var stage_sets: Dictionary = {}     # StringName -> StageSetDef
 var content_version: String = "unknown"
 var load_errors: PackedStringArray = []
+var generated_item_ids: Array[StringName] = []
+var generated_shop_rules: Dictionary = {}
+var generated_reward_rules: Dictionary = {}
+var items_from_excel: bool = false
 
 
 static func load_default() -> ContentCatalog:
@@ -35,7 +39,7 @@ static func load_default() -> ContentCatalog:
 
 
 func load_all() -> void:
-	items = _load_dir(ITEMS_DIR)
+	items = {} # Item definitions are exclusively authored in content/items.xlsx.
 	skills = _load_dir(SKILLS_DIR)
 	traits = _load_dir(TRAITS_DIR)
 	enemies = _load_dir(ENEMIES_DIR)
@@ -43,6 +47,91 @@ func load_all() -> void:
 	worlds = _load_dir(WORLDS_DIR)
 	stage_sets = _load_dir(STAGES_DIR)
 	_load_manifest()
+	_load_generated_items()
+
+
+## Excel 输出独立目录，旧生成器不能覆盖；清单只列出本批启用的物品。
+func _load_generated_items() -> void:
+	generated_item_ids.clear()
+	generated_shop_rules.clear()
+	generated_reward_rules.clear()
+	items_from_excel = false
+	var path := GENERATED_ITEMS_DIR + "/manifest.json"
+	if not FileAccess.file_exists(path):
+		load_errors.append("Excel 物品清单缺失，请先运行 content/update_items.cmd")
+		return
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
+	if not (parsed is Dictionary) or int(parsed.get("schema", 0)) != 1:
+		load_errors.append("Excel 物品清单格式无效")
+		return
+	items_from_excel = parsed.get("item_source", "") == "excel"
+	for entry in parsed.get("items", []):
+		var id := StringName(entry.get("id", ""))
+		if id == &"" or items.has(id):
+			load_errors.append("Excel 物品 ID 空白或重复：%s" % id)
+			continue
+		var definition := load("%s/%s.tres" % [GENERATED_ITEMS_DIR, id]) as ItemDef
+		if definition == null or definition.definition_id != id:
+			load_errors.append("Excel 物品加载失败：%s" % id)
+			continue
+		items[id] = definition
+		generated_item_ids.append(id)
+	for rule in parsed.get("shops", []):
+		var shop_id := StringName(rule.get("shop", ""))
+		var item_id := StringName(rule.get("item", ""))
+		if not shops.has(shop_id) or not generated_item_ids.has(item_id):
+			load_errors.append("Excel 商店配置引用无效：%s/%s" % [shop_id, item_id])
+			continue
+		if not generated_shop_rules.has(shop_id):
+			generated_shop_rules[shop_id] = []
+		generated_shop_rules[shop_id].append(rule)
+	load_reward_rules(parsed.get("channels", []))
+	content_version += "+" + str(parsed.get("content_version", "unknown"))
+
+
+func load_reward_rules(rules: Array) -> void:
+	generated_reward_rules.clear()
+	for rule in rules:
+		var item_id := StringName(rule.get("item", ""))
+		var kind := str(rule.get("type", ""))
+		var pool := str(rule.get("pool", ""))
+		var valid := kind in ["drop", "event", "quest"] and generated_item_ids.has(item_id)
+		valid = valid and is_finite(float(rule.get("weight",0)))
+		if kind == "drop": valid = valid and enemies.has(StringName(pool))
+		if kind == "event": valid = valid and pool in ["material_small", "supply_small"]
+		if kind == "quest":
+			var found := false
+			for w in worlds.values():
+				if w.quest_by_id(StringName(pool)) != null: found = true
+			valid = valid and found
+		if not valid or float(rule.get("weight", 0)) <= 0 or int(rule.get("min_quality", -1)) < 0 or int(rule.get("max_quality", 4)) > 3 or int(rule.get("min_quality", 0)) > int(rule.get("max_quality", 0)):
+			load_errors.append("Excel 奖励渠道配置无效：%s/%s/%s" % [kind,pool,item_id])
+			continue
+		var key := kind + "/" + pool
+		if not generated_reward_rules.has(key): generated_reward_rules[key] = []
+		var duplicate := false
+		for old in generated_reward_rules[key]:
+			if old["item"] == rule["item"]: duplicate = true
+		if duplicate:
+			load_errors.append("Excel 奖励渠道重复：%s/%s" % [key,item_id])
+			continue
+		generated_reward_rules[key].append(rule)
+
+
+func reward_rules(kind: String, pool: String) -> Array:
+	return generated_reward_rules.get(kind + "/" + pool, [])
+
+
+func roll_reward(kind: String, pool: String, rng: RandomService, scope: String) -> Dictionary:
+	var rules := reward_rules(kind,pool)
+	if rules.is_empty(): return {}
+	var weights: Array = []
+	for rule in rules: weights.append(float(rule["weight"]))
+	var chosen: Dictionary = rules[rng.pick_weighted(scope,weights)]
+	var low := int(chosen["min_quality"])
+	var quality := low + rng.rand_index(scope,int(chosen["max_quality"])-low+1)
+	if item(StringName(chosen["item"])).fixed_base_price >= 0:quality=0
+	return {"id":StringName(chosen["item"]),"quality":quality}
 
 
 func _load_dir(dir_path: String) -> Dictionary:
@@ -168,13 +257,43 @@ func validate() -> PackedStringArray:
 		var d: ItemDef = items[id]
 		if d.tier_values.size() != 4:
 			problems.append("物品 %s 的四档数值不完整" % id)
+		if d.tier_multicast.size() != 4:
+			problems.append("物品 %s 的四档多重释放次数不完整" % id)
+		if not d.tier_weapon_growth.is_empty():
+			if d.category != ItemDef.CAT_WEAPON or d.tier_weapon_growth.size() != 4:
+				problems.append("物品 %s 的武器成长配置非法" % id)
+			for amount in d.tier_weapon_growth:
+				if not is_finite(amount) or amount < 0 or amount > 99999 or amount != floor(amount):
+					problems.append("物品 %s 成长数值须为 0–99999 整数" % id)
+		for count in d.tier_multicast:
+			if count < 1 or count > 10:
+				problems.append("物品 %s 多重释放次数须为 1–10" % id)
 		if d.size < 1 or d.size > 3:
 			problems.append("物品 %s 占格非法：%d" % [id, d.size])
 		if d.equippable and d.size > 3:
 			problems.append("物品 %s 超过战斗栏单件上限" % id)
 		if d.cooldown_ms <= 0 and d.category != ItemDef.CAT_CONSUMABLE and d.category != ItemDef.CAT_MATERIAL:
 			problems.append("物品 %s 缺少有效 CD" % id)
-		for e in d.effects:
+		if d.effects.size() > (3 if d.size == 1 else 5):
+			problems.append("物品 %s 超过该尺寸的基础属性数量上限" % id)
+		var seen_effects: Array[StringName] = []
+		for index in d.effects.size():
+			var e := d.effects[index]
+			if e.effect_type in seen_effects:
+				problems.append("物品 %s 重复配置同种基础属性" % id)
+			seen_effects.append(e.effect_type)
+			if index > 0 and e.effect_type not in [EffectDef.TYPE_ATTACK, EffectDef.TYPE_SHIELD, EffectDef.TYPE_HEAL, EffectDef.TYPE_BURN, EffectDef.TYPE_POISON]:
+				problems.append("物品 %s 附加效果尚未支持" % id)
+			if index > 0 and e.value_source == &"tier" and e.tier_values.is_empty():
+				problems.append("物品 %s 的附加属性缺少独立品质数值" % id)
+			if not e.tier_values.is_empty():
+				if e.tier_values.size() != 4:
+					problems.append("物品 %s 的效果独立四档数值不完整" % id)
+				for amount in e.tier_values:
+					if not is_finite(amount) or amount < 0 or amount > 99999 or amount != floorf(amount):
+						problems.append("物品 %s 的效果数值须为 0–99999 整数" % id)
+				if index == 0 and e.tier_values != d.tier_values:
+					problems.append("物品 %s 主效果数值与物品主数值不一致" % id)
 			if e.value_source == &"tier" and d.tier_values.size() != 4:
 				problems.append("物品 %s 的效果缺少四档数值" % id)
 

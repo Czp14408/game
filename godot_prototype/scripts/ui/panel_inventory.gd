@@ -1,6 +1,6 @@
 class_name PanelInventory
 extends Control
-## 背包、商店、整理共用的右侧面板：一块面板贴图 + 两行物品横栏 + 底部操作条。
+## 商店、整理共用的右侧面板：独立绘制背景、两行物品卡、底部操作条。
 ## 依据：背包商店整理共用面板说明.md（视觉与布局）、ui修改迭代工作流.md（接入工序）。
 ## 边界：只负责把清单给的位置摆出来（贴图、单位格线、物品格、操作按钮），
 ## 哪件物品、能不能点、点了做什么，全部由页面通过 entries / ops 传进来。
@@ -76,9 +76,16 @@ func build() -> void:
 	position = Vector2(rect.position)
 	size = Vector2(rect.size)
 
-	var art := UiKit.panel_art(InventorySkin.texture(InventorySkin.PANEL),
-		Rect2i(Vector2i.ZERO, rect.size))
+	var art := Panel.new()
 	art.name = "PanelArt"
+	art.size = size
+	art.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var background := StyleBoxFlat.new()
+	background.bg_color = Color("122333")
+	background.border_color = Color("536e87")
+	background.set_border_width_all(2)
+	background.set_corner_radius_all(8)
+	art.add_theme_stylebox_override("panel", background)
 	add_child(art)
 
 	for row in row_order():
@@ -120,6 +127,8 @@ func set_row(row: String, entries: Array, capacity: int = -1) -> void:
 	var info: Dictionary = _rows[row]
 	var holder: Control = info["holder"]
 	var field: SlotField = info["field"]
+	var offers := not entries.is_empty() and bool(entries[0].get("offer", false))
+	field.slot_count = maxi(capacity, 1) if offers else InventorySkin.slot_count(row)
 	var n := maxi(int(field.slot_count), 1)
 	if capacity < 0:
 		capacity = n
@@ -137,7 +146,7 @@ func set_row(row: String, entries: Array, capacity: int = -1) -> void:
 	var cursor := 0
 	for i in entries.size():
 		var e: Dictionary = entries[i]
-		var span := maxi(int(e.get("size", 1)), 1)
+		var span := 1 if offers else maxi(int(e.get("size", 1)), 1)
 		if cursor + span > capacity:
 			break
 		var box := field.cell_rect(cursor, span)
@@ -238,6 +247,9 @@ func _apply_selection_style() -> void:
 
 
 func _apply_cell_style(b: Button, quality: int, enabled: bool, active: bool) -> void:
+	if b is ItemCard:
+		(b as ItemCard).set_active(active)
+		return
 	var box := StyleBoxFlat.new()
 	box.bg_color = Color(0.07, 0.13, 0.20, 0.72) if enabled else Color(0.07, 0.11, 0.16, 0.45)
 	box.set_border_width_all(2 if active else 1)
@@ -262,7 +274,7 @@ func _apply_cell_style(b: Button, quality: int, enabled: bool, active: bool) -> 
 
 
 func _make_cell(e: Dictionary, box: Rect2, row: String, index: int) -> Button:
-	var b := Button.new()
+	var b: Button = ItemCard.new() if e.get("definition") is ItemDef else Button.new()
 	b.name = "Cell_%s_%d" % [row, index]
 	b.focus_mode = Control.FOCUS_NONE
 	b.clip_text = true
@@ -270,6 +282,11 @@ func _make_cell(e: Dictionary, box: Rect2, row: String, index: int) -> Button:
 	b.position = box.position
 	b.size = box.size
 	b.mouse_filter = Control.MOUSE_FILTER_STOP
+
+	if b is ItemCard:
+		(b as ItemCard).configure(e)
+		b.pressed.connect(_on_cell_pressed.bind(row, index))
+		return b
 
 	var w := int(box.size.x)
 	var h := int(box.size.y)
@@ -350,10 +367,6 @@ func report() -> Dictionary:
 		"rows": rows,
 		"ops": ops,
 		"selected": _selected,
-		"texture": _texture_size(),
+		"texture": Vector2i.ZERO,
+		"background": "procedural",
 	}
-
-
-func _texture_size() -> Vector2i:
-	var tex := InventorySkin.texture(InventorySkin.PANEL)
-	return Vector2i.ZERO if tex == null else Vector2i(tex.get_size())

@@ -270,26 +270,18 @@ func _build_tray(view: BattleSide, key: String, actor: CombatActor) -> void:
 ## 依据 §2.1：单位格宽由净宽换算，物品边框不改变格宽；冷却与冻结减速均为独立覆盖层。
 ## 返回控件与其子节点的引用集合，供 _refresh_item_cell 增量刷新，避免每帧重建。
 func _make_item_cell(item: BattleItemState, box: Rect2, key: String, index: int) -> Dictionary:
-	var cell := Panel.new()
+	var cell := ItemCard.new()
 	cell.name = "Item_%s_%d" % [key, index]
 	cell.position = box.position
 	cell.size = box.size
-	var style := StyleBoxFlat.new()
-	style.bg_color = Color(0.11, 0.13, 0.17, 0.88)
-	style.set_border_width_all(2)
-	style.border_color = UiKit.quality_color(item.quality)
-	style.set_corner_radius_all(3)
-	cell.add_theme_stylebox_override("panel", style)
+	cell.focus_mode = Control.FOCUS_NONE
+	cell.configure({"definition": catalog.item(item.definition_id), "quality": item.quality, "battle_state": item})
+	var h := int(cell.card_rect.size.y)
+	var pad := int(cell.card_rect.position.x) + 5
+	var inner_w := maxi(int(cell.card_rect.size.x) - 10, 8)
 
-	var w := int(box.size.x)
-	var h := int(box.size.y)
-	var pad := 5
-	var inner_w := maxi(w - pad * 2, 8)
-
-	cell.add_child(UiKit.abs_block(item.display_name, 13, UiKit.COL_TEXT, Rect2i(pad, 4, inner_w, 36)))
-	cell.add_child(UiKit.abs_label("%s·%d格" % [PriceTable.quality_name(item.quality), item.size],
-		11, UiKit.quality_color(item.quality), Rect2i(pad, 42, inner_w, 15)))
 	var uses_l := UiKit.abs_label("", 11, UiKit.COL_MUTED, Rect2i(pad, 58, inner_w, 15))
+	uses_l.visible = false
 	cell.add_child(uses_l)
 
 	var bar_h := 7
@@ -304,17 +296,20 @@ func _make_item_cell(item: BattleItemState, box: Rect2, key: String, index: int)
 	bar.name = "Fill"
 	bar_wrap.add_child(bar)
 	cell.add_child(bar_wrap)
+	bar_wrap.visible = false  # Shared ItemMotion draws the cooldown bar.
 	var cd_l := UiKit.abs_label("", 11, UiKit.COL_MUTED, Rect2i(pad, h - 20, inner_w, 14))
 	cell.add_child(cd_l)
 
 	# 冻结／减速／加速覆盖层：整格染色，独立于冷却条，两种状态不会互相遮蔽。
-	var overlay := UiKit.overlay(Color(0, 0, 0, 0), Vector2(box.size))
+	var overlay := UiKit.overlay(Color(0, 0, 0, 0), cell.card_rect.size)
+	overlay.position = cell.card_rect.position
 	overlay.name = "ControlOverlay"
 	overlay.visible = false
 	cell.add_child(overlay)
 
 	# 冷却中整格压暗，让「现在能放什么」一眼可见。
-	var dim := UiKit.overlay(Color(0.02, 0.03, 0.05, 0.45), Vector2(box.size))
+	var dim := UiKit.overlay(Color(0.02, 0.03, 0.05, 0.45), cell.card_rect.size)
+	dim.position = cell.card_rect.position
 	dim.name = "CooldownDim"
 	dim.visible = false
 	cell.add_child(dim)
@@ -659,29 +654,17 @@ func _build_drop_display(es: EncounterState, win: bool) -> void:
 
 func _build_item_drop(it: ItemInstance) -> void:
 	var slot_w := _enemy_side.slots.size.x / 10.0
-	var span := maxi(it.size(catalog), 1)
+	var span := maxi(catalog.item(it.definition_id).size, 1)
 	var w := slot_w * span
 	var h := _enemy_side.slots.size.y
 	var x := (_enemy_side.slots.size.x - w) / 2.0
 	var box := Rect2(x, 0, w, h)
-	var cell := Panel.new()
+	var cell := ItemCard.new()
 	cell.position = box.position
 	cell.size = box.size
 	cell.mouse_filter = Control.MOUSE_FILTER_STOP
 	cell.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	var style := StyleBoxFlat.new()
-	style.bg_color = Color(0.11, 0.15, 0.22, 0.9)
-	style.set_border_width_all(2)
-	style.border_color = UiKit.quality_color(it.quality)
-	style.set_corner_radius_all(3)
-	cell.add_theme_stylebox_override("panel", style)
-	var def := catalog.item(it.definition_id)
-	cell.add_child(UiKit.abs_label("点击领取", 11, UiKit.COL_SYS_ACCENT,
-		Rect2i(4, int(h) - 34, int(w) - 8, 14), HORIZONTAL_ALIGNMENT_CENTER))
-	cell.add_child(UiKit.abs_block(def.display_name if def != null else String(it.definition_id),
-		12, UiKit.COL_TEXT, Rect2i(4, 6, int(w) - 8, maxi(int(h) - 50, 12))))
-	cell.add_child(UiKit.abs_label("%s·%d格" % [PriceTable.quality_name(it.quality), def.size if def != null else 1],
-		10, UiKit.quality_color(it.quality), Rect2i(4, int(h) - 18, int(w) - 8, 14)))
+	cell.configure({"definition": catalog.item(it.definition_id), "instance": it, "quality": it.quality, "price_text": "点击领取"})
 	cell.gui_input.connect(_on_drop_item_click.bind(it))
 	_drop_holder.add_child(cell)
 
@@ -902,8 +885,7 @@ func _refresh_item_cell(row: Dictionary) -> void:
 		state_text = "减速中"
 	elif it.haste_ms > 0:
 		state_text = "加速中"
-	(row["cd"] as Label).text = "%s · 冷却 %.1fs / %.1fs" % [
-		state_text, float(maxi(it.cooldown_remaining_ms, 0)) / 1000.0, float(it.base_cd_ms) / 1000.0]
+	(row["cd"] as Label).text = state_text if it.is_ready() else "%.1fs" % (float(maxi(it.cooldown_remaining_ms, 0)) / 1000.0)
 
 	var overlay: ColorRect = row["overlay"]
 	overlay.visible = it.freeze_ms > 0 or it.slow_ms > 0 or it.haste_ms > 0
@@ -914,6 +896,10 @@ func _refresh_item_cell(row: Dictionary) -> void:
 	else:
 		overlay.color = Color(0.95, 0.80, 0.30, 0.16)
 	(row["dim"] as ColorRect).visible = not it.is_ready()
+	# Shared motion layer owns artwork dimming and control effects; preserve the time label.
+	if (row["node"] as ItemCard).motion != null:
+		overlay.visible = false
+		(row["dim"] as ColorRect).visible = false
 
 
 func _update_log() -> void:

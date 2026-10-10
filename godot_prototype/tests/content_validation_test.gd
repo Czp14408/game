@@ -12,7 +12,8 @@ func _init() -> void:
 func run() -> void:
 	catalog = ContentCatalog.load_default()
 	check(catalog.content_version != "unknown", "应读取 content_version")
-	eq(catalog.items.size(), 14, "物品定义数量（12 主动物品 + 恢复品 + 材料）")
+	eq(catalog.items.size(), catalog.generated_item_ids.size(), "全部物品仅从 Excel 生成清单加载")
+	check(catalog.items_from_excel, "已关闭旧物品配置来源")
 	eq(catalog.skills.size(), 3, "独立被动技能数量")
 	eq(catalog.traits.size(), 4, "职业与血统数量")
 	eq(catalog.enemies.size(), 4, "敌人数量")

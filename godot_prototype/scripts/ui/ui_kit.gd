@@ -3,20 +3,20 @@ extends RefCounted
 ## 占位界面工具箱：统一 Theme、面板、按钮、数值条。
 ## 边界：只负责展示与命令转发，不承载业务规则。
 
-const COL_BG := Color(0.09, 0.09, 0.11)
-const COL_PANEL := Color(0.15, 0.15, 0.18)
+const COL_BG := GamePalette.BACKGROUND
+const COL_PANEL := GamePalette.PANEL
 const COL_PANEL_2 := Color(0.19, 0.19, 0.23)
-const COL_TEXT := Color(0.90, 0.90, 0.92)
-const COL_MUTED := Color(0.62, 0.62, 0.68)
+const COL_TEXT := GamePalette.TEXT
+const COL_MUTED := GamePalette.MUTED
 const COL_ACCENT := Color(0.85, 0.70, 0.42)
 const COL_PLAYER := Color(0.36, 0.62, 0.95)
 const COL_ENEMY := Color(0.87, 0.35, 0.35)
 const COL_MERCHANT := Color(0.42, 0.78, 0.45)
 const COL_INTEL := Color(0.90, 0.82, 0.35)
 const COL_HP := Color(0.78, 0.28, 0.30)
-const COL_SHIELD := Color(0.42, 0.66, 0.90)
-const COL_BURN := Color(0.95, 0.55, 0.25)
-const COL_POISON := Color(0.55, 0.80, 0.35)
+const COL_SHIELD := GamePalette.SHIELD
+const COL_BURN := GamePalette.BURN
+const COL_POISON := GamePalette.POISON
 
 ## 系统组件浅蓝半透明未来风格配色（system_components_v1）。
 ## 用于状态栏、背包底板、信息页、tooltip、context_menu 等系统级面板上的叠加内容。
@@ -31,12 +31,7 @@ const COL_SYS_BAD := Color(0.96, 0.55, 0.62)             ## 系统面板负向�
 const COL_SYS_GRID := Color(0.82, 0.93, 1.0, 0.20)       ## 系统面板格线
 
 ## 品质色（0 青铜 1 白银 2 黄金 3 钻石），与价目表的档位一致
-const QUALITY_COLORS: Array[Color] = [
-	Color(0.76, 0.54, 0.33),
-	Color(0.82, 0.84, 0.88),
-	Color(0.92, 0.78, 0.36),
-	Color(0.55, 0.85, 0.95),
-]
+const QUALITY_COLORS: Array[Color] = GamePalette.QUALITIES
 
 
 static func make_theme() -> Theme:

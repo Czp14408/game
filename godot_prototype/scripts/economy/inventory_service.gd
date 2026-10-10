@@ -59,6 +59,13 @@ func _commit(state: RunState, new_bar: Array, new_inv: Array) -> void:
 		it.location = ItemInstance.LOC_BATTLE
 	for it in state.inventory:
 		it.location = ItemInstance.LOC_INVENTORY
+	# Freeing space retries reserved quest items; erase before pickup to avoid recursion.
+	for reward_id in state.pending_quest_items.keys():
+		if not state.pending_quest_items.has(reward_id): continue
+		var pending: ItemInstance = state.pending_quest_items[reward_id]
+		state.pending_quest_items.erase(reward_id)
+		var result := pickup(state,pending)
+		if not result.success: state.pending_quest_items[reward_id] = pending
 
 
 func _typed(arr: Array) -> Array[ItemInstance]:

@@ -61,8 +61,8 @@ fi
 
 # 2.5) 随包附带验收文档，便于试玩者按项核对
 for doc in "人工验收清单.md" "游戏原型已知问题清单.md" "R0收尾证据.md"; do
-	if [[ -f "$GAME_DIR/$doc" ]]; then
-		cp "$GAME_DIR/$doc" "$OUT_DIR/$doc"
+	if [[ -f "$GAME_DIR/docs/validation/$doc" ]]; then
+		cp "$GAME_DIR/docs/validation/$doc" "$OUT_DIR/$doc"
 	fi
 done
 

@@ -29,6 +29,21 @@ func _ready() -> void:
 		add_child(demo)
 		return
 
+	if OS.get_cmdline_user_args().has("--preview-items"):
+		if not problems.is_empty():
+			get_tree().quit(1)
+			return
+		var hub: Control = load("res://tests/item_preview_hub.gd").new()
+		hub.set("catalog", catalog)
+		get_tree().root.add_child.call_deferred(hub)
+		return
+
+	if OS.get_cmdline_user_args().has("--preview-item"):
+		var preview: Node = load("res://tests/item_preview.gd").new()
+		preview.set("catalog", catalog)
+		add_child(preview)
+		return
+
 	if OS.get_cmdline_user_args().has("--screenshots"):
 		var shots: Node = load("res://tests/ui_screenshots.gd").new()
 		shots.name = "Screenshots"

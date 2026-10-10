@@ -251,6 +251,8 @@ func open_container(state: RunState, node_id: String, container_key: String) -> 
 			drops.append(state.new_instance(&"scrap_material" if idx == 0 else &"recovery_draught", 0, node_id))
 		_:
 			drops.append(state.new_instance(&"scrap_material", 0, node_id))
+	var extra := catalog.roll_reward("event",String(table),rng,scope + "/excel")
+	if not extra.is_empty(): drops.append(state.new_instance(extra["id"],extra["quality"],node_id))
 	for it in drops:
 		(it as ItemInstance).location = ItemInstance.LOC_NONE
 	ns.containers[container_key] = {"opened": true, "table": table, "drops": drops}

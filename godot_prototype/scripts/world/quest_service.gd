@@ -91,6 +91,20 @@ func claim(state: RunState, quest_id: StringName) -> OperationResult:
 	if def.claim_mode == QuestDef.CLAIM_NPC and state.current_node_id != def.claim_node_id:
 		return OperationResult.fail("需回到 %s 号节点向委托 NPC 领取" % def.claim_node_id)
 
+	var item_id := ""
+	if not catalog.reward_rules("quest",String(quest_id)).is_empty():
+		if not state.pending_quest_items.has(def.reward_id):
+			var reward := catalog.roll_reward("quest",String(quest_id),state.rng,"quest/%s/excel" % def.reward_id)
+			var item := state.new_instance(reward["id"],reward["quality"],state.current_node_id)
+			item.location = ItemInstance.LOC_NONE
+			state.pending_quest_items[def.reward_id] = item
+		var pending: ItemInstance = state.pending_quest_items[def.reward_id]
+		state.pending_quest_items.erase(def.reward_id)
+		var pickup := InventoryService.new(catalog).pickup(state,pending)
+		if pickup.success:
+			item_id = String(pickup.data.get("instance_id",""))
+		else:
+			state.pending_quest_items[def.reward_id] = pending
 	state.claimed_rewards[def.reward_id] = true
 	qs.status = QuestState.STATUS_CLAIMED
 	state.add_money(def.reward_money)
@@ -100,8 +114,10 @@ func claim(state: RunState, quest_id: StringName) -> OperationResult:
 		"quest": String(quest_id),
 		"reward_id": String(def.reward_id),
 		"money": def.reward_money,
+		"item_instance_id":item_id,
+		"item_pending":state.pending_quest_items.has(def.reward_id),
 	})
-	return OperationResult.ok({"money": def.reward_money, "reward_id": String(def.reward_id)})
+	return OperationResult.ok({"money": def.reward_money, "reward_id": String(def.reward_id), "item_instance_id":item_id, "item_pending":state.pending_quest_items.has(def.reward_id)})
 
 
 func _objective_satisfied(state: RunState, def: QuestDef) -> bool:

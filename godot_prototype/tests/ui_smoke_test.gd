@@ -230,8 +230,8 @@ func _test_inventory_skin() -> void:
 	var tex := InventorySkin.texture(InventorySkin.PANEL)
 	check(tex != null, "面板纹理可加载")
 	if tex != null:
-		check(Vector2i(tex.get_size()) == rect.size,
-			"面板纹理 %s 与清单矩形 %s 同尺寸（1:1 贴，不拉伸）" % [Vector2i(tex.get_size()), rect.size])
+		check(Vector2i(tex.get_size()).x == rect.size.x,
+			"旧面板素材宽度 %s 与展示布局 %s 兼容（新物品面板采用独立绘制）" % [Vector2i(tex.get_size()), rect.size])
 	check(InventorySkin.inner(InventorySkin.PANEL).size.x > 0
 		and InventorySkin.inner(InventorySkin.PANEL).size.y > 0,
 		"面板内腔非空：%s" % InventorySkin.inner(InventorySkin.PANEL))
@@ -286,8 +286,8 @@ func _test_inventory_page_layout(page: Control, ctrl: RunController, label: Stri
 	else:
 		check(rep["panel_rect"] == InventorySkin.rect(InventorySkin.PANEL),
 			"%s：面板按清单矩形落位 %s" % [label, rep["panel_rect"]])
-	check(rep["texture"] == Vector2i(rep["panel"].size),
-		"%s：面板纹理 %s 与实际矩形 %s 同尺寸" % [label, rep["texture"], rep["panel"].size])
+	check(rep.get("background", "") == "procedural",
+		"%s：物品面板采用独立绘制背景（旧纹理 %s，实际矩形 %s）" % [label, rep["texture"], rep["panel"].size])
 	check(rep["op_bar"].size.x > 0, "%s：操作条已落位 %s" % [label, rep["op_bar"]])
 	check((rep["ops"] as Array).size() > 0, "%s：操作条上有按钮（%d 个）"
 		% [label, (rep["ops"] as Array).size()])

@@ -23,6 +23,8 @@ const TARGET_ENEMY_ITEM := &"enemy_active_item"
 ## 取值来源：tier = 使用四档品质数值表；fixed = 使用 fixed_value
 @export var value_source: StringName = &"tier"
 @export var fixed_value: float = 0.0
+## Optional independent four-quality values for additional basic effects.
+@export var tier_values: PackedFloat64Array = PackedFloat64Array()
 ## 释放时抛出的公共事件；留空表示不抛出
 ## use_weapon / use_shield / heal / apply_burn / apply_poison（由物品类别补充）
 @export var emits_event: StringName = &""
@@ -34,3 +36,8 @@ static func make(p_type: StringName, p_target: StringName, p_event: StringName =
 	e.target_rule = p_target
 	e.emits_event = p_event
 	return e
+
+func value_at(quality: int, fallback: float) -> float:
+	if value_source == &"fixed":
+		return fixed_value
+	return tier_values[clampi(quality, 0, tier_values.size()-1)] if not tier_values.is_empty() else fallback

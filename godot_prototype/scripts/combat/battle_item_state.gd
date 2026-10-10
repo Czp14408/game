@@ -22,7 +22,12 @@ var freeze_ms: int = 0
 var slow_ms: int = 0
 var haste_ms: int = 0
 
+var multicast: int = 1
+var weapon_growth_per_use: float = 0.0
+var release_values: Array[float] = []
 var uses: int = 0
+## Presentation counter for real charge applications, including while frozen.
+var charge_visual_seq: int = 0
 ## 本步锁定释放时的效果值快照
 var locked_value: float = 0.0
 var locked_this_step: bool = false

@@ -30,3 +30,24 @@ _验证/截图/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Excel 临时锁文件与物品生成的事务临时目录
+~$*.xlsx
+.items-stage-*/
+.items-previous/
+.items-publish.lock
+
+# 物品模板自动填写前的本地备份与工作簿暂存
+/content/backups/
+/content/reports/
+/content/archives/
+.items-workbook-*
+.items-import.lock
+
+# 本地制作暂存与可重新生成的截图缓存
+/.scratch/item-pipeline/
+/_验证/截图_r0.8/
+/godot_prototype/_验证/
+/outputs/card-minimum-pages/
+/outputs/item-pipeline-v01/
+/outputs/item-ui-regression/
