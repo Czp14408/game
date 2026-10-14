@@ -1,0 +1,1060 @@
+{
+  "scope": "750 conditional five-world route probes with actual configured enemies, HP carry-over and three-loss termination. Fixed starting equipment/HP/blood; no midroute shopping, healing, loot use, resale, sidequest payouts or stage bosses. Victory cash only after winning, failure gains no new reward. Not overall trial win rates.",
+  "summaries": [
+    {
+      "world": "cyber1",
+      "route": "main",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 450
+    },
+    {
+      "world": "cyber1",
+      "route": "normal",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 450
+    },
+    {
+      "world": "cyber1",
+      "route": "deep",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 428.7095
+    },
+    {
+      "world": "cyber2",
+      "route": "main",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 893.6818181818182
+    },
+    {
+      "world": "cyber2",
+      "route": "normal",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 893.6818181818182
+    },
+    {
+      "world": "cyber2",
+      "route": "deep",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 890.9818181818182
+    },
+    {
+      "world": "cyber3",
+      "route": "main",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 2152.4772835096305
+    },
+    {
+      "world": "cyber3",
+      "route": "normal",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 2152.4772835096305
+    },
+    {
+      "world": "cyber3",
+      "route": "deep",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 2152.4772835096305
+    },
+    {
+      "world": "weird2",
+      "route": "main",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 509.70000000000044
+    },
+    {
+      "world": "weird2",
+      "route": "normal",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 502.20000000000044
+    },
+    {
+      "world": "weird2",
+      "route": "deep",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 100.1999999999999
+    },
+    {
+      "world": "weird3",
+      "route": "main",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 1133.3499999999992
+    },
+    {
+      "world": "weird3",
+      "route": "normal",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 1133.3499999999992
+    },
+    {
+      "world": "weird3",
+      "route": "deep",
+      "completed": 50,
+      "meanLosses": 0,
+      "meanHp": 307.3499999999999
+    }
+  ],
+  "examples": [
+    {
+      "world": "cyber1",
+      "route": "main",
+      "seed": 1,
+      "completed": true,
+      "hp": 450,
+      "losses": 0,
+      "money": 72,
+      "points": 4,
+      "log": [
+        {
+          "node": 4,
+          "before": 450,
+          "hp": 450,
+          "winner": "player",
+          "seconds": 19
+        }
+      ]
+    },
+    {
+      "world": "cyber1",
+      "route": "main",
+      "seed": 50,
+      "completed": true,
+      "hp": 450,
+      "losses": 0,
+      "money": 72,
+      "points": 4,
+      "log": [
+        {
+          "node": 4,
+          "before": 450,
+          "hp": 450,
+          "winner": "player",
+          "seconds": 19.1
+        }
+      ]
+    },
+    {
+      "world": "cyber1",
+      "route": "normal",
+      "seed": 1,
+      "completed": true,
+      "hp": 450,
+      "losses": 0,
+      "money": 78,
+      "points": 4,
+      "log": [
+        {
+          "node": 8,
+          "before": 450,
+          "hp": 450,
+          "winner": "player",
+          "seconds": 15
+        },
+        {
+          "node": 4,
+          "before": 450,
+          "hp": 450,
+          "winner": "player",
+          "seconds": 19
+        }
+      ]
+    },
+    {
+      "world": "cyber1",
+      "route": "normal",
+      "seed": 50,
+      "completed": true,
+      "hp": 450,
+      "losses": 0,
+      "money": 78,
+      "points": 4,
+      "log": [
+        {
+          "node": 8,
+          "before": 450,
+          "hp": 450,
+          "winner": "player",
+          "seconds": 15.1
+        },
+        {
+          "node": 4,
+          "before": 450,
+          "hp": 450,
+          "winner": "player",
+          "seconds": 19.1
+        }
+      ]
+    },
+    {
+      "world": "cyber1",
+      "route": "deep",
+      "seed": 1,
+      "completed": true,
+      "hp": 412.50000000000006,
+      "losses": 0,
+      "money": 88,
+      "points": 4,
+      "log": [
+        {
+          "node": 8,
+          "before": 450,
+          "hp": 450,
+          "winner": "player",
+          "seconds": 15
+        },
+        {
+          "node": 10,
+          "before": 450,
+          "hp": 304.5,
+          "winner": "player",
+          "seconds": 34
+        },
+        {
+          "node": 4,
+          "before": 304.5,
+          "hp": 412.50000000000006,
+          "winner": "player",
+          "seconds": 19
+        }
+      ]
+    },
+    {
+      "world": "cyber1",
+      "route": "deep",
+      "seed": 50,
+      "completed": true,
+      "hp": 412.50000000000006,
+      "losses": 0,
+      "money": 88,
+      "points": 4,
+      "log": [
+        {
+          "node": 8,
+          "before": 450,
+          "hp": 450,
+          "winner": "player",
+          "seconds": 15.1
+        },
+        {
+          "node": 10,
+          "before": 450,
+          "hp": 304.5,
+          "winner": "player",
+          "seconds": 34
+        },
+        {
+          "node": 4,
+          "before": 304.5,
+          "hp": 412.50000000000006,
+          "winner": "player",
+          "seconds": 19.1
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "route": "main",
+      "seed": 1,
+      "completed": true,
+      "hp": 771,
+      "losses": 0,
+      "money": 107,
+      "points": 6,
+      "log": [
+        {
+          "node": 4,
+          "before": 1300,
+          "hp": 1300,
+          "winner": "player",
+          "seconds": 22.5
+        },
+        {
+          "node": 6,
+          "before": 1300,
+          "hp": 771,
+          "winner": "player",
+          "seconds": 35
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "route": "main",
+      "seed": 50,
+      "completed": true,
+      "hp": 991,
+      "losses": 0,
+      "money": 107,
+      "points": 6,
+      "log": [
+        {
+          "node": 4,
+          "before": 1300,
+          "hp": 1300,
+          "winner": "player",
+          "seconds": 23.1
+        },
+        {
+          "node": 6,
+          "before": 1300,
+          "hp": 991,
+          "winner": "player",
+          "seconds": 33
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "route": "normal",
+      "seed": 1,
+      "completed": true,
+      "hp": 771,
+      "losses": 0,
+      "money": 116,
+      "points": 6,
+      "log": [
+        {
+          "node": 8,
+          "before": 1300,
+          "hp": 1300,
+          "winner": "player",
+          "seconds": 14.5
+        },
+        {
+          "node": 4,
+          "before": 1300,
+          "hp": 1300,
+          "winner": "player",
+          "seconds": 22.5
+        },
+        {
+          "node": 6,
+          "before": 1300,
+          "hp": 771,
+          "winner": "player",
+          "seconds": 35
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "route": "normal",
+      "seed": 50,
+      "completed": true,
+      "hp": 991,
+      "losses": 0,
+      "money": 116,
+      "points": 6,
+      "log": [
+        {
+          "node": 8,
+          "before": 1300,
+          "hp": 1300,
+          "winner": "player",
+          "seconds": 15.1
+        },
+        {
+          "node": 4,
+          "before": 1300,
+          "hp": 1300,
+          "winner": "player",
+          "seconds": 23.1
+        },
+        {
+          "node": 6,
+          "before": 1300,
+          "hp": 991,
+          "winner": "player",
+          "seconds": 33
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "route": "deep",
+      "seed": 1,
+      "completed": true,
+      "hp": 771,
+      "losses": 0,
+      "money": 131,
+      "points": 6,
+      "log": [
+        {
+          "node": 8,
+          "before": 1300,
+          "hp": 1300,
+          "winner": "player",
+          "seconds": 14.5
+        },
+        {
+          "node": 10,
+          "before": 1300,
+          "hp": 1098,
+          "winner": "player",
+          "seconds": 34.5
+        },
+        {
+          "node": 4,
+          "before": 1098,
+          "hp": 1300,
+          "winner": "player",
+          "seconds": 22.5
+        },
+        {
+          "node": 6,
+          "before": 1300,
+          "hp": 771,
+          "winner": "player",
+          "seconds": 35
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "route": "deep",
+      "seed": 50,
+      "completed": true,
+      "hp": 991,
+      "losses": 0,
+      "money": 131,
+      "points": 6,
+      "log": [
+        {
+          "node": 8,
+          "before": 1300,
+          "hp": 1300,
+          "winner": "player",
+          "seconds": 15.1
+        },
+        {
+          "node": 10,
+          "before": 1300,
+          "hp": 1098,
+          "winner": "player",
+          "seconds": 34.5
+        },
+        {
+          "node": 4,
+          "before": 1098,
+          "hp": 1300,
+          "winner": "player",
+          "seconds": 23.1
+        },
+        {
+          "node": 6,
+          "before": 1300,
+          "hp": 991,
+          "winner": "player",
+          "seconds": 33
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "route": "main",
+      "seed": 1,
+      "completed": true,
+      "hp": 1942.4093749999997,
+      "losses": 0,
+      "money": 136,
+      "points": 8,
+      "log": [
+        {
+          "node": 4,
+          "before": 2800,
+          "hp": 2800,
+          "winner": "player",
+          "seconds": 18
+        },
+        {
+          "node": 6,
+          "before": 2800,
+          "hp": 1942.4093749999997,
+          "winner": "player",
+          "seconds": 34
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "route": "main",
+      "seed": 50,
+      "completed": true,
+      "hp": 2264.2625,
+      "losses": 0,
+      "money": 136,
+      "points": 8,
+      "log": [
+        {
+          "node": 4,
+          "before": 2800,
+          "hp": 2800,
+          "winner": "player",
+          "seconds": 19.1
+        },
+        {
+          "node": 6,
+          "before": 2800,
+          "hp": 2264.2625,
+          "winner": "player",
+          "seconds": 32
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "route": "normal",
+      "seed": 1,
+      "completed": true,
+      "hp": 1942.4093749999997,
+      "losses": 0,
+      "money": 148,
+      "points": 8,
+      "log": [
+        {
+          "node": 8,
+          "before": 2800,
+          "hp": 2800,
+          "winner": "player",
+          "seconds": 10.1
+        },
+        {
+          "node": 4,
+          "before": 2800,
+          "hp": 2800,
+          "winner": "player",
+          "seconds": 18
+        },
+        {
+          "node": 6,
+          "before": 2800,
+          "hp": 1942.4093749999997,
+          "winner": "player",
+          "seconds": 34
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "route": "normal",
+      "seed": 50,
+      "completed": true,
+      "hp": 2264.2625,
+      "losses": 0,
+      "money": 148,
+      "points": 8,
+      "log": [
+        {
+          "node": 8,
+          "before": 2800,
+          "hp": 2800,
+          "winner": "player",
+          "seconds": 12
+        },
+        {
+          "node": 4,
+          "before": 2800,
+          "hp": 2800,
+          "winner": "player",
+          "seconds": 19.1
+        },
+        {
+          "node": 6,
+          "before": 2800,
+          "hp": 2264.2625,
+          "winner": "player",
+          "seconds": 32
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "route": "deep",
+      "seed": 1,
+      "completed": true,
+      "hp": 1942.4093749999997,
+      "losses": 0,
+      "money": 168,
+      "points": 8,
+      "log": [
+        {
+          "node": 8,
+          "before": 2800,
+          "hp": 2800,
+          "winner": "player",
+          "seconds": 10.1
+        },
+        {
+          "node": 10,
+          "before": 2800,
+          "hp": 2440,
+          "winner": "player",
+          "seconds": 33
+        },
+        {
+          "node": 4,
+          "before": 2440,
+          "hp": 2800,
+          "winner": "player",
+          "seconds": 18
+        },
+        {
+          "node": 6,
+          "before": 2800,
+          "hp": 1942.4093749999997,
+          "winner": "player",
+          "seconds": 34
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "route": "deep",
+      "seed": 50,
+      "completed": true,
+      "hp": 2264.2625,
+      "losses": 0,
+      "money": 168,
+      "points": 8,
+      "log": [
+        {
+          "node": 8,
+          "before": 2800,
+          "hp": 2800,
+          "winner": "player",
+          "seconds": 12
+        },
+        {
+          "node": 10,
+          "before": 2800,
+          "hp": 2430,
+          "winner": "player",
+          "seconds": 34
+        },
+        {
+          "node": 4,
+          "before": 2430,
+          "hp": 2800,
+          "winner": "player",
+          "seconds": 19.1
+        },
+        {
+          "node": 6,
+          "before": 2800,
+          "hp": 2264.2625,
+          "winner": "player",
+          "seconds": 32
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "route": "main",
+      "seed": 1,
+      "completed": true,
+      "hp": 509.70000000000005,
+      "losses": 0,
+      "money": 107,
+      "points": 6,
+      "log": [
+        {
+          "node": 4,
+          "before": 1300,
+          "hp": 1195.7,
+          "winner": "player",
+          "seconds": 15
+        },
+        {
+          "node": 6,
+          "before": 1195.7,
+          "hp": 509.70000000000005,
+          "winner": "player",
+          "seconds": 22
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "route": "main",
+      "seed": 50,
+      "completed": true,
+      "hp": 509.70000000000005,
+      "losses": 0,
+      "money": 107,
+      "points": 6,
+      "log": [
+        {
+          "node": 4,
+          "before": 1300,
+          "hp": 1195.7,
+          "winner": "player",
+          "seconds": 15
+        },
+        {
+          "node": 6,
+          "before": 1195.7,
+          "hp": 509.70000000000005,
+          "winner": "player",
+          "seconds": 22
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "route": "normal",
+      "seed": 1,
+      "completed": true,
+      "hp": 502.20000000000005,
+      "losses": 0,
+      "money": 116,
+      "points": 6,
+      "log": [
+        {
+          "node": 8,
+          "before": 1300,
+          "hp": 1229,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "node": 4,
+          "before": 1229,
+          "hp": 1188.2,
+          "winner": "player",
+          "seconds": 15
+        },
+        {
+          "node": 6,
+          "before": 1188.2,
+          "hp": 502.20000000000005,
+          "winner": "player",
+          "seconds": 22
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "route": "normal",
+      "seed": 50,
+      "completed": true,
+      "hp": 502.20000000000005,
+      "losses": 0,
+      "money": 116,
+      "points": 6,
+      "log": [
+        {
+          "node": 8,
+          "before": 1300,
+          "hp": 1229,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "node": 4,
+          "before": 1229,
+          "hp": 1188.2,
+          "winner": "player",
+          "seconds": 15
+        },
+        {
+          "node": 6,
+          "before": 1188.2,
+          "hp": 502.20000000000005,
+          "winner": "player",
+          "seconds": 22
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "route": "deep",
+      "seed": 1,
+      "completed": true,
+      "hp": 100.20000000000005,
+      "losses": 0,
+      "money": 131,
+      "points": 6,
+      "log": [
+        {
+          "node": 8,
+          "before": 1300,
+          "hp": 1229,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "node": 10,
+          "before": 1229,
+          "hp": 827,
+          "winner": "player",
+          "seconds": 19
+        },
+        {
+          "node": 4,
+          "before": 827,
+          "hp": 786.2,
+          "winner": "player",
+          "seconds": 15
+        },
+        {
+          "node": 6,
+          "before": 786.2,
+          "hp": 100.20000000000005,
+          "winner": "player",
+          "seconds": 22
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "route": "deep",
+      "seed": 50,
+      "completed": true,
+      "hp": 100.20000000000005,
+      "losses": 0,
+      "money": 131,
+      "points": 6,
+      "log": [
+        {
+          "node": 8,
+          "before": 1300,
+          "hp": 1229,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "node": 10,
+          "before": 1229,
+          "hp": 827,
+          "winner": "player",
+          "seconds": 19
+        },
+        {
+          "node": 4,
+          "before": 827,
+          "hp": 786.2,
+          "winner": "player",
+          "seconds": 15
+        },
+        {
+          "node": 6,
+          "before": 786.2,
+          "hp": 100.20000000000005,
+          "winner": "player",
+          "seconds": 22
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "route": "main",
+      "seed": 1,
+      "completed": true,
+      "hp": 1133.35,
+      "losses": 0,
+      "money": 136,
+      "points": 8,
+      "log": [
+        {
+          "node": 4,
+          "before": 2800,
+          "hp": 2623.75,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "node": 6,
+          "before": 2623.75,
+          "hp": 1133.35,
+          "winner": "player",
+          "seconds": 21
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "route": "main",
+      "seed": 50,
+      "completed": true,
+      "hp": 1133.35,
+      "losses": 0,
+      "money": 136,
+      "points": 8,
+      "log": [
+        {
+          "node": 4,
+          "before": 2800,
+          "hp": 2623.75,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "node": 6,
+          "before": 2623.75,
+          "hp": 1133.35,
+          "winner": "player",
+          "seconds": 21
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "route": "normal",
+      "seed": 1,
+      "completed": true,
+      "hp": 1133.35,
+      "losses": 0,
+      "money": 148,
+      "points": 8,
+      "log": [
+        {
+          "node": 8,
+          "before": 2800,
+          "hp": 2701.6,
+          "winner": "player",
+          "seconds": 13
+        },
+        {
+          "node": 4,
+          "before": 2701.6,
+          "hp": 2623.75,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "node": 6,
+          "before": 2623.75,
+          "hp": 1133.35,
+          "winner": "player",
+          "seconds": 21
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "route": "normal",
+      "seed": 50,
+      "completed": true,
+      "hp": 1133.35,
+      "losses": 0,
+      "money": 148,
+      "points": 8,
+      "log": [
+        {
+          "node": 8,
+          "before": 2800,
+          "hp": 2701.6,
+          "winner": "player",
+          "seconds": 13
+        },
+        {
+          "node": 4,
+          "before": 2701.6,
+          "hp": 2623.75,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "node": 6,
+          "before": 2623.75,
+          "hp": 1133.35,
+          "winner": "player",
+          "seconds": 21
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "route": "deep",
+      "seed": 1,
+      "completed": true,
+      "hp": 307.3499999999997,
+      "losses": 0,
+      "money": 168,
+      "points": 8,
+      "log": [
+        {
+          "node": 8,
+          "before": 2800,
+          "hp": 2701.6,
+          "winner": "player",
+          "seconds": 13
+        },
+        {
+          "node": 10,
+          "before": 2701.6,
+          "hp": 1797.6,
+          "winner": "player",
+          "seconds": 17
+        },
+        {
+          "node": 4,
+          "before": 1797.6,
+          "hp": 1797.7499999999998,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "node": 6,
+          "before": 1797.7499999999998,
+          "hp": 307.3499999999997,
+          "winner": "player",
+          "seconds": 21
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "route": "deep",
+      "seed": 50,
+      "completed": true,
+      "hp": 307.3499999999997,
+      "losses": 0,
+      "money": 168,
+      "points": 8,
+      "log": [
+        {
+          "node": 8,
+          "before": 2800,
+          "hp": 2701.6,
+          "winner": "player",
+          "seconds": 13
+        },
+        {
+          "node": 10,
+          "before": 2701.6,
+          "hp": 1797.6,
+          "winner": "player",
+          "seconds": 17
+        },
+        {
+          "node": 4,
+          "before": 1797.6,
+          "hp": 1797.7499999999998,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "node": 6,
+          "before": 1797.7499999999998,
+          "hp": 307.3499999999997,
+          "winner": "player",
+          "seconds": 21
+        }
+      ]
+    }
+  ]
+}

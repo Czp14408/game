@@ -1,0 +1,432 @@
+{
+  "date": "2026-10-14",
+  "checks": 39,
+  "scope": "Blood initial rank in world, post-victory species collection only; same fixed rewards and no classes. First-rank spending at hub only. No burn, freeze or slow.",
+  "journeys": [
+    {
+      "route": "main",
+      "species": 1,
+      "battles": [
+        {
+          "enemy": "guard",
+          "openingHp": 100,
+          "speciesBefore": 0,
+          "winner": "player",
+          "seconds": 12,
+          "hp": 85.19999999999999,
+          "lifesteal": 3.2
+        },
+        {
+          "enemy": "chief",
+          "openingHp": 85.19999999999999,
+          "speciesBefore": 1,
+          "winner": "player",
+          "seconds": 16,
+          "hp": 24.59999999999999,
+          "lifesteal": 6.400000000000001
+        }
+      ]
+    },
+    {
+      "route": "normal",
+      "species": 2,
+      "battles": [
+        {
+          "enemy": "hunter",
+          "openingHp": 100,
+          "speciesBefore": 0,
+          "winner": "player",
+          "seconds": 8,
+          "hp": 100,
+          "lifesteal": 2.9999999999999942
+        },
+        {
+          "enemy": "guard",
+          "openingHp": 100,
+          "speciesBefore": 1,
+          "winner": "player",
+          "seconds": 12,
+          "hp": 93.8,
+          "lifesteal": 3.2
+        },
+        {
+          "enemy": "chief",
+          "openingHp": 93.8,
+          "speciesBefore": 2,
+          "winner": "player",
+          "seconds": 16,
+          "hp": 53.2,
+          "lifesteal": 6.400000000000001
+        }
+      ]
+    },
+    {
+      "route": "deep",
+      "species": 3,
+      "battles": [
+        {
+          "enemy": "hunter",
+          "openingHp": 100,
+          "speciesBefore": 0,
+          "winner": "player",
+          "seconds": 8,
+          "hp": 100,
+          "lifesteal": 2.9999999999999942
+        },
+        {
+          "enemy": "beast",
+          "openingHp": 100,
+          "speciesBefore": 1,
+          "winner": "player",
+          "seconds": 28,
+          "hp": 45.80000000000002,
+          "lifesteal": 5.1000000000000005
+        },
+        {
+          "enemy": "guard",
+          "openingHp": 45.80000000000002,
+          "speciesBefore": 2,
+          "winner": "player",
+          "seconds": 7,
+          "hp": 51.50000000000002,
+          "lifesteal": 2.7
+        },
+        {
+          "enemy": "chief",
+          "openingHp": 51.50000000000002,
+          "speciesBefore": 3,
+          "winner": "player",
+          "seconds": 9,
+          "hp": 37.600000000000016,
+          "lifesteal": 4.1
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "route": "main",
+      "plan": "initial-blood",
+      "points": 0,
+      "enemy": "attack",
+      "winner": "enemy",
+      "seconds": 16,
+      "hp": 0,
+      "attackLifeDamage": 120,
+      "lifesteal": 12.000000000000002,
+      "poisonDamage": 0
+    },
+    {
+      "route": "main",
+      "plan": "initial-blood",
+      "points": 0,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 28.199999999999992,
+      "attackLifeDamage": 142,
+      "lifesteal": 14.200000000000003,
+      "poisonDamage": 0
+    },
+    {
+      "route": "main",
+      "plan": "initial-blood",
+      "points": 0,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 15.300000000000011,
+      "attackLifeDamage": 136,
+      "lifesteal": 11.3,
+      "poisonDamage": 0
+    },
+    {
+      "route": "main",
+      "plan": "blood-rank-one",
+      "points": 4,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 5.999999999999997,
+      "attackLifeDamage": 120,
+      "lifesteal": 17.999999999999996,
+      "poisonDamage": 0
+    },
+    {
+      "route": "main",
+      "plan": "blood-rank-one",
+      "points": 4,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 35.300000000000004,
+      "attackLifeDamage": 142,
+      "lifesteal": 21.3,
+      "poisonDamage": 0
+    },
+    {
+      "route": "main",
+      "plan": "blood-rank-one",
+      "points": 4,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 20.94999999999999,
+      "attackLifeDamage": 136,
+      "lifesteal": 16.95,
+      "poisonDamage": 0
+    },
+    {
+      "route": "main",
+      "plan": "health",
+      "points": 2,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 20.000000000000004,
+      "attackLifeDamage": 120,
+      "lifesteal": 12.000000000000002,
+      "poisonDamage": 0
+    },
+    {
+      "route": "main",
+      "plan": "health",
+      "points": 2,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 48.2,
+      "attackLifeDamage": 142,
+      "lifesteal": 14.200000000000003,
+      "poisonDamage": 0
+    },
+    {
+      "route": "main",
+      "plan": "health",
+      "points": 2,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 35.30000000000001,
+      "attackLifeDamage": 136,
+      "lifesteal": 11.3,
+      "poisonDamage": 0
+    },
+    {
+      "route": "normal",
+      "plan": "initial-blood",
+      "points": 0,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 14.90000000000001,
+      "attackLifeDamage": 120,
+      "lifesteal": 12.000000000000002,
+      "poisonDamage": 0
+    },
+    {
+      "route": "normal",
+      "plan": "initial-blood",
+      "points": 0,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 46.2,
+      "attackLifeDamage": 142,
+      "lifesteal": 14.200000000000003,
+      "poisonDamage": 0
+    },
+    {
+      "route": "normal",
+      "plan": "initial-blood",
+      "points": 0,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 27.30000000000001,
+      "attackLifeDamage": 136,
+      "lifesteal": 11.3,
+      "poisonDamage": 0
+    },
+    {
+      "route": "normal",
+      "plan": "blood-rank-one",
+      "points": 4,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 19.84999999999999,
+      "attackLifeDamage": 120,
+      "lifesteal": 17.499999999999996,
+      "poisonDamage": 0
+    },
+    {
+      "route": "normal",
+      "plan": "blood-rank-one",
+      "points": 4,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 52.3,
+      "attackLifeDamage": 142,
+      "lifesteal": 21.2,
+      "poisonDamage": 0
+    },
+    {
+      "route": "normal",
+      "plan": "blood-rank-one",
+      "points": 4,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 32.94999999999999,
+      "attackLifeDamage": 136,
+      "lifesteal": 16.95,
+      "poisonDamage": 0
+    },
+    {
+      "route": "normal",
+      "plan": "health",
+      "points": 2,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 34.900000000000006,
+      "attackLifeDamage": 120,
+      "lifesteal": 12.000000000000002,
+      "poisonDamage": 0
+    },
+    {
+      "route": "normal",
+      "plan": "health",
+      "points": 2,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 66.2,
+      "attackLifeDamage": 142,
+      "lifesteal": 14.200000000000003,
+      "poisonDamage": 0
+    },
+    {
+      "route": "normal",
+      "plan": "health",
+      "points": 2,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 47.300000000000004,
+      "attackLifeDamage": 136,
+      "lifesteal": 11.3,
+      "poisonDamage": 0
+    },
+    {
+      "route": "deep",
+      "plan": "initial-blood",
+      "points": 0,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 9,
+      "hp": 91.4,
+      "attackLifeDamage": 96,
+      "lifesteal": 7.4,
+      "poisonDamage": 30
+    },
+    {
+      "route": "deep",
+      "plan": "initial-blood",
+      "points": 0,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 100,
+      "attackLifeDamage": 89.66666666666667,
+      "lifesteal": 2.2,
+      "poisonDamage": 40
+    },
+    {
+      "route": "deep",
+      "plan": "initial-blood",
+      "points": 0,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 9,
+      "hp": 86.4,
+      "attackLifeDamage": 106,
+      "lifesteal": 6.4,
+      "poisonDamage": 30
+    },
+    {
+      "route": "deep",
+      "plan": "blood-rank-one",
+      "points": 4,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 8,
+      "hp": 92.58461538461539,
+      "attackLifeDamage": 89.23076923076923,
+      "lifesteal": 9.584615384615386,
+      "poisonDamage": 32
+    },
+    {
+      "route": "deep",
+      "plan": "blood-rank-one",
+      "points": 4,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 100,
+      "attackLifeDamage": 78.93333333333334,
+      "lifesteal": 3.3,
+      "poisonDamage": 64
+    },
+    {
+      "route": "deep",
+      "plan": "blood-rank-one",
+      "points": 4,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 8,
+      "hp": 96.29354838709678,
+      "attackLifeDamage": 97.29032258064515,
+      "lifesteal": 8.293548387096774,
+      "poisonDamage": 32
+    },
+    {
+      "route": "deep",
+      "plan": "health",
+      "points": 2,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 9,
+      "hp": 111.4,
+      "attackLifeDamage": 96,
+      "lifesteal": 7.4,
+      "poisonDamage": 30
+    },
+    {
+      "route": "deep",
+      "plan": "health",
+      "points": 2,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 120,
+      "attackLifeDamage": 89.66666666666667,
+      "lifesteal": 2.2,
+      "poisonDamage": 40
+    },
+    {
+      "route": "deep",
+      "plan": "health",
+      "points": 2,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 9,
+      "hp": 106.4,
+      "attackLifeDamage": 106,
+      "lifesteal": 6.4,
+      "poisonDamage": 30
+    }
+  ]
+}

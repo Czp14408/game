@@ -190,6 +190,8 @@ func _refresh_detail() -> void:
 		_detail_body.text = "点击左侧地图上的节点查看详情。\n\n货币 %d　下一新节点费用 %d" % [
 			state.money, ctrl.world.next_fee_preview(state),
 		]
+		if state.card_exploration:
+			_detail_body.text = "探索时间 %d　货币 %d" % [state.exploration_time, state.money]
 		return
 	_detail_head.text = "节点 %s %s" % [_selected, _node_name(_selected)]
 	var nd := ctrl.world.world(state).node_by_id(_selected)
@@ -210,6 +212,8 @@ func _refresh_detail() -> void:
 	lines.append("进入过：%s" % ("是（重访免费）" if discovered else "否"))
 	var fee := _map.fee_of(_selected)
 	lines.append("本次进入费用：%s" % ("免费" if fee == 0 else "%d 货币" % fee))
+	if state.card_exploration:
+		lines[-1] = "本次探索时间：%d　剩余：%d" % [fee, state.exploration_time]
 	if _is_blocked_to(_selected):
 		lines.append("该通路被守路者封锁。")
 	_detail_body.text = "\n".join(lines)

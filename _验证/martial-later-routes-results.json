@@ -1,0 +1,115 @@
+{
+  "scope": "Eight fixed structural routes only; no combat or acquisition proof.",
+  "worlds": [
+    {
+      "id": "martial2",
+      "stage": 2,
+      "name": "围城镖案",
+      "final": "battle"
+    },
+    {
+      "id": "martial3",
+      "stage": 3,
+      "name": "剑冢夺旗",
+      "final": "battle"
+    }
+  ],
+  "rows": [
+    {
+      "world": "martial2",
+      "route": "main",
+      "visited": 6,
+      "remaining": 6,
+      "complete": true,
+      "delivered": false,
+      "fights": 2,
+      "smallContainers": 1,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "martial2",
+      "route": "normal",
+      "visited": 10,
+      "remaining": 2,
+      "complete": true,
+      "delivered": true,
+      "fights": 3,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "martial2",
+      "route": "deep",
+      "visited": 12,
+      "remaining": 0,
+      "complete": true,
+      "delivered": true,
+      "fights": 4,
+      "smallContainers": 5,
+      "eliteChests": 1,
+      "bossChests": 1
+    },
+    {
+      "world": "martial2",
+      "route": "bypass",
+      "visited": 9,
+      "remaining": 3,
+      "complete": true,
+      "delivered": false,
+      "fights": 2,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "martial3",
+      "route": "main",
+      "visited": 6,
+      "remaining": 6,
+      "complete": true,
+      "delivered": false,
+      "fights": 2,
+      "smallContainers": 1,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "martial3",
+      "route": "normal",
+      "visited": 10,
+      "remaining": 2,
+      "complete": true,
+      "delivered": true,
+      "fights": 3,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "martial3",
+      "route": "deep",
+      "visited": 12,
+      "remaining": 0,
+      "complete": true,
+      "delivered": true,
+      "fights": 4,
+      "smallContainers": 5,
+      "eliteChests": 1,
+      "bossChests": 1
+    },
+    {
+      "world": "martial3",
+      "route": "bypass",
+      "visited": 9,
+      "remaining": 3,
+      "complete": true,
+      "delivered": false,
+      "fights": 2,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 1
+    }
+  ]
+}

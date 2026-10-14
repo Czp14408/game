@@ -32,6 +32,8 @@ var quests: QuestService
 var encounters: EncounterService
 var inventory: InventoryService
 var recorder: SessionRecorder
+var use_card_exploration: bool = false
+var node_cards := NodeCardService.new()
 
 var current_page: StringName = PAGE_HOME
 var active_shop_key: String = "deity/deity_mixed"
@@ -80,6 +82,7 @@ func new_trial(profession: StringName, bloodline: StringName, seed_value: int = 
 	if seed_value >= 0:
 		rng = RandomService.create(seed_value)
 	state = RunState.create(catalog, rng)
+	state.card_exploration = use_card_exploration
 	state.profession = profession
 	state.bloodline = bloodline
 	state.apply_traits()
@@ -179,6 +182,8 @@ func surrender() -> OperationResult:
 # ---------------------------------------------------------------------------
 
 func travel_to(node_id: String) -> OperationResult:
+	if state != null and state.card_exploration and current_page == PAGE_BATTLE:
+		return OperationResult.fail("战斗期间不能移动节点")
 	var r := world.travel(state, node_id)
 	if not r.success:
 		if r.reason.begins_with("连接被守路者封锁"):
@@ -242,6 +247,8 @@ func is_area_known() -> bool:
 
 
 func talk_to(service: StringName) -> OperationResult:
+	if not _card_access("npc", String(service)):
+		return OperationResult.fail("该人物不可接触")
 	var r := world.talk(state, state.current_node_id, service, quests)
 	if r.success:
 		message.emit(str(r.data.get("text", "")))
@@ -259,6 +266,9 @@ func node_enemy_keys() -> Array[String]:
 # ---------------------------------------------------------------------------
 
 func open_pre_battle(encounter_key: String) -> void:
+	if not _card_access("enemy", encounter_key):
+		message.emit("该敌人不可接触")
+		return
 	var es := encounters.ensure(state, state.current_node_id, encounter_key)
 	active_encounter_key = encounter_key
 	_set_page(PAGE_PRE_BATTLE, {"encounter": es})
@@ -371,6 +381,9 @@ func close_battle() -> void:
 # ---------------------------------------------------------------------------
 
 func open_shop(shop_key: String, return_to: StringName = PAGE_MINIMAP) -> void:
+	if state != null and not state.returned_to_deity and not _card_access("shop", shop_key):
+		message.emit("该商店不可接触")
+		return
 	active_shop_key = shop_key
 	_shop_return = return_to
 	_set_page(PAGE_SHOP, {"shop_key": shop_key})
@@ -529,6 +542,8 @@ func use_recovery(instance_id: String) -> OperationResult:
 
 ## 容器：开启一次生成一次，实物按容量拾取，容量不足时留在节点
 func open_container_here(container_key: String) -> OperationResult:
+	if not _card_access("container", container_key):
+		return OperationResult.fail("该容器被遮挡，不能隔层开启")
 	var r := world.open_container(state, state.current_node_id, container_key)
 	if not r.success:
 		message.emit(r.reason)
@@ -641,7 +656,18 @@ func _finish_run(reason: String) -> void:
 
 
 func _open_minimap() -> void:
+	if state != null and state.card_exploration:
+		var ns := state.node_state(state.current_node_id)
+		node_cards.initialize(ns, node_cards.specs(state, catalog, world, encounters))
 	_set_page(PAGE_MINIMAP)
+
+
+func _card_access(kind: String, key: String) -> bool:
+	if state == null or not state.card_exploration:
+		return true
+	if current_page == PAGE_BATTLE:
+		return false
+	return node_cards.accessible(state.node_state(state.current_node_id), "%s:%s" % [kind, key])
 
 
 ## 页面切换与耗时统计（统计模式互斥）

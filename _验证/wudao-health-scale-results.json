@@ -1,0 +1,280 @@
+{
+  "date": "2026-10-14",
+  "checks": 39,
+  "scope": "HP-only sensitivity; attack, shielding, healing, growth, poison and storm unchanged. Not a new full-scale balance or economy.",
+  "player": {
+    "items": [
+      {
+        "id": "blade",
+        "quality": 3
+      },
+      {
+        "id": "mirror",
+        "quality": 3
+      },
+      {
+        "id": "dagger",
+        "quality": 3
+      },
+      {
+        "id": "hammer",
+        "quality": 3
+      },
+      {
+        "id": "medicine",
+        "quality": 2
+      }
+    ],
+    "skills": {
+      "fervor": 4
+    },
+    "blood": {
+      "lifesteal": 0.1,
+      "toxinBonus": 1
+    }
+  },
+  "templates": {
+    "attack": {
+      "items": [
+        {
+          "id": "blade",
+          "quality": 3
+        },
+        {
+          "id": "hammer",
+          "quality": 2
+        },
+        {
+          "id": "dagger",
+          "quality": 2
+        },
+        {
+          "id": "mirror",
+          "quality": 2
+        },
+        {
+          "id": "shield",
+          "quality": 2
+        }
+      ],
+      "skills": {
+        "fervor": 3
+      }
+    },
+    "defense": {
+      "items": [
+        {
+          "id": "mirror",
+          "quality": 3
+        },
+        {
+          "id": "blade",
+          "quality": 2
+        },
+        {
+          "id": "shield",
+          "quality": 2
+        },
+        {
+          "id": "medicine",
+          "quality": 2
+        },
+        {
+          "id": "stone",
+          "quality": 2
+        },
+        {
+          "id": "dagger",
+          "quality": 2
+        }
+      ],
+      "skills": {
+        "fervor": 3,
+        "restorative": 5
+      }
+    },
+    "poison": {
+      "items": [
+        {
+          "id": "blade",
+          "quality": 3
+        },
+        {
+          "id": "needle",
+          "quality": 2
+        },
+        {
+          "id": "needle",
+          "quality": 2
+        },
+        {
+          "id": "mirror",
+          "quality": 2
+        },
+        {
+          "id": "medicine",
+          "quality": 2
+        },
+        {
+          "id": "shield",
+          "quality": 2
+        }
+      ],
+      "skills": {
+        "restorative": 5
+      }
+    }
+  },
+  "rows": [
+    {
+      "multiplier": 1,
+      "playerMaxHp": 160,
+      "enemyMaxHp": 220,
+      "enemy": "attack",
+      "winner": "enemy",
+      "seconds": 14,
+      "hp": 0,
+      "enemyHp": 0
+    },
+    {
+      "multiplier": 1,
+      "playerMaxHp": 160,
+      "enemyMaxHp": 220,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 92.4,
+      "enemyHp": 0
+    },
+    {
+      "multiplier": 1,
+      "playerMaxHp": 160,
+      "enemyMaxHp": 220,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 14,
+      "hp": 94.90000000000002,
+      "enemyHp": 0
+    },
+    {
+      "multiplier": 2,
+      "playerMaxHp": 320,
+      "enemyMaxHp": 440,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 17.10000000000002,
+      "enemyHp": 0
+    },
+    {
+      "multiplier": 2,
+      "playerMaxHp": 320,
+      "enemyMaxHp": 440,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 24,
+      "hp": 92.39999999999996,
+      "enemyHp": 0
+    },
+    {
+      "multiplier": 2,
+      "playerMaxHp": 320,
+      "enemyMaxHp": 440,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 21,
+      "hp": 136.9,
+      "enemyHp": 0
+    },
+    {
+      "multiplier": 5,
+      "playerMaxHp": 800,
+      "enemyMaxHp": 1100,
+      "enemy": "attack",
+      "winner": "enemy",
+      "seconds": 32,
+      "hp": 0,
+      "enemyHp": 42
+    },
+    {
+      "multiplier": 5,
+      "playerMaxHp": 800,
+      "enemyMaxHp": 1100,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 36,
+      "hp": 59.465217391304414,
+      "enemyHp": 0
+    },
+    {
+      "multiplier": 5,
+      "playerMaxHp": 800,
+      "enemyMaxHp": 1100,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 35,
+      "hp": 67.7062499999999,
+      "enemyHp": 0
+    },
+    {
+      "multiplier": 10,
+      "playerMaxHp": 1600,
+      "enemyMaxHp": 2200,
+      "enemy": "attack",
+      "winner": "enemy",
+      "seconds": 41,
+      "hp": 0,
+      "enemyHp": 378
+    },
+    {
+      "multiplier": 10,
+      "playerMaxHp": 1600,
+      "enemyMaxHp": 2200,
+      "enemy": "defense",
+      "winner": "enemy",
+      "seconds": 45,
+      "hp": 0,
+      "enemyHp": 51
+    },
+    {
+      "multiplier": 10,
+      "playerMaxHp": 1600,
+      "enemyMaxHp": 2200,
+      "enemy": "poison",
+      "winner": "enemy",
+      "seconds": 44,
+      "hp": 0,
+      "enemyHp": 0
+    },
+    {
+      "multiplier": 20,
+      "playerMaxHp": 3200,
+      "enemyMaxHp": 4400,
+      "enemy": "attack",
+      "winner": "enemy",
+      "seconds": 52,
+      "hp": 0,
+      "enemyHp": 759
+    },
+    {
+      "multiplier": 20,
+      "playerMaxHp": 3200,
+      "enemyMaxHp": 4400,
+      "enemy": "defense",
+      "winner": "enemy",
+      "seconds": 55,
+      "hp": 0,
+      "enemyHp": 680
+    },
+    {
+      "multiplier": 20,
+      "playerMaxHp": 3200,
+      "enemyMaxHp": 4400,
+      "enemy": "poison",
+      "winner": "enemy",
+      "seconds": 54,
+      "hp": 0,
+      "enemyHp": 561
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 ## Agent skills
 
+### Documentation
+
+When adding, moving, merging, or archiving project documentation, follow `DOCUMENTATION.md` and update the root `README.md` index.
+
 ### Issue tracker
 
 Issues and specs are tracked in GitHub Issues for `Czp14408/game`. See `docs/agents/issue-tracker.md`.

@@ -1,0 +1,718 @@
+{
+  "date": "2026-10-14",
+  "scope": "Fixed non-player-adaptive templates; points do not include money. No blood/class simulation. Existing silver skills cannot be exchanged to gold in stage one.",
+  "templates": {
+    "attack": {
+      "hp": 120,
+      "items": [
+        {
+          "id": "blade",
+          "quality": 1
+        },
+        {
+          "id": "hammer",
+          "quality": 0
+        },
+        {
+          "id": "dagger",
+          "quality": 0
+        },
+        {
+          "id": "mirror",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        }
+      ],
+      "skills": {
+        "fervor": 1
+      }
+    },
+    "defense": {
+      "hp": 120,
+      "items": [
+        {
+          "id": "blade",
+          "quality": 1
+        },
+        {
+          "id": "mirror",
+          "quality": 1
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        },
+        {
+          "id": "stone",
+          "quality": 0
+        },
+        {
+          "id": "dagger",
+          "quality": 0
+        }
+      ],
+      "skills": {
+        "fervor": 1,
+        "restorative": 2
+      }
+    },
+    "poison": {
+      "hp": 120,
+      "items": [
+        {
+          "id": "needle",
+          "quality": 1
+        },
+        {
+          "id": "needle",
+          "quality": 1
+        },
+        {
+          "id": "blade",
+          "quality": 0
+        },
+        {
+          "id": "mirror",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        }
+      ],
+      "skills": {
+        "restorative": 2
+      }
+    }
+  },
+  "menu": {
+    "maxHp": {
+      "points": 2,
+      "amount": 20,
+      "purchasesPerStage": 1
+    },
+    "bronzeItemToSilver": {
+      "points": 2
+    },
+    "bronzeSkillToSilver": {
+      "points": 3
+    },
+    "bloodFirstRank": {
+      "points": 4,
+      "simulated": false
+    }
+  },
+  "rows": [
+    {
+      "route": "main",
+      "plan": "no-spend",
+      "points": 0,
+      "remainingPoints": 4,
+      "enemy": "attack",
+      "winner": "enemy",
+      "seconds": 16,
+      "hp": 0
+    },
+    {
+      "route": "main",
+      "plan": "no-spend",
+      "points": 0,
+      "remainingPoints": 4,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 14
+    },
+    {
+      "route": "main",
+      "plan": "no-spend",
+      "points": 0,
+      "remainingPoints": 4,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 4
+    },
+    {
+      "route": "main",
+      "plan": "health",
+      "points": 2,
+      "remainingPoints": 2,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 8
+    },
+    {
+      "route": "main",
+      "plan": "health",
+      "points": 2,
+      "remainingPoints": 2,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 34
+    },
+    {
+      "route": "main",
+      "plan": "health",
+      "points": 2,
+      "remainingPoints": 2,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 24
+    },
+    {
+      "route": "main",
+      "plan": "upgrade-shield-0",
+      "points": 2,
+      "remainingPoints": 2,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 4
+    },
+    {
+      "route": "main",
+      "plan": "upgrade-shield-0",
+      "points": 2,
+      "remainingPoints": 2,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 34
+    },
+    {
+      "route": "main",
+      "plan": "upgrade-shield-0",
+      "points": 2,
+      "remainingPoints": 2,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 4
+    },
+    {
+      "route": "main",
+      "plan": "health+upgrade-shield-0",
+      "points": 4,
+      "remainingPoints": 0,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 24
+    },
+    {
+      "route": "main",
+      "plan": "health+upgrade-shield-0",
+      "points": 4,
+      "remainingPoints": 0,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 54
+    },
+    {
+      "route": "main",
+      "plan": "health+upgrade-shield-0",
+      "points": 4,
+      "remainingPoints": 0,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 24
+    },
+    {
+      "route": "normal",
+      "plan": "no-spend",
+      "points": 0,
+      "remainingPoints": 6,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 4
+    },
+    {
+      "route": "normal",
+      "plan": "no-spend",
+      "points": 0,
+      "remainingPoints": 6,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 34
+    },
+    {
+      "route": "normal",
+      "plan": "no-spend",
+      "points": 0,
+      "remainingPoints": 6,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 16
+    },
+    {
+      "route": "normal",
+      "plan": "health",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 24
+    },
+    {
+      "route": "normal",
+      "plan": "health",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 54
+    },
+    {
+      "route": "normal",
+      "plan": "health",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 36
+    },
+    {
+      "route": "normal",
+      "plan": "upgrade-shield-0",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 20
+    },
+    {
+      "route": "normal",
+      "plan": "upgrade-shield-0",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 52
+    },
+    {
+      "route": "normal",
+      "plan": "upgrade-shield-0",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 16
+    },
+    {
+      "route": "normal",
+      "plan": "health+upgrade-shield-0",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 40
+    },
+    {
+      "route": "normal",
+      "plan": "health+upgrade-shield-0",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 72
+    },
+    {
+      "route": "normal",
+      "plan": "health+upgrade-shield-0",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 36
+    },
+    {
+      "route": "normal",
+      "plan": "upgrade-medicine-1",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 9
+    },
+    {
+      "route": "normal",
+      "plan": "upgrade-medicine-1",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 39
+    },
+    {
+      "route": "normal",
+      "plan": "upgrade-medicine-1",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 21
+    },
+    {
+      "route": "normal",
+      "plan": "health+upgrade-medicine-1",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 29
+    },
+    {
+      "route": "normal",
+      "plan": "health+upgrade-medicine-1",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 59
+    },
+    {
+      "route": "normal",
+      "plan": "health+upgrade-medicine-1",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 41
+    },
+    {
+      "route": "normal",
+      "plan": "restorative",
+      "points": 3,
+      "remainingPoints": 3,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 6
+    },
+    {
+      "route": "normal",
+      "plan": "restorative",
+      "points": 3,
+      "remainingPoints": 3,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "hp": 36
+    },
+    {
+      "route": "normal",
+      "plan": "restorative",
+      "points": 3,
+      "remainingPoints": 3,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "hp": 16
+    },
+    {
+      "route": "deep",
+      "plan": "no-spend",
+      "points": 0,
+      "remainingPoints": 6,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 87
+    },
+    {
+      "route": "deep",
+      "plan": "no-spend",
+      "points": 0,
+      "remainingPoints": 6,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 12,
+      "hp": 100
+    },
+    {
+      "route": "deep",
+      "plan": "no-spend",
+      "points": 0,
+      "remainingPoints": 6,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 72
+    },
+    {
+      "route": "deep",
+      "plan": "health",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 107
+    },
+    {
+      "route": "deep",
+      "plan": "health",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 12,
+      "hp": 120
+    },
+    {
+      "route": "deep",
+      "plan": "health",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 92
+    },
+    {
+      "route": "deep",
+      "plan": "upgrade-shield-0",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 92
+    },
+    {
+      "route": "deep",
+      "plan": "upgrade-shield-0",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 12,
+      "hp": 100
+    },
+    {
+      "route": "deep",
+      "plan": "upgrade-shield-0",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 72
+    },
+    {
+      "route": "deep",
+      "plan": "health+upgrade-shield-0",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 112
+    },
+    {
+      "route": "deep",
+      "plan": "health+upgrade-shield-0",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 12,
+      "hp": 120
+    },
+    {
+      "route": "deep",
+      "plan": "health+upgrade-shield-0",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 92
+    },
+    {
+      "route": "deep",
+      "plan": "upgrade-medicine-1",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 87
+    },
+    {
+      "route": "deep",
+      "plan": "upgrade-medicine-1",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 12,
+      "hp": 100
+    },
+    {
+      "route": "deep",
+      "plan": "upgrade-medicine-1",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 72
+    },
+    {
+      "route": "deep",
+      "plan": "health+upgrade-medicine-1",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 107
+    },
+    {
+      "route": "deep",
+      "plan": "health+upgrade-medicine-1",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 12,
+      "hp": 120
+    },
+    {
+      "route": "deep",
+      "plan": "health+upgrade-medicine-1",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 92
+    },
+    {
+      "route": "deep",
+      "plan": "upgrade-dagger-6",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 87
+    },
+    {
+      "route": "deep",
+      "plan": "upgrade-dagger-6",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 12,
+      "hp": 100
+    },
+    {
+      "route": "deep",
+      "plan": "upgrade-dagger-6",
+      "points": 2,
+      "remainingPoints": 4,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 72
+    },
+    {
+      "route": "deep",
+      "plan": "health+upgrade-dagger-6",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 107
+    },
+    {
+      "route": "deep",
+      "plan": "health+upgrade-dagger-6",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 12,
+      "hp": 120
+    },
+    {
+      "route": "deep",
+      "plan": "health+upgrade-dagger-6",
+      "points": 4,
+      "remainingPoints": 2,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 92
+    },
+    {
+      "route": "deep",
+      "plan": "restorative",
+      "points": 3,
+      "remainingPoints": 3,
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 88
+    },
+    {
+      "route": "deep",
+      "plan": "restorative",
+      "points": 3,
+      "remainingPoints": 3,
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 12,
+      "hp": 100
+    },
+    {
+      "route": "deep",
+      "plan": "restorative",
+      "points": 3,
+      "remainingPoints": 3,
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 10,
+      "hp": 72
+    }
+  ]
+}

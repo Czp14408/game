@@ -1,0 +1,5443 @@
+{
+  "date": "2026-10-14",
+  "checks": 39,
+  "scope": "Three-stage fixed combat/cash/points/inventory skeleton; starts after fixed world one. Later optional tasks and inventories are explicit fixtures, not exploration generation. No class, random supply, control, or 45-minute timing validation.",
+  "stages": [
+    null,
+    {
+      "road": {
+        "hp": 64,
+        "items": [
+          {
+            "id": "blade",
+            "quality": 1
+          },
+          {
+            "id": "mirror",
+            "quality": 1
+          }
+        ],
+        "skills": {
+          "fervor": 2
+        }
+      },
+      "chief": {
+        "hp": 120,
+        "items": [
+          {
+            "id": "hammer",
+            "quality": 2
+          },
+          {
+            "id": "dagger",
+            "quality": 1
+          },
+          {
+            "id": "mirror",
+            "quality": 1
+          }
+        ],
+        "skills": {
+          "fervor": 2
+        }
+      },
+      "templates": {
+        "attack": {
+          "hp": 160,
+          "items": [
+            {
+              "id": "blade",
+              "quality": 2
+            },
+            {
+              "id": "hammer",
+              "quality": 1
+            },
+            {
+              "id": "dagger",
+              "quality": 1
+            },
+            {
+              "id": "mirror",
+              "quality": 1
+            },
+            {
+              "id": "shield",
+              "quality": 1
+            }
+          ],
+          "skills": {
+            "fervor": 2
+          }
+        },
+        "defense": {
+          "hp": 160,
+          "items": [
+            {
+              "id": "mirror",
+              "quality": 2
+            },
+            {
+              "id": "blade",
+              "quality": 1
+            },
+            {
+              "id": "shield",
+              "quality": 1
+            },
+            {
+              "id": "medicine",
+              "quality": 1
+            },
+            {
+              "id": "stone",
+              "quality": 1
+            },
+            {
+              "id": "dagger",
+              "quality": 1
+            }
+          ],
+          "skills": {
+            "fervor": 2,
+            "restorative": 3
+          }
+        },
+        "poison": {
+          "hp": 160,
+          "items": [
+            {
+              "id": "blade",
+              "quality": 2
+            },
+            {
+              "id": "needle",
+              "quality": 1
+            },
+            {
+              "id": "needle",
+              "quality": 1
+            },
+            {
+              "id": "mirror",
+              "quality": 1
+            },
+            {
+              "id": "medicine",
+              "quality": 1
+            },
+            {
+              "id": "shield",
+              "quality": 1
+            }
+          ],
+          "skills": {
+            "restorative": 3
+          }
+        }
+      },
+      "money": {
+        "road": 8,
+        "chief": 18,
+        "main": 32,
+        "optional": 16
+      },
+      "mainPoints": 6,
+      "material": 5,
+      "heal": 45,
+      "healPrice": 8
+    },
+    {
+      "hubStock": [
+        {
+          "id": "needle",
+          "quality": 3,
+          "price": 24
+        },
+        {
+          "id": "tassel",
+          "quality": 2,
+          "price": 16
+        },
+        {
+          "id": "stone",
+          "quality": 2,
+          "price": 16
+        },
+        {
+          "id": "wrist",
+          "quality": 2,
+          "price": 26
+        }
+      ],
+      "road": {
+        "hp": 96,
+        "items": [
+          {
+            "id": "blade",
+            "quality": 2
+          },
+          {
+            "id": "mirror",
+            "quality": 2
+          }
+        ],
+        "skills": {
+          "fervor": 3
+        }
+      },
+      "chief": {
+        "hp": 180,
+        "items": [
+          {
+            "id": "hammer",
+            "quality": 3
+          },
+          {
+            "id": "dagger",
+            "quality": 2
+          },
+          {
+            "id": "mirror",
+            "quality": 2
+          }
+        ],
+        "skills": {
+          "fervor": 3
+        }
+      },
+      "templates": {
+        "attack": {
+          "hp": 220,
+          "items": [
+            {
+              "id": "blade",
+              "quality": 3
+            },
+            {
+              "id": "hammer",
+              "quality": 2
+            },
+            {
+              "id": "dagger",
+              "quality": 2
+            },
+            {
+              "id": "mirror",
+              "quality": 2
+            },
+            {
+              "id": "shield",
+              "quality": 2
+            }
+          ],
+          "skills": {
+            "fervor": 3
+          }
+        },
+        "defense": {
+          "hp": 220,
+          "items": [
+            {
+              "id": "mirror",
+              "quality": 3
+            },
+            {
+              "id": "blade",
+              "quality": 2
+            },
+            {
+              "id": "shield",
+              "quality": 2
+            },
+            {
+              "id": "medicine",
+              "quality": 2
+            },
+            {
+              "id": "stone",
+              "quality": 2
+            },
+            {
+              "id": "dagger",
+              "quality": 2
+            }
+          ],
+          "skills": {
+            "fervor": 3,
+            "restorative": 5
+          }
+        },
+        "poison": {
+          "hp": 220,
+          "items": [
+            {
+              "id": "blade",
+              "quality": 3
+            },
+            {
+              "id": "needle",
+              "quality": 2
+            },
+            {
+              "id": "needle",
+              "quality": 2
+            },
+            {
+              "id": "mirror",
+              "quality": 2
+            },
+            {
+              "id": "medicine",
+              "quality": 2
+            },
+            {
+              "id": "shield",
+              "quality": 2
+            }
+          ],
+          "skills": {
+            "restorative": 5
+          }
+        }
+      },
+      "money": {
+        "road": 10,
+        "chief": 26,
+        "main": 40,
+        "optional": 20
+      },
+      "mainPoints": 8,
+      "material": 6,
+      "heal": 60,
+      "healPrice": 10
+    }
+  ],
+  "results": [
+    {
+      "route": "main",
+      "template": "attack",
+      "success": false,
+      "log": [
+        {
+          "action": "buy vitality +20",
+          "money": 48,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 48,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "hub one explicit free treatment",
+          "money": 48,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "stage one opponent",
+          "money": 48,
+          "points": 2,
+          "hp": 20.000000000000004,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 62,
+          "points": 2,
+          "hp": 20.000000000000004,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "purchase blade:2",
+          "money": 36,
+          "points": 2,
+          "hp": 20.000000000000004,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 36,
+          "points": 2,
+          "hp": 50,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 28,
+          "points": 2,
+          "hp": 95,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 20,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 road",
+          "money": 20,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "road rewards",
+          "money": 28,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 chief",
+          "money": 28,
+          "points": 2,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 78,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:2",
+          "money": 78,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:2",
+          "money": 78,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine",
+          "money": 78,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 78,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 104,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "unequip shield for heavy weapon",
+          "money": 104,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 7,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy silver hammer",
+          "money": 82,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 82,
+          "points": 5,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 82,
+          "points": 5,
+          "hp": 39.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "upgrade hammer to gold",
+          "money": 82,
+          "points": 2,
+          "hp": 39.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "points hammer:2",
+          "money": 82,
+          "points": 2,
+          "hp": 39.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 85,
+          "points": 2,
+          "hp": 39.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 85,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 2 opponent",
+          "money": 85,
+          "points": 2,
+          "hp": 7.499999999999983,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "action": "purchase blade:3",
+          "money": 45,
+          "points": 2,
+          "hp": 7.499999999999983,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 45,
+          "points": 2,
+          "hp": 52.499999999999986,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 35,
+          "points": 2,
+          "hp": 112.49999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 road",
+          "money": 35,
+          "points": 2,
+          "hp": 135.1,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 7
+        },
+        {
+          "action": "road rewards",
+          "money": 45,
+          "points": 2,
+          "hp": 135.1,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 chief",
+          "money": 45,
+          "points": 2,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 12
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 111,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:3",
+          "money": 111,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:3",
+          "money": 111,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:2",
+          "money": 111,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 8,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 111,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 159,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 159,
+          "points": 6,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 159,
+          "points": 6,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "upgrade hammer to diamond",
+          "money": 159,
+          "points": 1,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "points hammer:3",
+          "money": 159,
+          "points": 1,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 159,
+          "points": 1,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 159,
+          "points": 1,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 159,
+          "points": 1,
+          "hp": 0,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "enemy",
+          "seconds": 14
+        },
+        {
+          "action": "defeat restores HP; same enemy, no rewards or free stock",
+          "money": 159,
+          "points": 1,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 1
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 159,
+          "points": 1,
+          "hp": 0,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 1,
+          "winner": "enemy",
+          "seconds": 14
+        },
+        {
+          "action": "defeat restores HP; same enemy, no rewards or free stock",
+          "money": 159,
+          "points": 1,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 2
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 159,
+          "points": 1,
+          "hp": 0,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 2,
+          "winner": "enemy",
+          "seconds": 14
+        },
+        {
+          "action": "third defeat ends trial",
+          "money": 159,
+          "points": 1,
+          "hp": 0,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 3
+        }
+      ]
+    },
+    {
+      "route": "main",
+      "template": "defense",
+      "success": true,
+      "log": [
+        {
+          "action": "buy vitality +20",
+          "money": 48,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 48,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "hub one explicit free treatment",
+          "money": 48,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "stage one opponent",
+          "money": 48,
+          "points": 2,
+          "hp": 48.2,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 20
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 62,
+          "points": 2,
+          "hp": 48.2,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "purchase blade:2",
+          "money": 36,
+          "points": 2,
+          "hp": 48.2,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 36,
+          "points": 2,
+          "hp": 78.2,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 28,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 road",
+          "money": 28,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "road rewards",
+          "money": 36,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 chief",
+          "money": 36,
+          "points": 2,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 86,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:2",
+          "money": 86,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:2",
+          "money": 86,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine",
+          "money": 86,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 86,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 112,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "unequip shield for heavy weapon",
+          "money": 112,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 7,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy silver hammer",
+          "money": 90,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 90,
+          "points": 5,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 90,
+          "points": 5,
+          "hp": 39.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "upgrade hammer to gold",
+          "money": 90,
+          "points": 2,
+          "hp": 39.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "points hammer:2",
+          "money": 90,
+          "points": 2,
+          "hp": 39.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 93,
+          "points": 2,
+          "hp": 39.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 93,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 2 opponent",
+          "money": 93,
+          "points": 2,
+          "hp": 115.3,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "action": "purchase blade:3",
+          "money": 53,
+          "points": 2,
+          "hp": 115.3,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 road",
+          "money": 53,
+          "points": 2,
+          "hp": 137.9,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 7
+        },
+        {
+          "action": "road rewards",
+          "money": 63,
+          "points": 2,
+          "hp": 137.9,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 chief",
+          "money": 63,
+          "points": 2,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 12
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 129,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:3",
+          "money": 129,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:3",
+          "money": 129,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:2",
+          "money": 129,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 129,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 10,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 181,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 181,
+          "points": 6,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 181,
+          "points": 6,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "upgrade hammer to diamond",
+          "money": 181,
+          "points": 1,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "points hammer:3",
+          "money": 181,
+          "points": 1,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 181,
+          "points": 1,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 181,
+          "points": 1,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 181,
+          "points": 1,
+          "hp": 92.4,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "third stage victory: immediate completion, no rewards",
+          "money": 181,
+          "points": 1,
+          "hp": 92.4,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        }
+      ]
+    },
+    {
+      "route": "main",
+      "template": "poison",
+      "success": true,
+      "log": [
+        {
+          "action": "buy vitality +20",
+          "money": 48,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 48,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "hub one explicit free treatment",
+          "money": 48,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "stage one opponent",
+          "money": 48,
+          "points": 2,
+          "hp": 35.30000000000001,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 62,
+          "points": 2,
+          "hp": 35.30000000000001,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "purchase blade:2",
+          "money": 36,
+          "points": 2,
+          "hp": 35.30000000000001,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 36,
+          "points": 2,
+          "hp": 65.30000000000001,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 28,
+          "points": 2,
+          "hp": 110.30000000000001,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 road",
+          "money": 28,
+          "points": 2,
+          "hp": 116.70000000000002,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "road rewards",
+          "money": 36,
+          "points": 2,
+          "hp": 116.70000000000002,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 chief",
+          "money": 36,
+          "points": 2,
+          "hp": 16.70000000000001,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 86,
+          "points": 8,
+          "hp": 16.70000000000001,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:2",
+          "money": 86,
+          "points": 8,
+          "hp": 16.70000000000001,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:2",
+          "money": 86,
+          "points": 8,
+          "hp": 16.70000000000001,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine",
+          "money": 86,
+          "points": 8,
+          "hp": 16.70000000000001,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 86,
+          "points": 8,
+          "hp": 16.70000000000001,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 112,
+          "points": 8,
+          "hp": 16.70000000000001,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "unequip shield for heavy weapon",
+          "money": 112,
+          "points": 8,
+          "hp": 16.70000000000001,
+          "maxHp": 120,
+          "field": 7,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy silver hammer",
+          "money": 90,
+          "points": 8,
+          "hp": 16.70000000000001,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 90,
+          "points": 5,
+          "hp": 16.70000000000001,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 90,
+          "points": 5,
+          "hp": 36.70000000000001,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "upgrade hammer to gold",
+          "money": 90,
+          "points": 2,
+          "hp": 36.70000000000001,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "points hammer:2",
+          "money": 90,
+          "points": 2,
+          "hp": 36.70000000000001,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 93,
+          "points": 2,
+          "hp": 36.70000000000001,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 93,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 2 opponent",
+          "money": 93,
+          "points": 2,
+          "hp": 96.10000000000001,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "action": "purchase blade:3",
+          "money": 53,
+          "points": 2,
+          "hp": 96.10000000000001,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 53,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 road",
+          "money": 53,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 7
+        },
+        {
+          "action": "road rewards",
+          "money": 63,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 chief",
+          "money": 63,
+          "points": 2,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 12
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 129,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:3",
+          "money": 129,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:3",
+          "money": 129,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:2",
+          "money": 129,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 8,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 129,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 177,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 177,
+          "points": 6,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 177,
+          "points": 6,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "upgrade hammer to diamond",
+          "money": 177,
+          "points": 1,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "points hammer:3",
+          "money": 177,
+          "points": 1,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 177,
+          "points": 1,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 177,
+          "points": 1,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 177,
+          "points": 1,
+          "hp": 94.90000000000002,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "action": "third stage victory: immediate completion, no rewards",
+          "money": 177,
+          "points": 1,
+          "hp": 94.90000000000002,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        }
+      ]
+    },
+    {
+      "route": "normal",
+      "template": "attack",
+      "success": false,
+      "log": [
+        {
+          "action": "buy vitality +20",
+          "money": 68,
+          "points": 4,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 68,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "hub one explicit free treatment",
+          "money": 68,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "stage one opponent",
+          "money": 68,
+          "points": 4,
+          "hp": 34.900000000000006,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 82,
+          "points": 4,
+          "hp": 34.900000000000006,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "purchase blade:2",
+          "money": 56,
+          "points": 4,
+          "hp": 34.900000000000006,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 56,
+          "points": 4,
+          "hp": 64.9,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 48,
+          "points": 4,
+          "hp": 109.9,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 road",
+          "money": 48,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "road rewards",
+          "money": 56,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 chief",
+          "money": 56,
+          "points": 4,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:2",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:2",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:1",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 8,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 153,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "unequip shield for heavy weapon",
+          "money": 153,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 7,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy silver hammer",
+          "money": 131,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 131,
+          "points": 9,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 131,
+          "points": 9,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "upgrade hammer to gold",
+          "money": 131,
+          "points": 6,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "points hammer:2",
+          "money": 131,
+          "points": 6,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 131,
+          "points": 2,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 134,
+          "points": 2,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 134,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 2 opponent",
+          "money": 134,
+          "points": 2,
+          "hp": 18.750000000000018,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "action": "purchase blade:3",
+          "money": 94,
+          "points": 2,
+          "hp": 18.750000000000018,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 94,
+          "points": 2,
+          "hp": 63.750000000000014,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 84,
+          "points": 2,
+          "hp": 123.75000000000001,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 road",
+          "money": 84,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 7
+        },
+        {
+          "action": "road rewards",
+          "money": 94,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 chief",
+          "money": 94,
+          "points": 2,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 12
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 180,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:3",
+          "money": 180,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:3",
+          "money": 180,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:2",
+          "money": 180,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 8,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 180,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 228,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 228,
+          "points": 8,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 228,
+          "points": 8,
+          "hp": 130,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 228,
+          "points": 2,
+          "hp": 130,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 228,
+          "points": 2,
+          "hp": 130,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 228,
+          "points": 2,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 228,
+          "points": 2,
+          "hp": 0,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "enemy",
+          "seconds": 14
+        },
+        {
+          "action": "defeat restores HP; same enemy, no rewards or free stock",
+          "money": 228,
+          "points": 2,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 1
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 228,
+          "points": 2,
+          "hp": 0,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 1,
+          "winner": "enemy",
+          "seconds": 14
+        },
+        {
+          "action": "defeat restores HP; same enemy, no rewards or free stock",
+          "money": 228,
+          "points": 2,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 2
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 228,
+          "points": 2,
+          "hp": 0,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 2,
+          "winner": "enemy",
+          "seconds": 14
+        },
+        {
+          "action": "third defeat ends trial",
+          "money": 228,
+          "points": 2,
+          "hp": 0,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 3
+        }
+      ]
+    },
+    {
+      "route": "normal",
+      "template": "defense",
+      "success": true,
+      "log": [
+        {
+          "action": "buy vitality +20",
+          "money": 68,
+          "points": 4,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 68,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "hub one explicit free treatment",
+          "money": 68,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "stage one opponent",
+          "money": 68,
+          "points": 4,
+          "hp": 66.2,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 20
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 82,
+          "points": 4,
+          "hp": 66.2,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "purchase blade:2",
+          "money": 56,
+          "points": 4,
+          "hp": 66.2,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 56,
+          "points": 4,
+          "hp": 96.2,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 road",
+          "money": 56,
+          "points": 4,
+          "hp": 110.60000000000001,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "road rewards",
+          "money": 64,
+          "points": 4,
+          "hp": 110.60000000000001,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 chief",
+          "money": 64,
+          "points": 4,
+          "hp": 30.6,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 130,
+          "points": 12,
+          "hp": 30.6,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:2",
+          "money": 130,
+          "points": 12,
+          "hp": 30.6,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:2",
+          "money": 130,
+          "points": 12,
+          "hp": 30.6,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:1",
+          "money": 130,
+          "points": 12,
+          "hp": 30.6,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 8,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 130,
+          "points": 12,
+          "hp": 30.6,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 161,
+          "points": 12,
+          "hp": 30.6,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "unequip shield for heavy weapon",
+          "money": 161,
+          "points": 12,
+          "hp": 30.6,
+          "maxHp": 120,
+          "field": 7,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy silver hammer",
+          "money": 139,
+          "points": 12,
+          "hp": 30.6,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 139,
+          "points": 9,
+          "hp": 30.6,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 139,
+          "points": 9,
+          "hp": 50.6,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "upgrade hammer to gold",
+          "money": 139,
+          "points": 6,
+          "hp": 50.6,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "points hammer:2",
+          "money": 139,
+          "points": 6,
+          "hp": 50.6,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 139,
+          "points": 2,
+          "hp": 50.6,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 142,
+          "points": 2,
+          "hp": 50.6,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 142,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 2 opponent",
+          "money": 142,
+          "points": 2,
+          "hp": 119.95,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "action": "purchase blade:3",
+          "money": 102,
+          "points": 2,
+          "hp": 119.95,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 road",
+          "money": 102,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 7
+        },
+        {
+          "action": "road rewards",
+          "money": 112,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 chief",
+          "money": 112,
+          "points": 2,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 12
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 198,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:3",
+          "money": 198,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:3",
+          "money": 198,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:2",
+          "money": 198,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 198,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 10,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 250,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 250,
+          "points": 8,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 250,
+          "points": 8,
+          "hp": 130,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 250,
+          "points": 2,
+          "hp": 130,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 250,
+          "points": 2,
+          "hp": 130,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 250,
+          "points": 2,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 250,
+          "points": 2,
+          "hp": 120.75,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "third stage victory: immediate completion, no rewards",
+          "money": 250,
+          "points": 2,
+          "hp": 120.75,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        }
+      ]
+    },
+    {
+      "route": "normal",
+      "template": "poison",
+      "success": true,
+      "log": [
+        {
+          "action": "buy vitality +20",
+          "money": 68,
+          "points": 4,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 68,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "hub one explicit free treatment",
+          "money": 68,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "stage one opponent",
+          "money": 68,
+          "points": 4,
+          "hp": 47.300000000000004,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 82,
+          "points": 4,
+          "hp": 47.300000000000004,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "purchase blade:2",
+          "money": 56,
+          "points": 4,
+          "hp": 47.300000000000004,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 56,
+          "points": 4,
+          "hp": 77.30000000000001,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 48,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 road",
+          "money": 48,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "road rewards",
+          "money": 56,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 chief",
+          "money": 56,
+          "points": 4,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:2",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:2",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:1",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 8,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 153,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "unequip shield for heavy weapon",
+          "money": 153,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 7,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy silver hammer",
+          "money": 131,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 131,
+          "points": 9,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 131,
+          "points": 9,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "upgrade hammer to gold",
+          "money": 131,
+          "points": 6,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "points hammer:2",
+          "money": 131,
+          "points": 6,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 131,
+          "points": 2,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 134,
+          "points": 2,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 134,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 2 opponent",
+          "money": 134,
+          "points": 2,
+          "hp": 102.95,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "action": "purchase blade:3",
+          "money": 94,
+          "points": 2,
+          "hp": 102.95,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 94,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 road",
+          "money": 94,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 7
+        },
+        {
+          "action": "road rewards",
+          "money": 104,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 chief",
+          "money": 104,
+          "points": 2,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 12
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 190,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:3",
+          "money": 190,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:3",
+          "money": 190,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:2",
+          "money": 190,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 8,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 190,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 238,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 238,
+          "points": 8,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 238,
+          "points": 8,
+          "hp": 130,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 238,
+          "points": 2,
+          "hp": 130,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 238,
+          "points": 2,
+          "hp": 130,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 238,
+          "points": 2,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 238,
+          "points": 2,
+          "hp": 119.5,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "action": "third stage victory: immediate completion, no rewards",
+          "money": 238,
+          "points": 2,
+          "hp": 119.5,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        }
+      ]
+    },
+    {
+      "route": "deep",
+      "template": "attack",
+      "success": true,
+      "log": [
+        {
+          "action": "buy next blood rank",
+          "money": 86,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "hub one explicit free treatment",
+          "money": 86,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "stage one opponent",
+          "money": 86,
+          "points": 2,
+          "hp": 92.58461538461539,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 103,
+          "points": 2,
+          "hp": 92.58461538461539,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "purchase blade:2",
+          "money": 77,
+          "points": 2,
+          "hp": 92.58461538461539,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 road",
+          "money": 77,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 5
+        },
+        {
+          "action": "road rewards",
+          "money": 85,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 chief",
+          "money": 85,
+          "points": 2,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:2",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:2",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:1",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 10,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 185,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 185,
+          "points": 4,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 185,
+          "points": 1,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 185,
+          "points": 1,
+          "hp": 92.56147540983606,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 185,
+          "points": 1,
+          "hp": 92.56147540983606,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 185,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 2 opponent",
+          "money": 185,
+          "points": 1,
+          "hp": 103.28472222222223,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "purchase blade:3",
+          "money": 145,
+          "points": 1,
+          "hp": 103.28472222222223,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 road",
+          "money": 145,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 6
+        },
+        {
+          "action": "road rewards",
+          "money": 155,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 chief",
+          "money": 155,
+          "points": 1,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:3",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:3",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:2",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 10,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 293,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 293,
+          "points": 3,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 293,
+          "points": 3,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 293,
+          "points": 3,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 293,
+          "points": 3,
+          "hp": 97.95,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "third stage victory: immediate completion, no rewards",
+          "money": 293,
+          "points": 3,
+          "hp": 97.95,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        }
+      ]
+    },
+    {
+      "route": "deep",
+      "template": "defense",
+      "success": true,
+      "log": [
+        {
+          "action": "buy next blood rank",
+          "money": 86,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "hub one explicit free treatment",
+          "money": 86,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "stage one opponent",
+          "money": 86,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 10
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 103,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "purchase blade:2",
+          "money": 77,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 road",
+          "money": 77,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 5
+        },
+        {
+          "action": "road rewards",
+          "money": 85,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 chief",
+          "money": 85,
+          "points": 2,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:2",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:2",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:1",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 10,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 185,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 185,
+          "points": 4,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 185,
+          "points": 1,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 185,
+          "points": 1,
+          "hp": 92.56147540983606,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 185,
+          "points": 1,
+          "hp": 92.56147540983606,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 185,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 2 opponent",
+          "money": 185,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 10
+        },
+        {
+          "action": "purchase blade:3",
+          "money": 145,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 road",
+          "money": 145,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 6
+        },
+        {
+          "action": "road rewards",
+          "money": 155,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 chief",
+          "money": 155,
+          "points": 1,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:3",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:3",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:2",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 10,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 293,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 293,
+          "points": 3,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 293,
+          "points": 3,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 293,
+          "points": 3,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 293,
+          "points": 3,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 10
+        },
+        {
+          "action": "third stage victory: immediate completion, no rewards",
+          "money": 293,
+          "points": 3,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        }
+      ]
+    },
+    {
+      "route": "deep",
+      "template": "poison",
+      "success": true,
+      "log": [
+        {
+          "action": "buy next blood rank",
+          "money": 86,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "hub one explicit free treatment",
+          "money": 86,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "stage one opponent",
+          "money": 86,
+          "points": 2,
+          "hp": 96.29354838709678,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 103,
+          "points": 2,
+          "hp": 96.29354838709678,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "purchase blade:2",
+          "money": 77,
+          "points": 2,
+          "hp": 96.29354838709678,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 road",
+          "money": 77,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 5
+        },
+        {
+          "action": "road rewards",
+          "money": 85,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 chief",
+          "money": 85,
+          "points": 2,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:2",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:2",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:1",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 151,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 10,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 185,
+          "points": 10,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 185,
+          "points": 4,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 185,
+          "points": 1,
+          "hp": 72.56147540983606,
+          "maxHp": 100,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 185,
+          "points": 1,
+          "hp": 92.56147540983606,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 185,
+          "points": 1,
+          "hp": 92.56147540983606,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 185,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 2 opponent",
+          "money": 185,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "purchase blade:3",
+          "money": 145,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 road",
+          "money": 145,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 6
+        },
+        {
+          "action": "road rewards",
+          "money": 155,
+          "points": 1,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 chief",
+          "money": 155,
+          "points": 1,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 4,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:3",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:3",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:2",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 241,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 10,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 293,
+          "points": 11,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 293,
+          "points": 3,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 293,
+          "points": 3,
+          "hp": 93.1470588235294,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 293,
+          "points": 3,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 293,
+          "points": 3,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "third stage victory: immediate completion, no rewards",
+          "money": 293,
+          "points": 3,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        }
+      ]
+    }
+  ],
+  "recoveryResults": [
+    {
+      "route": "main",
+      "template": "attack",
+      "success": true,
+      "log": [
+        {
+          "action": "buy vitality +20",
+          "money": 48,
+          "points": 2,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 48,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "hub one explicit free treatment",
+          "money": 48,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "stage one opponent",
+          "money": 48,
+          "points": 2,
+          "hp": 20.000000000000004,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 62,
+          "points": 2,
+          "hp": 20.000000000000004,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "purchase blade:2",
+          "money": 36,
+          "points": 2,
+          "hp": 20.000000000000004,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 36,
+          "points": 2,
+          "hp": 50,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 28,
+          "points": 2,
+          "hp": 95,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 20,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 road",
+          "money": 20,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "road rewards",
+          "money": 28,
+          "points": 2,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 chief",
+          "money": 28,
+          "points": 2,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 78,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:2",
+          "money": 78,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:2",
+          "money": 78,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 6,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine",
+          "money": 78,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 78,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 7,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 104,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "unequip shield for heavy weapon",
+          "money": 104,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 7,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy silver hammer",
+          "money": 82,
+          "points": 8,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 82,
+          "points": 5,
+          "hp": 19.999999999999993,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 82,
+          "points": 5,
+          "hp": 39.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "upgrade hammer to gold",
+          "money": 82,
+          "points": 2,
+          "hp": 39.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "points hammer:2",
+          "money": 82,
+          "points": 2,
+          "hp": 39.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 85,
+          "points": 2,
+          "hp": 39.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 85,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 2 opponent",
+          "money": 85,
+          "points": 2,
+          "hp": 7.499999999999983,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "action": "purchase blade:3",
+          "money": 45,
+          "points": 2,
+          "hp": 7.499999999999983,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 45,
+          "points": 2,
+          "hp": 52.499999999999986,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 35,
+          "points": 2,
+          "hp": 112.49999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 road",
+          "money": 35,
+          "points": 2,
+          "hp": 135.1,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 7
+        },
+        {
+          "action": "road rewards",
+          "money": 45,
+          "points": 2,
+          "hp": 135.1,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 chief",
+          "money": 45,
+          "points": 2,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 12
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 111,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:3",
+          "money": 111,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:3",
+          "money": 111,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:2",
+          "money": 111,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 8,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 111,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 159,
+          "points": 10,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 159,
+          "points": 6,
+          "hp": 101,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 159,
+          "points": 6,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "upgrade hammer to diamond",
+          "money": 159,
+          "points": 1,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "points hammer:3",
+          "money": 159,
+          "points": 1,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 159,
+          "points": 1,
+          "hp": 121,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 159,
+          "points": 1,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 159,
+          "points": 1,
+          "hp": 0,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "enemy",
+          "seconds": 14
+        },
+        {
+          "action": "defeat restores HP; same enemy, no rewards or free stock",
+          "money": 159,
+          "points": 1,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 1
+        },
+        {
+          "action": "adaptive retry: unequip hammer, preserve in bag",
+          "money": 159,
+          "points": 1,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 7,
+          "bag": 4,
+          "defeats": 1
+        },
+        {
+          "action": "adaptive retry: buy needle",
+          "money": 135,
+          "points": 1,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 8,
+          "bag": 4,
+          "defeats": 1
+        },
+        {
+          "action": "adaptive retry: buy tassel",
+          "money": 119,
+          "points": 1,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 9,
+          "bag": 4,
+          "defeats": 1
+        },
+        {
+          "action": "adaptive retry: buy stone",
+          "money": 103,
+          "points": 1,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 4,
+          "defeats": 1
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 103,
+          "points": 1,
+          "hp": 73.37142857142857,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 4,
+          "defeats": 1,
+          "winner": "player",
+          "seconds": 12
+        },
+        {
+          "action": "third stage victory: immediate completion, no rewards",
+          "money": 103,
+          "points": 1,
+          "hp": 73.37142857142857,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 4,
+          "defeats": 1
+        }
+      ]
+    },
+    {
+      "route": "normal",
+      "template": "attack",
+      "success": true,
+      "log": [
+        {
+          "action": "buy vitality +20",
+          "money": 68,
+          "points": 4,
+          "hp": 100,
+          "maxHp": 100,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 68,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "hub one explicit free treatment",
+          "money": 68,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "stage one opponent",
+          "money": 68,
+          "points": 4,
+          "hp": 34.900000000000006,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 82,
+          "points": 4,
+          "hp": 34.900000000000006,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "purchase blade:2",
+          "money": 56,
+          "points": 4,
+          "hp": 34.900000000000006,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 56,
+          "points": 4,
+          "hp": 64.9,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 48,
+          "points": 4,
+          "hp": 109.9,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 road",
+          "money": 48,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 8
+        },
+        {
+          "action": "road rewards",
+          "money": 56,
+          "points": 4,
+          "hp": 120,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 2 chief",
+          "money": 56,
+          "points": 4,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 16
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:2",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:2",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:1",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 8,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 122,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 153,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 8,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "unequip shield for heavy weapon",
+          "money": 153,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 7,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy silver hammer",
+          "money": 131,
+          "points": 12,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 131,
+          "points": 9,
+          "hp": 34.99999999999999,
+          "maxHp": 120,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 131,
+          "points": 9,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "upgrade hammer to gold",
+          "money": 131,
+          "points": 6,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "points hammer:2",
+          "money": 131,
+          "points": 6,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 131,
+          "points": 2,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 134,
+          "points": 2,
+          "hp": 54.99999999999999,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 134,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 2 opponent",
+          "money": 134,
+          "points": 2,
+          "hp": 18.750000000000018,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 14
+        },
+        {
+          "action": "purchase blade:3",
+          "money": 94,
+          "points": 2,
+          "hp": 18.750000000000018,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "consume carried recovery",
+          "money": 94,
+          "points": 2,
+          "hp": 63.750000000000014,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "buy and consume world recovery",
+          "money": 84,
+          "points": 2,
+          "hp": 123.75000000000001,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 road",
+          "money": 84,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 2,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 7
+        },
+        {
+          "action": "road rewards",
+          "money": 94,
+          "points": 2,
+          "hp": 140,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "world 3 chief",
+          "money": 94,
+          "points": 2,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0,
+          "winner": "player",
+          "seconds": 12
+        },
+        {
+          "action": "chief skill duplicate merges; fixed completed tasks pay",
+          "money": 180,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 3,
+          "defeats": 0
+        },
+        {
+          "action": "reward mirror:3",
+          "money": 180,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 5,
+          "defeats": 0
+        },
+        {
+          "action": "reward dagger:3",
+          "money": 180,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 6,
+          "defeats": 0
+        },
+        {
+          "action": "reward medicine:2",
+          "money": 180,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 8,
+          "defeats": 0
+        },
+        {
+          "action": "boss chest recovery",
+          "money": 180,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 9,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 228,
+          "points": 12,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy vitality +20",
+          "money": 228,
+          "points": 8,
+          "hp": 110,
+          "maxHp": 140,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "apply vitality",
+          "money": 228,
+          "points": 8,
+          "hp": 130,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "buy next blood rank",
+          "money": 228,
+          "points": 2,
+          "hp": 130,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "explicitly sell old equipment/materials and surplus recovery; keep strongest one",
+          "money": 228,
+          "points": 2,
+          "hp": 130,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "hub explicit free treatment",
+          "money": 228,
+          "points": 2,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 228,
+          "points": 2,
+          "hp": 0,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 0,
+          "winner": "enemy",
+          "seconds": 14
+        },
+        {
+          "action": "defeat restores HP; same enemy, no rewards or free stock",
+          "money": 228,
+          "points": 2,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 1,
+          "defeats": 1
+        },
+        {
+          "action": "adaptive retry: unequip hammer, preserve in bag",
+          "money": 228,
+          "points": 2,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 7,
+          "bag": 4,
+          "defeats": 1
+        },
+        {
+          "action": "adaptive retry: buy needle",
+          "money": 204,
+          "points": 2,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 8,
+          "bag": 4,
+          "defeats": 1
+        },
+        {
+          "action": "adaptive retry: buy tassel",
+          "money": 188,
+          "points": 2,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 9,
+          "bag": 4,
+          "defeats": 1
+        },
+        {
+          "action": "adaptive retry: buy stone",
+          "money": 172,
+          "points": 2,
+          "hp": 160,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 4,
+          "defeats": 1
+        },
+        {
+          "action": "stage 3 opponent",
+          "money": 172,
+          "points": 2,
+          "hp": 72,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 4,
+          "defeats": 1,
+          "winner": "player",
+          "seconds": 11
+        },
+        {
+          "action": "third stage victory: immediate completion, no rewards",
+          "money": 172,
+          "points": 2,
+          "hp": 72,
+          "maxHp": 160,
+          "field": 10,
+          "bag": 4,
+          "defeats": 1
+        }
+      ]
+    }
+  ]
+}

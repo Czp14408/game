@@ -1,0 +1,8829 @@
+{
+  "scope": "15 fixed ledger routes, all required fights assumed won; no shopping or equipment use. Fixed material drops and actual configured equipment drops; automatic bag merges and standard equipment resale prices. Combat probes are isolated full-HP tests, not continuous-route validation.",
+  "enemies": [
+    {
+      "world": "cyber1",
+      "node": 4,
+      "hp": 220,
+      "items": [
+        {
+          "id": "pistol",
+          "quality": 0
+        },
+        {
+          "id": "emitter",
+          "quality": 0
+        }
+      ],
+      "effectScale": 3,
+      "stormScale": 2,
+      "skills": {}
+    },
+    {
+      "world": "cyber1",
+      "node": 8,
+      "hp": 220,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "quality": 0
+        }
+      ],
+      "effectScale": 3,
+      "stormScale": 2,
+      "skills": {}
+    },
+    {
+      "world": "cyber1",
+      "node": 10,
+      "hp": 330,
+      "items": [
+        {
+          "id": "drone",
+          "quality": 0
+        },
+        {
+          "id": "emitter",
+          "quality": 0
+        },
+        {
+          "id": "battery",
+          "quality": 0
+        }
+      ],
+      "effectScale": 3,
+      "stormScale": 2,
+      "skills": {}
+    },
+    {
+      "world": "cyber1",
+      "node": 16,
+      "hp": 330,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "quality": 0
+        },
+        {
+          "id": "emitter",
+          "quality": 0
+        },
+        {
+          "id": "battery",
+          "quality": 0
+        }
+      ],
+      "effectScale": 3,
+      "stormScale": 2,
+      "skills": {}
+    },
+    {
+      "world": "cyber1",
+      "node": 17,
+      "hp": 220,
+      "items": [
+        {
+          "id": "pistol",
+          "quality": 0
+        },
+        {
+          "id": "battery",
+          "quality": 0
+        }
+      ],
+      "effectScale": 3,
+      "stormScale": 2,
+      "skills": {}
+    },
+    {
+      "world": "cyber1",
+      "node": 18,
+      "hp": 220,
+      "items": [
+        {
+          "id": "igniter",
+          "quality": 0
+        },
+        {
+          "id": "emitter",
+          "quality": 0
+        }
+      ],
+      "effectScale": 3,
+      "stormScale": 2,
+      "skills": {}
+    },
+    {
+      "world": "cyber2",
+      "node": 4,
+      "hp": 600,
+      "items": [
+        {
+          "id": "pistol",
+          "quality": 1
+        },
+        {
+          "id": "emitter",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {}
+    },
+    {
+      "world": "cyber2",
+      "node": 8,
+      "hp": 600,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {}
+    },
+    {
+      "world": "cyber2",
+      "node": 10,
+      "hp": 900,
+      "items": [
+        {
+          "id": "drone",
+          "quality": 1
+        },
+        {
+          "id": "emitter",
+          "quality": 1
+        },
+        {
+          "id": "battery",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {
+        "regulated": 0.3
+      }
+    },
+    {
+      "world": "cyber2",
+      "node": 6,
+      "hp": 900,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "quality": 1
+        },
+        {
+          "id": "drone",
+          "quality": 1
+        },
+        {
+          "id": "medpack",
+          "quality": 1
+        },
+        {
+          "id": "battery",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {
+        "regulated": 0.3
+      }
+    },
+    {
+      "world": "cyber2",
+      "node": 16,
+      "hp": 900,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "quality": 1
+        },
+        {
+          "id": "emitter",
+          "quality": 1
+        },
+        {
+          "id": "battery",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {}
+    },
+    {
+      "world": "cyber2",
+      "node": 17,
+      "hp": 600,
+      "items": [
+        {
+          "id": "pistol",
+          "quality": 1
+        },
+        {
+          "id": "battery",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {}
+    },
+    {
+      "world": "cyber2",
+      "node": 18,
+      "hp": 600,
+      "items": [
+        {
+          "id": "igniter",
+          "quality": 1
+        },
+        {
+          "id": "emitter",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {}
+    },
+    {
+      "world": "cyber3",
+      "node": 4,
+      "hp": 1300,
+      "items": [
+        {
+          "id": "pistol",
+          "quality": 2
+        },
+        {
+          "id": "emitter",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {}
+    },
+    {
+      "world": "cyber3",
+      "node": 8,
+      "hp": 1300,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {}
+    },
+    {
+      "world": "cyber3",
+      "node": 10,
+      "hp": 1950,
+      "items": [
+        {
+          "id": "drone",
+          "quality": 2
+        },
+        {
+          "id": "emitter",
+          "quality": 2
+        },
+        {
+          "id": "battery",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {
+        "regulated": 0.5
+      }
+    },
+    {
+      "world": "cyber3",
+      "node": 6,
+      "hp": 1950,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "quality": 2
+        },
+        {
+          "id": "drone",
+          "quality": 2
+        },
+        {
+          "id": "medpack",
+          "quality": 2
+        },
+        {
+          "id": "battery",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {
+        "regulated": 0.5
+      }
+    },
+    {
+      "world": "cyber3",
+      "node": 16,
+      "hp": 1950,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "quality": 2
+        },
+        {
+          "id": "emitter",
+          "quality": 2
+        },
+        {
+          "id": "battery",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {}
+    },
+    {
+      "world": "cyber3",
+      "node": 17,
+      "hp": 1300,
+      "items": [
+        {
+          "id": "pistol",
+          "quality": 2
+        },
+        {
+          "id": "battery",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {}
+    },
+    {
+      "world": "cyber3",
+      "node": 18,
+      "hp": 1300,
+      "items": [
+        {
+          "id": "igniter",
+          "quality": 2
+        },
+        {
+          "id": "emitter",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {}
+    },
+    {
+      "world": "weird2",
+      "node": 4,
+      "hp": 600,
+      "items": [
+        {
+          "id": "curseBlade",
+          "quality": 1
+        },
+        {
+          "id": "boneCharm",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {}
+    },
+    {
+      "world": "weird2",
+      "node": 8,
+      "hp": 600,
+      "items": [
+        {
+          "id": "curseBlade",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {}
+    },
+    {
+      "world": "weird2",
+      "node": 10,
+      "hp": 900,
+      "items": [
+        {
+          "id": "curseBlade",
+          "quality": 1
+        },
+        {
+          "id": "soulArmor",
+          "quality": 1
+        },
+        {
+          "id": "vial",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {}
+    },
+    {
+      "world": "weird2",
+      "node": 6,
+      "hp": 900,
+      "items": [
+        {
+          "id": "curseBlade",
+          "quality": 1
+        },
+        {
+          "id": "soulArmor",
+          "quality": 1
+        },
+        {
+          "id": "bloodCup",
+          "quality": 1
+        },
+        {
+          "id": "vial",
+          "quality": 1
+        },
+        {
+          "id": "boneCharm",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {}
+    },
+    {
+      "world": "weird2",
+      "node": 16,
+      "hp": 900,
+      "items": [
+        {
+          "id": "soulArmor",
+          "quality": 1
+        },
+        {
+          "id": "vial",
+          "quality": 1
+        },
+        {
+          "id": "bloodCup",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {
+        "ward": 3
+      }
+    },
+    {
+      "world": "weird2",
+      "node": 17,
+      "hp": 600,
+      "items": [
+        {
+          "id": "candle",
+          "quality": 1
+        },
+        {
+          "id": "boneCharm",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {}
+    },
+    {
+      "world": "weird2",
+      "node": 18,
+      "hp": 600,
+      "items": [
+        {
+          "id": "curseBlade",
+          "quality": 1
+        },
+        {
+          "id": "vial",
+          "quality": 1
+        }
+      ],
+      "effectScale": 5,
+      "stormScale": 4,
+      "skills": {}
+    },
+    {
+      "world": "weird3",
+      "node": 4,
+      "hp": 1300,
+      "items": [
+        {
+          "id": "curseBlade",
+          "quality": 2
+        },
+        {
+          "id": "boneCharm",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {}
+    },
+    {
+      "world": "weird3",
+      "node": 8,
+      "hp": 1300,
+      "items": [
+        {
+          "id": "curseBlade",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {}
+    },
+    {
+      "world": "weird3",
+      "node": 10,
+      "hp": 1950,
+      "items": [
+        {
+          "id": "curseBlade",
+          "quality": 2
+        },
+        {
+          "id": "soulArmor",
+          "quality": 2
+        },
+        {
+          "id": "vial",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {}
+    },
+    {
+      "world": "weird3",
+      "node": 6,
+      "hp": 1950,
+      "items": [
+        {
+          "id": "curseBlade",
+          "quality": 2
+        },
+        {
+          "id": "soulArmor",
+          "quality": 2
+        },
+        {
+          "id": "bloodCup",
+          "quality": 2
+        },
+        {
+          "id": "vial",
+          "quality": 2
+        },
+        {
+          "id": "boneCharm",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {}
+    },
+    {
+      "world": "weird3",
+      "node": 16,
+      "hp": 1950,
+      "items": [
+        {
+          "id": "soulArmor",
+          "quality": 2
+        },
+        {
+          "id": "vial",
+          "quality": 2
+        },
+        {
+          "id": "bloodCup",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {
+        "ward": 5
+      }
+    },
+    {
+      "world": "weird3",
+      "node": 17,
+      "hp": 1300,
+      "items": [
+        {
+          "id": "candle",
+          "quality": 2
+        },
+        {
+          "id": "boneCharm",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {}
+    },
+    {
+      "world": "weird3",
+      "node": 18,
+      "hp": 1300,
+      "items": [
+        {
+          "id": "curseBlade",
+          "quality": 2
+        },
+        {
+          "id": "vial",
+          "quality": 2
+        }
+      ],
+      "effectScale": 8,
+      "stormScale": 8,
+      "skills": {}
+    }
+  ],
+  "rows": [
+    {
+      "world": "cyber1",
+      "route": "main",
+      "cash": 72,
+      "points": 4,
+      "bagSpace": 2,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 0
+        },
+        {
+          "id": "pistol",
+          "size": 1,
+          "value": 3,
+          "quality": 0
+        }
+      ],
+      "rewards": [
+        "fight-4",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 0,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 0,
+          "space": 2
+        }
+      ]
+    },
+    {
+      "world": "cyber1",
+      "route": "normal",
+      "cash": 107,
+      "points": 6,
+      "bagSpace": 2,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 0
+        },
+        {
+          "id": "pistol",
+          "size": 1,
+          "value": 3,
+          "quality": 0
+        }
+      ],
+      "rewards": [
+        "fight-8",
+        "fight-4",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 7,
+          "action": "pickup",
+          "id": "material-7",
+          "quality": 0,
+          "space": 1
+        },
+        {
+          "node": 11,
+          "action": "pickup",
+          "id": "material-11",
+          "quality": 0,
+          "space": 3
+        },
+        {
+          "node": 12,
+          "action": "pickup",
+          "id": "material-12",
+          "quality": 0,
+          "space": 4
+        },
+        {
+          "node": 8,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 0,
+          "space": 6
+        },
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 0,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 0,
+          "space": 2
+        }
+      ]
+    },
+    {
+      "world": "cyber1",
+      "route": "deep",
+      "cash": 131,
+      "points": 6,
+      "bagSpace": 2,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 0
+        },
+        {
+          "id": "pistol",
+          "size": 1,
+          "value": 3,
+          "quality": 0
+        }
+      ],
+      "rewards": [
+        "fight-8",
+        "fight-10",
+        "chest-10",
+        "fight-4",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 7,
+          "action": "pickup",
+          "id": "material-7",
+          "quality": 0,
+          "space": 1
+        },
+        {
+          "node": 11,
+          "action": "pickup",
+          "id": "material-11",
+          "quality": 0,
+          "space": 3
+        },
+        {
+          "node": 12,
+          "action": "pickup",
+          "id": "material-12",
+          "quality": 0,
+          "space": 4
+        },
+        {
+          "node": 8,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 0,
+          "space": 6
+        },
+        {
+          "node": 9,
+          "action": "pickup",
+          "id": "material-9",
+          "quality": 0,
+          "space": 7
+        },
+        {
+          "node": 10,
+          "action": "pickup",
+          "id": "drone",
+          "quality": 0,
+          "space": 10
+        },
+        {
+          "node": 10,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 1,
+          "space": 10
+        },
+        {
+          "node": 10,
+          "action": "leave",
+          "id": "pistol"
+        },
+        {
+          "node": 10,
+          "action": "leave",
+          "id": "recovery"
+        },
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 0,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 0,
+          "space": 2
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "route": "main",
+      "cash": 107,
+      "points": 6,
+      "bagSpace": 6,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 1
+        },
+        {
+          "id": "pulseBlade",
+          "size": 2,
+          "value": 13,
+          "quality": 2
+        },
+        {
+          "id": "pistol",
+          "size": 1,
+          "value": 8,
+          "quality": 2
+        },
+        {
+          "id": "battery",
+          "size": 1,
+          "value": 5,
+          "quality": 1
+        },
+        {
+          "id": "recovery",
+          "size": 1,
+          "value": 3,
+          "quality": 1
+        }
+      ],
+      "rewards": [
+        "fight-4",
+        "fight-6",
+        "chest-6",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 1,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 1,
+          "space": 2
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 1,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "battery",
+          "quality": 1,
+          "space": 5
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "recovery",
+          "quality": 1,
+          "space": 6
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "route": "normal",
+      "cash": 154,
+      "points": 8,
+      "bagSpace": 6,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 1
+        },
+        {
+          "id": "pulseBlade",
+          "size": 2,
+          "value": 13,
+          "quality": 2
+        },
+        {
+          "id": "pistol",
+          "size": 1,
+          "value": 8,
+          "quality": 2
+        },
+        {
+          "id": "battery",
+          "size": 1,
+          "value": 5,
+          "quality": 1
+        },
+        {
+          "id": "recovery",
+          "size": 1,
+          "value": 3,
+          "quality": 1
+        }
+      ],
+      "rewards": [
+        "fight-8",
+        "fight-4",
+        "fight-6",
+        "chest-6",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 7,
+          "action": "pickup",
+          "id": "material-7",
+          "quality": 1,
+          "space": 1
+        },
+        {
+          "node": 11,
+          "action": "pickup",
+          "id": "material-11",
+          "quality": 1,
+          "space": 3
+        },
+        {
+          "node": 12,
+          "action": "pickup",
+          "id": "material-12",
+          "quality": 1,
+          "space": 4
+        },
+        {
+          "node": 8,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 1,
+          "space": 6
+        },
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 1,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 1,
+          "space": 2
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 1,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "battery",
+          "quality": 1,
+          "space": 5
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "recovery",
+          "quality": 1,
+          "space": 6
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "route": "deep",
+      "cash": 189,
+      "points": 8,
+      "bagSpace": 6,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 1
+        },
+        {
+          "id": "pulseBlade",
+          "size": 2,
+          "value": 13,
+          "quality": 2
+        },
+        {
+          "id": "pistol",
+          "size": 1,
+          "value": 8,
+          "quality": 2
+        },
+        {
+          "id": "battery",
+          "size": 1,
+          "value": 5,
+          "quality": 1
+        },
+        {
+          "id": "recovery",
+          "size": 1,
+          "value": 3,
+          "quality": 1
+        }
+      ],
+      "rewards": [
+        "fight-8",
+        "fight-10",
+        "chest-10",
+        "fight-4",
+        "fight-6",
+        "chest-6",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 7,
+          "action": "pickup",
+          "id": "material-7",
+          "quality": 1,
+          "space": 1
+        },
+        {
+          "node": 11,
+          "action": "pickup",
+          "id": "material-11",
+          "quality": 1,
+          "space": 3
+        },
+        {
+          "node": 12,
+          "action": "pickup",
+          "id": "material-12",
+          "quality": 1,
+          "space": 4
+        },
+        {
+          "node": 8,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 1,
+          "space": 6
+        },
+        {
+          "node": 9,
+          "action": "pickup",
+          "id": "material-9",
+          "quality": 1,
+          "space": 7
+        },
+        {
+          "node": 10,
+          "action": "pickup",
+          "id": "drone",
+          "quality": 1,
+          "space": 10
+        },
+        {
+          "node": 10,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 2,
+          "space": 10
+        },
+        {
+          "node": 10,
+          "action": "leave",
+          "id": "pistol"
+        },
+        {
+          "node": 10,
+          "action": "leave",
+          "id": "recovery"
+        },
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 1,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 1,
+          "space": 2
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 1,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "battery",
+          "quality": 1,
+          "space": 5
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "recovery",
+          "quality": 1,
+          "space": 6
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "route": "main",
+      "cash": 136,
+      "points": 8,
+      "bagSpace": 6,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 2
+        },
+        {
+          "id": "pulseBlade",
+          "size": 2,
+          "value": 20,
+          "quality": 3
+        },
+        {
+          "id": "pistol",
+          "size": 1,
+          "value": 12,
+          "quality": 3
+        },
+        {
+          "id": "battery",
+          "size": 1,
+          "value": 8,
+          "quality": 2
+        },
+        {
+          "id": "recovery",
+          "size": 1,
+          "value": 3,
+          "quality": 2
+        }
+      ],
+      "rewards": [
+        "fight-4",
+        "fight-6",
+        "chest-6",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 2,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 2,
+          "space": 2
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 3,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 3,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "battery",
+          "quality": 2,
+          "space": 5
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "recovery",
+          "quality": 2,
+          "space": 6
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "route": "normal",
+      "cash": 197,
+      "points": 10,
+      "bagSpace": 6,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 2
+        },
+        {
+          "id": "pulseBlade",
+          "size": 2,
+          "value": 20,
+          "quality": 3
+        },
+        {
+          "id": "pistol",
+          "size": 1,
+          "value": 12,
+          "quality": 3
+        },
+        {
+          "id": "battery",
+          "size": 1,
+          "value": 8,
+          "quality": 2
+        },
+        {
+          "id": "recovery",
+          "size": 1,
+          "value": 3,
+          "quality": 2
+        }
+      ],
+      "rewards": [
+        "fight-8",
+        "fight-4",
+        "fight-6",
+        "chest-6",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 7,
+          "action": "pickup",
+          "id": "material-7",
+          "quality": 2,
+          "space": 1
+        },
+        {
+          "node": 11,
+          "action": "pickup",
+          "id": "material-11",
+          "quality": 2,
+          "space": 3
+        },
+        {
+          "node": 12,
+          "action": "pickup",
+          "id": "material-12",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 8,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 2,
+          "space": 6
+        },
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 2,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 2,
+          "space": 2
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 3,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 3,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "battery",
+          "quality": 2,
+          "space": 5
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "recovery",
+          "quality": 2,
+          "space": 6
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "route": "deep",
+      "cash": 246,
+      "points": 10,
+      "bagSpace": 6,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 2
+        },
+        {
+          "id": "pulseBlade",
+          "size": 2,
+          "value": 20,
+          "quality": 3
+        },
+        {
+          "id": "pistol",
+          "size": 1,
+          "value": 12,
+          "quality": 3
+        },
+        {
+          "id": "battery",
+          "size": 1,
+          "value": 8,
+          "quality": 2
+        },
+        {
+          "id": "recovery",
+          "size": 1,
+          "value": 3,
+          "quality": 2
+        }
+      ],
+      "rewards": [
+        "fight-8",
+        "fight-10",
+        "chest-10",
+        "fight-4",
+        "fight-6",
+        "chest-6",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 7,
+          "action": "pickup",
+          "id": "material-7",
+          "quality": 2,
+          "space": 1
+        },
+        {
+          "node": 11,
+          "action": "pickup",
+          "id": "material-11",
+          "quality": 2,
+          "space": 3
+        },
+        {
+          "node": 12,
+          "action": "pickup",
+          "id": "material-12",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 8,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 2,
+          "space": 6
+        },
+        {
+          "node": 9,
+          "action": "pickup",
+          "id": "material-9",
+          "quality": 2,
+          "space": 7
+        },
+        {
+          "node": 10,
+          "action": "pickup",
+          "id": "drone",
+          "quality": 2,
+          "space": 10
+        },
+        {
+          "node": 10,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 3,
+          "space": 10
+        },
+        {
+          "node": 10,
+          "action": "leave",
+          "id": "pistol"
+        },
+        {
+          "node": 10,
+          "action": "leave",
+          "id": "recovery"
+        },
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 2,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 2,
+          "space": 2
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pulseBlade",
+          "quality": 3,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "pistol",
+          "quality": 3,
+          "space": 4
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "battery",
+          "quality": 2,
+          "space": 5
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "recovery",
+          "quality": 2,
+          "space": 6
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "route": "main",
+      "cash": 107,
+      "points": 6,
+      "bagSpace": 8,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 1
+        },
+        {
+          "id": "curseBlade",
+          "size": 2,
+          "value": 13,
+          "quality": 2
+        },
+        {
+          "id": "curseBlade",
+          "size": 2,
+          "value": 8,
+          "quality": 1
+        },
+        {
+          "id": "vial",
+          "size": 1,
+          "value": 5,
+          "quality": 1
+        },
+        {
+          "id": "boneCharm",
+          "size": 1,
+          "value": 5,
+          "quality": 1
+        },
+        {
+          "id": "recovery",
+          "size": 1,
+          "value": 3,
+          "quality": 1
+        }
+      ],
+      "rewards": [
+        "fight-4",
+        "fight-6",
+        "chest-6",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 1,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 1,
+          "space": 3
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 3
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 1,
+          "space": 5
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "vial",
+          "quality": 1,
+          "space": 6
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "boneCharm",
+          "quality": 1,
+          "space": 7
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "recovery",
+          "quality": 1,
+          "space": 8
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "route": "normal",
+      "cash": 154,
+      "points": 8,
+      "bagSpace": 8,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 1
+        },
+        {
+          "id": "curseBlade",
+          "size": 2,
+          "value": 13,
+          "quality": 2
+        },
+        {
+          "id": "curseBlade",
+          "size": 2,
+          "value": 8,
+          "quality": 1
+        },
+        {
+          "id": "vial",
+          "size": 1,
+          "value": 5,
+          "quality": 1
+        },
+        {
+          "id": "boneCharm",
+          "size": 1,
+          "value": 5,
+          "quality": 1
+        },
+        {
+          "id": "recovery",
+          "size": 1,
+          "value": 3,
+          "quality": 1
+        }
+      ],
+      "rewards": [
+        "fight-8",
+        "fight-4",
+        "fight-6",
+        "chest-6",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 7,
+          "action": "pickup",
+          "id": "material-7",
+          "quality": 1,
+          "space": 1
+        },
+        {
+          "node": 11,
+          "action": "pickup",
+          "id": "material-11",
+          "quality": 1,
+          "space": 3
+        },
+        {
+          "node": 12,
+          "action": "pickup",
+          "id": "material-12",
+          "quality": 1,
+          "space": 4
+        },
+        {
+          "node": 8,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 1,
+          "space": 6
+        },
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 1,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 1,
+          "space": 3
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 3
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 1,
+          "space": 5
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "vial",
+          "quality": 1,
+          "space": 6
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "boneCharm",
+          "quality": 1,
+          "space": 7
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "recovery",
+          "quality": 1,
+          "space": 8
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "route": "deep",
+      "cash": 191,
+      "points": 8,
+      "bagSpace": 8,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 1
+        },
+        {
+          "id": "curseBlade",
+          "size": 2,
+          "value": 13,
+          "quality": 2
+        },
+        {
+          "id": "curseBlade",
+          "size": 2,
+          "value": 8,
+          "quality": 1
+        },
+        {
+          "id": "vial",
+          "size": 1,
+          "value": 5,
+          "quality": 1
+        },
+        {
+          "id": "boneCharm",
+          "size": 1,
+          "value": 5,
+          "quality": 1
+        },
+        {
+          "id": "recovery",
+          "size": 1,
+          "value": 3,
+          "quality": 1
+        }
+      ],
+      "rewards": [
+        "fight-8",
+        "fight-10",
+        "chest-10",
+        "fight-4",
+        "fight-6",
+        "chest-6",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 7,
+          "action": "pickup",
+          "id": "material-7",
+          "quality": 1,
+          "space": 1
+        },
+        {
+          "node": 11,
+          "action": "pickup",
+          "id": "material-11",
+          "quality": 1,
+          "space": 3
+        },
+        {
+          "node": 12,
+          "action": "pickup",
+          "id": "material-12",
+          "quality": 1,
+          "space": 4
+        },
+        {
+          "node": 8,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 1,
+          "space": 6
+        },
+        {
+          "node": 9,
+          "action": "pickup",
+          "id": "material-9",
+          "quality": 1,
+          "space": 7
+        },
+        {
+          "node": 10,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 7
+        },
+        {
+          "node": 10,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 1,
+          "space": 9
+        },
+        {
+          "node": 10,
+          "action": "pickup",
+          "id": "vial",
+          "quality": 1,
+          "space": 10
+        },
+        {
+          "node": 10,
+          "action": "leave",
+          "id": "recovery"
+        },
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 1,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 1,
+          "space": 3
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 3
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 1,
+          "space": 5
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "vial",
+          "quality": 1,
+          "space": 6
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "boneCharm",
+          "quality": 1,
+          "space": 7
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "recovery",
+          "quality": 1,
+          "space": 8
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "route": "main",
+      "cash": 136,
+      "points": 8,
+      "bagSpace": 8,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 2
+        },
+        {
+          "id": "curseBlade",
+          "size": 2,
+          "value": 20,
+          "quality": 3
+        },
+        {
+          "id": "curseBlade",
+          "size": 2,
+          "value": 13,
+          "quality": 2
+        },
+        {
+          "id": "vial",
+          "size": 1,
+          "value": 8,
+          "quality": 2
+        },
+        {
+          "id": "boneCharm",
+          "size": 1,
+          "value": 8,
+          "quality": 2
+        },
+        {
+          "id": "recovery",
+          "size": 1,
+          "value": 3,
+          "quality": 2
+        }
+      ],
+      "rewards": [
+        "fight-4",
+        "fight-6",
+        "chest-6",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 2,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 3
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 3,
+          "space": 3
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 5
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "vial",
+          "quality": 2,
+          "space": 6
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "boneCharm",
+          "quality": 2,
+          "space": 7
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "recovery",
+          "quality": 2,
+          "space": 8
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "route": "normal",
+      "cash": 197,
+      "points": 10,
+      "bagSpace": 8,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 2
+        },
+        {
+          "id": "curseBlade",
+          "size": 2,
+          "value": 20,
+          "quality": 3
+        },
+        {
+          "id": "curseBlade",
+          "size": 2,
+          "value": 13,
+          "quality": 2
+        },
+        {
+          "id": "vial",
+          "size": 1,
+          "value": 8,
+          "quality": 2
+        },
+        {
+          "id": "boneCharm",
+          "size": 1,
+          "value": 8,
+          "quality": 2
+        },
+        {
+          "id": "recovery",
+          "size": 1,
+          "value": 3,
+          "quality": 2
+        }
+      ],
+      "rewards": [
+        "fight-8",
+        "fight-4",
+        "fight-6",
+        "chest-6",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 7,
+          "action": "pickup",
+          "id": "material-7",
+          "quality": 2,
+          "space": 1
+        },
+        {
+          "node": 11,
+          "action": "pickup",
+          "id": "material-11",
+          "quality": 2,
+          "space": 3
+        },
+        {
+          "node": 12,
+          "action": "pickup",
+          "id": "material-12",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 8,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 6
+        },
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 2,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 3
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 3,
+          "space": 3
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 5
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "vial",
+          "quality": 2,
+          "space": 6
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "boneCharm",
+          "quality": 2,
+          "space": 7
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "recovery",
+          "quality": 2,
+          "space": 8
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "route": "deep",
+      "cash": 249,
+      "points": 10,
+      "bagSpace": 8,
+      "bag": [
+        {
+          "id": "material-3",
+          "size": 1,
+          "value": 4,
+          "quality": 2
+        },
+        {
+          "id": "curseBlade",
+          "size": 2,
+          "value": 20,
+          "quality": 3
+        },
+        {
+          "id": "curseBlade",
+          "size": 2,
+          "value": 13,
+          "quality": 2
+        },
+        {
+          "id": "vial",
+          "size": 1,
+          "value": 8,
+          "quality": 2
+        },
+        {
+          "id": "boneCharm",
+          "size": 1,
+          "value": 8,
+          "quality": 2
+        },
+        {
+          "id": "recovery",
+          "size": 1,
+          "value": 3,
+          "quality": 2
+        }
+      ],
+      "rewards": [
+        "fight-8",
+        "fight-10",
+        "chest-10",
+        "fight-4",
+        "fight-6",
+        "chest-6",
+        "main"
+      ],
+      "log": [
+        {
+          "node": 7,
+          "action": "pickup",
+          "id": "material-7",
+          "quality": 2,
+          "space": 1
+        },
+        {
+          "node": 11,
+          "action": "pickup",
+          "id": "material-11",
+          "quality": 2,
+          "space": 3
+        },
+        {
+          "node": 12,
+          "action": "pickup",
+          "id": "material-12",
+          "quality": 2,
+          "space": 4
+        },
+        {
+          "node": 8,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 6
+        },
+        {
+          "node": 9,
+          "action": "pickup",
+          "id": "material-9",
+          "quality": 2,
+          "space": 7
+        },
+        {
+          "node": 10,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 3,
+          "space": 7
+        },
+        {
+          "node": 10,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 9
+        },
+        {
+          "node": 10,
+          "action": "pickup",
+          "id": "vial",
+          "quality": 2,
+          "space": 10
+        },
+        {
+          "node": 10,
+          "action": "leave",
+          "id": "recovery"
+        },
+        {
+          "node": 3,
+          "action": "pickup",
+          "id": "material-3",
+          "quality": 2,
+          "space": 1
+        },
+        {
+          "node": 4,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 3
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 3,
+          "space": 3
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "curseBlade",
+          "quality": 2,
+          "space": 5
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "vial",
+          "quality": 2,
+          "space": 6
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "boneCharm",
+          "quality": 2,
+          "space": 7
+        },
+        {
+          "node": 6,
+          "action": "pickup",
+          "id": "recovery",
+          "quality": 2,
+          "space": 8
+        }
+      ]
+    }
+  ],
+  "fights": [
+    {
+      "world": "cyber1",
+      "node": 4,
+      "winner": "player",
+      "seconds": 19,
+      "simultaneousDeaths": false,
+      "playerHp": 450,
+      "enemyHp": 0,
+      "attack": 312,
+      "healing": 90,
+      "actualHealing": 10.5,
+      "shielding": 162,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 220,
+      "lifestealHealing": 4.5,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 87,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 70,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 110,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 110,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 170,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 170,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 190,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber1",
+      "node": 8,
+      "winner": "player",
+      "seconds": 15,
+      "simultaneousDeaths": false,
+      "playerHp": 450,
+      "enemyHp": 0,
+      "attack": 228,
+      "healing": 60,
+      "actualHealing": 25.5,
+      "shielding": 138,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 220,
+      "lifestealHealing": 4.5,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 78,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 70,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 110,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 110,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber1",
+      "node": 10,
+      "winner": "player",
+      "seconds": 34,
+      "simultaneousDeaths": false,
+      "playerHp": 304.5,
+      "enemyHp": 0,
+      "attack": 540,
+      "healing": 150,
+      "actualHealing": 24,
+      "shielding": 330,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 210,
+      "lifestealHealing": 4.5,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 30,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 9,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 70,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 110,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 110,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 170,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 230,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 250,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 251,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 290,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 290,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 291,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 331,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 340,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber1",
+      "node": 16,
+      "winner": "player",
+      "seconds": 30,
+      "simultaneousDeaths": false,
+      "playerHp": 446.834375,
+      "enemyHp": 0,
+      "attack": 510,
+      "healing": 150,
+      "actualHealing": 25.5,
+      "shielding": 300,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 321.5625,
+      "lifestealHealing": 11.334375,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 90,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 8,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 70,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 110,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 110,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 170,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 230,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 250,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 251,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 290,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 290,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 291,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber1",
+      "node": 17,
+      "winner": "player",
+      "seconds": 15,
+      "simultaneousDeaths": false,
+      "playerHp": 450,
+      "enemyHp": 0,
+      "attack": 228,
+      "healing": 60,
+      "actualHealing": 10.5,
+      "shielding": 138,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 220,
+      "lifestealHealing": 4.5,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 78,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 70,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 110,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 110,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber1",
+      "node": 18,
+      "winner": "player",
+      "seconds": 19,
+      "simultaneousDeaths": false,
+      "playerHp": 407.2,
+      "enemyHp": 0,
+      "attack": 312,
+      "healing": 90,
+      "actualHealing": 23,
+      "shielding": 162,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 220,
+      "lifestealHealing": 5.2,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 0,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 70,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 110,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 110,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 170,
+          "id": "drone",
+          "attack": 54,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 170,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 190,
+          "id": "pulseBlade",
+          "attack": 30,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "node": 4,
+      "winner": "player",
+      "seconds": 22.5,
+      "simultaneousDeaths": false,
+      "playerHp": 1300,
+      "enemyHp": 0,
+      "attack": 1040,
+      "healing": 320,
+      "actualHealing": 28,
+      "shielding": 560,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 600,
+      "lifestealHealing": 12,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 320,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 65,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 145,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 165,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 165,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 185,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 210,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 225,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 225,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "node": 8,
+      "winner": "player",
+      "seconds": 14.5,
+      "simultaneousDeaths": false,
+      "playerHp": 1300,
+      "enemyHp": 0,
+      "attack": 600,
+      "healing": 160,
+      "actualHealing": 68,
+      "shielding": 280,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 600,
+      "lifestealHealing": 12,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 120,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 65,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 145,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "node": 10,
+      "winner": "player",
+      "seconds": 34.5,
+      "simultaneousDeaths": false,
+      "playerHp": 1098,
+      "enemyHp": 0,
+      "attack": 1560,
+      "healing": 480,
+      "actualHealing": 140,
+      "shielding": 920,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 600,
+      "lifestealHealing": 18,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 140,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 9,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 65,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 145,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 165,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 170,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 210,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 225,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 235,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 250,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 250,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 275,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 285,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 285,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 315,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 335,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 345,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 345,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "node": 6,
+      "winner": "player",
+      "seconds": 35,
+      "simultaneousDeaths": false,
+      "playerHp": 771,
+      "enemyHp": 0,
+      "attack": 1420,
+      "healing": 480,
+      "actualHealing": 444,
+      "shielding": 860,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 1060,
+      "lifestealHealing": 147,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 0,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 9,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 65,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 145,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 165,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 185,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 185,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 210,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 225,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 235,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 250,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 255,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 265,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 285,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 305,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 315,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 320,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 345,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 350,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "node": 16,
+      "winner": "player",
+      "seconds": 31,
+      "simultaneousDeaths": false,
+      "playerHp": 1260,
+      "enemyHp": 0,
+      "attack": 1340,
+      "healing": 400,
+      "actualHealing": 68,
+      "shielding": 780,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 860,
+      "lifestealHealing": 32,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 220,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 8,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 65,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 145,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 165,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 170,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 210,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 225,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 235,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 250,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 250,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 275,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 285,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 285,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "node": 17,
+      "winner": "player",
+      "seconds": 14.5,
+      "simultaneousDeaths": false,
+      "playerHp": 1300,
+      "enemyHp": 0,
+      "attack": 600,
+      "healing": 160,
+      "actualHealing": 28,
+      "shielding": 280,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 600,
+      "lifestealHealing": 12,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 120,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 65,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 145,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber2",
+      "node": 18,
+      "winner": "player",
+      "seconds": 22.5,
+      "simultaneousDeaths": false,
+      "playerHp": 992,
+      "enemyHp": 0,
+      "attack": 1040,
+      "healing": 320,
+      "actualHealing": 160,
+      "shielding": 560,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 600,
+      "lifestealHealing": 36,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 60,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 65,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 105,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 145,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 165,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 165,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 185,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 210,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 225,
+          "id": "pulseBlade",
+          "attack": 80,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 225,
+          "id": "drone",
+          "attack": 140,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "node": 4,
+      "winner": "player",
+      "seconds": 18,
+      "simultaneousDeaths": false,
+      "playerHp": 2800,
+      "enemyHp": 0,
+      "attack": 2056,
+      "healing": 600,
+      "actualHealing": 66,
+      "shielding": 1056,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 1300,
+      "lifestealHealing": 30,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 576,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 101,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 161,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "node": 8,
+      "winner": "player",
+      "seconds": 10.1,
+      "simultaneousDeaths": false,
+      "playerHp": 2800,
+      "enemyHp": 0,
+      "attack": 1304,
+      "healing": 200,
+      "actualHealing": 170,
+      "shielding": 704,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 1300,
+      "lifestealHealing": 30,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 504,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 1,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 101,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "node": 10,
+      "winner": "player",
+      "seconds": 33,
+      "simultaneousDeaths": false,
+      "playerHp": 2440,
+      "enemyHp": 0,
+      "attack": 3560,
+      "healing": 1000,
+      "actualHealing": 144,
+      "shielding": 2176,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 1592,
+      "lifestealHealing": 40,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 208,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 9,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 101,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 161,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 221,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 230,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 250,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 281,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 330,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "node": 6,
+      "winner": "player",
+      "seconds": 34,
+      "simultaneousDeaths": false,
+      "playerHp": 1942.4093749999997,
+      "enemyHp": 0,
+      "attack": 3560,
+      "healing": 1200,
+      "actualHealing": 1078.8000000000002,
+      "shielding": 2176,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 2664.0625,
+      "lifestealHealing": 399.60937499999994,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 0,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 9,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 101,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 161,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 201,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 230,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 250,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 251,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 310,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 311,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 340,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "node": 16,
+      "winner": "player",
+      "seconds": 30,
+      "simultaneousDeaths": false,
+      "playerHp": 2785.4301369863015,
+      "enemyHp": 0,
+      "attack": 3560,
+      "healing": 1000,
+      "actualHealing": 170,
+      "shielding": 1968,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 1937.5342465753424,
+      "lifestealHealing": 55.43013698630137,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 568,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 9,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 101,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 161,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 221,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 230,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 250,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 281,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "node": 17,
+      "winner": "player",
+      "seconds": 12,
+      "simultaneousDeaths": false,
+      "playerHp": 2800,
+      "enemyHp": 0,
+      "attack": 1304,
+      "healing": 400,
+      "actualHealing": 66,
+      "shielding": 704,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 1300,
+      "lifestealHealing": 30,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 416,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 101,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "cyber3",
+      "node": 18,
+      "winner": "player",
+      "seconds": 18,
+      "simultaneousDeaths": false,
+      "playerHp": 2433.7999999999997,
+      "enemyHp": 0,
+      "attack": 2056,
+      "healing": 600,
+      "actualHealing": 166,
+      "shielding": 1056,
+      "poisonDamage": 0,
+      "lifeAttackDamage": 1300,
+      "lifestealHealing": 61.8,
+      "burnDamage": 0,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 0,
+      "enemyPoison": 0,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "drone",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "medpack",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "battery",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "emitter",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 101,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "battery",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "emitter",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "medpack",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 161,
+          "id": "drone",
+          "attack": 352,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "pulseBlade",
+          "attack": 200,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "node": 4,
+      "winner": "player",
+      "seconds": 15,
+      "simultaneousDeaths": false,
+      "playerHp": 1195.7,
+      "enemyHp": 0,
+      "attack": 180,
+      "healing": 210,
+      "actualHealing": 146.5,
+      "shielding": 355,
+      "poisonDamage": 456,
+      "lifeAttackDamage": 128,
+      "lifestealHealing": 19.2,
+      "burnDamage": 144,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 235,
+      "enemyPoison": 70,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "node": 8,
+      "winner": "player",
+      "seconds": 14,
+      "simultaneousDeaths": false,
+      "playerHp": 1229,
+      "enemyHp": 0,
+      "attack": 180,
+      "healing": 210,
+      "actualHealing": 142,
+      "shielding": 310,
+      "poisonDamage": 386,
+      "lifeAttackDamage": 180,
+      "lifestealHealing": 27,
+      "burnDamage": 122,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 190,
+      "enemyPoison": 70,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "node": 10,
+      "winner": "player",
+      "seconds": 19,
+      "simultaneousDeaths": false,
+      "playerHp": 854,
+      "enemyHp": 0,
+      "attack": 240,
+      "healing": 315,
+      "actualHealing": 271,
+      "shielding": 465,
+      "poisonDamage": 789,
+      "lifeAttackDamage": 120,
+      "lifestealHealing": 18,
+      "burnDamage": 237,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 285,
+      "enemyPoison": 99,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "node": 6,
+      "winner": "player",
+      "seconds": 22,
+      "simultaneousDeaths": false,
+      "playerHp": 570,
+      "enemyHp": 0,
+      "attack": 300,
+      "healing": 315,
+      "actualHealing": 271,
+      "shielding": 510,
+      "poisonDamage": 1110,
+      "lifeAttackDamage": 60,
+      "lifestealHealing": 9,
+      "burnDamage": 330,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 270,
+      "enemyPoison": 111,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "node": 16,
+      "winner": "player",
+      "seconds": 19,
+      "simultaneousDeaths": false,
+      "playerHp": 685.75,
+      "enemyHp": 0,
+      "attack": 240,
+      "healing": 315,
+      "actualHealing": 210,
+      "shielding": 465,
+      "poisonDamage": 789,
+      "lifeAttackDamage": 165,
+      "lifestealHealing": 15.75,
+      "burnDamage": 237,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 465,
+      "enemyPoison": 99,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "node": 17,
+      "winner": "player",
+      "seconds": 15,
+      "simultaneousDeaths": false,
+      "playerHp": 1300,
+      "enemyHp": 0,
+      "attack": 180,
+      "healing": 210,
+      "actualHealing": 0,
+      "shielding": 355,
+      "poisonDamage": 456,
+      "lifeAttackDamage": 128,
+      "lifestealHealing": 0,
+      "burnDamage": 144,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 175,
+      "enemyPoison": 70,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird2",
+      "node": 18,
+      "winner": "player",
+      "seconds": 14,
+      "simultaneousDeaths": false,
+      "playerHp": 1103,
+      "enemyHp": 0,
+      "attack": 180,
+      "healing": 210,
+      "actualHealing": 166,
+      "shielding": 310,
+      "poisonDamage": 386,
+      "lifeAttackDamage": 180,
+      "lifestealHealing": 27,
+      "burnDamage": 122,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 190,
+      "enemyPoison": 70,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "node": 4,
+      "winner": "player",
+      "seconds": 14,
+      "simultaneousDeaths": false,
+      "playerHp": 2623.75,
+      "enemyHp": 0,
+      "attack": 432,
+      "healing": 528,
+      "actualHealing": 351.5999999999999,
+      "shielding": 768,
+      "poisonDamage": 888,
+      "lifeAttackDamage": 321,
+      "lifestealHealing": 48.15,
+      "burnDamage": 372,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 480,
+      "enemyPoison": 162,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "node": 8,
+      "winner": "player",
+      "seconds": 13,
+      "simultaneousDeaths": false,
+      "playerHp": 2701.6,
+      "enemyHp": 0,
+      "attack": 432,
+      "healing": 528,
+      "actualHealing": 340.8000000000002,
+      "shielding": 768,
+      "poisonDamage": 726,
+      "lifeAttackDamage": 432,
+      "lifestealHealing": 64.8,
+      "burnDamage": 299,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 480,
+      "enemyPoison": 162,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "node": 10,
+      "winner": "player",
+      "seconds": 17,
+      "simultaneousDeaths": false,
+      "playerHp": 1797.6,
+      "enemyHp": 0,
+      "attack": 576,
+      "healing": 528,
+      "actualHealing": 410.4000000000001,
+      "shielding": 880,
+      "poisonDamage": 1400,
+      "lifeAttackDamage": 288,
+      "lifestealHealing": 43.199999999999996,
+      "burnDamage": 585,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 448,
+      "enemyPoison": 188,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "node": 6,
+      "winner": "player",
+      "seconds": 21,
+      "simultaneousDeaths": false,
+      "playerHp": 1192,
+      "enemyHp": 0,
+      "attack": 720,
+      "healing": 792,
+      "actualHealing": 674.4000000000001,
+      "shielding": 1264,
+      "poisonDamage": 2304,
+      "lifeAttackDamage": 144,
+      "lifestealHealing": 21.599999999999998,
+      "burnDamage": 975,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 688,
+      "enemyPoison": 256,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "node": 16,
+      "winner": "player",
+      "seconds": 17,
+      "simultaneousDeaths": false,
+      "playerHp": 507.19999999999993,
+      "enemyHp": 0,
+      "attack": 576,
+      "healing": 528,
+      "actualHealing": 264,
+      "shielding": 880,
+      "poisonDamage": 1400,
+      "lifeAttackDamage": 432,
+      "lifestealHealing": 43.199999999999996,
+      "burnDamage": 585,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 880,
+      "enemyPoison": 188,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "node": 17,
+      "winner": "player",
+      "seconds": 14,
+      "simultaneousDeaths": false,
+      "playerHp": 2800,
+      "enemyHp": 0,
+      "attack": 432,
+      "healing": 528,
+      "actualHealing": 0,
+      "shielding": 768,
+      "poisonDamage": 888,
+      "lifeAttackDamage": 321,
+      "lifestealHealing": 0,
+      "burnDamage": 372,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 284,
+      "enemyPoison": 162,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    {
+      "world": "weird3",
+      "node": 18,
+      "winner": "player",
+      "seconds": 13,
+      "simultaneousDeaths": false,
+      "playerHp": 2451.2,
+      "enemyHp": 0,
+      "attack": 432,
+      "healing": 528,
+      "actualHealing": 410.4000000000001,
+      "shielding": 768,
+      "poisonDamage": 726,
+      "lifeAttackDamage": 432,
+      "lifestealHealing": 64.8,
+      "burnDamage": 299,
+      "bootUsed": false,
+      "wardPayments": 0,
+      "wardSpent": 0,
+      "wardPoison": 0,
+      "playerShield": 480,
+      "enemyPoison": 162,
+      "pendingEffects": 0,
+      "items": [
+        {
+          "id": "curseBlade",
+          "uses": 3,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "soulArmor",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "bloodCup",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "vial",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "boneCharm",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "incense",
+          "uses": 2,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "boneCharm",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "curseBlade",
+          "attack": 144,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "soulArmor",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "bloodCup",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "vial",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "incense",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    }
+  ]
+}

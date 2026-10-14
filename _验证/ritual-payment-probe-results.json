@@ -1,0 +1,1282 @@
+{
+  "date": "2026-10-14",
+  "scope": "Eight atomic payment checks and finite isolated shield-to-poison proposals; no real combat, regen, death, blood bonus, input skill acquisition or balance claim. Neither trigger mode is adopted.",
+  "rows": [
+    {
+      "initialShield": 40,
+      "selfTrigger": false,
+      "shield": 32,
+      "poison": 3,
+      "steps": 1,
+      "paid": 1,
+      "log": [
+        {
+          "step": 1,
+          "result": "paid",
+          "shield": 32,
+          "poison": 3
+        }
+      ]
+    },
+    {
+      "initialShield": 40,
+      "selfTrigger": true,
+      "shield": 0,
+      "poison": 15,
+      "steps": 6,
+      "paid": 5,
+      "log": [
+        {
+          "step": 1,
+          "result": "paid",
+          "shield": 32,
+          "poison": 3
+        },
+        {
+          "step": 2,
+          "result": "paid",
+          "shield": 24,
+          "poison": 6
+        },
+        {
+          "step": 3,
+          "result": "paid",
+          "shield": 16,
+          "poison": 9
+        },
+        {
+          "step": 4,
+          "result": "paid",
+          "shield": 8,
+          "poison": 12
+        },
+        {
+          "step": 5,
+          "result": "paid",
+          "shield": 0,
+          "poison": 15
+        },
+        {
+          "step": 6,
+          "result": "invalid-or-insufficient",
+          "shield": 0
+        }
+      ]
+    },
+    {
+      "initialShield": 100,
+      "selfTrigger": false,
+      "shield": 92,
+      "poison": 3,
+      "steps": 1,
+      "paid": 1,
+      "log": [
+        {
+          "step": 1,
+          "result": "paid",
+          "shield": 92,
+          "poison": 3
+        }
+      ]
+    },
+    {
+      "initialShield": 100,
+      "selfTrigger": true,
+      "shield": 4,
+      "poison": 36,
+      "steps": 13,
+      "paid": 12,
+      "log": [
+        {
+          "step": 1,
+          "result": "paid",
+          "shield": 92,
+          "poison": 3
+        },
+        {
+          "step": 2,
+          "result": "paid",
+          "shield": 84,
+          "poison": 6
+        },
+        {
+          "step": 3,
+          "result": "paid",
+          "shield": 76,
+          "poison": 9
+        },
+        {
+          "step": 4,
+          "result": "paid",
+          "shield": 68,
+          "poison": 12
+        },
+        {
+          "step": 5,
+          "result": "paid",
+          "shield": 60,
+          "poison": 15
+        },
+        {
+          "step": 6,
+          "result": "paid",
+          "shield": 52,
+          "poison": 18
+        },
+        {
+          "step": 7,
+          "result": "paid",
+          "shield": 44,
+          "poison": 21
+        },
+        {
+          "step": 8,
+          "result": "paid",
+          "shield": 36,
+          "poison": 24
+        },
+        {
+          "step": 9,
+          "result": "paid",
+          "shield": 28,
+          "poison": 27
+        },
+        {
+          "step": 10,
+          "result": "paid",
+          "shield": 20,
+          "poison": 30
+        },
+        {
+          "step": 11,
+          "result": "paid",
+          "shield": 12,
+          "poison": 33
+        },
+        {
+          "step": 12,
+          "result": "paid",
+          "shield": 4,
+          "poison": 36
+        },
+        {
+          "step": 13,
+          "result": "invalid-or-insufficient",
+          "shield": 4
+        }
+      ]
+    },
+    {
+      "initialShield": 400,
+      "selfTrigger": false,
+      "shield": 392,
+      "poison": 3,
+      "steps": 1,
+      "paid": 1,
+      "log": [
+        {
+          "step": 1,
+          "result": "paid",
+          "shield": 392,
+          "poison": 3
+        }
+      ]
+    },
+    {
+      "initialShield": 400,
+      "selfTrigger": true,
+      "shield": 0,
+      "poison": 150,
+      "steps": 51,
+      "paid": 50,
+      "log": [
+        {
+          "step": 1,
+          "result": "paid",
+          "shield": 392,
+          "poison": 3
+        },
+        {
+          "step": 2,
+          "result": "paid",
+          "shield": 384,
+          "poison": 6
+        },
+        {
+          "step": 3,
+          "result": "paid",
+          "shield": 376,
+          "poison": 9
+        },
+        {
+          "step": 4,
+          "result": "paid",
+          "shield": 368,
+          "poison": 12
+        },
+        {
+          "step": 5,
+          "result": "paid",
+          "shield": 360,
+          "poison": 15
+        },
+        {
+          "step": 6,
+          "result": "paid",
+          "shield": 352,
+          "poison": 18
+        },
+        {
+          "step": 7,
+          "result": "paid",
+          "shield": 344,
+          "poison": 21
+        },
+        {
+          "step": 8,
+          "result": "paid",
+          "shield": 336,
+          "poison": 24
+        },
+        {
+          "step": 9,
+          "result": "paid",
+          "shield": 328,
+          "poison": 27
+        },
+        {
+          "step": 10,
+          "result": "paid",
+          "shield": 320,
+          "poison": 30
+        },
+        {
+          "step": 11,
+          "result": "paid",
+          "shield": 312,
+          "poison": 33
+        },
+        {
+          "step": 12,
+          "result": "paid",
+          "shield": 304,
+          "poison": 36
+        },
+        {
+          "step": 13,
+          "result": "paid",
+          "shield": 296,
+          "poison": 39
+        },
+        {
+          "step": 14,
+          "result": "paid",
+          "shield": 288,
+          "poison": 42
+        },
+        {
+          "step": 15,
+          "result": "paid",
+          "shield": 280,
+          "poison": 45
+        },
+        {
+          "step": 16,
+          "result": "paid",
+          "shield": 272,
+          "poison": 48
+        },
+        {
+          "step": 17,
+          "result": "paid",
+          "shield": 264,
+          "poison": 51
+        },
+        {
+          "step": 18,
+          "result": "paid",
+          "shield": 256,
+          "poison": 54
+        },
+        {
+          "step": 19,
+          "result": "paid",
+          "shield": 248,
+          "poison": 57
+        },
+        {
+          "step": 20,
+          "result": "paid",
+          "shield": 240,
+          "poison": 60
+        },
+        {
+          "step": 21,
+          "result": "paid",
+          "shield": 232,
+          "poison": 63
+        },
+        {
+          "step": 22,
+          "result": "paid",
+          "shield": 224,
+          "poison": 66
+        },
+        {
+          "step": 23,
+          "result": "paid",
+          "shield": 216,
+          "poison": 69
+        },
+        {
+          "step": 24,
+          "result": "paid",
+          "shield": 208,
+          "poison": 72
+        },
+        {
+          "step": 25,
+          "result": "paid",
+          "shield": 200,
+          "poison": 75
+        },
+        {
+          "step": 26,
+          "result": "paid",
+          "shield": 192,
+          "poison": 78
+        },
+        {
+          "step": 27,
+          "result": "paid",
+          "shield": 184,
+          "poison": 81
+        },
+        {
+          "step": 28,
+          "result": "paid",
+          "shield": 176,
+          "poison": 84
+        },
+        {
+          "step": 29,
+          "result": "paid",
+          "shield": 168,
+          "poison": 87
+        },
+        {
+          "step": 30,
+          "result": "paid",
+          "shield": 160,
+          "poison": 90
+        },
+        {
+          "step": 31,
+          "result": "paid",
+          "shield": 152,
+          "poison": 93
+        },
+        {
+          "step": 32,
+          "result": "paid",
+          "shield": 144,
+          "poison": 96
+        },
+        {
+          "step": 33,
+          "result": "paid",
+          "shield": 136,
+          "poison": 99
+        },
+        {
+          "step": 34,
+          "result": "paid",
+          "shield": 128,
+          "poison": 102
+        },
+        {
+          "step": 35,
+          "result": "paid",
+          "shield": 120,
+          "poison": 105
+        },
+        {
+          "step": 36,
+          "result": "paid",
+          "shield": 112,
+          "poison": 108
+        },
+        {
+          "step": 37,
+          "result": "paid",
+          "shield": 104,
+          "poison": 111
+        },
+        {
+          "step": 38,
+          "result": "paid",
+          "shield": 96,
+          "poison": 114
+        },
+        {
+          "step": 39,
+          "result": "paid",
+          "shield": 88,
+          "poison": 117
+        },
+        {
+          "step": 40,
+          "result": "paid",
+          "shield": 80,
+          "poison": 120
+        },
+        {
+          "step": 41,
+          "result": "paid",
+          "shield": 72,
+          "poison": 123
+        },
+        {
+          "step": 42,
+          "result": "paid",
+          "shield": 64,
+          "poison": 126
+        },
+        {
+          "step": 43,
+          "result": "paid",
+          "shield": 56,
+          "poison": 129
+        },
+        {
+          "step": 44,
+          "result": "paid",
+          "shield": 48,
+          "poison": 132
+        },
+        {
+          "step": 45,
+          "result": "paid",
+          "shield": 40,
+          "poison": 135
+        },
+        {
+          "step": 46,
+          "result": "paid",
+          "shield": 32,
+          "poison": 138
+        },
+        {
+          "step": 47,
+          "result": "paid",
+          "shield": 24,
+          "poison": 141
+        },
+        {
+          "step": 48,
+          "result": "paid",
+          "shield": 16,
+          "poison": 144
+        },
+        {
+          "step": 49,
+          "result": "paid",
+          "shield": 8,
+          "poison": 147
+        },
+        {
+          "step": 50,
+          "result": "paid",
+          "shield": 0,
+          "poison": 150
+        },
+        {
+          "step": 51,
+          "result": "invalid-or-insufficient",
+          "shield": 0
+        }
+      ]
+    },
+    {
+      "initialShield": 1000,
+      "selfTrigger": false,
+      "shield": 992,
+      "poison": 3,
+      "steps": 1,
+      "paid": 1,
+      "log": [
+        {
+          "step": 1,
+          "result": "paid",
+          "shield": 992,
+          "poison": 3
+        }
+      ]
+    },
+    {
+      "initialShield": 1000,
+      "selfTrigger": true,
+      "shield": 0,
+      "poison": 375,
+      "steps": 126,
+      "paid": 125,
+      "log": [
+        {
+          "step": 1,
+          "result": "paid",
+          "shield": 992,
+          "poison": 3
+        },
+        {
+          "step": 2,
+          "result": "paid",
+          "shield": 984,
+          "poison": 6
+        },
+        {
+          "step": 3,
+          "result": "paid",
+          "shield": 976,
+          "poison": 9
+        },
+        {
+          "step": 4,
+          "result": "paid",
+          "shield": 968,
+          "poison": 12
+        },
+        {
+          "step": 5,
+          "result": "paid",
+          "shield": 960,
+          "poison": 15
+        },
+        {
+          "step": 6,
+          "result": "paid",
+          "shield": 952,
+          "poison": 18
+        },
+        {
+          "step": 7,
+          "result": "paid",
+          "shield": 944,
+          "poison": 21
+        },
+        {
+          "step": 8,
+          "result": "paid",
+          "shield": 936,
+          "poison": 24
+        },
+        {
+          "step": 9,
+          "result": "paid",
+          "shield": 928,
+          "poison": 27
+        },
+        {
+          "step": 10,
+          "result": "paid",
+          "shield": 920,
+          "poison": 30
+        },
+        {
+          "step": 11,
+          "result": "paid",
+          "shield": 912,
+          "poison": 33
+        },
+        {
+          "step": 12,
+          "result": "paid",
+          "shield": 904,
+          "poison": 36
+        },
+        {
+          "step": 13,
+          "result": "paid",
+          "shield": 896,
+          "poison": 39
+        },
+        {
+          "step": 14,
+          "result": "paid",
+          "shield": 888,
+          "poison": 42
+        },
+        {
+          "step": 15,
+          "result": "paid",
+          "shield": 880,
+          "poison": 45
+        },
+        {
+          "step": 16,
+          "result": "paid",
+          "shield": 872,
+          "poison": 48
+        },
+        {
+          "step": 17,
+          "result": "paid",
+          "shield": 864,
+          "poison": 51
+        },
+        {
+          "step": 18,
+          "result": "paid",
+          "shield": 856,
+          "poison": 54
+        },
+        {
+          "step": 19,
+          "result": "paid",
+          "shield": 848,
+          "poison": 57
+        },
+        {
+          "step": 20,
+          "result": "paid",
+          "shield": 840,
+          "poison": 60
+        },
+        {
+          "step": 21,
+          "result": "paid",
+          "shield": 832,
+          "poison": 63
+        },
+        {
+          "step": 22,
+          "result": "paid",
+          "shield": 824,
+          "poison": 66
+        },
+        {
+          "step": 23,
+          "result": "paid",
+          "shield": 816,
+          "poison": 69
+        },
+        {
+          "step": 24,
+          "result": "paid",
+          "shield": 808,
+          "poison": 72
+        },
+        {
+          "step": 25,
+          "result": "paid",
+          "shield": 800,
+          "poison": 75
+        },
+        {
+          "step": 26,
+          "result": "paid",
+          "shield": 792,
+          "poison": 78
+        },
+        {
+          "step": 27,
+          "result": "paid",
+          "shield": 784,
+          "poison": 81
+        },
+        {
+          "step": 28,
+          "result": "paid",
+          "shield": 776,
+          "poison": 84
+        },
+        {
+          "step": 29,
+          "result": "paid",
+          "shield": 768,
+          "poison": 87
+        },
+        {
+          "step": 30,
+          "result": "paid",
+          "shield": 760,
+          "poison": 90
+        },
+        {
+          "step": 31,
+          "result": "paid",
+          "shield": 752,
+          "poison": 93
+        },
+        {
+          "step": 32,
+          "result": "paid",
+          "shield": 744,
+          "poison": 96
+        },
+        {
+          "step": 33,
+          "result": "paid",
+          "shield": 736,
+          "poison": 99
+        },
+        {
+          "step": 34,
+          "result": "paid",
+          "shield": 728,
+          "poison": 102
+        },
+        {
+          "step": 35,
+          "result": "paid",
+          "shield": 720,
+          "poison": 105
+        },
+        {
+          "step": 36,
+          "result": "paid",
+          "shield": 712,
+          "poison": 108
+        },
+        {
+          "step": 37,
+          "result": "paid",
+          "shield": 704,
+          "poison": 111
+        },
+        {
+          "step": 38,
+          "result": "paid",
+          "shield": 696,
+          "poison": 114
+        },
+        {
+          "step": 39,
+          "result": "paid",
+          "shield": 688,
+          "poison": 117
+        },
+        {
+          "step": 40,
+          "result": "paid",
+          "shield": 680,
+          "poison": 120
+        },
+        {
+          "step": 41,
+          "result": "paid",
+          "shield": 672,
+          "poison": 123
+        },
+        {
+          "step": 42,
+          "result": "paid",
+          "shield": 664,
+          "poison": 126
+        },
+        {
+          "step": 43,
+          "result": "paid",
+          "shield": 656,
+          "poison": 129
+        },
+        {
+          "step": 44,
+          "result": "paid",
+          "shield": 648,
+          "poison": 132
+        },
+        {
+          "step": 45,
+          "result": "paid",
+          "shield": 640,
+          "poison": 135
+        },
+        {
+          "step": 46,
+          "result": "paid",
+          "shield": 632,
+          "poison": 138
+        },
+        {
+          "step": 47,
+          "result": "paid",
+          "shield": 624,
+          "poison": 141
+        },
+        {
+          "step": 48,
+          "result": "paid",
+          "shield": 616,
+          "poison": 144
+        },
+        {
+          "step": 49,
+          "result": "paid",
+          "shield": 608,
+          "poison": 147
+        },
+        {
+          "step": 50,
+          "result": "paid",
+          "shield": 600,
+          "poison": 150
+        },
+        {
+          "step": 51,
+          "result": "paid",
+          "shield": 592,
+          "poison": 153
+        },
+        {
+          "step": 52,
+          "result": "paid",
+          "shield": 584,
+          "poison": 156
+        },
+        {
+          "step": 53,
+          "result": "paid",
+          "shield": 576,
+          "poison": 159
+        },
+        {
+          "step": 54,
+          "result": "paid",
+          "shield": 568,
+          "poison": 162
+        },
+        {
+          "step": 55,
+          "result": "paid",
+          "shield": 560,
+          "poison": 165
+        },
+        {
+          "step": 56,
+          "result": "paid",
+          "shield": 552,
+          "poison": 168
+        },
+        {
+          "step": 57,
+          "result": "paid",
+          "shield": 544,
+          "poison": 171
+        },
+        {
+          "step": 58,
+          "result": "paid",
+          "shield": 536,
+          "poison": 174
+        },
+        {
+          "step": 59,
+          "result": "paid",
+          "shield": 528,
+          "poison": 177
+        },
+        {
+          "step": 60,
+          "result": "paid",
+          "shield": 520,
+          "poison": 180
+        },
+        {
+          "step": 61,
+          "result": "paid",
+          "shield": 512,
+          "poison": 183
+        },
+        {
+          "step": 62,
+          "result": "paid",
+          "shield": 504,
+          "poison": 186
+        },
+        {
+          "step": 63,
+          "result": "paid",
+          "shield": 496,
+          "poison": 189
+        },
+        {
+          "step": 64,
+          "result": "paid",
+          "shield": 488,
+          "poison": 192
+        },
+        {
+          "step": 65,
+          "result": "paid",
+          "shield": 480,
+          "poison": 195
+        },
+        {
+          "step": 66,
+          "result": "paid",
+          "shield": 472,
+          "poison": 198
+        },
+        {
+          "step": 67,
+          "result": "paid",
+          "shield": 464,
+          "poison": 201
+        },
+        {
+          "step": 68,
+          "result": "paid",
+          "shield": 456,
+          "poison": 204
+        },
+        {
+          "step": 69,
+          "result": "paid",
+          "shield": 448,
+          "poison": 207
+        },
+        {
+          "step": 70,
+          "result": "paid",
+          "shield": 440,
+          "poison": 210
+        },
+        {
+          "step": 71,
+          "result": "paid",
+          "shield": 432,
+          "poison": 213
+        },
+        {
+          "step": 72,
+          "result": "paid",
+          "shield": 424,
+          "poison": 216
+        },
+        {
+          "step": 73,
+          "result": "paid",
+          "shield": 416,
+          "poison": 219
+        },
+        {
+          "step": 74,
+          "result": "paid",
+          "shield": 408,
+          "poison": 222
+        },
+        {
+          "step": 75,
+          "result": "paid",
+          "shield": 400,
+          "poison": 225
+        },
+        {
+          "step": 76,
+          "result": "paid",
+          "shield": 392,
+          "poison": 228
+        },
+        {
+          "step": 77,
+          "result": "paid",
+          "shield": 384,
+          "poison": 231
+        },
+        {
+          "step": 78,
+          "result": "paid",
+          "shield": 376,
+          "poison": 234
+        },
+        {
+          "step": 79,
+          "result": "paid",
+          "shield": 368,
+          "poison": 237
+        },
+        {
+          "step": 80,
+          "result": "paid",
+          "shield": 360,
+          "poison": 240
+        },
+        {
+          "step": 81,
+          "result": "paid",
+          "shield": 352,
+          "poison": 243
+        },
+        {
+          "step": 82,
+          "result": "paid",
+          "shield": 344,
+          "poison": 246
+        },
+        {
+          "step": 83,
+          "result": "paid",
+          "shield": 336,
+          "poison": 249
+        },
+        {
+          "step": 84,
+          "result": "paid",
+          "shield": 328,
+          "poison": 252
+        },
+        {
+          "step": 85,
+          "result": "paid",
+          "shield": 320,
+          "poison": 255
+        },
+        {
+          "step": 86,
+          "result": "paid",
+          "shield": 312,
+          "poison": 258
+        },
+        {
+          "step": 87,
+          "result": "paid",
+          "shield": 304,
+          "poison": 261
+        },
+        {
+          "step": 88,
+          "result": "paid",
+          "shield": 296,
+          "poison": 264
+        },
+        {
+          "step": 89,
+          "result": "paid",
+          "shield": 288,
+          "poison": 267
+        },
+        {
+          "step": 90,
+          "result": "paid",
+          "shield": 280,
+          "poison": 270
+        },
+        {
+          "step": 91,
+          "result": "paid",
+          "shield": 272,
+          "poison": 273
+        },
+        {
+          "step": 92,
+          "result": "paid",
+          "shield": 264,
+          "poison": 276
+        },
+        {
+          "step": 93,
+          "result": "paid",
+          "shield": 256,
+          "poison": 279
+        },
+        {
+          "step": 94,
+          "result": "paid",
+          "shield": 248,
+          "poison": 282
+        },
+        {
+          "step": 95,
+          "result": "paid",
+          "shield": 240,
+          "poison": 285
+        },
+        {
+          "step": 96,
+          "result": "paid",
+          "shield": 232,
+          "poison": 288
+        },
+        {
+          "step": 97,
+          "result": "paid",
+          "shield": 224,
+          "poison": 291
+        },
+        {
+          "step": 98,
+          "result": "paid",
+          "shield": 216,
+          "poison": 294
+        },
+        {
+          "step": 99,
+          "result": "paid",
+          "shield": 208,
+          "poison": 297
+        },
+        {
+          "step": 100,
+          "result": "paid",
+          "shield": 200,
+          "poison": 300
+        },
+        {
+          "step": 101,
+          "result": "paid",
+          "shield": 192,
+          "poison": 303
+        },
+        {
+          "step": 102,
+          "result": "paid",
+          "shield": 184,
+          "poison": 306
+        },
+        {
+          "step": 103,
+          "result": "paid",
+          "shield": 176,
+          "poison": 309
+        },
+        {
+          "step": 104,
+          "result": "paid",
+          "shield": 168,
+          "poison": 312
+        },
+        {
+          "step": 105,
+          "result": "paid",
+          "shield": 160,
+          "poison": 315
+        },
+        {
+          "step": 106,
+          "result": "paid",
+          "shield": 152,
+          "poison": 318
+        },
+        {
+          "step": 107,
+          "result": "paid",
+          "shield": 144,
+          "poison": 321
+        },
+        {
+          "step": 108,
+          "result": "paid",
+          "shield": 136,
+          "poison": 324
+        },
+        {
+          "step": 109,
+          "result": "paid",
+          "shield": 128,
+          "poison": 327
+        },
+        {
+          "step": 110,
+          "result": "paid",
+          "shield": 120,
+          "poison": 330
+        },
+        {
+          "step": 111,
+          "result": "paid",
+          "shield": 112,
+          "poison": 333
+        },
+        {
+          "step": 112,
+          "result": "paid",
+          "shield": 104,
+          "poison": 336
+        },
+        {
+          "step": 113,
+          "result": "paid",
+          "shield": 96,
+          "poison": 339
+        },
+        {
+          "step": 114,
+          "result": "paid",
+          "shield": 88,
+          "poison": 342
+        },
+        {
+          "step": 115,
+          "result": "paid",
+          "shield": 80,
+          "poison": 345
+        },
+        {
+          "step": 116,
+          "result": "paid",
+          "shield": 72,
+          "poison": 348
+        },
+        {
+          "step": 117,
+          "result": "paid",
+          "shield": 64,
+          "poison": 351
+        },
+        {
+          "step": 118,
+          "result": "paid",
+          "shield": 56,
+          "poison": 354
+        },
+        {
+          "step": 119,
+          "result": "paid",
+          "shield": 48,
+          "poison": 357
+        },
+        {
+          "step": 120,
+          "result": "paid",
+          "shield": 40,
+          "poison": 360
+        },
+        {
+          "step": 121,
+          "result": "paid",
+          "shield": 32,
+          "poison": 363
+        },
+        {
+          "step": 122,
+          "result": "paid",
+          "shield": 24,
+          "poison": 366
+        },
+        {
+          "step": 123,
+          "result": "paid",
+          "shield": 16,
+          "poison": 369
+        },
+        {
+          "step": 124,
+          "result": "paid",
+          "shield": 8,
+          "poison": 372
+        },
+        {
+          "step": 125,
+          "result": "paid",
+          "shield": 0,
+          "poison": 375
+        },
+        {
+          "step": 126,
+          "result": "invalid-or-insufficient",
+          "shield": 0
+        }
+      ]
+    }
+  ]
+}

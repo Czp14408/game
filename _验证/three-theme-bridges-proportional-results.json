@@ -1,0 +1,492 @@
+{
+  "date": "2026-10-14",
+  "allocation": "proportional",
+  "scope": "39 existing combat checks plus bridge checks; 900 fixed mixed-build battles. Attack-first shield absorption is adopted; proportional is historical comparison only. No acquisition/economy proof, no resource payment skill, no full three-world trial.",
+  "builds": {
+    "martial": {
+      "items": [
+        {
+          "id": "blade",
+          "quality": 1
+        },
+        {
+          "id": "dagger",
+          "quality": 1
+        },
+        {
+          "id": "mirror",
+          "quality": 1
+        },
+        {
+          "id": "medicine",
+          "quality": 1
+        },
+        {
+          "id": "shield",
+          "quality": 1
+        },
+        {
+          "id": "stone",
+          "quality": 1
+        },
+        {
+          "id": "dagger",
+          "quality": 1
+        }
+      ],
+      "skills": {
+        "fervor": 2
+      }
+    },
+    "cyber": {
+      "items": [
+        {
+          "id": "pulseBlade",
+          "quality": 1
+        },
+        {
+          "id": "pistol",
+          "quality": 1
+        },
+        {
+          "id": "emitter",
+          "quality": 1
+        },
+        {
+          "id": "medpack",
+          "quality": 1
+        },
+        {
+          "id": "battery",
+          "quality": 1
+        },
+        {
+          "id": "pistol",
+          "quality": 1
+        },
+        {
+          "id": "accelerator",
+          "quality": 1
+        }
+      ],
+      "skills": {
+        "regulated": 0.3
+      }
+    },
+    "weird": {
+      "items": [
+        {
+          "id": "curseBlade",
+          "quality": 1
+        },
+        {
+          "id": "candle",
+          "quality": 1
+        },
+        {
+          "id": "bloodCup",
+          "quality": 1
+        },
+        {
+          "id": "boneCharm",
+          "quality": 1
+        },
+        {
+          "id": "vial",
+          "quality": 1
+        },
+        {
+          "id": "soulBell",
+          "quality": 1
+        },
+        {
+          "id": "incense",
+          "quality": 1
+        }
+      ],
+      "skills": {
+        "flame": 4,
+        "plague": 0.2
+      }
+    },
+    "martialCyber": {
+      "items": [
+        {
+          "id": "blade",
+          "quality": 1
+        },
+        {
+          "id": "dagger",
+          "quality": 1
+        },
+        {
+          "id": "mirror",
+          "quality": 1
+        },
+        {
+          "id": "medpack",
+          "quality": 1
+        },
+        {
+          "id": "battery",
+          "quality": 1
+        },
+        {
+          "id": "pistol",
+          "quality": 1
+        },
+        {
+          "id": "accelerator",
+          "quality": 1
+        }
+      ],
+      "skills": {
+        "fervor": 2,
+        "regulated": 0.3
+      }
+    },
+    "cyberWeird": {
+      "items": [
+        {
+          "id": "pulseBlade",
+          "quality": 1
+        },
+        {
+          "id": "emitter",
+          "quality": 1
+        },
+        {
+          "id": "medpack",
+          "quality": 1
+        },
+        {
+          "id": "candle",
+          "quality": 1
+        },
+        {
+          "id": "vial",
+          "quality": 1
+        },
+        {
+          "id": "vial",
+          "quality": 1
+        },
+        {
+          "id": "incense",
+          "quality": 1
+        }
+      ],
+      "skills": {
+        "regulated": 0.3,
+        "flame": 4,
+        "plague": 0.2
+      }
+    },
+    "martialWeird": {
+      "items": [
+        {
+          "id": "blade",
+          "quality": 1
+        },
+        {
+          "id": "mirror",
+          "quality": 1
+        },
+        {
+          "id": "incense",
+          "quality": 1
+        },
+        {
+          "id": "needle",
+          "quality": 1
+        },
+        {
+          "id": "shield",
+          "quality": 1
+        },
+        {
+          "id": "soulBell",
+          "quality": 1
+        },
+        {
+          "id": "dagger",
+          "quality": 1
+        }
+      ],
+      "skills": {
+        "fervor": 2,
+        "restorative": 3,
+        "flame": 4,
+        "plague": 0.2
+      }
+    }
+  },
+  "enemies": {
+    "attack": {
+      "hp": 1300,
+      "items": [
+        {
+          "id": "blade",
+          "quality": 1
+        },
+        {
+          "id": "hammer",
+          "quality": 1
+        },
+        {
+          "id": "dagger",
+          "quality": 1
+        },
+        {
+          "id": "mirror",
+          "quality": 1
+        },
+        {
+          "id": "shield",
+          "quality": 1
+        },
+        {
+          "id": "stone",
+          "quality": 1
+        }
+      ],
+      "skills": {
+        "fervor": 2
+      }
+    },
+    "defense": {
+      "hp": 1300,
+      "items": [
+        {
+          "id": "pulseBlade",
+          "quality": 1
+        },
+        {
+          "id": "emitter",
+          "quality": 1
+        },
+        {
+          "id": "medpack",
+          "quality": 1
+        },
+        {
+          "id": "battery",
+          "quality": 1
+        },
+        {
+          "id": "shield",
+          "quality": 1
+        },
+        {
+          "id": "pistol",
+          "quality": 1
+        },
+        {
+          "id": "accelerator",
+          "quality": 1
+        }
+      ],
+      "skills": {
+        "regulated": 0.3,
+        "restorative": 3
+      }
+    },
+    "anomaly": {
+      "hp": 1300,
+      "items": [
+        {
+          "id": "curseBlade",
+          "quality": 1
+        },
+        {
+          "id": "candle",
+          "quality": 1
+        },
+        {
+          "id": "bloodCup",
+          "quality": 1
+        },
+        {
+          "id": "boneCharm",
+          "quality": 1
+        },
+        {
+          "id": "vial",
+          "quality": 1
+        },
+        {
+          "id": "soulBell",
+          "quality": 1
+        },
+        {
+          "id": "incense",
+          "quality": 1
+        }
+      ],
+      "skills": {
+        "flame": 4,
+        "plague": 0.2
+      }
+    }
+  },
+  "modes": [
+    {
+      "mode": "attack-first",
+      "hp": 54,
+      "attackLifeDamage": 10,
+      "lifesteal": 1
+    },
+    {
+      "mode": "proportional",
+      "hp": 54.05384615384615,
+      "attackLifeDamage": 10.538461538461537,
+      "lifesteal": 1.0538461538461537
+    }
+  ],
+  "summaries": [
+    {
+      "name": "martial",
+      "spaces": 10,
+      "enemy": "attack",
+      "wins": 50,
+      "meanSeconds": 18,
+      "meanHp": 706.55
+    },
+    {
+      "name": "martial",
+      "spaces": 10,
+      "enemy": "defense",
+      "wins": 50,
+      "meanSeconds": 18.52,
+      "meanHp": 1300
+    },
+    {
+      "name": "martial",
+      "spaces": 10,
+      "enemy": "anomaly",
+      "wins": 50,
+      "meanSeconds": 16.78,
+      "meanHp": 1041.4
+    },
+    {
+      "name": "cyber",
+      "spaces": 10,
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 18.76,
+      "meanHp": 0
+    },
+    {
+      "name": "cyber",
+      "spaces": 10,
+      "enemy": "defense",
+      "wins": 3,
+      "meanSeconds": 39.784,
+      "meanHp": 1.905
+    },
+    {
+      "name": "cyber",
+      "spaces": 10,
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 21.22,
+      "meanHp": 0
+    },
+    {
+      "name": "weird",
+      "spaces": 10,
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 19.24,
+      "meanHp": 0
+    },
+    {
+      "name": "weird",
+      "spaces": 10,
+      "enemy": "defense",
+      "wins": 50,
+      "meanSeconds": 20.84,
+      "meanHp": 1207.2297988602209
+    },
+    {
+      "name": "weird",
+      "spaces": 10,
+      "enemy": "anomaly",
+      "wins": 50,
+      "meanSeconds": 19.319999999999997,
+      "meanHp": 230.67935385591875
+    },
+    {
+      "name": "martialCyber",
+      "spaces": 10,
+      "enemy": "attack",
+      "wins": 19,
+      "meanSeconds": 21.214000000000006,
+      "meanHp": 84.065
+    },
+    {
+      "name": "martialCyber",
+      "spaces": 10,
+      "enemy": "defense",
+      "wins": 50,
+      "meanSeconds": 22.286000000000005,
+      "meanHp": 1300
+    },
+    {
+      "name": "martialCyber",
+      "spaces": 10,
+      "enemy": "anomaly",
+      "wins": 50,
+      "meanSeconds": 20.674000000000007,
+      "meanHp": 586.91
+    },
+    {
+      "name": "cyberWeird",
+      "spaces": 10,
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 20,
+      "meanHp": 0
+    },
+    {
+      "name": "cyberWeird",
+      "spaces": 10,
+      "enemy": "defense",
+      "wins": 50,
+      "meanSeconds": 21.2,
+      "meanHp": 1261.9751642135195
+    },
+    {
+      "name": "cyberWeird",
+      "spaces": 10,
+      "enemy": "anomaly",
+      "wins": 50,
+      "meanSeconds": 20,
+      "meanHp": 224.907303414049
+    },
+    {
+      "name": "martialWeird",
+      "spaces": 10,
+      "enemy": "attack",
+      "wins": 50,
+      "meanSeconds": 17.94,
+      "meanHp": 573.1927659931798
+    },
+    {
+      "name": "martialWeird",
+      "spaces": 10,
+      "enemy": "defense",
+      "wins": 50,
+      "meanSeconds": 18.387999999999998,
+      "meanHp": 1300
+    },
+    {
+      "name": "martialWeird",
+      "spaces": 10,
+      "enemy": "anomaly",
+      "wins": 50,
+      "meanSeconds": 16.504,
+      "meanHp": 957.3230406055159
+    }
+  ]
+}

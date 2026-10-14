@@ -1,0 +1,418 @@
+{
+  "worlds": [
+    {
+      "id": "cyber1",
+      "stage": 1,
+      "name": "失电工区",
+      "final": "event",
+      "trade": "regulated"
+    },
+    {
+      "id": "cyber2",
+      "stage": 2,
+      "name": "封锁城区",
+      "final": "battle",
+      "trade": "boot"
+    },
+    {
+      "id": "cyber3",
+      "stage": 3,
+      "name": "核心机房",
+      "final": "battle",
+      "trade": "boot"
+    },
+    {
+      "id": "weird2",
+      "stage": 2,
+      "name": "荒镇疫案",
+      "final": "battle",
+      "trade": "ward"
+    },
+    {
+      "id": "weird3",
+      "stage": 3,
+      "name": "失控祭城",
+      "final": "battle",
+      "trade": "ward"
+    }
+  ],
+  "edges": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      7,
+      11
+    ],
+    [
+      7,
+      12
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      14,
+      3
+    ],
+    [
+      5,
+      15
+    ],
+    [
+      15,
+      16
+    ],
+    [
+      15,
+      17
+    ],
+    [
+      17,
+      18
+    ],
+    [
+      12,
+      17
+    ]
+  ],
+  "routes": {
+    "main": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "normal": [
+      1,
+      2,
+      7,
+      11,
+      7,
+      12,
+      7,
+      8,
+      7,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "deep": [
+      1,
+      2,
+      7,
+      11,
+      7,
+      12,
+      7,
+      8,
+      9,
+      10,
+      9,
+      8,
+      7,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "bypass": [
+      1,
+      2,
+      3,
+      2,
+      7,
+      12,
+      17,
+      15,
+      5,
+      6
+    ]
+  },
+  "summaries": [
+    {
+      "world": "cyber1",
+      "route": "main",
+      "visited": 6,
+      "remaining": 6,
+      "complete": true,
+      "delivered": false,
+      "fights": 1,
+      "smallContainers": 1,
+      "eliteChests": 0,
+      "bossChests": 0
+    },
+    {
+      "world": "cyber1",
+      "route": "normal",
+      "visited": 10,
+      "remaining": 2,
+      "complete": true,
+      "delivered": true,
+      "fights": 2,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 0
+    },
+    {
+      "world": "cyber1",
+      "route": "deep",
+      "visited": 12,
+      "remaining": 0,
+      "complete": true,
+      "delivered": true,
+      "fights": 3,
+      "smallContainers": 5,
+      "eliteChests": 1,
+      "bossChests": 0
+    },
+    {
+      "world": "cyber1",
+      "route": "bypass",
+      "visited": 9,
+      "remaining": 3,
+      "complete": true,
+      "delivered": false,
+      "fights": 1,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 0
+    },
+    {
+      "world": "cyber2",
+      "route": "main",
+      "visited": 6,
+      "remaining": 6,
+      "complete": true,
+      "delivered": false,
+      "fights": 2,
+      "smallContainers": 1,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "cyber2",
+      "route": "normal",
+      "visited": 10,
+      "remaining": 2,
+      "complete": true,
+      "delivered": true,
+      "fights": 3,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "cyber2",
+      "route": "deep",
+      "visited": 12,
+      "remaining": 0,
+      "complete": true,
+      "delivered": true,
+      "fights": 4,
+      "smallContainers": 5,
+      "eliteChests": 1,
+      "bossChests": 1
+    },
+    {
+      "world": "cyber2",
+      "route": "bypass",
+      "visited": 9,
+      "remaining": 3,
+      "complete": true,
+      "delivered": false,
+      "fights": 2,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "cyber3",
+      "route": "main",
+      "visited": 6,
+      "remaining": 6,
+      "complete": true,
+      "delivered": false,
+      "fights": 2,
+      "smallContainers": 1,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "cyber3",
+      "route": "normal",
+      "visited": 10,
+      "remaining": 2,
+      "complete": true,
+      "delivered": true,
+      "fights": 3,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "cyber3",
+      "route": "deep",
+      "visited": 12,
+      "remaining": 0,
+      "complete": true,
+      "delivered": true,
+      "fights": 4,
+      "smallContainers": 5,
+      "eliteChests": 1,
+      "bossChests": 1
+    },
+    {
+      "world": "cyber3",
+      "route": "bypass",
+      "visited": 9,
+      "remaining": 3,
+      "complete": true,
+      "delivered": false,
+      "fights": 2,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "weird2",
+      "route": "main",
+      "visited": 6,
+      "remaining": 6,
+      "complete": true,
+      "delivered": false,
+      "fights": 2,
+      "smallContainers": 1,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "weird2",
+      "route": "normal",
+      "visited": 10,
+      "remaining": 2,
+      "complete": true,
+      "delivered": true,
+      "fights": 3,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "weird2",
+      "route": "deep",
+      "visited": 12,
+      "remaining": 0,
+      "complete": true,
+      "delivered": true,
+      "fights": 4,
+      "smallContainers": 5,
+      "eliteChests": 1,
+      "bossChests": 1
+    },
+    {
+      "world": "weird2",
+      "route": "bypass",
+      "visited": 9,
+      "remaining": 3,
+      "complete": true,
+      "delivered": false,
+      "fights": 2,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "weird3",
+      "route": "main",
+      "visited": 6,
+      "remaining": 6,
+      "complete": true,
+      "delivered": false,
+      "fights": 2,
+      "smallContainers": 1,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "weird3",
+      "route": "normal",
+      "visited": 10,
+      "remaining": 2,
+      "complete": true,
+      "delivered": true,
+      "fights": 3,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 1
+    },
+    {
+      "world": "weird3",
+      "route": "deep",
+      "visited": 12,
+      "remaining": 0,
+      "complete": true,
+      "delivered": true,
+      "fights": 4,
+      "smallContainers": 5,
+      "eliteChests": 1,
+      "bossChests": 1
+    },
+    {
+      "world": "weird3",
+      "route": "bypass",
+      "visited": 9,
+      "remaining": 3,
+      "complete": true,
+      "delivered": false,
+      "fights": 2,
+      "smallContainers": 4,
+      "eliteChests": 0,
+      "bossChests": 1
+    }
+  ],
+  "scope": "Five fixed task maps. Assumes successful required fights and bag capacity for side parcel; no combat/economy/procedural-generation proof."
+}

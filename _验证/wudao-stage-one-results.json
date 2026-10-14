@@ -1,0 +1,1169 @@
+{
+  "date": "2026-10-14",
+  "modelChecks": 27,
+  "scope": "Fixed legal reward and shop inputs; no class, blood or lifesteal. Not random supply success rates.",
+  "encounters": {
+    "guard": {
+      "hp": 36,
+      "items": [
+        {
+          "id": "blade",
+          "quality": 0
+        },
+        {
+          "id": "mirror",
+          "quality": 0
+        }
+      ],
+      "skills": {
+        "fervor": 1
+      }
+    },
+    "hunter": {
+      "hp": 40,
+      "items": [
+        {
+          "id": "dagger",
+          "quality": 0
+        }
+      ]
+    },
+    "beast": {
+      "hp": 60,
+      "items": [
+        {
+          "id": "needle",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 1
+        }
+      ]
+    },
+    "chief": {
+      "hp": 64,
+      "items": [
+        {
+          "id": "hammer",
+          "quality": 1
+        },
+        {
+          "id": "dagger",
+          "quality": 0
+        },
+        {
+          "id": "mirror",
+          "quality": 0
+        }
+      ],
+      "skills": {
+        "fervor": 1
+      }
+    },
+    "arsenal": {
+      "hp": 64,
+      "items": [
+        {
+          "id": "blade",
+          "quality": 1
+        },
+        {
+          "id": "mirror",
+          "quality": 1
+        },
+        {
+          "id": "dagger",
+          "quality": 1
+        }
+      ],
+      "skills": {
+        "fervor": 2
+      }
+    },
+    "mine": {
+      "hp": 40,
+      "items": [
+        {
+          "id": "hammer",
+          "quality": 0
+        }
+      ]
+    },
+    "cellar": {
+      "hp": 44,
+      "items": [
+        {
+          "id": "needle",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        }
+      ]
+    }
+  },
+  "named": {
+    "start": [
+      {
+        "id": "blade",
+        "quality": 0
+      },
+      {
+        "id": "shield",
+        "quality": 0
+      },
+      {
+        "id": "dagger",
+        "quality": 0
+      }
+    ],
+    "supported": [
+      {
+        "id": "blade",
+        "quality": 0
+      },
+      {
+        "id": "shield",
+        "quality": 0
+      },
+      {
+        "id": "dagger",
+        "quality": 0
+      },
+      {
+        "id": "medicine",
+        "quality": 0
+      }
+    ],
+    "afterGuard": [
+      {
+        "id": "blade",
+        "quality": 0
+      },
+      {
+        "id": "shield",
+        "quality": 0
+      },
+      {
+        "id": "dagger",
+        "quality": 0
+      },
+      {
+        "id": "mirror",
+        "quality": 0
+      }
+    ],
+    "normalBeforeChief": [
+      {
+        "id": "blade",
+        "quality": 0
+      },
+      {
+        "id": "shield",
+        "quality": 0
+      },
+      {
+        "id": "dagger",
+        "quality": 0
+      },
+      {
+        "id": "medicine",
+        "quality": 0
+      },
+      {
+        "id": "mirror",
+        "quality": 0
+      }
+    ],
+    "deepBeforeChief": [
+      {
+        "id": "blade",
+        "quality": 0
+      },
+      {
+        "id": "shield",
+        "quality": 0
+      },
+      {
+        "id": "medicine",
+        "quality": 0
+      },
+      {
+        "id": "dagger",
+        "quality": 1
+      },
+      {
+        "id": "needle",
+        "quality": 1
+      },
+      {
+        "id": "mirror",
+        "quality": 0
+      }
+    ]
+  },
+  "boundary": [
+    {
+      "build": "start",
+      "hp": 100,
+      "enemy": "guard",
+      "winner": "player",
+      "seconds": 12,
+      "remaining": 82
+    },
+    {
+      "build": "start",
+      "hp": 60,
+      "enemy": "guard",
+      "winner": "player",
+      "seconds": 12,
+      "remaining": 42
+    },
+    {
+      "build": "start",
+      "hp": 30,
+      "enemy": "guard",
+      "winner": "player",
+      "seconds": 12,
+      "remaining": 12
+    },
+    {
+      "build": "supported",
+      "hp": 100,
+      "enemy": "beast",
+      "winner": "player",
+      "seconds": 28,
+      "remaining": 41
+    },
+    {
+      "build": "supported",
+      "hp": 60,
+      "enemy": "beast",
+      "winner": "player",
+      "seconds": 28,
+      "remaining": 8
+    },
+    {
+      "build": "supported",
+      "hp": 30,
+      "enemy": "beast",
+      "winner": "enemy",
+      "seconds": 23,
+      "remaining": 0
+    },
+    {
+      "build": "afterGuard",
+      "hp": 100,
+      "enemy": "chief",
+      "winner": "enemy",
+      "seconds": 21,
+      "remaining": 0
+    },
+    {
+      "build": "afterGuard",
+      "hp": 60,
+      "enemy": "chief",
+      "winner": "enemy",
+      "seconds": 14,
+      "remaining": 0
+    },
+    {
+      "build": "afterGuard",
+      "hp": 30,
+      "enemy": "chief",
+      "winner": "enemy",
+      "seconds": 14,
+      "remaining": 0
+    },
+    {
+      "build": "normalBeforeChief",
+      "hp": 100,
+      "enemy": "chief",
+      "winner": "enemy",
+      "seconds": 28,
+      "remaining": 0
+    },
+    {
+      "build": "normalBeforeChief",
+      "hp": 60,
+      "enemy": "chief",
+      "winner": "enemy",
+      "seconds": 21,
+      "remaining": 0
+    },
+    {
+      "build": "normalBeforeChief",
+      "hp": 30,
+      "enemy": "chief",
+      "winner": "enemy",
+      "seconds": 14,
+      "remaining": 0
+    },
+    {
+      "build": "deepBeforeChief",
+      "hp": 100,
+      "enemy": "chief",
+      "winner": "player",
+      "seconds": 12,
+      "remaining": 84
+    },
+    {
+      "build": "deepBeforeChief",
+      "hp": 60,
+      "enemy": "chief",
+      "winner": "player",
+      "seconds": 12,
+      "remaining": 48
+    },
+    {
+      "build": "deepBeforeChief",
+      "hp": 30,
+      "enemy": "chief",
+      "winner": "player",
+      "seconds": 12,
+      "remaining": 18
+    }
+  ],
+  "routes": [
+    {
+      "name": "main",
+      "battles": [
+        {
+          "enemy": "guard",
+          "openingHp": 100,
+          "winner": "player",
+          "seconds": 12,
+          "remaining": 82
+        },
+        {
+          "enemy": "chief",
+          "openingHp": 82,
+          "winner": "player",
+          "seconds": 16,
+          "remaining": 15
+        }
+      ],
+      "finalHp": 15
+    },
+    {
+      "name": "normal",
+      "battles": [
+        {
+          "enemy": "hunter",
+          "openingHp": 100,
+          "winner": "player",
+          "seconds": 8,
+          "remaining": 99
+        },
+        {
+          "enemy": "guard",
+          "openingHp": 99,
+          "winner": "player",
+          "seconds": 12,
+          "remaining": 93
+        },
+        {
+          "enemy": "chief",
+          "openingHp": 93,
+          "winner": "player",
+          "seconds": 16,
+          "remaining": 46
+        }
+      ],
+      "finalHp": 46
+    },
+    {
+      "name": "deep",
+      "battles": [
+        {
+          "enemy": "hunter",
+          "openingHp": 100,
+          "winner": "player",
+          "seconds": 8,
+          "remaining": 99
+        },
+        {
+          "enemy": "beast",
+          "openingHp": 99,
+          "winner": "player",
+          "seconds": 28,
+          "remaining": 41
+        },
+        {
+          "enemy": "guard",
+          "openingHp": 41,
+          "winner": "player",
+          "seconds": 8,
+          "remaining": 40
+        },
+        {
+          "enemy": "chief",
+          "openingHp": 40,
+          "winner": "player",
+          "seconds": 12,
+          "remaining": 30
+        }
+      ],
+      "finalHp": 30
+    }
+  ],
+  "prices": {
+    "shield": [
+      6,
+      10
+    ],
+    "dagger": [
+      6,
+      10
+    ],
+    "medicine": [
+      10,
+      16
+    ],
+    "fervor": [
+      12,
+      20
+    ]
+  },
+  "ledgers": [
+    {
+      "name": "main",
+      "money": 48,
+      "peak": 6,
+      "bagSize": 6,
+      "equippedSize": 6,
+      "bag": [
+        {
+          "id": "mineral",
+          "q": 0,
+          "size": 1
+        },
+        {
+          "id": "blade",
+          "q": 0,
+          "size": 2
+        },
+        {
+          "id": "mirror",
+          "q": 0,
+          "size": 2
+        },
+        {
+          "id": "recovery",
+          "q": 0,
+          "size": 1
+        }
+      ],
+      "equipped": [
+        {
+          "id": "shield",
+          "q": 0,
+          "size": 1
+        },
+        {
+          "id": "blade",
+          "q": 1,
+          "size": 2
+        },
+        {
+          "id": "mirror",
+          "q": 1,
+          "size": 2
+        },
+        {
+          "id": "dagger",
+          "q": 1,
+          "size": 1
+        }
+      ],
+      "log": [
+        {
+          "action": "buy shield",
+          "money": 24,
+          "bag": 0,
+          "equipped": 3
+        },
+        {
+          "action": "buy dagger",
+          "money": 18,
+          "bag": 0,
+          "equipped": 4
+        },
+        {
+          "action": "collect mineral",
+          "money": 18,
+          "bag": 1,
+          "equipped": 4
+        },
+        {
+          "action": "guard win; equip mirror",
+          "money": 24,
+          "bag": 1,
+          "equipped": 6
+        },
+        {
+          "action": "revisit market; buy bronze fervor",
+          "money": 12,
+          "bag": 1,
+          "equipped": 6
+        },
+        {
+          "action": "chief and main quest money; learn second bronze fervor -> silver",
+          "money": 48,
+          "bag": 1,
+          "equipped": 6
+        },
+        {
+          "action": "replace blade:1",
+          "money": 48,
+          "bag": 3,
+          "equipped": 6
+        },
+        {
+          "action": "replace mirror:1",
+          "money": 48,
+          "bag": 5,
+          "equipped": 6
+        },
+        {
+          "action": "unequip dagger to bag",
+          "money": 48,
+          "bag": 6,
+          "equipped": 5
+        },
+        {
+          "action": "claim bronze dagger; atomic merge to silver",
+          "money": 48,
+          "bag": 6,
+          "equipped": 5
+        },
+        {
+          "action": "equip silver dagger",
+          "money": 48,
+          "bag": 5,
+          "equipped": 6
+        },
+        {
+          "action": "collect recovery",
+          "money": 48,
+          "bag": 6,
+          "equipped": 6
+        }
+      ],
+      "points": 4
+    },
+    {
+      "name": "normal",
+      "money": 68,
+      "peak": 6,
+      "bagSize": 6,
+      "equippedSize": 8,
+      "bag": [
+        {
+          "id": "mineral",
+          "q": 0,
+          "size": 1
+        },
+        {
+          "id": "blade",
+          "q": 0,
+          "size": 2
+        },
+        {
+          "id": "mirror",
+          "q": 0,
+          "size": 2
+        },
+        {
+          "id": "recovery",
+          "q": 0,
+          "size": 1
+        }
+      ],
+      "equipped": [
+        {
+          "id": "shield",
+          "q": 0,
+          "size": 1
+        },
+        {
+          "id": "medicine",
+          "q": 0,
+          "size": 2
+        },
+        {
+          "id": "blade",
+          "q": 1,
+          "size": 2
+        },
+        {
+          "id": "mirror",
+          "q": 1,
+          "size": 2
+        },
+        {
+          "id": "dagger",
+          "q": 1,
+          "size": 1
+        }
+      ],
+      "log": [
+        {
+          "action": "buy shield",
+          "money": 24,
+          "bag": 0,
+          "equipped": 3
+        },
+        {
+          "action": "buy dagger",
+          "money": 18,
+          "bag": 0,
+          "equipped": 4
+        },
+        {
+          "action": "buy medicine",
+          "money": 8,
+          "bag": 0,
+          "equipped": 6
+        },
+        {
+          "action": "collect hide",
+          "money": 8,
+          "bag": 1,
+          "equipped": 6
+        },
+        {
+          "action": "collect parcel",
+          "money": 8,
+          "bag": 2,
+          "equipped": 6
+        },
+        {
+          "action": "collect copper",
+          "money": 8,
+          "bag": 3,
+          "equipped": 6
+        },
+        {
+          "action": "collect recovery",
+          "money": 8,
+          "bag": 4,
+          "equipped": 6
+        },
+        {
+          "action": "collect bone",
+          "money": 14,
+          "bag": 5,
+          "equipped": 6
+        },
+        {
+          "action": "sell hide",
+          "money": 18,
+          "bag": 4,
+          "equipped": 6
+        },
+        {
+          "action": "sell copper",
+          "money": 22,
+          "bag": 3,
+          "equipped": 6
+        },
+        {
+          "action": "sell bone",
+          "money": 26,
+          "bag": 2,
+          "equipped": 6
+        },
+        {
+          "action": "deliver parcel and disciple quests",
+          "money": 38,
+          "bag": 1,
+          "equipped": 6
+        },
+        {
+          "action": "collect mineral",
+          "money": 38,
+          "bag": 2,
+          "equipped": 6
+        },
+        {
+          "action": "submit recovery for restorative skill",
+          "money": 38,
+          "bag": 1,
+          "equipped": 6
+        },
+        {
+          "action": "guard win; equip mirror",
+          "money": 44,
+          "bag": 1,
+          "equipped": 8
+        },
+        {
+          "action": "revisit market; buy bronze fervor",
+          "money": 32,
+          "bag": 1,
+          "equipped": 8
+        },
+        {
+          "action": "chief and main quest money; learn second bronze fervor -> silver",
+          "money": 68,
+          "bag": 1,
+          "equipped": 8
+        },
+        {
+          "action": "replace blade:1",
+          "money": 68,
+          "bag": 3,
+          "equipped": 8
+        },
+        {
+          "action": "replace mirror:1",
+          "money": 68,
+          "bag": 5,
+          "equipped": 8
+        },
+        {
+          "action": "unequip dagger to bag",
+          "money": 68,
+          "bag": 6,
+          "equipped": 7
+        },
+        {
+          "action": "claim bronze dagger; atomic merge to silver",
+          "money": 68,
+          "bag": 6,
+          "equipped": 7
+        },
+        {
+          "action": "equip silver dagger",
+          "money": 68,
+          "bag": 5,
+          "equipped": 8
+        },
+        {
+          "action": "collect recovery",
+          "money": 68,
+          "bag": 6,
+          "equipped": 8
+        }
+      ],
+      "points": 6
+    },
+    {
+      "name": "deep",
+      "money": 86,
+      "peak": 8,
+      "bagSize": 7,
+      "equippedSize": 10,
+      "bag": [
+        {
+          "id": "needle",
+          "q": 0,
+          "size": 1
+        },
+        {
+          "id": "mineral",
+          "q": 0,
+          "size": 1
+        },
+        {
+          "id": "blade",
+          "q": 0,
+          "size": 2
+        },
+        {
+          "id": "mirror",
+          "q": 0,
+          "size": 2
+        },
+        {
+          "id": "recovery",
+          "q": 0,
+          "size": 1
+        }
+      ],
+      "equipped": [
+        {
+          "id": "shield",
+          "q": 0,
+          "size": 1
+        },
+        {
+          "id": "medicine",
+          "q": 0,
+          "size": 2
+        },
+        {
+          "id": "needle",
+          "q": 1,
+          "size": 1
+        },
+        {
+          "id": "dagger",
+          "q": 1,
+          "size": 1
+        },
+        {
+          "id": "blade",
+          "q": 1,
+          "size": 2
+        },
+        {
+          "id": "mirror",
+          "q": 1,
+          "size": 2
+        },
+        {
+          "id": "dagger",
+          "q": 0,
+          "size": 1
+        }
+      ],
+      "log": [
+        {
+          "action": "buy shield",
+          "money": 24,
+          "bag": 0,
+          "equipped": 3
+        },
+        {
+          "action": "buy dagger",
+          "money": 18,
+          "bag": 0,
+          "equipped": 4
+        },
+        {
+          "action": "buy medicine",
+          "money": 8,
+          "bag": 0,
+          "equipped": 6
+        },
+        {
+          "action": "collect hide",
+          "money": 8,
+          "bag": 1,
+          "equipped": 6
+        },
+        {
+          "action": "collect parcel",
+          "money": 8,
+          "bag": 2,
+          "equipped": 6
+        },
+        {
+          "action": "collect copper",
+          "money": 8,
+          "bag": 3,
+          "equipped": 6
+        },
+        {
+          "action": "collect recovery",
+          "money": 8,
+          "bag": 4,
+          "equipped": 6
+        },
+        {
+          "action": "collect bone",
+          "money": 14,
+          "bag": 5,
+          "equipped": 6
+        },
+        {
+          "action": "collect herb",
+          "money": 14,
+          "bag": 6,
+          "equipped": 6
+        },
+        {
+          "action": "elite drops bronze needle",
+          "money": 24,
+          "bag": 6,
+          "equipped": 7
+        },
+        {
+          "action": "replace needle:1",
+          "money": 24,
+          "bag": 7,
+          "equipped": 7
+        },
+        {
+          "action": "unequip dagger to bag",
+          "money": 24,
+          "bag": 8,
+          "equipped": 6
+        },
+        {
+          "action": "claim bronze dagger; atomic merge to silver",
+          "money": 24,
+          "bag": 8,
+          "equipped": 6
+        },
+        {
+          "action": "equip silver dagger",
+          "money": 24,
+          "bag": 7,
+          "equipped": 7
+        },
+        {
+          "action": "collect gland",
+          "money": 24,
+          "bag": 8,
+          "equipped": 7
+        },
+        {
+          "action": "sell hide",
+          "money": 28,
+          "bag": 7,
+          "equipped": 7
+        },
+        {
+          "action": "sell copper",
+          "money": 32,
+          "bag": 6,
+          "equipped": 7
+        },
+        {
+          "action": "sell bone",
+          "money": 36,
+          "bag": 5,
+          "equipped": 7
+        },
+        {
+          "action": "sell herb",
+          "money": 40,
+          "bag": 4,
+          "equipped": 7
+        },
+        {
+          "action": "sell gland",
+          "money": 44,
+          "bag": 3,
+          "equipped": 7
+        },
+        {
+          "action": "deliver parcel and disciple quests",
+          "money": 56,
+          "bag": 2,
+          "equipped": 7
+        },
+        {
+          "action": "collect mineral",
+          "money": 56,
+          "bag": 3,
+          "equipped": 7
+        },
+        {
+          "action": "submit recovery for restorative skill",
+          "money": 56,
+          "bag": 2,
+          "equipped": 7
+        },
+        {
+          "action": "guard win; equip mirror",
+          "money": 62,
+          "bag": 2,
+          "equipped": 9
+        },
+        {
+          "action": "revisit market; buy bronze fervor",
+          "money": 50,
+          "bag": 2,
+          "equipped": 9
+        },
+        {
+          "action": "chief and main quest money; learn second bronze fervor -> silver",
+          "money": 86,
+          "bag": 2,
+          "equipped": 9
+        },
+        {
+          "action": "replace blade:1",
+          "money": 86,
+          "bag": 4,
+          "equipped": 9
+        },
+        {
+          "action": "replace mirror:1",
+          "money": 86,
+          "bag": 6,
+          "equipped": 9
+        },
+        {
+          "action": "equip boss bronze dagger",
+          "money": 86,
+          "bag": 6,
+          "equipped": 10
+        },
+        {
+          "action": "collect recovery",
+          "money": 86,
+          "bag": 7,
+          "equipped": 10
+        }
+      ],
+      "points": 6
+    }
+  ],
+  "stageEnemies": {
+    "attack": {
+      "hp": 100,
+      "items": [
+        {
+          "id": "blade",
+          "quality": 1
+        },
+        {
+          "id": "dagger",
+          "quality": 0
+        },
+        {
+          "id": "mirror",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        }
+      ]
+    },
+    "defense": {
+      "hp": 100,
+      "items": [
+        {
+          "id": "mirror",
+          "quality": 1
+        },
+        {
+          "id": "blade",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        },
+        {
+          "id": "stone",
+          "quality": 0
+        }
+      ]
+    },
+    "poison": {
+      "hp": 100,
+      "items": [
+        {
+          "id": "needle",
+          "quality": 1
+        },
+        {
+          "id": "blade",
+          "quality": 0
+        },
+        {
+          "id": "mirror",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        }
+      ]
+    }
+  },
+  "stage": [
+    {
+      "route": "main",
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "remaining": 96
+    },
+    {
+      "route": "main",
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "remaining": 100
+    },
+    {
+      "route": "main",
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "remaining": 52
+    },
+    {
+      "route": "normal",
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 16,
+      "remaining": 100
+    },
+    {
+      "route": "normal",
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 20,
+      "remaining": 100
+    },
+    {
+      "route": "normal",
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 16,
+      "remaining": 62
+    },
+    {
+      "route": "deep",
+      "enemy": "attack",
+      "winner": "player",
+      "seconds": 9,
+      "remaining": 100
+    },
+    {
+      "route": "deep",
+      "enemy": "defense",
+      "winner": "player",
+      "seconds": 10,
+      "remaining": 100
+    },
+    {
+      "route": "deep",
+      "enemy": "poison",
+      "winner": "player",
+      "seconds": 8,
+      "remaining": 94
+    }
+  ],
+  "alternatives": [
+    {
+      "items": "blade shield dagger mirror hammer",
+      "winner": "player",
+      "seconds": 14,
+      "remaining": 16
+    },
+    {
+      "items": "blade shield dagger mirror medicine",
+      "winner": "enemy",
+      "seconds": 21,
+      "remaining": 0
+    }
+  ]
+}

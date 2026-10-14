@@ -15,6 +15,8 @@ var containers: Dictionary = {}    # container_key -> {"opened": bool, "table": 
 var events_done: Dictionary = {}   # event_id -> true
 ## 已显示原因的守路连接：连接键 -> true
 var guard_revealed: Dictionary = {}
+var card_lanes: Array = []
+var scene_cards: Dictionary = {}
 
 
 func encounter(key: String) -> EncounterState:

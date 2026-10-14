@@ -1,0 +1,3801 @@
+{
+  "version": "v0.1",
+  "testsPassed": 27,
+  "seeds": 100,
+  "stepSeconds": 0.1,
+  "definitions": {
+    "dagger": {
+      "size": 1,
+      "cd": 20,
+      "attack": [
+        4,
+        6,
+        9,
+        13
+      ],
+      "weapon": true
+    },
+    "blade": {
+      "size": 2,
+      "cd": 40,
+      "attack": [
+        12,
+        18,
+        28,
+        42
+      ],
+      "weapon": true
+    },
+    "hammer": {
+      "size": 3,
+      "cd": 70,
+      "attack": [
+        30,
+        45,
+        65,
+        90
+      ],
+      "weapon": true
+    },
+    "shield": {
+      "size": 1,
+      "cd": 40,
+      "shield": [
+        7,
+        11,
+        17,
+        25
+      ]
+    },
+    "mirror": {
+      "size": 2,
+      "cd": 50,
+      "shield": [
+        12,
+        20,
+        32,
+        48
+      ]
+    },
+    "medicine": {
+      "size": 2,
+      "cd": 60,
+      "heal": [
+        8,
+        13,
+        20,
+        30
+      ]
+    },
+    "tassel": {
+      "size": 1,
+      "cd": 60,
+      "haste": [
+        20,
+        30,
+        40,
+        50
+      ]
+    },
+    "stone": {
+      "size": 1,
+      "cd": 50,
+      "growth": [
+        2,
+        3,
+        5,
+        8
+      ]
+    },
+    "wrist": {
+      "size": 2,
+      "cd": 50,
+      "shield": [
+        null,
+        14,
+        22,
+        34
+      ],
+      "hasteGrowth": [
+        null,
+        2,
+        3,
+        5
+      ]
+    },
+    "charged": {
+      "size": 3,
+      "cd": 70,
+      "attack": [
+        null,
+        24,
+        36,
+        52
+      ],
+      "stackPower": [
+        null,
+        4,
+        6,
+        9
+      ],
+      "weapon": true
+    },
+    "wind": {
+      "size": 2,
+      "cd": 40,
+      "attack": [
+        null,
+        null,
+        20,
+        30
+      ],
+      "hasteGrowth": [
+        null,
+        null,
+        2,
+        3
+      ],
+      "reduction": [
+        null,
+        null,
+        2,
+        3
+      ],
+      "weapon": true
+    },
+    "needle": {
+      "size": 1,
+      "cd": 40,
+      "attack": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "poison": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "weapon": true
+    }
+  },
+  "builds": {
+    "pure": {
+      "items": [
+        {
+          "id": "blade",
+          "quality": 0
+        },
+        {
+          "id": "hammer",
+          "quality": 0
+        },
+        {
+          "id": "dagger",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        }
+      ]
+    },
+    "quick": {
+      "items": [
+        {
+          "id": "dagger",
+          "quality": 0
+        },
+        {
+          "id": "blade",
+          "quality": 0
+        },
+        {
+          "id": "tassel",
+          "quality": 0
+        },
+        {
+          "id": "stone",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        }
+      ]
+    },
+    "charged": {
+      "items": [
+        {
+          "id": "dagger",
+          "quality": 1
+        },
+        {
+          "id": "blade",
+          "quality": 1
+        },
+        {
+          "id": "charged",
+          "quality": 1
+        },
+        {
+          "id": "shield",
+          "quality": 1
+        },
+        {
+          "id": "medicine",
+          "quality": 1
+        }
+      ]
+    },
+    "chargedFast": {
+      "items": [
+        {
+          "id": "dagger",
+          "quality": 1
+        },
+        {
+          "id": "dagger",
+          "quality": 1
+        },
+        {
+          "id": "dagger",
+          "quality": 1
+        },
+        {
+          "id": "charged",
+          "quality": 1
+        },
+        {
+          "id": "shield",
+          "quality": 1
+        },
+        {
+          "id": "medicine",
+          "quality": 1
+        }
+      ]
+    },
+    "defense": {
+      "items": [
+        {
+          "id": "dagger",
+          "quality": 0
+        },
+        {
+          "id": "blade",
+          "quality": 0
+        },
+        {
+          "id": "mirror",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        }
+      ]
+    },
+    "spam": {
+      "items": [
+        {
+          "id": "dagger",
+          "quality": 0
+        },
+        {
+          "id": "dagger",
+          "quality": 0
+        },
+        {
+          "id": "dagger",
+          "quality": 0
+        },
+        {
+          "id": "dagger",
+          "quality": 0
+        },
+        {
+          "id": "mirror",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        }
+      ]
+    },
+    "poison": {
+      "items": [
+        {
+          "id": "needle",
+          "quality": 0
+        },
+        {
+          "id": "needle",
+          "quality": 0
+        },
+        {
+          "id": "blade",
+          "quality": 0
+        },
+        {
+          "id": "mirror",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        }
+      ]
+    }
+  },
+  "enemies": {
+    "attack": {
+      "hp": 100,
+      "items": [
+        {
+          "id": "blade",
+          "quality": 0
+        },
+        {
+          "id": "hammer",
+          "quality": 0
+        },
+        {
+          "id": "dagger",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        }
+      ]
+    },
+    "defense": {
+      "hp": 100,
+      "items": [
+        {
+          "id": "blade",
+          "quality": 0
+        },
+        {
+          "id": "mirror",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        },
+        {
+          "id": "stone",
+          "quality": 0
+        }
+      ]
+    },
+    "poison": {
+      "hp": 100,
+      "items": [
+        {
+          "id": "needle",
+          "quality": 0
+        },
+        {
+          "id": "needle",
+          "quality": 0
+        },
+        {
+          "id": "blade",
+          "quality": 0
+        },
+        {
+          "id": "mirror",
+          "quality": 0
+        },
+        {
+          "id": "shield",
+          "quality": 0
+        },
+        {
+          "id": "medicine",
+          "quality": 0
+        }
+      ]
+    }
+  },
+  "scope": "Design model only; no lifesteal, blood growth, classes, freeze/slow or multicast. Same-tier synthetic opponents, not generated encounters or overall win rates.",
+  "matrix": [
+    {
+      "quality": 0,
+      "name": "pure",
+      "spaces": 9,
+      "enemy": "attack",
+      "wins": 0,
+      "simultaneousDeaths": 100,
+      "meanSeconds": 20,
+      "meanHp": 0
+    },
+    {
+      "quality": 0,
+      "name": "pure",
+      "spaces": 9,
+      "enemy": "defense",
+      "wins": 0,
+      "simultaneousDeaths": 100,
+      "meanSeconds": 33,
+      "meanHp": 0
+    },
+    {
+      "quality": 0,
+      "name": "pure",
+      "spaces": 9,
+      "enemy": "poison",
+      "wins": 0,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 20,
+      "meanHp": 0
+    },
+    {
+      "quality": 0,
+      "name": "quick",
+      "spaces": 9,
+      "enemy": "attack",
+      "wins": 0,
+      "simultaneousDeaths": 67,
+      "meanSeconds": 22,
+      "meanHp": 0
+    },
+    {
+      "quality": 0,
+      "name": "quick",
+      "spaces": 9,
+      "enemy": "defense",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 33.81,
+      "meanHp": 13.7
+    },
+    {
+      "quality": 0,
+      "name": "quick",
+      "spaces": 9,
+      "enemy": "poison",
+      "wins": 0,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 23,
+      "meanHp": 0
+    },
+    {
+      "quality": 0,
+      "name": "defense",
+      "spaces": 9,
+      "enemy": "attack",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 33,
+      "meanHp": 8
+    },
+    {
+      "quality": 0,
+      "name": "defense",
+      "spaces": 9,
+      "enemy": "defense",
+      "wins": 0,
+      "simultaneousDeaths": 100,
+      "meanSeconds": 35,
+      "meanHp": 0
+    },
+    {
+      "quality": 0,
+      "name": "defense",
+      "spaces": 9,
+      "enemy": "poison",
+      "wins": 0,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 25,
+      "meanHp": 0
+    },
+    {
+      "quality": 0,
+      "name": "spam",
+      "spaces": 8,
+      "enemy": "attack",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 20,
+      "meanHp": 68
+    },
+    {
+      "quality": 0,
+      "name": "spam",
+      "spaces": 8,
+      "enemy": "defense",
+      "wins": 0,
+      "simultaneousDeaths": 100,
+      "meanSeconds": 35,
+      "meanHp": 0
+    },
+    {
+      "quality": 0,
+      "name": "spam",
+      "spaces": 8,
+      "enemy": "poison",
+      "wins": 0,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 25,
+      "meanHp": 0
+    },
+    {
+      "quality": 0,
+      "name": "poison",
+      "spaces": 9,
+      "enemy": "attack",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 20,
+      "meanHp": 47
+    },
+    {
+      "quality": 0,
+      "name": "poison",
+      "spaces": 9,
+      "enemy": "defense",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 25,
+      "meanHp": 100
+    },
+    {
+      "quality": 0,
+      "name": "poison",
+      "spaces": 9,
+      "enemy": "poison",
+      "wins": 0,
+      "simultaneousDeaths": 100,
+      "meanSeconds": 25,
+      "meanHp": 0
+    },
+    {
+      "quality": 1,
+      "name": "pure",
+      "spaces": 9,
+      "enemy": "attack",
+      "wins": 0,
+      "simultaneousDeaths": 100,
+      "meanSeconds": 14,
+      "meanHp": 0
+    },
+    {
+      "quality": 1,
+      "name": "pure",
+      "spaces": 9,
+      "enemy": "defense",
+      "wins": 0,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 32,
+      "meanHp": 0
+    },
+    {
+      "quality": 1,
+      "name": "pure",
+      "spaces": 9,
+      "enemy": "poison",
+      "wins": 0,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 16,
+      "meanHp": 0
+    },
+    {
+      "quality": 1,
+      "name": "quick",
+      "spaces": 9,
+      "enemy": "attack",
+      "wins": 16,
+      "simultaneousDeaths": 25,
+      "meanSeconds": 15.84,
+      "meanHp": 0.16
+    },
+    {
+      "quality": 1,
+      "name": "quick",
+      "spaces": 9,
+      "enemy": "defense",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 32.73,
+      "meanHp": 36.4
+    },
+    {
+      "quality": 1,
+      "name": "quick",
+      "spaces": 9,
+      "enemy": "poison",
+      "wins": 0,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 17,
+      "meanHp": 0
+    },
+    {
+      "quality": 1,
+      "name": "charged",
+      "spaces": 9,
+      "enemy": "attack",
+      "wins": 0,
+      "simultaneousDeaths": 100,
+      "meanSeconds": 14,
+      "meanHp": 0
+    },
+    {
+      "quality": 1,
+      "name": "charged",
+      "spaces": 9,
+      "enemy": "defense",
+      "wins": 0,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 32,
+      "meanHp": 0
+    },
+    {
+      "quality": 1,
+      "name": "charged",
+      "spaces": 9,
+      "enemy": "poison",
+      "wins": 0,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 16,
+      "meanHp": 0
+    },
+    {
+      "quality": 1,
+      "name": "chargedFast",
+      "spaces": 9,
+      "enemy": "attack",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 10,
+      "meanHp": 24
+    },
+    {
+      "quality": 1,
+      "name": "chargedFast",
+      "spaces": 9,
+      "enemy": "defense",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 21,
+      "meanHp": 68
+    },
+    {
+      "quality": 1,
+      "name": "chargedFast",
+      "spaces": 9,
+      "enemy": "poison",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 14,
+      "meanHp": 15
+    },
+    {
+      "quality": 1,
+      "name": "defense",
+      "spaces": 9,
+      "enemy": "attack",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 32,
+      "meanHp": 32
+    },
+    {
+      "quality": 1,
+      "name": "defense",
+      "spaces": 9,
+      "enemy": "defense",
+      "wins": 0,
+      "simultaneousDeaths": 100,
+      "meanSeconds": 35,
+      "meanHp": 0
+    },
+    {
+      "quality": 1,
+      "name": "defense",
+      "spaces": 9,
+      "enemy": "poison",
+      "wins": 0,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 19,
+      "meanHp": 0
+    },
+    {
+      "quality": 1,
+      "name": "spam",
+      "spaces": 8,
+      "enemy": "attack",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 14,
+      "meanHp": 57
+    },
+    {
+      "quality": 1,
+      "name": "spam",
+      "spaces": 8,
+      "enemy": "defense",
+      "wins": 0,
+      "simultaneousDeaths": 100,
+      "meanSeconds": 35,
+      "meanHp": 0
+    },
+    {
+      "quality": 1,
+      "name": "spam",
+      "spaces": 8,
+      "enemy": "poison",
+      "wins": 0,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 19,
+      "meanHp": 0
+    },
+    {
+      "quality": 1,
+      "name": "poison",
+      "spaces": 9,
+      "enemy": "attack",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 16,
+      "meanHp": 20
+    },
+    {
+      "quality": 1,
+      "name": "poison",
+      "spaces": 9,
+      "enemy": "defense",
+      "wins": 100,
+      "simultaneousDeaths": 0,
+      "meanSeconds": 19,
+      "meanHp": 100
+    },
+    {
+      "quality": 1,
+      "name": "poison",
+      "spaces": 9,
+      "enemy": "poison",
+      "wins": 0,
+      "simultaneousDeaths": 100,
+      "meanSeconds": 18,
+      "meanHp": 0
+    }
+  ],
+  "skills": [
+    {
+      "name": "quick",
+      "skills": {
+        "edge": 0.02
+      },
+      "wins": 30,
+      "meanSeconds": 21.21,
+      "meanHp": 9.84
+    },
+    {
+      "name": "defense",
+      "skills": {
+        "fervor": 1
+      },
+      "wins": 100,
+      "meanSeconds": 18,
+      "meanHp": 84
+    },
+    {
+      "name": "spam",
+      "skills": {
+        "fervor": 1
+      },
+      "wins": 100,
+      "meanSeconds": 12,
+      "meanHp": 82
+    }
+  ],
+  "probes": {
+    "pure": {
+      "winner": "timeout",
+      "seconds": 30,
+      "simultaneousDeaths": false,
+      "playerHp": 95,
+      "enemyHp": 999999731,
+      "attack": 264,
+      "healing": 40,
+      "actualHealing": 0,
+      "shielding": 49,
+      "poisonDamage": 0,
+      "items": [
+        {
+          "id": "blade",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "hammer",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 7,
+          "stacks": 0
+        },
+        {
+          "id": "dagger",
+          "uses": 15,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 2,
+          "stacks": 0
+        },
+        {
+          "id": "shield",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "medicine",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 20,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 70,
+          "id": "hammer",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "hammer",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 210,
+          "id": "hammer",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "hammer",
+          "attack": 30,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    "quick": {
+      "winner": "timeout",
+      "seconds": 30,
+      "simultaneousDeaths": false,
+      "playerHp": 95,
+      "enemyHp": 999999759,
+      "attack": 236,
+      "healing": 40,
+      "actualHealing": 0,
+      "shielding": 98,
+      "poisonDamage": 0,
+      "items": [
+        {
+          "id": "dagger",
+          "uses": 17,
+          "attackGrowth": 8,
+          "shieldGrowth": 0,
+          "cd": 2,
+          "stacks": 0
+        },
+        {
+          "id": "blade",
+          "uses": 8,
+          "attackGrowth": 4,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "tassel",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "stone",
+          "uses": 6,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "shield",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "medicine",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "shield",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 20,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 50,
+          "id": "stone",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "tassel",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 70,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "stone",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "blade",
+          "attack": 14,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "tassel",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "blade",
+          "attack": 14,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 150,
+          "id": "stone",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "dagger",
+          "attack": 8,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "dagger",
+          "attack": 8,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "blade",
+          "attack": 14,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "tassel",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 190,
+          "id": "dagger",
+          "attack": 8,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "dagger",
+          "attack": 8,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "stone",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "dagger",
+          "attack": 8,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "blade",
+          "attack": 16,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "dagger",
+          "attack": 8,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "tassel",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 250,
+          "id": "blade",
+          "attack": 16,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 250,
+          "id": "stone",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "dagger",
+          "attack": 10,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "dagger",
+          "attack": 10,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "blade",
+          "attack": 16,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "dagger",
+          "attack": 10,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "tassel",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "stone",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    "defense": {
+      "winner": "timeout",
+      "seconds": 30,
+      "simultaneousDeaths": false,
+      "playerHp": 95,
+      "enemyHp": 999999851,
+      "attack": 144,
+      "healing": 40,
+      "actualHealing": 0,
+      "shielding": 194,
+      "poisonDamage": 0,
+      "items": [
+        {
+          "id": "dagger",
+          "uses": 15,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 2,
+          "stacks": 0
+        },
+        {
+          "id": "blade",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "mirror",
+          "uses": 8,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "shield",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "medicine",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        },
+        {
+          "id": "shield",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 20,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 61,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 91,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 121,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 161,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 201,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 241,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 281,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    "spam": {
+      "winner": "timeout",
+      "seconds": 30,
+      "simultaneousDeaths": false,
+      "playerHp": 95,
+      "enemyHp": 999999755,
+      "attack": 240,
+      "healing": 40,
+      "actualHealing": 0,
+      "shielding": 168,
+      "poisonDamage": 0,
+      "items": [
+        {
+          "id": "dagger",
+          "uses": 15,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 2,
+          "stacks": 0
+        },
+        {
+          "id": "dagger",
+          "uses": 15,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 2,
+          "stacks": 0
+        },
+        {
+          "id": "dagger",
+          "uses": 15,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 2,
+          "stacks": 0
+        },
+        {
+          "id": "dagger",
+          "uses": 15,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 2,
+          "stacks": 0
+        },
+        {
+          "id": "mirror",
+          "uses": 14,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "medicine",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 20,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 20,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 20,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 20,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 21,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 41,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 61,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 81,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 101,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 121,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 141,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 161,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 181,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 201,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 221,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 241,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 261,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 281,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "dagger",
+          "attack": 4,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    "poison": {
+      "winner": "timeout",
+      "seconds": 30,
+      "simultaneousDeaths": false,
+      "playerHp": 95,
+      "enemyHp": 999999687,
+      "attack": 112,
+      "healing": 40,
+      "actualHealing": 0,
+      "shielding": 133,
+      "poisonDamage": 196,
+      "items": [
+        {
+          "id": "needle",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "needle",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "blade",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "mirror",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 5,
+          "stacks": 0
+        },
+        {
+          "id": "shield",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "medicine",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 41,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 81,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 121,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 161,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 201,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 241,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "needle",
+          "attack": 2,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "blade",
+          "attack": 12,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 281,
+          "id": "mirror",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    "charged": {
+      "winner": "timeout",
+      "seconds": 30,
+      "simultaneousDeaths": false,
+      "playerHp": 95,
+      "enemyHp": 999999607,
+      "attack": 388,
+      "healing": 65,
+      "actualHealing": 0,
+      "shielding": 77,
+      "poisonDamage": 0,
+      "items": [
+        {
+          "id": "dagger",
+          "uses": 15,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 2,
+          "stacks": 0
+        },
+        {
+          "id": "blade",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "charged",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 7,
+          "stacks": 3
+        },
+        {
+          "id": "shield",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "medicine",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 20,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "blade",
+          "attack": 18,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 70,
+          "id": "charged",
+          "attack": 40,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "blade",
+          "attack": 18,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "blade",
+          "attack": 18,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "charged",
+          "attack": 44,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "blade",
+          "attack": 18,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "blade",
+          "attack": 18,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 210,
+          "id": "charged",
+          "attack": 48,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "blade",
+          "attack": 18,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "blade",
+          "attack": 18,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "charged",
+          "attack": 40,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    "chargedFast": {
+      "winner": "timeout",
+      "seconds": 30,
+      "simultaneousDeaths": false,
+      "playerHp": 95,
+      "enemyHp": 999999473,
+      "attack": 522,
+      "healing": 65,
+      "actualHealing": 0,
+      "shielding": 77,
+      "poisonDamage": 0,
+      "items": [
+        {
+          "id": "dagger",
+          "uses": 15,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 2,
+          "stacks": 0
+        },
+        {
+          "id": "dagger",
+          "uses": 15,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 2,
+          "stacks": 0
+        },
+        {
+          "id": "dagger",
+          "uses": 15,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 2,
+          "stacks": 0
+        },
+        {
+          "id": "charged",
+          "uses": 4,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 7,
+          "stacks": 6
+        },
+        {
+          "id": "shield",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "medicine",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 20,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 20,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 20,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 70,
+          "id": "charged",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "charged",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 210,
+          "id": "charged",
+          "attack": 72,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "charged",
+          "attack": 60,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "shield",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "dagger",
+          "attack": 6,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "medicine",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    "wind": {
+      "winner": "timeout",
+      "seconds": 30,
+      "simultaneousDeaths": false,
+      "playerHp": 95,
+      "enemyHp": 999999699,
+      "attack": 296,
+      "healing": 0,
+      "actualHealing": 0,
+      "shielding": 0,
+      "poisonDamage": 0,
+      "items": [
+        {
+          "id": "wind",
+          "uses": 12,
+          "attackGrowth": 10,
+          "shieldGrowth": 0,
+          "cd": 3,
+          "stacks": 0
+        },
+        {
+          "id": "tassel",
+          "uses": 5,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 6,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "wind",
+          "attack": 20,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "tassel",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 70,
+          "id": "wind",
+          "attack": 22,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 89,
+          "id": "wind",
+          "attack": 22,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 116,
+          "id": "wind",
+          "attack": 22,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "tassel",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 137,
+          "id": "wind",
+          "attack": 24,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 155,
+          "id": "wind",
+          "attack": 24,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "tassel",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 183,
+          "id": "wind",
+          "attack": 26,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "wind",
+          "attack": 26,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 217,
+          "id": "wind",
+          "attack": 26,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "tassel",
+          "attack": 0,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 244,
+          "id": "wind",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "wind",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 276,
+          "id": "wind",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "tassel",
+          "attack": 0,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    "windBaseline": {
+      "winner": "timeout",
+      "seconds": 30,
+      "simultaneousDeaths": false,
+      "playerHp": 95,
+      "enemyHp": 999999799,
+      "attack": 196,
+      "healing": 0,
+      "actualHealing": 0,
+      "shielding": 0,
+      "poisonDamage": 0,
+      "items": [
+        {
+          "id": "blade",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 40,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        }
+      ]
+    },
+    "windEqualSpace": {
+      "winner": "timeout",
+      "seconds": 30,
+      "simultaneousDeaths": false,
+      "playerHp": 95,
+      "enemyHp": 999999664,
+      "attack": 331,
+      "healing": 0,
+      "actualHealing": 0,
+      "shielding": 0,
+      "poisonDamage": 0,
+      "items": [
+        {
+          "id": "blade",
+          "uses": 7,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 4,
+          "stacks": 0
+        },
+        {
+          "id": "dagger",
+          "uses": 15,
+          "attackGrowth": 0,
+          "shieldGrowth": 0,
+          "cd": 2,
+          "stacks": 0
+        }
+      ],
+      "trace": [
+        {
+          "tick": 20,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 40,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 60,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 80,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 100,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 120,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 140,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 160,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 180,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 200,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 220,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 240,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 260,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "blade",
+          "attack": 28,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 280,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        },
+        {
+          "tick": 300,
+          "id": "dagger",
+          "attack": 9,
+          "stacksAfterLock": 0
+        }
+      ]
+    }
+  }
+}

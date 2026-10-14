@@ -1,0 +1,276 @@
+{
+  "baselineChecks": 39,
+  "scope": "Fixed equipment combat only; no acquisition or economy model. Gold/diamond skill tested with bronze equipment.",
+  "rows": [
+    {
+      "name": "poison",
+      "enemy": "attack",
+      "ward": 0,
+      "wins": 50,
+      "payments": 0,
+      "spent": 0,
+      "extraPoison": 0,
+      "seconds": 26
+    },
+    {
+      "name": "poison",
+      "enemy": "attack",
+      "ward": 3,
+      "wins": 50,
+      "payments": 3,
+      "spent": 120,
+      "extraPoison": 45,
+      "seconds": 21
+    },
+    {
+      "name": "poison",
+      "enemy": "attack",
+      "ward": 5,
+      "wins": 50,
+      "payments": 3,
+      "spent": 120,
+      "extraPoison": 75,
+      "seconds": 19
+    },
+    {
+      "name": "poison",
+      "enemy": "cyber",
+      "ward": 0,
+      "wins": 50,
+      "payments": 0,
+      "spent": 0,
+      "extraPoison": 0,
+      "seconds": 28
+    },
+    {
+      "name": "poison",
+      "enemy": "cyber",
+      "ward": 3,
+      "wins": 50,
+      "payments": 1.76,
+      "spent": 70.4,
+      "extraPoison": 26.4,
+      "seconds": 26.1
+    },
+    {
+      "name": "poison",
+      "enemy": "cyber",
+      "ward": 5,
+      "wins": 50,
+      "payments": 1.38,
+      "spent": 55.2,
+      "extraPoison": 34.5,
+      "seconds": 25.24
+    },
+    {
+      "name": "poison",
+      "enemy": "weird",
+      "ward": 0,
+      "wins": 50,
+      "payments": 0,
+      "spent": 0,
+      "extraPoison": 0,
+      "seconds": 28
+    },
+    {
+      "name": "poison",
+      "enemy": "weird",
+      "ward": 3,
+      "wins": 50,
+      "payments": 4,
+      "spent": 160,
+      "extraPoison": 60,
+      "seconds": 22
+    },
+    {
+      "name": "poison",
+      "enemy": "weird",
+      "ward": 5,
+      "wins": 50,
+      "payments": 4,
+      "spent": 160,
+      "extraPoison": 100,
+      "seconds": 19
+    },
+    {
+      "name": "shield",
+      "enemy": "attack",
+      "ward": 0,
+      "wins": 50,
+      "payments": 0,
+      "spent": 0,
+      "extraPoison": 0,
+      "seconds": 28
+    },
+    {
+      "name": "shield",
+      "enemy": "attack",
+      "ward": 3,
+      "wins": 50,
+      "payments": 6,
+      "spent": 240,
+      "extraPoison": 90,
+      "seconds": 18
+    },
+    {
+      "name": "shield",
+      "enemy": "attack",
+      "ward": 5,
+      "wins": 50,
+      "payments": 6,
+      "spent": 240,
+      "extraPoison": 150,
+      "seconds": 15
+    },
+    {
+      "name": "shield",
+      "enemy": "cyber",
+      "ward": 0,
+      "wins": 50,
+      "payments": 0,
+      "spent": 0,
+      "extraPoison": 0,
+      "seconds": 28.14
+    },
+    {
+      "name": "shield",
+      "enemy": "cyber",
+      "ward": 3,
+      "wins": 50,
+      "payments": 7.06,
+      "spent": 282.4,
+      "extraPoison": 105.9,
+      "seconds": 20.24
+    },
+    {
+      "name": "shield",
+      "enemy": "cyber",
+      "ward": 5,
+      "wins": 50,
+      "payments": 5.02,
+      "spent": 200.8,
+      "extraPoison": 125.5,
+      "seconds": 17.72
+    },
+    {
+      "name": "shield",
+      "enemy": "weird",
+      "ward": 0,
+      "wins": 50,
+      "payments": 0,
+      "spent": 0,
+      "extraPoison": 0,
+      "seconds": 29
+    },
+    {
+      "name": "shield",
+      "enemy": "weird",
+      "ward": 3,
+      "wins": 50,
+      "payments": 8,
+      "spent": 320,
+      "extraPoison": 120,
+      "seconds": 17
+    },
+    {
+      "name": "shield",
+      "enemy": "weird",
+      "ward": 5,
+      "wins": 50,
+      "payments": 8,
+      "spent": 320,
+      "extraPoison": 200,
+      "seconds": 14
+    },
+    {
+      "name": "hybrid",
+      "enemy": "attack",
+      "ward": 0,
+      "wins": 50,
+      "payments": 0,
+      "spent": 0,
+      "extraPoison": 0,
+      "seconds": 27
+    },
+    {
+      "name": "hybrid",
+      "enemy": "attack",
+      "ward": 3,
+      "wins": 50,
+      "payments": 8,
+      "spent": 320,
+      "extraPoison": 120,
+      "seconds": 19
+    },
+    {
+      "name": "hybrid",
+      "enemy": "attack",
+      "ward": 5,
+      "wins": 50,
+      "payments": 6,
+      "spent": 240,
+      "extraPoison": 150,
+      "seconds": 16
+    },
+    {
+      "name": "hybrid",
+      "enemy": "cyber",
+      "ward": 0,
+      "wins": 50,
+      "payments": 0,
+      "spent": 0,
+      "extraPoison": 0,
+      "seconds": 28.14
+    },
+    {
+      "name": "hybrid",
+      "enemy": "cyber",
+      "ward": 3,
+      "wins": 50,
+      "payments": 4.46,
+      "spent": 178.4,
+      "extraPoison": 66.9,
+      "seconds": 21.72
+    },
+    {
+      "name": "hybrid",
+      "enemy": "cyber",
+      "ward": 5,
+      "wins": 50,
+      "payments": 4.26,
+      "spent": 170.4,
+      "extraPoison": 106.5,
+      "seconds": 19.74
+    },
+    {
+      "name": "hybrid",
+      "enemy": "weird",
+      "ward": 0,
+      "wins": 50,
+      "payments": 0,
+      "spent": 0,
+      "extraPoison": 0,
+      "seconds": 29
+    },
+    {
+      "name": "hybrid",
+      "enemy": "weird",
+      "ward": 3,
+      "wins": 50,
+      "payments": 7,
+      "spent": 280,
+      "extraPoison": 105,
+      "seconds": 18
+    },
+    {
+      "name": "hybrid",
+      "enemy": "weird",
+      "ward": 5,
+      "wins": 50,
+      "payments": 7,
+      "spent": 280,
+      "extraPoison": 175,
+      "seconds": 15
+    }
+  ]
+}

@@ -35,10 +35,14 @@ func entry_fee(state: RunState, node_id: String) -> int:
 		return 0
 	if state.node_state(node_id).entered:
 		return 0
+	if state.card_exploration:
+		return 1
 	return state.paid_node_count + ENTRY_FEE_BASE
 
 
 func next_fee_preview(state: RunState) -> int:
+	if state.card_exploration:
+		return 1
 	return state.paid_node_count + ENTRY_FEE_BASE
 
 
@@ -64,6 +68,10 @@ func can_travel(state: RunState, to_node: String) -> OperationResult:
 	if is_connection_blocked(state, state.current_node_id, to_node):
 		return OperationResult.fail("连接被守路者封锁，需先击败守路者")
 	var fee := entry_fee(state, to_node)
+	if state.card_exploration:
+		if fee > state.exploration_time:
+			return OperationResult.fail("探索时间不足（需要 %d，剩余 %d）" % [fee, state.exploration_time])
+		return OperationResult.ok({"fee": fee, "guarded": conn.guard_enemy_id != &""})
 	if fee > state.money:
 		return OperationResult.fail("余额不足（本次进入需要 %d，现有 %d）" % [fee, state.money])
 	return OperationResult.ok({"fee": fee, "guarded": conn.guard_enemy_id != &""})
@@ -79,7 +87,9 @@ func travel(state: RunState, to_node: String) -> OperationResult:
 	var fee: int = check.data["fee"]
 	var ns := state.node_state(to_node)
 	if fee > 0:
-		if not state.spend_money(fee):
+		if state.card_exploration:
+			state.exploration_time -= fee
+		elif not state.spend_money(fee):
 			return OperationResult.fail("扣款失败，未进入节点")
 		state.paid_node_count += 1
 		ns.fee_amount = fee

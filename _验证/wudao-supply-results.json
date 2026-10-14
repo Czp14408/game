@@ -1,0 +1,862 @@
+{
+  "date": "2026-10-14",
+  "scope": "Main route only; visible-purchase search evaluated on fixed prediction seeds 7/19/37, actual battle seed is not used for purchase selection. No equipment swaps, backpack merging, retries, optional branches, blood or class. Success is policy/model conditional, not human win rate.",
+  "guard": {
+    "hp": 36,
+    "items": [
+      {
+        "id": "blade",
+        "quality": 0
+      },
+      {
+        "id": "mirror",
+        "quality": 0
+      }
+    ],
+    "skills": {
+      "fervor": 1
+    }
+  },
+  "chief": {
+    "hp": 64,
+    "items": [
+      {
+        "id": "hammer",
+        "quality": 1
+      },
+      {
+        "id": "dagger",
+        "quality": 0
+      },
+      {
+        "id": "mirror",
+        "quality": 0
+      }
+    ],
+    "skills": {
+      "fervor": 1
+    }
+  },
+  "pool": [
+    "dagger",
+    "blade",
+    "hammer",
+    "shield",
+    "mirror",
+    "medicine",
+    "tassel",
+    "stone",
+    "needle"
+  ],
+  "prices": {
+    "1": [
+      6,
+      10
+    ],
+    "2": [
+      10,
+      16
+    ],
+    "3": [
+      14,
+      22
+    ]
+  },
+  "skillPool": [
+    "fervor",
+    "restorative",
+    "edge"
+  ],
+  "skillValues": {
+    "fervor": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "restorative": [
+      2,
+      3,
+      5,
+      8
+    ],
+    "edge": [
+      0.02,
+      0.04,
+      0.06,
+      0.08
+    ]
+  },
+  "summaries": [
+    {
+      "forceMaterials": false,
+      "refreshCap": 0,
+      "samples": 200,
+      "success": 119,
+      "guardBlocked": 0,
+      "chiefBlocked": 81,
+      "meanRefreshes": 0,
+      "meanSpent": 19.07
+    },
+    {
+      "forceMaterials": false,
+      "refreshCap": 2,
+      "samples": 200,
+      "success": 133,
+      "guardBlocked": 0,
+      "chiefBlocked": 67,
+      "meanRefreshes": 0.7,
+      "meanSpent": 22.79
+    },
+    {
+      "forceMaterials": false,
+      "refreshCap": 4,
+      "samples": 200,
+      "success": 136,
+      "guardBlocked": 0,
+      "chiefBlocked": 64,
+      "meanRefreshes": 1.305,
+      "meanSpent": 24.895
+    },
+    {
+      "forceMaterials": true,
+      "refreshCap": 0,
+      "samples": 200,
+      "success": 89,
+      "guardBlocked": 0,
+      "chiefBlocked": 111,
+      "meanRefreshes": 0,
+      "meanSpent": 18.51
+    },
+    {
+      "forceMaterials": true,
+      "refreshCap": 2,
+      "samples": 200,
+      "success": 121,
+      "guardBlocked": 0,
+      "chiefBlocked": 79,
+      "meanRefreshes": 0.925,
+      "meanSpent": 24.735
+    },
+    {
+      "forceMaterials": true,
+      "refreshCap": 4,
+      "samples": 200,
+      "success": 125,
+      "guardBlocked": 0,
+      "chiefBlocked": 75,
+      "meanRefreshes": 1.665,
+      "meanSpent": 27.375
+    }
+  ],
+  "examples": [
+    {
+      "forceMaterials": false,
+      "refreshCap": 0,
+      "failed": {
+        "seed": 4,
+        "failedAt": "chief",
+        "money": 30,
+        "refreshes": 0,
+        "spent": 6,
+        "initialStock": [
+          {
+            "id": "needle",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "hammer",
+            "quality": 0,
+            "kind": "gear",
+            "price": 14
+          },
+          {
+            "id": "medicine",
+            "quality": 1,
+            "kind": "gear",
+            "price": 16
+          },
+          {
+            "id": "stone",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "restorative",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          },
+          {
+            "id": "restorative",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          }
+        ],
+        "drop": "fervor",
+        "bag": 0
+      },
+      "successful": {
+        "seed": 1,
+        "failedAt": null,
+        "money": 52,
+        "hp": 13,
+        "refreshes": 0,
+        "spent": 24,
+        "initialStock": [
+          {
+            "id": "blade",
+            "quality": 0,
+            "kind": "gear",
+            "price": 10
+          },
+          {
+            "id": "dagger",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "dagger",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "needle",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "fervor",
+            "quality": 1,
+            "kind": "skill",
+            "price": 20
+          },
+          {
+            "id": "edge",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          }
+        ],
+        "drop": "material",
+        "bag": 0,
+        "items": [
+          {
+            "id": "blade",
+            "quality": 0
+          },
+          {
+            "id": "dagger",
+            "quality": 0
+          },
+          {
+            "id": "dagger",
+            "quality": 0
+          },
+          {
+            "id": "needle",
+            "quality": 0
+          }
+        ],
+        "skills": {}
+      }
+    },
+    {
+      "forceMaterials": false,
+      "refreshCap": 2,
+      "failed": {
+        "seed": 4,
+        "failedAt": "chief",
+        "money": 24,
+        "refreshes": 2,
+        "spent": 12,
+        "initialStock": [
+          {
+            "id": "needle",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "hammer",
+            "quality": 0,
+            "kind": "gear",
+            "price": 14
+          },
+          {
+            "id": "medicine",
+            "quality": 1,
+            "kind": "gear",
+            "price": 16
+          },
+          {
+            "id": "stone",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "restorative",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          },
+          {
+            "id": "restorative",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          }
+        ],
+        "drop": "fervor",
+        "bag": 0
+      },
+      "successful": {
+        "seed": 1,
+        "failedAt": null,
+        "money": 52,
+        "hp": 13,
+        "refreshes": 0,
+        "spent": 24,
+        "initialStock": [
+          {
+            "id": "blade",
+            "quality": 0,
+            "kind": "gear",
+            "price": 10
+          },
+          {
+            "id": "dagger",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "dagger",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "needle",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "fervor",
+            "quality": 1,
+            "kind": "skill",
+            "price": 20
+          },
+          {
+            "id": "edge",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          }
+        ],
+        "drop": "material",
+        "bag": 0,
+        "items": [
+          {
+            "id": "blade",
+            "quality": 0
+          },
+          {
+            "id": "dagger",
+            "quality": 0
+          },
+          {
+            "id": "dagger",
+            "quality": 0
+          },
+          {
+            "id": "needle",
+            "quality": 0
+          }
+        ],
+        "skills": {}
+      }
+    },
+    {
+      "forceMaterials": false,
+      "refreshCap": 4,
+      "failed": {
+        "seed": 4,
+        "failedAt": "chief",
+        "money": 18,
+        "refreshes": 4,
+        "spent": 18,
+        "initialStock": [
+          {
+            "id": "needle",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "hammer",
+            "quality": 0,
+            "kind": "gear",
+            "price": 14
+          },
+          {
+            "id": "medicine",
+            "quality": 1,
+            "kind": "gear",
+            "price": 16
+          },
+          {
+            "id": "stone",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "restorative",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          },
+          {
+            "id": "restorative",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          }
+        ],
+        "drop": "fervor",
+        "bag": 0
+      },
+      "successful": {
+        "seed": 1,
+        "failedAt": null,
+        "money": 52,
+        "hp": 13,
+        "refreshes": 0,
+        "spent": 24,
+        "initialStock": [
+          {
+            "id": "blade",
+            "quality": 0,
+            "kind": "gear",
+            "price": 10
+          },
+          {
+            "id": "dagger",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "dagger",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "needle",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "fervor",
+            "quality": 1,
+            "kind": "skill",
+            "price": 20
+          },
+          {
+            "id": "edge",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          }
+        ],
+        "drop": "material",
+        "bag": 0,
+        "items": [
+          {
+            "id": "blade",
+            "quality": 0
+          },
+          {
+            "id": "dagger",
+            "quality": 0
+          },
+          {
+            "id": "dagger",
+            "quality": 0
+          },
+          {
+            "id": "needle",
+            "quality": 0
+          }
+        ],
+        "skills": {}
+      }
+    },
+    {
+      "forceMaterials": true,
+      "refreshCap": 0,
+      "failed": {
+        "seed": 4,
+        "failedAt": "chief",
+        "money": 34,
+        "refreshes": 0,
+        "spent": 6,
+        "initialStock": [
+          {
+            "id": "needle",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "hammer",
+            "quality": 0,
+            "kind": "gear",
+            "price": 14
+          },
+          {
+            "id": "medicine",
+            "quality": 1,
+            "kind": "gear",
+            "price": 16
+          },
+          {
+            "id": "stone",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "restorative",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          },
+          {
+            "id": "restorative",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          }
+        ],
+        "drop": "material",
+        "bag": 0
+      },
+      "successful": {
+        "seed": 1,
+        "failedAt": null,
+        "money": 52,
+        "hp": 13,
+        "refreshes": 0,
+        "spent": 24,
+        "initialStock": [
+          {
+            "id": "blade",
+            "quality": 0,
+            "kind": "gear",
+            "price": 10
+          },
+          {
+            "id": "dagger",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "dagger",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "needle",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "fervor",
+            "quality": 1,
+            "kind": "skill",
+            "price": 20
+          },
+          {
+            "id": "edge",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          }
+        ],
+        "drop": "material",
+        "bag": 0,
+        "items": [
+          {
+            "id": "blade",
+            "quality": 0
+          },
+          {
+            "id": "dagger",
+            "quality": 0
+          },
+          {
+            "id": "dagger",
+            "quality": 0
+          },
+          {
+            "id": "needle",
+            "quality": 0
+          }
+        ],
+        "skills": {}
+      }
+    },
+    {
+      "forceMaterials": true,
+      "refreshCap": 2,
+      "failed": {
+        "seed": 4,
+        "failedAt": "chief",
+        "money": 28,
+        "refreshes": 2,
+        "spent": 12,
+        "initialStock": [
+          {
+            "id": "needle",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "hammer",
+            "quality": 0,
+            "kind": "gear",
+            "price": 14
+          },
+          {
+            "id": "medicine",
+            "quality": 1,
+            "kind": "gear",
+            "price": 16
+          },
+          {
+            "id": "stone",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "restorative",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          },
+          {
+            "id": "restorative",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          }
+        ],
+        "drop": "material",
+        "bag": 0
+      },
+      "successful": {
+        "seed": 1,
+        "failedAt": null,
+        "money": 52,
+        "hp": 13,
+        "refreshes": 0,
+        "spent": 24,
+        "initialStock": [
+          {
+            "id": "blade",
+            "quality": 0,
+            "kind": "gear",
+            "price": 10
+          },
+          {
+            "id": "dagger",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "dagger",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "needle",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "fervor",
+            "quality": 1,
+            "kind": "skill",
+            "price": 20
+          },
+          {
+            "id": "edge",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          }
+        ],
+        "drop": "material",
+        "bag": 0,
+        "items": [
+          {
+            "id": "blade",
+            "quality": 0
+          },
+          {
+            "id": "dagger",
+            "quality": 0
+          },
+          {
+            "id": "dagger",
+            "quality": 0
+          },
+          {
+            "id": "needle",
+            "quality": 0
+          }
+        ],
+        "skills": {}
+      }
+    },
+    {
+      "forceMaterials": true,
+      "refreshCap": 4,
+      "failed": {
+        "seed": 4,
+        "failedAt": "chief",
+        "money": 22,
+        "refreshes": 4,
+        "spent": 18,
+        "initialStock": [
+          {
+            "id": "needle",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "hammer",
+            "quality": 0,
+            "kind": "gear",
+            "price": 14
+          },
+          {
+            "id": "medicine",
+            "quality": 1,
+            "kind": "gear",
+            "price": 16
+          },
+          {
+            "id": "stone",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "restorative",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          },
+          {
+            "id": "restorative",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          }
+        ],
+        "drop": "material",
+        "bag": 0
+      },
+      "successful": {
+        "seed": 1,
+        "failedAt": null,
+        "money": 52,
+        "hp": 13,
+        "refreshes": 0,
+        "spent": 24,
+        "initialStock": [
+          {
+            "id": "blade",
+            "quality": 0,
+            "kind": "gear",
+            "price": 10
+          },
+          {
+            "id": "dagger",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "dagger",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "needle",
+            "quality": 0,
+            "kind": "gear",
+            "price": 6
+          },
+          {
+            "id": "fervor",
+            "quality": 1,
+            "kind": "skill",
+            "price": 20
+          },
+          {
+            "id": "edge",
+            "quality": 0,
+            "kind": "skill",
+            "price": 12
+          }
+        ],
+        "drop": "material",
+        "bag": 0,
+        "items": [
+          {
+            "id": "blade",
+            "quality": 0
+          },
+          {
+            "id": "dagger",
+            "quality": 0
+          },
+          {
+            "id": "dagger",
+            "quality": 0
+          },
+          {
+            "id": "needle",
+            "quality": 0
+          }
+        ],
+        "skills": {}
+      }
+    }
+  ]
+}

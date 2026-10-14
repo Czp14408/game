@@ -62,7 +62,8 @@ func _build_shell() -> void:
 
 func register_pages() -> void:
 	_pages[RunController.PAGE_HOME] = func(c: RunController, p: Dictionary) -> Control: return PageHome.new(c, p)
-	_pages[RunController.PAGE_MINIMAP] = func(c: RunController, p: Dictionary) -> Control: return PageMinimap.new(c, p)
+	_pages[RunController.PAGE_MINIMAP] = func(c: RunController, p: Dictionary) -> Control:
+		return PageNodeCards.new(c, p) if c.state != null and c.state.card_exploration else PageMinimap.new(c, p)
 	_pages[RunController.PAGE_WORLD_MAP] = func(c: RunController, p: Dictionary) -> Control: return PageWorldMap.new(c, p)
 	_pages[RunController.PAGE_PRE_BATTLE] = func(c: RunController, p: Dictionary) -> Control: return PagePreBattle.new(c, p)
 	_pages[RunController.PAGE_BATTLE] = func(c: RunController, p: Dictionary) -> Control: return PageBattle.new(c, p)

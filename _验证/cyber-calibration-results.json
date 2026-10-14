@@ -1,0 +1,293 @@
+{
+  "scope": "1800 fixed silver-equipment battles; feedback uses diamond skill value, other skills silver. No acquisition proof. Player blood only.",
+  "rows": [
+    {
+      "name": "original",
+      "spaces": 10,
+      "skill": "native",
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 18.76
+    },
+    {
+      "name": "original",
+      "spaces": 10,
+      "skill": "native",
+      "enemy": "defense",
+      "wins": 3,
+      "meanSeconds": 39.784
+    },
+    {
+      "name": "original",
+      "spaces": 10,
+      "skill": "native",
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 21.22
+    },
+    {
+      "name": "original",
+      "spaces": 10,
+      "skill": "feedback",
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 19.16
+    },
+    {
+      "name": "original",
+      "spaces": 10,
+      "skill": "feedback",
+      "enemy": "defense",
+      "wins": 5,
+      "meanSeconds": 39.87
+    },
+    {
+      "name": "original",
+      "spaces": 10,
+      "skill": "feedback",
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 21.34
+    },
+    {
+      "name": "original",
+      "spaces": 10,
+      "skill": "sharedGrowth",
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 19.6
+    },
+    {
+      "name": "original",
+      "spaces": 10,
+      "skill": "sharedGrowth",
+      "enemy": "defense",
+      "wins": 50,
+      "meanSeconds": 32.79
+    },
+    {
+      "name": "original",
+      "spaces": 10,
+      "skill": "sharedGrowth",
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 21.52
+    },
+    {
+      "name": "drone",
+      "spaces": 10,
+      "skill": "native",
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 20
+    },
+    {
+      "name": "drone",
+      "spaces": 10,
+      "skill": "native",
+      "enemy": "defense",
+      "wins": 17,
+      "meanSeconds": 40.174
+    },
+    {
+      "name": "drone",
+      "spaces": 10,
+      "skill": "native",
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 22
+    },
+    {
+      "name": "drone",
+      "spaces": 10,
+      "skill": "feedback",
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 20
+    },
+    {
+      "name": "drone",
+      "spaces": 10,
+      "skill": "feedback",
+      "enemy": "defense",
+      "wins": 24,
+      "meanSeconds": 40.162
+    },
+    {
+      "name": "drone",
+      "spaces": 10,
+      "skill": "feedback",
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 22.08
+    },
+    {
+      "name": "drone",
+      "spaces": 10,
+      "skill": "sharedGrowth",
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 20
+    },
+    {
+      "name": "drone",
+      "spaces": 10,
+      "skill": "sharedGrowth",
+      "enemy": "defense",
+      "wins": 50,
+      "meanSeconds": 35.48199999999999
+    },
+    {
+      "name": "drone",
+      "spaces": 10,
+      "skill": "sharedGrowth",
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 22.3
+    },
+    {
+      "name": "direct",
+      "spaces": 10,
+      "skill": "native",
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 16.24
+    },
+    {
+      "name": "direct",
+      "spaces": 10,
+      "skill": "native",
+      "enemy": "defense",
+      "wins": 50,
+      "meanSeconds": 35.95199999999999
+    },
+    {
+      "name": "direct",
+      "spaces": 10,
+      "skill": "native",
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 20.14
+    },
+    {
+      "name": "direct",
+      "spaces": 10,
+      "skill": "feedback",
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 16.24
+    },
+    {
+      "name": "direct",
+      "spaces": 10,
+      "skill": "feedback",
+      "enemy": "defense",
+      "wins": 50,
+      "meanSeconds": 35.95199999999999
+    },
+    {
+      "name": "direct",
+      "spaces": 10,
+      "skill": "feedback",
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 20.14
+    },
+    {
+      "name": "direct",
+      "spaces": 10,
+      "skill": "sharedGrowth",
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 16.32
+    },
+    {
+      "name": "direct",
+      "spaces": 10,
+      "skill": "sharedGrowth",
+      "enemy": "defense",
+      "wins": 50,
+      "meanSeconds": 27.208000000000002
+    },
+    {
+      "name": "direct",
+      "spaces": 10,
+      "skill": "sharedGrowth",
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 20.96
+    },
+    {
+      "name": "medical",
+      "spaces": 10,
+      "skill": "native",
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 20.94
+    },
+    {
+      "name": "medical",
+      "spaces": 10,
+      "skill": "native",
+      "enemy": "defense",
+      "wins": 6,
+      "meanSeconds": 40.96
+    },
+    {
+      "name": "medical",
+      "spaces": 10,
+      "skill": "native",
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 23.028000000000002
+    },
+    {
+      "name": "medical",
+      "spaces": 10,
+      "skill": "feedback",
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 21.02
+    },
+    {
+      "name": "medical",
+      "spaces": 10,
+      "skill": "feedback",
+      "enemy": "defense",
+      "wins": 9,
+      "meanSeconds": 40.96
+    },
+    {
+      "name": "medical",
+      "spaces": 10,
+      "skill": "feedback",
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 23.312
+    },
+    {
+      "name": "medical",
+      "spaces": 10,
+      "skill": "sharedGrowth",
+      "enemy": "attack",
+      "wins": 0,
+      "meanSeconds": 20.94
+    },
+    {
+      "name": "medical",
+      "spaces": 10,
+      "skill": "sharedGrowth",
+      "enemy": "defense",
+      "wins": 33,
+      "meanSeconds": 40.448
+    },
+    {
+      "name": "medical",
+      "spaces": 10,
+      "skill": "sharedGrowth",
+      "enemy": "anomaly",
+      "wins": 0,
+      "meanSeconds": 23.184
+    }
+  ]
+}

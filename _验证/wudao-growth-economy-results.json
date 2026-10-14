@@ -1,0 +1,774 @@
+{
+  "date": "2026-10-14",
+  "validation": "39 existing combat checks plus growth/inventory/refresh assertions passed",
+  "scope": "Twelve isolated hub policy samples, 100 seeds each; not an entire trial. Changed HP/effects/storm are experiment inputs, no optimum purchase search, class or control.",
+  "summaries": [
+    {
+      "stage": 1,
+      "policy": "health",
+      "wins": 100,
+      "meanMoney": 11.91,
+      "meanHp": 649,
+      "meanRefreshes": 0.61
+    },
+    {
+      "stage": 1,
+      "policy": "weapon",
+      "wins": 100,
+      "meanMoney": 9.15,
+      "meanHp": 450,
+      "meanRefreshes": 2.49
+    },
+    {
+      "stage": 1,
+      "policy": "toxin",
+      "wins": 100,
+      "meanMoney": 13.57,
+      "meanHp": 450,
+      "meanRefreshes": 1.58
+    },
+    {
+      "stage": 1,
+      "policy": "mixed",
+      "wins": 100,
+      "meanMoney": 13.75,
+      "meanHp": 550,
+      "meanRefreshes": 0.99
+    },
+    {
+      "stage": 2,
+      "policy": "health",
+      "wins": 100,
+      "meanMoney": 8.58,
+      "meanHp": 1382.5,
+      "meanRefreshes": 1.25
+    },
+    {
+      "stage": 2,
+      "policy": "weapon",
+      "wins": 100,
+      "meanMoney": 15.3,
+      "meanHp": 650,
+      "meanRefreshes": 3.23
+    },
+    {
+      "stage": 2,
+      "policy": "toxin",
+      "wins": 100,
+      "meanMoney": 17.64,
+      "meanHp": 650,
+      "meanRefreshes": 2.32
+    },
+    {
+      "stage": 2,
+      "policy": "mixed",
+      "wins": 100,
+      "meanMoney": 13.64,
+      "meanHp": 1150,
+      "meanRefreshes": 1.45
+    },
+    {
+      "stage": 3,
+      "policy": "health",
+      "wins": 100,
+      "meanMoney": 33.98,
+      "meanHp": 2540,
+      "meanRefreshes": 1.3
+    },
+    {
+      "stage": 3,
+      "policy": "weapon",
+      "wins": 49,
+      "meanMoney": 35.2,
+      "meanHp": 1050,
+      "meanRefreshes": 3.61
+    },
+    {
+      "stage": 3,
+      "policy": "toxin",
+      "wins": 0,
+      "meanMoney": 45.43,
+      "meanHp": 1050,
+      "meanRefreshes": 2.59
+    },
+    {
+      "stage": 3,
+      "policy": "mixed",
+      "wins": 100,
+      "meanMoney": 35.77,
+      "meanHp": 2050,
+      "meanRefreshes": 1.72
+    }
+  ],
+  "examples": [
+    {
+      "seed": 1,
+      "policy": "health",
+      "stage": 0,
+      "initialMoney": 48,
+      "money": 9,
+      "maxHp": 650,
+      "refreshes": 1,
+      "purchases": [
+        "vitality",
+        "vitality"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 3,
+      "winner": "player",
+      "seconds": 18,
+      "hp": 481.70000000000005
+    },
+    {
+      "seed": 2,
+      "policy": "health",
+      "stage": 0,
+      "initialMoney": 48,
+      "money": 14,
+      "maxHp": 650,
+      "refreshes": 0,
+      "purchases": [
+        "vitality",
+        "bloodHp"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 3,
+      "winner": "player",
+      "seconds": 18,
+      "hp": 481.70000000000005
+    },
+    {
+      "seed": 3,
+      "policy": "health",
+      "stage": 0,
+      "initialMoney": 48,
+      "money": 13,
+      "maxHp": 650,
+      "refreshes": 1,
+      "purchases": [
+        "bloodHp",
+        "bloodHp"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 3,
+      "winner": "player",
+      "seconds": 18,
+      "hp": 481.70000000000005
+    },
+    {
+      "seed": 1,
+      "policy": "weapon",
+      "stage": 0,
+      "initialMoney": 48,
+      "money": 0,
+      "maxHp": 450,
+      "refreshes": 3,
+      "purchases": [
+        "edge",
+        "edge",
+        "edge"
+      ],
+      "permanentAttack": 6,
+      "toxinBonus": 3,
+      "winner": "player",
+      "seconds": 16,
+      "hp": 280.5000000000001
+    },
+    {
+      "seed": 2,
+      "policy": "weapon",
+      "stage": 0,
+      "initialMoney": 48,
+      "money": 9,
+      "maxHp": 450,
+      "refreshes": 2,
+      "purchases": [
+        "edge",
+        "edge",
+        "edge"
+      ],
+      "permanentAttack": 6,
+      "toxinBonus": 3,
+      "winner": "player",
+      "seconds": 16,
+      "hp": 280.5000000000001
+    },
+    {
+      "seed": 3,
+      "policy": "weapon",
+      "stage": 0,
+      "initialMoney": 48,
+      "money": 10,
+      "maxHp": 450,
+      "refreshes": 3,
+      "purchases": [
+        "edge",
+        "edge"
+      ],
+      "permanentAttack": 4,
+      "toxinBonus": 3,
+      "winner": "player",
+      "seconds": 16,
+      "hp": 280.9
+    },
+    {
+      "seed": 1,
+      "policy": "toxin",
+      "stage": 0,
+      "initialMoney": 48,
+      "money": 7,
+      "maxHp": 450,
+      "refreshes": 2,
+      "purchases": [
+        "bloodToxin",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 5,
+      "winner": "player",
+      "seconds": 15,
+      "hp": 328.8
+    },
+    {
+      "seed": 2,
+      "policy": "toxin",
+      "stage": 0,
+      "initialMoney": 48,
+      "money": 23,
+      "maxHp": 450,
+      "refreshes": 2,
+      "purchases": [
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 4,
+      "winner": "player",
+      "seconds": 16,
+      "hp": 267.3979591836735
+    },
+    {
+      "seed": 3,
+      "policy": "toxin",
+      "stage": 0,
+      "initialMoney": 48,
+      "money": 13,
+      "maxHp": 450,
+      "refreshes": 1,
+      "purchases": [
+        "bloodToxin",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 5,
+      "winner": "player",
+      "seconds": 15,
+      "hp": 328.8
+    },
+    {
+      "seed": 1,
+      "policy": "mixed",
+      "stage": 0,
+      "initialMoney": 48,
+      "money": 14,
+      "maxHp": 550,
+      "refreshes": 0,
+      "purchases": [
+        "vitality",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 4,
+      "winner": "player",
+      "seconds": 16,
+      "hp": 367.3979591836735
+    },
+    {
+      "seed": 2,
+      "policy": "mixed",
+      "stage": 0,
+      "initialMoney": 48,
+      "money": 5,
+      "maxHp": 550,
+      "refreshes": 2,
+      "purchases": [
+        "vitality",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 4,
+      "winner": "player",
+      "seconds": 16,
+      "hp": 367.3979591836735
+    },
+    {
+      "seed": 3,
+      "policy": "mixed",
+      "stage": 0,
+      "initialMoney": 48,
+      "money": 13,
+      "maxHp": 550,
+      "refreshes": 1,
+      "purchases": [
+        "bloodHp",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 4,
+      "winner": "player",
+      "seconds": 16,
+      "hp": 367.3979591836735
+    },
+    {
+      "seed": 1,
+      "policy": "health",
+      "stage": 1,
+      "initialMoney": 100,
+      "money": 8,
+      "maxHp": 1400,
+      "refreshes": 1,
+      "purchases": [
+        "vitality",
+        "vitality",
+        "bloodHp"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 6,
+      "winner": "player",
+      "seconds": 20,
+      "hp": 798.75
+    },
+    {
+      "seed": 2,
+      "policy": "health",
+      "stage": 1,
+      "initialMoney": 100,
+      "money": 10,
+      "maxHp": 1400,
+      "refreshes": 1,
+      "purchases": [
+        "vitality",
+        "bloodHp",
+        "bloodHp"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 6,
+      "winner": "player",
+      "seconds": 20,
+      "hp": 798.75
+    },
+    {
+      "seed": 3,
+      "policy": "health",
+      "stage": 1,
+      "initialMoney": 100,
+      "money": 10,
+      "maxHp": 1400,
+      "refreshes": 1,
+      "purchases": [
+        "bloodHp",
+        "bloodHp",
+        "vitality"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 6,
+      "winner": "player",
+      "seconds": 20,
+      "hp": 798.75
+    },
+    {
+      "seed": 1,
+      "policy": "weapon",
+      "stage": 1,
+      "initialMoney": 100,
+      "money": 22,
+      "maxHp": 650,
+      "refreshes": 3,
+      "purchases": [
+        "edge",
+        "edge",
+        "edge"
+      ],
+      "permanentAttack": 15,
+      "toxinBonus": 6,
+      "winner": "player",
+      "seconds": 18,
+      "hp": 193
+    },
+    {
+      "seed": 2,
+      "policy": "weapon",
+      "stage": 1,
+      "initialMoney": 100,
+      "money": 22,
+      "maxHp": 650,
+      "refreshes": 3,
+      "purchases": [
+        "edge",
+        "edge",
+        "edge"
+      ],
+      "permanentAttack": 15,
+      "toxinBonus": 6,
+      "winner": "player",
+      "seconds": 18,
+      "hp": 193
+    },
+    {
+      "seed": 3,
+      "policy": "weapon",
+      "stage": 1,
+      "initialMoney": 100,
+      "money": 6,
+      "maxHp": 650,
+      "refreshes": 4,
+      "purchases": [
+        "edge",
+        "edge",
+        "edge"
+      ],
+      "permanentAttack": 15,
+      "toxinBonus": 6,
+      "winner": "player",
+      "seconds": 18,
+      "hp": 193
+    },
+    {
+      "seed": 1,
+      "policy": "toxin",
+      "stage": 1,
+      "initialMoney": 100,
+      "money": 4,
+      "maxHp": 650,
+      "refreshes": 2,
+      "purchases": [
+        "bloodToxin",
+        "bloodToxin",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 12,
+      "winner": "player",
+      "seconds": 16,
+      "hp": 102.91386554621849
+    },
+    {
+      "seed": 2,
+      "policy": "toxin",
+      "stage": 1,
+      "initialMoney": 100,
+      "money": 20,
+      "maxHp": 650,
+      "refreshes": 3,
+      "purchases": [
+        "bloodToxin",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 10,
+      "winner": "player",
+      "seconds": 16,
+      "hp": 110.38043478260869
+    },
+    {
+      "seed": 3,
+      "policy": "toxin",
+      "stage": 1,
+      "initialMoney": 100,
+      "money": 32,
+      "maxHp": 650,
+      "refreshes": 2,
+      "purchases": [
+        "bloodToxin",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 10,
+      "winner": "player",
+      "seconds": 16,
+      "hp": 110.38043478260869
+    },
+    {
+      "seed": 1,
+      "policy": "mixed",
+      "stage": 1,
+      "initialMoney": 100,
+      "money": 0,
+      "maxHp": 1150,
+      "refreshes": 2,
+      "purchases": [
+        "vitality",
+        "vitality",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 8,
+      "winner": "player",
+      "seconds": 16,
+      "hp": 618.3851351351351
+    },
+    {
+      "seed": 2,
+      "policy": "mixed",
+      "stage": 1,
+      "initialMoney": 100,
+      "money": 2,
+      "maxHp": 1150,
+      "refreshes": 2,
+      "purchases": [
+        "vitality",
+        "bloodHp",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 8,
+      "winner": "player",
+      "seconds": 16,
+      "hp": 618.3851351351351
+    },
+    {
+      "seed": 3,
+      "policy": "mixed",
+      "stage": 1,
+      "initialMoney": 100,
+      "money": 32,
+      "maxHp": 1150,
+      "refreshes": 2,
+      "purchases": [
+        "bloodHp",
+        "bloodHp"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 6,
+      "winner": "player",
+      "seconds": 17,
+      "hp": 622.25
+    },
+    {
+      "seed": 1,
+      "policy": "health",
+      "stage": 2,
+      "initialMoney": 180,
+      "money": 35,
+      "maxHp": 2550,
+      "refreshes": 1,
+      "purchases": [
+        "vitality",
+        "vitality",
+        "bloodHp"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 9,
+      "winner": "player",
+      "seconds": 20,
+      "hp": 1369
+    },
+    {
+      "seed": 2,
+      "policy": "health",
+      "stage": 2,
+      "initialMoney": 180,
+      "money": 39,
+      "maxHp": 2550,
+      "refreshes": 1,
+      "purchases": [
+        "vitality",
+        "bloodHp",
+        "bloodHp"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 9,
+      "winner": "player",
+      "seconds": 20,
+      "hp": 1369
+    },
+    {
+      "seed": 3,
+      "policy": "health",
+      "stage": 2,
+      "initialMoney": 180,
+      "money": 39,
+      "maxHp": 2550,
+      "refreshes": 1,
+      "purchases": [
+        "bloodHp",
+        "bloodHp",
+        "vitality"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 9,
+      "winner": "player",
+      "seconds": 20,
+      "hp": 1369
+    },
+    {
+      "seed": 1,
+      "policy": "weapon",
+      "stage": 2,
+      "initialMoney": 180,
+      "money": 10,
+      "maxHp": 1050,
+      "refreshes": 4,
+      "purchases": [
+        "edge",
+        "edge",
+        "edge",
+        "edge"
+      ],
+      "permanentAttack": 40,
+      "toxinBonus": 9,
+      "winner": "player",
+      "seconds": 18,
+      "hp": 215
+    },
+    {
+      "seed": 2,
+      "policy": "weapon",
+      "stage": 2,
+      "initialMoney": 180,
+      "money": 40,
+      "maxHp": 1050,
+      "refreshes": 4,
+      "purchases": [
+        "edge",
+        "edge",
+        "edge"
+      ],
+      "permanentAttack": 30,
+      "toxinBonus": 9,
+      "winner": "enemy",
+      "seconds": 20,
+      "hp": 0
+    },
+    {
+      "seed": 3,
+      "policy": "weapon",
+      "stage": 2,
+      "initialMoney": 180,
+      "money": 10,
+      "maxHp": 1050,
+      "refreshes": 4,
+      "purchases": [
+        "edge",
+        "edge",
+        "edge",
+        "edge"
+      ],
+      "permanentAttack": 40,
+      "toxinBonus": 9,
+      "winner": "player",
+      "seconds": 18,
+      "hp": 215
+    },
+    {
+      "seed": 1,
+      "policy": "toxin",
+      "stage": 2,
+      "initialMoney": 180,
+      "money": 33,
+      "maxHp": 1050,
+      "refreshes": 2,
+      "purchases": [
+        "bloodToxin",
+        "bloodToxin",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 18,
+      "winner": "enemy",
+      "seconds": 16,
+      "hp": 0
+    },
+    {
+      "seed": 2,
+      "policy": "toxin",
+      "stage": 2,
+      "initialMoney": 180,
+      "money": 62,
+      "maxHp": 1050,
+      "refreshes": 3,
+      "purchases": [
+        "bloodToxin",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 15,
+      "winner": "enemy",
+      "seconds": 16,
+      "hp": 0
+    },
+    {
+      "seed": 3,
+      "policy": "toxin",
+      "stage": 2,
+      "initialMoney": 180,
+      "money": 62,
+      "maxHp": 1050,
+      "refreshes": 3,
+      "purchases": [
+        "bloodToxin",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 15,
+      "winner": "enemy",
+      "seconds": 16,
+      "hp": 0
+    },
+    {
+      "seed": 1,
+      "policy": "mixed",
+      "stage": 2,
+      "initialMoney": 180,
+      "money": 25,
+      "maxHp": 2050,
+      "refreshes": 2,
+      "purchases": [
+        "vitality",
+        "vitality",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 12,
+      "winner": "player",
+      "seconds": 17,
+      "hp": 840
+    },
+    {
+      "seed": 2,
+      "policy": "mixed",
+      "stage": 2,
+      "initialMoney": 180,
+      "money": 29,
+      "maxHp": 2050,
+      "refreshes": 2,
+      "purchases": [
+        "vitality",
+        "bloodHp",
+        "bloodToxin"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 12,
+      "winner": "player",
+      "seconds": 17,
+      "hp": 840
+    },
+    {
+      "seed": 3,
+      "policy": "mixed",
+      "stage": 2,
+      "initialMoney": 180,
+      "money": 62,
+      "maxHp": 2050,
+      "refreshes": 3,
+      "purchases": [
+        "bloodHp",
+        "bloodHp"
+      ],
+      "permanentAttack": 0,
+      "toxinBonus": 9,
+      "winner": "player",
+      "seconds": 18,
+      "hp": 1080
+    }
+  ]
+}

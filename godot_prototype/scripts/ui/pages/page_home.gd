@@ -62,6 +62,7 @@ func build() -> void:
 	rb.add_child(UiKit.button("三路线回放：连续战败", _on_play.bind(DevTools.MODE_REPLAY_FAILURE)))
 	rb.add_child(UiKit.button("战斗实验室（单步与快速计算）", _on_play.bind(DevTools.MODE_BATTLE_LAB)))
 	rb.add_child(UiKit.button("参数检查", _on_validate))
+	rb.add_child(UiKit.button("新版节点测试：武道", _on_card_test))
 	rb.add_child(UiKit.spacer(10))
 
 	root.add_child(UiKit.label("本次选择：", 15, UiKit.COL_MUTED))
@@ -86,11 +87,19 @@ func _apply_highlight() -> void:
 
 
 func _on_start() -> void:
+	ctrl.use_card_exploration = false
 	ctrl.new_trial(_profession, _bloodline, DevTools.world_seed)
 
 
 func _on_play(mode: StringName) -> void:
+	ctrl.use_card_exploration = false
 	ctrl.request_dev_mode(mode)
+	ctrl.new_trial(_profession, _bloodline, DevTools.world_seed)
+
+
+func _on_card_test() -> void:
+	ctrl.use_card_exploration = true
+	ctrl.request_dev_mode(DevTools.MODE_RANDOM)
 	ctrl.new_trial(_profession, _bloodline, DevTools.world_seed)
 
 

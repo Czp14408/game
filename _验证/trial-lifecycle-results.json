@@ -1,0 +1,3759 @@
+{
+  "scope": "Lifecycle invariants and 50 continuous combat fixtures. Fixed stage equipment and max HP, simplified task/loot, no acquisition or economic balance proof. World combat fixtures do not represent the five task worlds.",
+  "counts": {
+    "victory": 50,
+    "defeat": 0
+  },
+  "trials": [
+    {
+      "seed": 1,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 3,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 4,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 5,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 6,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 7,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 8,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 9,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 10,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 12,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 13,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 14,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 15,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 16,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 17,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 18,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 19,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 20,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 21,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 23,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 24,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 25,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 26,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 27,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 28,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 29,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 30,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 31,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 32,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 34,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 35,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 36,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 37,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 38,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 39,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 40,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 41,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 43,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 44,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 45,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 46,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 47,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 48,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 49,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    },
+    {
+      "seed": 50,
+      "outcome": "victory",
+      "log": [
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 450,
+          "losses": 0
+        },
+        {
+          "stage": 1,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 300,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 400,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 500,
+          "losses": 0
+        },
+        {
+          "stage": 2,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 1000,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 4,
+          "winner": "player",
+          "hp": 1248,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "world",
+          "node": 6,
+          "winner": "player",
+          "hp": 1496,
+          "losses": 0
+        },
+        {
+          "stage": 3,
+          "kind": "boss",
+          "winner": "player",
+          "hp": 0,
+          "losses": 0
+        }
+      ]
+    }
+  ]
+}
